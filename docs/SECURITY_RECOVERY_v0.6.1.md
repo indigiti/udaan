@@ -50,3 +50,7 @@ History purge execution armed after workflow syntax correction.
 History purge trigger re-issued after simplifying the workflow parser path.
 
 History purge trigger re-issued after removing the final tracked import lock.
+
+## Repository purge completion
+
+Branch history was replaced with a clean security baseline after P0 certification. The normal branch tree no longer contains the removed runtime keys, learner/session state, generated packs/backups, or the import lock. All prior local clones must be discarded and re-cloned before future pushes.
