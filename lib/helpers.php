@@ -40,7 +40,7 @@ function storage_key(): string {
 }
 function secure_pack(array $payload): string {
     $json=json_encode($payload,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES); if(!is_string($json)) throw new RuntimeException('Could not encode secure payload.');
-    if(!storage_encryption_available()) return $json;
+    if(!storage_encryption_available()) throw new RuntimeException('AES-256-GCM is required for sensitive server storage.');
     $iv=random_bytes(12); $tag=''; $ct=openssl_encrypt($json,'aes-256-gcm',storage_key(),OPENSSL_RAW_DATA,$iv,$tag,'udaan:v1',16);
     if(!is_string($ct)) throw new RuntimeException('Could not encrypt secure payload.');
     $env=json_encode(['iv'=>b64url_encode($iv),'tag'=>b64url_encode($tag),'ct'=>b64url_encode($ct)],JSON_UNESCAPED_SLASHES);if(!is_string($env))throw new RuntimeException('Could not encode encryption envelope.');return 'UDENC1.'.b64url_encode($env);
