@@ -7,7 +7,10 @@ function content_admin_key(): string {
     if (strlen($env) >= 12) return $env;
     $file = content_admin_key_path();
     $raw = @file_get_contents($file);
-    if (is_string($raw) && strlen(trim($raw)) >= 12) return trim($raw);
+    if (is_string($raw) && strlen(trim($raw)) >= 12) {
+        @chmod($file, 0600);
+        return trim($raw);
+    }
     $alphabet = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%';
     $key = '';
     for ($i=0; $i<24; $i++) $key .= $alphabet[random_int(0, strlen($alphabet)-1)];
