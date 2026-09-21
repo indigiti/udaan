@@ -17,8 +17,9 @@ function content_signing_keys(): array {
     if($raw!==''){$decoded=base64_decode($raw,true);if(is_string($decoded)&&strlen($decoded)===SODIUM_CRYPTO_SIGN_SECRETKEYBYTES)$secret=$decoded;}
     if($secret===''){
         $kp=sodium_crypto_sign_keypair();$secret=sodium_crypto_sign_secretkey($kp);$encoded=base64_encode($secret);
-        rewind($fh);ftruncate($fh,0);if(fwrite($fh,$encoded)===false){flock($fh,LOCK_UN);fclose($fh);throw new RuntimeException('Could not persist content signing key.');}fflush($fh);@chmod($file,0600);
+        rewind($fh);ftruncate($fh,0);if(fwrite($fh,$encoded)===false){flock($fh,LOCK_UN);fclose($fh);throw new RuntimeException('Could not persist content signing key.');}fflush($fh);
     }
+    @chmod($file,0600);
     flock($fh,LOCK_UN);fclose($fh);$public=sodium_crypto_sign_publickey_from_secretkey($secret);
     return $keys=['secret'=>$secret,'public'=>$public,'public_b64'=>b64url_encode($public),'key_id'=>substr(hash('sha256',$public),0,16)];
 }
