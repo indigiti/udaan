@@ -59,7 +59,7 @@ function offline_sync_token(string $learningKey,string $deviceHash,int $expires)
 function offline_sync_token_parse(string $token): ?array { $p=explode('.',$token,2); if(count($p)!==2)return null; [$payload,$sig]=$p; $expect=b64url_encode(hash_hmac('sha256','offline-sync:'.$payload,app_secret(),true)); if(!hash_equals($expect,$sig))return null; $raw=b64url_decode($payload); $d=is_string($raw)?json_decode($raw,true):null; if(!is_array($d)||empty($d['u'])||empty($d['d'])||(int)($d['exp']??0)<time())return null; return $d; }
 
 function app_base_path(): string {
-    static $base=null;if($base!==null)return $base;$app=str_replace('\\','/',realpath(__DIR__.'/..')?:dirname(__DIR__));$doc=str_replace('\\','/',realpath($_SERVER['DOCUMENT_ROOT']??'')?:'');
+    static $base=null;if($base!==null)return $base;$forced=trim((string)(getenv('UDAAN_BASE_PATH')?:''));if($forced!==''){return $base=$forced==='/'?'':'/'.trim($forced,'/');}$app=str_replace('\\','/',realpath(__DIR__.'/..')?:dirname(__DIR__));$doc=str_replace('\\','/',realpath($_SERVER['DOCUMENT_ROOT']??'')?:'');
     if($doc!==''&&str_starts_with($app,rtrim($doc,'/'))){$rel=substr($app,strlen(rtrim($doc,'/')));return $base=rtrim('/'.trim($rel,'/'),'/');}
     $script=str_replace('\\','/',$_SERVER['SCRIPT_NAME']??'');return $base=rtrim(dirname($script),'/.');
 }
