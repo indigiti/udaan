@@ -14,9 +14,14 @@ function phone_mask(string $phone): string {$p=normalized_phone($phone);if(strle
 function app_secret(): string {
     static $secret=null; if(is_string($secret))return $secret;
     $file=dirname(__DIR__).'/data/app-secret.key';
-    $existing=@file_get_contents($file); if(is_string($existing)&&strlen(trim($existing))>=32)return $secret=trim($existing);
-    $secret=bin2hex(random_bytes(32)); if(@file_put_contents($file,$secret,LOCK_EX)===false){$secret='udaan-live-v040-fallback-pepper-change-me';}
-    return $secret;
+    $fh=@fopen($file,'c+');
+    if(!$fh)throw new RuntimeException('Application secret file is not writable.');
+    if(!flock($fh,LOCK_EX)){fclose($fh);throw new RuntimeException('Could not lock application secret file.');}
+    rewind($fh);$existing=trim((string)stream_get_contents($fh));
+    if(strlen($existing)>=32){@chmod($file,0600);flock($fh,LOCK_UN);fclose($fh);return $secret=$existing;}
+    $secret=bin2hex(random_bytes(32));rewind($fh);ftruncate($fh,0);
+    if(fwrite($fh,$secret)===false){flock($fh,LOCK_UN);fclose($fh);throw new RuntimeException('Could not persist application secret.');}
+    fflush($fh);@chmod($file,0600);flock($fh,LOCK_UN);fclose($fh);return $secret;
 }
 function learning_identity(string $phone): string { return hash_hmac('sha256',normalized_phone($phone),app_secret()); }
 function client_cache_token(string $learningIdentity): string { return substr(hash_hmac('sha256','browser-cache:'.$learningIdentity,app_secret()),0,32); }
@@ -29,7 +34,8 @@ function storage_key(): string {
     $file=dirname(__DIR__).'/data/storage-encryption.key'; $fh=@fopen($file,'c+'); if(!$fh) throw new RuntimeException('Storage encryption key file is not writable.');
     if(!flock($fh,LOCK_EX)){fclose($fh);throw new RuntimeException('Could not lock storage encryption key file.');}
     rewind($fh);$raw=stream_get_contents($fh);$hex=is_string($raw)?trim($raw):'';
-    if(!preg_match('/^[a-f0-9]{64}$/i',$hex)){ $bytes=random_bytes(32);$hex=bin2hex($bytes);rewind($fh);ftruncate($fh,0);if(fwrite($fh,$hex)===false){flock($fh,LOCK_UN);fclose($fh);throw new RuntimeException('Could not persist storage encryption key.');}fflush($fh);@chmod($file,0600); }
+    if(!preg_match('/^[a-f0-9]{64}$/i',$hex)){ $bytes=random_bytes(32);$hex=bin2hex($bytes);rewind($fh);ftruncate($fh,0);if(fwrite($fh,$hex)===false){flock($fh,LOCK_UN);fclose($fh);throw new RuntimeException('Could not persist storage encryption key.');}fflush($fh); }
+    @chmod($file,0600);
     flock($fh,LOCK_UN);fclose($fh);$bin=hex2bin($hex);if(!is_string($bin)||strlen($bin)!==32)throw new RuntimeException('Storage encryption key is invalid.');return $key=$bin;
 }
 function secure_pack(array $payload): string {
