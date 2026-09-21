@@ -1,0 +1,178 @@
+{
+    "schema_version": 1,
+    "pack_id": "build-002",
+    "pillar": "build",
+    "pillar_name": "Build & Create",
+    "sequence": 2,
+    "card_count": 6,
+    "bank_version": "2026.09.import20260904011537",
+    "cards": [
+        {
+            "pillar": "build",
+            "pillar_name": "Build & Create",
+            "label": "BUILD & CREATE",
+            "topic": "injection",
+            "topic_name": "Injection attacks",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "fc77ec65-8537-4c90-8440-c985175d63ca",
+            "kind": "reveal",
+            "title": "When does an injection attack happen?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Injection occurs when untrusted input is interpreted as commands or queries instead of being handled safely as data.",
+            "meta": {
+                "source_title": "Supplied web security notes",
+                "source_section": "Injection attacks",
+                "source_reference": "Item 6",
+                "source_url": "",
+                "concept_key": "build:injection:untrusted_input",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "build",
+            "pillar_name": "Build & Create",
+            "label": "BUILD & CREATE",
+            "topic": "iteration",
+            "topic_name": "Iteration",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "fd163aa3-c3b0-5453-91f9-d6c58119826b",
+            "kind": "reveal",
+            "title": "Iteration",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Iteration means making a version, testing it, learning and improving the next version."
+        },
+        {
+            "pillar": "build",
+            "pillar_name": "Build & Create",
+            "label": "BUILD & CREATE",
+            "topic": "security_testing",
+            "topic_name": "SAST and DAST",
+            "min_grade": 10,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "fe7c9c2f-3a68-4e35-8804-770bb174a773",
+            "kind": "quiz",
+            "title": "Which statement best distinguishes SAST from DAST?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "SAST analyzes code; DAST tests a running application"
+                },
+                {
+                    "id": "b",
+                    "label": "SAST tests networks; DAST designs databases"
+                },
+                {
+                    "id": "c",
+                    "label": "They are identical techniques"
+                }
+            ],
+            "correct": "a",
+            "explain": "SAST analyzes application code or related artifacts for potential security problems, while DAST tests a running application from the outside.",
+            "meta": {
+                "source_title": "Supplied web security notes",
+                "source_section": "Security testing",
+                "source_reference": "Item 48",
+                "source_url": "",
+                "concept_key": "build:security_testing:sast_dast",
+                "educational_value": 97,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "build",
+            "pillar_name": "Build & Create",
+            "label": "BUILD & CREATE",
+            "topic": "circuits",
+            "topic_name": "Making circuits",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "fe920bbb-0ea3-5c37-815d-0e47aa0fea40",
+            "kind": "choice",
+            "title": "Why is electrical safety non-negotiable?",
+            "subtitle": "Connect making circuits to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "build",
+            "pillar_name": "Build & Create",
+            "label": "BUILD & CREATE",
+            "topic": "algorithm",
+            "topic_name": "Algorithms",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "fefd693c-cc00-5181-8815-fea72bc2a60a",
+            "kind": "reveal",
+            "title": "Algorithms",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "An algorithm is a clear sequence of steps for solving a problem or completing a task."
+        },
+        {
+            "pillar": "build",
+            "pillar_name": "Build & Create",
+            "label": "BUILD & CREATE",
+            "topic": "path_traversal",
+            "topic_name": "Path traversal",
+            "min_grade": 10,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "ff16959d-9cb1-4496-8f80-9cf1640a6e82",
+            "kind": "reveal",
+            "title": "What can a path traversal vulnerability expose?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Path traversal vulnerabilities can allow access to files outside an application's intended directory.",
+            "meta": {
+                "source_title": "Supplied web security notes",
+                "source_section": "Path traversal",
+                "source_reference": "Item 43",
+                "source_url": "",
+                "concept_key": "build:path_traversal:file_access",
+                "educational_value": 89,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        }
+    ],
+    "sha256": "94677ddb492ff9a5d1e887c420b978d98acd4862a7866e3a97f9edde7c50f686",
+    "signature_alg": "Ed25519",
+    "signing_key_id": "76f1f50a291c1ec5",
+    "signature": "ukGRMUO0HX5Cj-Z4huQjy11gPtdMF-02GtWct0NxBJ-7CZXSfamuI_hzufgwSHdk4Fjooq2cHOZrj22cjuBSBQ"
+}

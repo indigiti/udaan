@@ -1,0 +1,138 @@
+UDAAN LIVE v0.2.1 — CLOUDWAYS QUICK SETUP
+
+TARGET EXAMPLE
+  /home/1323555.cloudwaysapps.com/pxjmtnyeba/public_html/ver/udan/
+  https://lexicon.digiti.in/ver/udan/
+
+UPGRADE
+1. Back up the current udan folder.
+2. Upload/overwrite v0.2.1 files.
+3. Ensure these folders are writable by PHP:
+   data/rooms/
+   data/insights/
+4. Open:
+   https://lexicon.digiti.in/ver/udan/health.php
+5. Confirm ok=true.
+6. Open:
+   https://lexicon.digiti.in/ver/udan/
+7. CREATE A NEW ROOM. Do not reuse the old NBGEF/VC42C verification session.
+
+PRETTY URL EXAMPLE
+  https://lexicon.digiti.in/ver/udan/room/<uuid>/join
+  https://lexicon.digiti.in/ver/udan/room/<uuid>/verify
+  https://lexicon.digiti.in/ver/udan/room/<uuid>/journey
+  https://lexicon.digiti.in/ver/udan/room/<uuid>/present
+
+Apache mod_rewrite / .htaccess must be enabled. Cloudways' standard Apache layer normally supports this.
+
+REDIS (recommended, no database)
+  REDIS_ENABLED=1
+  REDIS_HOST=127.0.0.1
+  REDIS_PORT=6379
+  REDIS_PASSWORD=your-secret-if-required
+  REDIS_DB=0
+
+Without Redis, the prototype automatically uses temporary JSON room files.
+
+OPTIONAL CLEANUP CRON
+  */10 * * * * /usr/bin/php /home/1323555.cloudwaysapps.com/pxjmtnyeba/public_html/ver/udan/cleanup.php >/dev/null 2>&1
+
+DIAGNOSTICS
+- health endpoint: /ver/udan/health.php
+- private PHP error log: /ver/udan/data/php-error.log
+- never expose data/php-error.log publicly
+
+ROOT CAUSE OF v0.2.0 VERIFY 500
+Generic PHP session key collision caused `pending` to be a string while verify.php expected an array. v0.2.1 uses a dedicated UDAANLIVESESSID cookie and namespaced session state.
+
+CONTENT BANK ADMIN (v0.4.2)
+----------------------------
+Open: /admin/content-bank
+
+On first access the app creates:
+  data/content-admin.key
+
+Read that key via SFTP/SSH. Do not expose the file publicly. data/.htaccess blocks direct web access.
+
+Optional preferred production configuration:
+  UDAAN_CONTENT_ADMIN_KEY=<your-long-random-secret>
+
+Ensure PHP can write:
+  data/content/
+  data/content/backups/
+  data/imports/pending/
+
+The importer never writes directly to the live bank before verification. It backs up, writes a temp file, validates it, then atomically renames it over cards.json.
+
+PWA + USER CACHE (v0.5.0)
+-------------------------
+Ensure PHP can write:
+  data/user-cache/
+  data/sync-outbox/
+
+Recommended cleanup cron remains:
+  */10 * * * * /usr/bin/php /home/master/applications/YOUR_APP/public_html/ver/udan/cleanup.php >/dev/null 2>&1
+
+Keep HTTPS enabled. Service workers/PWA installation require a secure context in normal browser deployments.
+Preserve data/app-secret.key, data/history/, data/content/cards.json and data/sync-outbox/ during upgrades.
+
+LEARNING REFLECTION RAIL (v0.5.1)
+---------------------------------
+After uploading v0.5.1:
+
+1. Preserve all protected data files/history before overlaying.
+2. Hard refresh the browser (Ctrl+Shift+R) or close/reopen installed PWA.
+3. The service worker should activate cache `udaan-v0.5.1-static`.
+4. Check /health.php for:
+   - version = 0.5.1
+   - learning_reflection_rail = true
+   - card_reflection_seconds = 3
+5. Create a new UUID room and answer a fresh card.
+6. Confirm feedback remains visible while the 3-second bottom spectrum rail counts down.
+7. Confirm swipe/keyboard cannot skip the active reflection interval.
+8. Confirm PWA/offline answer queue and Content Bank importer remain working.
+
+No database/schema migration is required for v0.5.1.
+
+V0.5.2 ENCRYPTED OFFLINE LEARNING VAULT
+---------------------------------------
+1. Back up the entire live /ver/udan/ data directory before deploying.
+2. Preserve data/app-secret.key and all existing content/history/outbox data.
+3. Upload the v0.5.2 overlay.
+4. Ensure PHP OpenSSL is enabled with aes-256-gcm support.
+5. On first encrypted write, data/storage-encryption.key is generated. Back it up securely immediately and preserve it on all future deployments.
+6. Check /health.php:
+   - version = 0.5.2
+   - offline_reserve_cards = 108
+   - browser_qna_cache = AES-GCM encrypted IndexedDB
+   - server_temp_encryption = AES-256-GCM
+7. Hard refresh/reopen the installed PWA so udaan-v0.5.2-static activates.
+8. Run the full RELEASE_AUDIT_v0.5.2.md checklist.
+
+ROLLBACK WARNING: once room/history/user-cache/outbox data has been rewritten to UDENC1 encrypted format, plain v0.5.1 code cannot read it. Retain v0.5.2 secure_unpack compatibility or restore a pre-v0.5.2 protected-data backup.
+
+V0.6.0 DISTRIBUTED CONTENT FOUNDATION
+=====================================
+
+1. Back up the complete current data/ directory before upload.
+2. Preserve app-secret.key, storage-encryption.key, content-admin.key, cards.json, history/, user-cache/, sync-outbox/.
+3. Upload the v0.6.0 HOTFIX overlay, not the clean full ZIP, onto an existing installation.
+4. Open /health.php.
+5. Confirm version = 0.6.0 and content_distribution.ready = true.
+6. The first health/manifest build may create data/content-signing.key.
+7. Immediately back up data/content-signing.key. Never overwrite it on future releases.
+8. Open /content/manifest and one /content/pack/{pack-id} URL.
+9. Hard refresh/reopen PWA so udaan-v0.6.0-static activates.
+10. Join the same room from two devices; verify different card order and differing option positions.
+11. Confirm each 21–36 card journey contains no more than one action card.
+12. Confirm Future choice cards render 5 options.
+13. Run docs/RELEASE_AUDIT_v0.6.0.md.
+
+PHP REQUIREMENTS FOR V0.6.0
+----------------------------
+- PHP 8.1+
+- OpenSSL with aes-256-gcm
+- Sodium extension for Ed25519 signed content packs
+- Redis optional but recommended
+
+NO MARIADB IS REQUIRED FOR V0.6.0.

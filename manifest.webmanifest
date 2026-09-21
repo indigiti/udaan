@@ -1,0 +1,16 @@
+{
+  "id":"./",
+  "name":"Udaan Live — Daily Learning",
+  "short_name":"Udaan",
+  "description":"Daily 9, live learning, friend challenges and encrypted offline-first learning with signed content packs and up to 1,008 cards per device.",
+  "start_url":"./",
+  "scope":"./",
+  "display":"standalone",
+  "orientation":"portrait-primary",
+  "background_color":"#f3f0e9",
+  "theme_color":"#f3f0e9",
+  "icons":[
+    {"src":"assets/icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"assets/icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}

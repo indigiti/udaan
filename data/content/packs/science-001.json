@@ -1,0 +1,3579 @@
+{
+    "schema_version": 1,
+    "pack_id": "science-001",
+    "pillar": "science",
+    "pillar_name": "Science & Discovery",
+    "sequence": 1,
+    "card_count": 112,
+    "bank_version": "2026.09.import20260904011537",
+    "cards": [
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "energy",
+            "topic_name": "Energy transformation",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "04ef18c6-e252-542e-ba63-b879659bf25d",
+            "kind": "quiz",
+            "title": "A fan mainly converts electrical energy into…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Motion"
+                },
+                {
+                    "id": "b",
+                    "label": "Mass"
+                },
+                {
+                    "id": "c",
+                    "label": "Gravity"
+                }
+            ],
+            "correct": "a",
+            "explain": "Energy changes form—for example, electrical energy can become light, heat or motion."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "leaf_color",
+            "topic_name": "Leaf color change",
+            "min_grade": 4,
+            "max_grade": 9,
+            "language": "en",
+            "active": true,
+            "id": "07188b9a-56a8-47e1-a5e1-47ba95ab1717",
+            "kind": "reveal",
+            "title": "What kind of science helps explain why leaves change color?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Chemistry helps explain the changes in pigments that produce different leaf colors.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "17. Why Do Leaves Change Color?",
+                "source_reference": "Chemistry behind autumn",
+                "source_url": "",
+                "concept_key": "science:leaf_color:pigment_chemistry",
+                "educational_value": 86,
+                "confidence": 0.96,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "origin_of_life",
+            "topic_name": "Origin of life",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "07bad933-6d7e-4bc0-a260-f6e0fd054949",
+            "kind": "reveal",
+            "title": "Do scientists have only one settled explanation for how life began?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "The supplied source frames the origin of life as an area with leading scientific ideas that researchers continue to explore.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "49. How Did Life Begin on Earth?",
+                "source_reference": "Leading scientific ideas about life's origins",
+                "source_url": "",
+                "concept_key": "science:origin_of_life:scientific_ideas",
+                "educational_value": 95,
+                "confidence": 0.95,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "immortal_jellyfish",
+            "topic_name": "Life-cycle reversal in jellyfish",
+            "min_grade": 6,
+            "max_grade": 11,
+            "language": "en",
+            "active": true,
+            "id": "07baec39-e490-4cf8-bc45-5a1d6af03333",
+            "kind": "quiz",
+            "title": "What unusual ability is linked to the 'immortal jellyfish'?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Reversing its life cycle"
+                },
+                {
+                    "id": "b",
+                    "label": "Flying through the air"
+                },
+                {
+                    "id": "c",
+                    "label": "Living without water"
+                }
+            ],
+            "correct": "a",
+            "explain": "The supplied source highlights a jellyfish capable of reversing its life cycle.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "33. The Immortal Jellyfish",
+                "source_reference": "Capable of reversing its life cycle",
+                "source_url": "",
+                "concept_key": "science:immortal_jellyfish:life_cycle_reversal",
+                "educational_value": 88,
+                "confidence": 0.96,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "sky_scattering",
+            "topic_name": "Why the sky is blue",
+            "min_grade": 5,
+            "max_grade": 9,
+            "language": "en",
+            "active": true,
+            "id": "0b2e1461-4e94-4db3-b7ad-fd0c3373fc01",
+            "kind": "reveal",
+            "title": "Why does the daytime sky look blue?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "The blue sky is connected to the way sunlight scatters as it travels through Earth's atmosphere.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "1. Why Is the Sky Blue?",
+                "source_reference": "Sunlight scattering through Earth's atmosphere",
+                "source_url": "",
+                "concept_key": "science:sky_scattering:blue_sky",
+                "educational_value": 90,
+                "confidence": 0.99,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "post_quantum",
+            "topic_name": "Post-quantum cryptography",
+            "min_grade": 10,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "0ea08af9-71bd-40bd-a53e-355263460b1c",
+            "kind": "quiz",
+            "title": "What is post-quantum cryptography designed to resist?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Only classical computers"
+                },
+                {
+                    "id": "b",
+                    "label": "Both classical and quantum attacks"
+                },
+                {
+                    "id": "c",
+                    "label": "Only network outages"
+                }
+            ],
+            "correct": "b",
+            "explain": "Post-quantum cryptography develops algorithms intended to resist attacks from both classical and quantum computers.",
+            "meta": {
+                "source_title": "User-supplied cryptography notes",
+                "source_section": "Post-quantum cryptography",
+                "source_reference": "Item 49",
+                "source_url": "",
+                "concept_key": "science:post_quantum:purpose",
+                "educational_value": 93,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "watercycle",
+            "topic_name": "Water cycle",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "0f8f0453-b086-566f-8e44-695c5d488592",
+            "kind": "action",
+            "title": "Notice one place water changes state today.",
+            "subtitle": "A tiny action linked to water cycle.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "light",
+            "topic_name": "Light",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "12decd4a-f796-556c-8f41-3e7f3ec2862b",
+            "kind": "action",
+            "title": "Find one reflective, one transparent and one opaque object.",
+            "subtitle": "A tiny action linked to light.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "mariana_trench",
+            "topic_name": "The Mariana Trench",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "14fb3f62-b5dd-442a-a2c5-ef0c6ae8d202",
+            "kind": "quiz",
+            "title": "Which place is described as the deepest place on Earth?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Mariana Trench"
+                },
+                {
+                    "id": "b",
+                    "label": "Mount Everest"
+                },
+                {
+                    "id": "c",
+                    "label": "Sahara Desert"
+                }
+            ],
+            "correct": "a",
+            "explain": "The supplied source identifies the Mariana Trench as the deepest place on Earth.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "2. The Deepest Place on Earth",
+                "source_reference": "Mariana Trench",
+                "source_url": "",
+                "concept_key": "science:mariana_trench:deepest_place",
+                "educational_value": 82,
+                "confidence": 0.99,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "peregrine_speed",
+            "topic_name": "Peregrine falcon speed",
+            "min_grade": 4,
+            "max_grade": 9,
+            "language": "en",
+            "active": true,
+            "id": "18ac54be-78a7-4e56-8b3e-f77f637c1818",
+            "kind": "quiz",
+            "title": "Which animal is highlighted for extraordinary speed?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Peregrine falcon"
+                },
+                {
+                    "id": "b",
+                    "label": "Tortoise"
+                },
+                {
+                    "id": "c",
+                    "label": "Sloth"
+                }
+            ],
+            "correct": "a",
+            "explain": "The supplied source identifies the peregrine falcon as the fastest animal on Earth.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "18. The Fastest Animal on Earth",
+                "source_reference": "Peregrine falcon",
+                "source_url": "",
+                "concept_key": "science:peregrine_speed:fastest_animal",
+                "educational_value": 83,
+                "confidence": 0.97,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "electricity",
+            "topic_name": "Electric circuits",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "18b329aa-2cd6-5cef-9444-c50688f8b690",
+            "kind": "choice",
+            "title": "What makes a circuit complete?",
+            "subtitle": "Connect electric circuits to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "future_discovery",
+            "topic_name": "Future scientific discoveries",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "18cbea44-89d6-4ae3-b9d5-d212626c5050",
+            "kind": "choice",
+            "title": "Which future science frontier would you most like to explore?",
+            "subtitle": "Choose the area that sparks your curiosity.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Fusion energy"
+                },
+                {
+                    "id": "b",
+                    "label": "New worlds"
+                },
+                {
+                    "id": "c",
+                    "label": "Other discoveries"
+                }
+            ],
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "50. What Will Science Discover Next?",
+                "source_reference": "Fusion energy to new worlds",
+                "source_url": "",
+                "concept_key": "science:future_discovery:science_frontiers",
+                "educational_value": 86,
+                "confidence": 0.98,
+                "evidence_class": "not_applicable",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "aurora",
+            "topic_name": "Northern lights",
+            "min_grade": 6,
+            "max_grade": 11,
+            "language": "en",
+            "active": true,
+            "id": "18cbfa42-981b-451d-832a-eaa367a33434",
+            "kind": "quiz",
+            "title": "What helps create the Northern Lights?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Solar particles"
+                },
+                {
+                    "id": "b",
+                    "label": "Ocean waves"
+                },
+                {
+                    "id": "c",
+                    "label": "Earthquakes"
+                }
+            ],
+            "correct": "a",
+            "explain": "The supplied source links the glowing Northern Lights to particles arriving from the Sun.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "34. What Causes the Northern Lights?",
+                "source_reference": "Solar particles create glowing skies",
+                "source_url": "",
+                "concept_key": "science:aurora:solar_particles",
+                "educational_value": 93,
+                "confidence": 0.98,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "climate",
+            "topic_name": "Weather and climate",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "1a61d17b-2e8f-5bed-a5e2-8455a922729a",
+            "kind": "quiz",
+            "title": "Which describes climate?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Typical rainfall patterns over decades"
+                },
+                {
+                    "id": "b",
+                    "label": "Today’s afternoon shower"
+                },
+                {
+                    "id": "c",
+                    "label": "One gust of wind"
+                }
+            ],
+            "correct": "a",
+            "explain": "Weather describes short-term atmospheric conditions; climate describes longer-term patterns."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "energy",
+            "topic_name": "Energy transformation",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "1f104fad-01d8-53cf-ac1c-8426878e84d2",
+            "kind": "choice",
+            "title": "Why track energy transformations?",
+            "subtitle": "Connect energy transformation to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "ecosystems",
+            "topic_name": "Ecosystems",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "1f8ff799-7767-5486-911c-fdeae7e8418a",
+            "kind": "action",
+            "title": "Sketch a tiny food relationship among three organisms.",
+            "subtitle": "A tiny action linked to ecosystems.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "ecosystems",
+            "topic_name": "Ecosystems",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "207180d2-366c-5836-8429-b128a5ce4067",
+            "kind": "reveal",
+            "title": "Ecosystems",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "An ecosystem includes living organisms and their interactions with air, water, soil and other non-living factors."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "password_hashing",
+            "topic_name": "Password hashing",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "222681f6-c8c2-4f90-a394-7ea74d4e2d5b",
+            "kind": "reveal",
+            "title": "What does hashing do to a password?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Hashing converts a password into a derived value using a one-way function, allowing systems to avoid storing the original password in plaintext.",
+            "meta": {
+                "source_title": "Password security source notes",
+                "source_section": "Password storage",
+                "source_reference": "Items 40-41",
+                "source_url": "",
+                "concept_key": "science:password_hashing:hashing_definition",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "black_holes",
+            "topic_name": "Black holes",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "258b7cf4-3f8c-4c99-bfc2-1c2cd45d0303",
+            "kind": "reveal",
+            "title": "What is one extreme feature of a black hole?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Black holes have gravity so extreme that even light cannot escape from within their boundary.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "3. How Black Holes Work",
+                "source_reference": "Even light cannot escape",
+                "source_url": "",
+                "concept_key": "science:black_holes:light_escape",
+                "educational_value": 94,
+                "confidence": 0.97,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "sanskrit_science",
+            "topic_name": "Sanskrit word for science",
+            "min_grade": 4,
+            "max_grade": 9,
+            "language": "en",
+            "active": true,
+            "id": "258dc985-8795-487f-b946-741913550350",
+            "kind": "quiz",
+            "title": "What does “विज्ञानम्” mean?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Science"
+                },
+                {
+                    "id": "b",
+                    "label": "Energy"
+                },
+                {
+                    "id": "c",
+                    "label": "Environment"
+                }
+            ],
+            "correct": "a",
+            "explain": "विज्ञानम् (vijñānam) means “science.” The source connects science with understanding the mysteries of nature.",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Mathematics and science",
+                "source_reference": "Entry 105",
+                "source_url": "",
+                "concept_key": "science:sanskrit_science:vijnanam",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "buoyancy",
+            "topic_name": "Submarines and buoyancy",
+            "min_grade": 6,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "295f1024-c2de-4325-9db2-03c46b2e1919",
+            "kind": "quiz",
+            "title": "Which physics idea helps explain how submarines dive?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Buoyancy"
+                },
+                {
+                    "id": "b",
+                    "label": "Reflection"
+                },
+                {
+                    "id": "c",
+                    "label": "Magnetism only"
+                }
+            ],
+            "correct": "a",
+            "explain": "Buoyancy is the key physics concept highlighted in the supplied source for understanding how submarines dive.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "19. How Do Submarines Dive?",
+                "source_reference": "Physics of buoyancy",
+                "source_url": "",
+                "concept_key": "science:buoyancy:submarine_dive",
+                "educational_value": 93,
+                "confidence": 0.99,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "bird_navigation",
+            "topic_name": "Bird navigation",
+            "min_grade": 6,
+            "max_grade": 11,
+            "language": "en",
+            "active": true,
+            "id": "29dc07a5-faf7-4905-9458-37e628e63535",
+            "kind": "quiz",
+            "title": "Which clues can birds use while navigating?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Stars, landmarks and Earth's magnetic field"
+                },
+                {
+                    "id": "b",
+                    "label": "Only road signs"
+                },
+                {
+                    "id": "c",
+                    "label": "Only ocean temperature"
+                }
+            ],
+            "correct": "a",
+            "explain": "The supplied source highlights stars, landmarks and Earth's magnetic field as navigation cues used by birds.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "35. How Do Birds Navigate?",
+                "source_reference": "Stars, landmarks and Earth's magnetic field",
+                "source_url": "",
+                "concept_key": "science:bird_navigation:navigation_cues",
+                "educational_value": 94,
+                "confidence": 0.98,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "orbit",
+            "topic_name": "Orbits and gravity",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "304c7ecc-b9d4-5b2a-952b-bab474528503",
+            "kind": "reveal",
+            "title": "Orbits and gravity",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "An orbiting satellite is continually falling under gravity while moving sideways fast enough to keep missing Earth."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "dna",
+            "topic_name": "DNA and information",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "31700afb-def2-5bcb-9cf2-75d961942af2",
+            "kind": "action",
+            "title": "Remember: genes influence traits, but environment can matter too.",
+            "subtitle": "A tiny action linked to dna and information.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "mars_habitat",
+            "topic_name": "Living on Mars",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "318cb0b7-0a19-4ba7-becb-497793d40404",
+            "kind": "reveal",
+            "title": "What question must scientists solve before people could live on Mars?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Scientists would need to work out how to build and support a safe human home in the Martian environment.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "4. Can Humans Live on Mars?",
+                "source_reference": "What it would take to build a Martian home",
+                "source_url": "",
+                "concept_key": "science:mars_habitat:human_home",
+                "educational_value": 88,
+                "confidence": 0.95,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "dna",
+            "topic_name": "DNA and information",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "396890d0-4e19-5f42-ad69-7d4d08ed5df7",
+            "kind": "choice",
+            "title": "Why are traits not always simple?",
+            "subtitle": "Connect dna and information to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "plant_signals",
+            "topic_name": "Plant communication",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "3a4d61a7-fcf1-4865-a719-27360a602020",
+            "kind": "reveal",
+            "title": "Can plants exchange information without words?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Plants can use chemical signals, and the supplied source also highlights underground fungal networks as part of this communication story.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "20. Can Plants Communicate?",
+                "source_reference": "Chemical signals and underground fungal networks",
+                "source_url": "",
+                "concept_key": "science:plant_signals:chemical_fungal",
+                "educational_value": 91,
+                "confidence": 0.94,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "tsunamis",
+            "topic_name": "Tsunamis",
+            "min_grade": 6,
+            "max_grade": 11,
+            "language": "en",
+            "active": true,
+            "id": "3aed14b6-c402-4b44-b6ce-97debc083636",
+            "kind": "reveal",
+            "title": "What scientific question does tsunami research ask?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Tsunami science investigates how very large ocean waves form and move.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "36. The Science of Tsunamis",
+                "source_reference": "How giant ocean waves form",
+                "source_url": "",
+                "concept_key": "science:tsunamis:wave_formation",
+                "educational_value": 89,
+                "confidence": 0.97,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "energy",
+            "topic_name": "Energy transformation",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "3dee8262-de23-5b1a-a082-75b4032f6b00",
+            "kind": "reveal",
+            "title": "Energy transformation",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Energy changes form—for example, electrical energy can become light, heat or motion."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "dna",
+            "topic_name": "DNA",
+            "min_grade": 6,
+            "max_grade": 11,
+            "language": "en",
+            "active": true,
+            "id": "42d611c0-b84b-4b3e-a05a-c1b203aa0505",
+            "kind": "reveal",
+            "title": "Why is DNA often compared with a biological code?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "DNA carries genetic information and is part of the biological code that contributes to what makes each person unique.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "5. The Secret Life of DNA",
+                "source_reference": "The code that makes you unique",
+                "source_url": "",
+                "concept_key": "science:dna:genetic_code",
+                "educational_value": 93,
+                "confidence": 0.96,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "password_hashing",
+            "topic_name": "Password hashing",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "42f83e82-7a8e-4578-83d6-ef7d6d01c167",
+            "kind": "quiz",
+            "title": "How should a password database avoid storing passwords?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "As plaintext"
+                },
+                {
+                    "id": "b",
+                    "label": "As password hashes"
+                },
+                {
+                    "id": "c",
+                    "label": "In public documents"
+                }
+            ],
+            "correct": "b",
+            "explain": "Password databases should not store passwords in plaintext. Secure systems generally store derived password hashes instead of the original passwords.",
+            "meta": {
+                "source_title": "Password security source notes",
+                "source_section": "Password storage",
+                "source_reference": "Items 39-40",
+                "source_url": "",
+                "concept_key": "science:password_hashing:secure_storage",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "sound",
+            "topic_name": "Sound waves",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "4736975b-a8dd-5c4c-aefd-795532ca30df",
+            "kind": "quiz",
+            "title": "Sound begins with…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Vibration"
+                },
+                {
+                    "id": "b",
+                    "label": "Stillness"
+                },
+                {
+                    "id": "c",
+                    "label": "Vacuum energy"
+                }
+            ],
+            "correct": "a",
+            "explain": "Sound is produced by vibrations and travels through a medium as a wave."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "microbes",
+            "topic_name": "Microorganisms",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "49992c17-7106-59cd-b9fa-a7fb813cf6ad",
+            "kind": "quiz",
+            "title": "Which statement about microbes is accurate?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Many are useful and some cause disease"
+                },
+                {
+                    "id": "b",
+                    "label": "All microbes are harmful"
+                },
+                {
+                    "id": "c",
+                    "label": "Microbes are visible without magnification"
+                }
+            ],
+            "correct": "a",
+            "explain": "Microorganisms include bacteria, fungi, protozoa and microscopic algae; many are useful, while some can cause disease."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "cells",
+            "topic_name": "Cells",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "4a327396-13c3-51ec-bf00-7389b5d0653d",
+            "kind": "action",
+            "title": "Look at a leaf or skin and remember it is built from cells.",
+            "subtitle": "A tiny action linked to cells.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "quantum_physics",
+            "topic_name": "Quantum physics",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "4b76a943-e176-4fa4-bf9c-d512d78b2121",
+            "kind": "reveal",
+            "title": "What scale of nature does quantum physics explore?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Quantum physics studies the strange behavior of matter and energy at very small scales.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "21. What Is Quantum Physics?",
+                "source_reference": "Strange world of tiny particles",
+                "source_url": "",
+                "concept_key": "science:quantum_physics:tiny_scale",
+                "educational_value": 92,
+                "confidence": 0.97,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "onion_tears",
+            "topic_name": "Why onions cause tears",
+            "min_grade": 4,
+            "max_grade": 9,
+            "language": "en",
+            "active": true,
+            "id": "4bfe2d77-4b15-446f-8cf0-b97b28b83737",
+            "kind": "quiz",
+            "title": "What is responsible for the tears that onions can trigger?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Chemicals released by the onion"
+                },
+                {
+                    "id": "b",
+                    "label": "Magnetism"
+                },
+                {
+                    "id": "c",
+                    "label": "Sound waves"
+                }
+            ],
+            "correct": "a",
+            "explain": "The supplied source identifies chemicals from onions as the reason they can make your eyes water.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "37. Why Do Onions Make You Cry?",
+                "source_reference": "Chemicals responsible for tears",
+                "source_url": "",
+                "concept_key": "science:onion_tears:chemicals",
+                "educational_value": 87,
+                "confidence": 0.98,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "sanskrit_environment",
+            "topic_name": "Sanskrit environment vocabulary",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "4cb4058c-d6b5-49d5-b93b-666a148593d8",
+            "kind": "quiz",
+            "title": "Which Sanskrit word means “environment”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "पर्यावरणम्"
+                },
+                {
+                    "id": "b",
+                    "label": "प्रकृतिः"
+                },
+                {
+                    "id": "c",
+                    "label": "पृथ्वी"
+                }
+            ],
+            "correct": "a",
+            "explain": "पर्यावरणम् (paryāvaraṇam) means “environment.” The source says protecting the environment is our duty.",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Mathematics and science",
+                "source_reference": "Entry 108",
+                "source_url": "",
+                "concept_key": "science:sanskrit_environment:paryavaranam",
+                "educational_value": 93,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "atoms",
+            "topic_name": "Atoms",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "4db35a51-ec9e-54f2-aae1-9b3f70b3232a",
+            "kind": "choice",
+            "title": "Why can the same elements form different substances?",
+            "subtitle": "Connect atoms to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "dreams",
+            "topic_name": "Dreams and sleep",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "56cb71d8-13d4-43d7-b095-a29135530606",
+            "kind": "reveal",
+            "title": "Which part of science can help us study dreams?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Dreams are studied as part of the science of sleep, where researchers investigate what happens in the brain and body while we sleep.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "6. Why Do We Dream?",
+                "source_reference": "Science behind dreams and sleep",
+                "source_url": "",
+                "concept_key": "science:dreams:sleep_science",
+                "educational_value": 86,
+                "confidence": 0.94,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "sound",
+            "topic_name": "Sound waves",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "5ab46121-4872-56b6-af88-d2b1edcf3695",
+            "kind": "reveal",
+            "title": "Sound waves",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Sound is produced by vibrations and travels through a medium as a wave."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "3d_printing",
+            "topic_name": "3D printing",
+            "min_grade": 6,
+            "max_grade": 11,
+            "language": "en",
+            "active": true,
+            "id": "5c0f4e88-d6b9-4ca4-bdde-12394c203838",
+            "kind": "reveal",
+            "title": "What does a 3D printer turn into a physical object?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "A 3D printer uses a digital design as the starting point for creating a physical object.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "38. How Does a 3D Printer Work?",
+                "source_reference": "Digital designs become physical objects",
+                "source_url": "",
+                "concept_key": "science:3d_printing:digital_to_physical",
+                "educational_value": 91,
+                "confidence": 0.98,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "neurons",
+            "topic_name": "Brain and neurons",
+            "min_grade": 6,
+            "max_grade": 11,
+            "language": "en",
+            "active": true,
+            "id": "5ca135fe-53eb-48c8-822e-315639f82222",
+            "kind": "reveal",
+            "title": "What kind of cells work together in the brain?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Billions of neurons work together as part of the brain's complex information-processing system.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "22. The Human Brain's Amazing Power",
+                "source_reference": "Billions of neurons work together",
+                "source_url": "",
+                "concept_key": "science:neurons:brain_network",
+                "educational_value": 93,
+                "confidence": 0.98,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "invasive_control",
+            "topic_name": "Managing invasive aquatic plants",
+            "min_grade": 7,
+            "max_grade": 11,
+            "language": "en",
+            "active": true,
+            "id": "6269e73f-e7bd-4907-b8c4-332c0b99635b",
+            "kind": "quiz",
+            "title": "Which approach can help control water hyacinth?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Mechanical removal and nutrient control"
+                },
+                {
+                    "id": "b",
+                    "label": "Adding more sewage"
+                },
+                {
+                    "id": "c",
+                    "label": "Increasing nutrient pollution"
+                }
+            ],
+            "correct": "a",
+            "explain": "The source lists mechanical removal, biological control using Neochetina weevils, and reducing nutrient pollution or sewage discharge as management approaches.",
+            "meta": {
+                "source_title": "Water Hyacinth Menace in Vembanad Lake",
+                "source_section": "Management",
+                "source_reference": "Pasted markdown.md",
+                "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/water-hyacinth-menace-in-vembanad-lake",
+                "concept_key": "science:invasive_control:hyacinth_management",
+                "educational_value": 94,
+                "confidence": 0.98,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "volcanoes",
+            "topic_name": "Giant volcanoes",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "63c9bdf2-4963-4c6f-a1e5-6301df920707",
+            "kind": "reveal",
+            "title": "Are giant volcanoes found only on Earth?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "No. The supplied topic points learners toward gigantic volcanoes both on Earth and beyond our planet.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "7. The World's Largest Volcano",
+                "source_reference": "Gigantic volcanoes on Earth and beyond",
+                "source_url": "",
+                "concept_key": "science:volcanoes:earth_and_beyond",
+                "educational_value": 82,
+                "confidence": 0.95,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "microbes",
+            "topic_name": "Microorganisms",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "6435f912-63a9-567d-9b43-55c952962ac3",
+            "kind": "action",
+            "title": "Think of curd, bread or decomposition as microbial activity.",
+            "subtitle": "A tiny action linked to microorganisms.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "electricity",
+            "topic_name": "Electric circuits",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "674f28ac-15a1-5d3c-b1c0-0534b20500bd",
+            "kind": "reveal",
+            "title": "Electric circuits",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Electric current needs a closed conducting path to flow through a simple circuit."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "sound",
+            "topic_name": "Sound waves",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "6cc35018-1ebb-5892-9ef6-629548831330",
+            "kind": "action",
+            "title": "Touch your throat gently while humming and notice vibration.",
+            "subtitle": "A tiny action linked to sound waves.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "artificial_intelligence",
+            "topic_name": "Artificial intelligence",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "6d105f99-137e-402d-88c7-718540fe3939",
+            "kind": "reveal",
+            "title": "Which field explores whether machines can perform tasks that seem intelligent?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Artificial intelligence and machine learning explore ways for computer systems to perform tasks associated with intelligent behavior.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "39. Can Robots Think?",
+                "source_reference": "Artificial intelligence and machine learning",
+                "source_url": "",
+                "concept_key": "science:artificial_intelligence:machine_learning",
+                "educational_value": 94,
+                "confidence": 0.96,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "sound_in_space",
+            "topic_name": "Sound in space",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "6d72f049-e210-4fd3-9da4-bdc4fdd52323",
+            "kind": "quiz",
+            "title": "Why is empty space silent?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Sound cannot travel through empty space"
+                },
+                {
+                    "id": "b",
+                    "label": "Light blocks all sound"
+                },
+                {
+                    "id": "c",
+                    "label": "Stars absorb every sound"
+                }
+            ],
+            "correct": "a",
+            "explain": "The supplied source explains that sound cannot travel through empty space.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "23. Why Is Space Silent?",
+                "source_reference": "Sound cannot travel through empty space",
+                "source_url": "",
+                "concept_key": "science:sound_in_space:vacuum",
+                "educational_value": 95,
+                "confidence": 0.99,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "bee_dance",
+            "topic_name": "Bee communication",
+            "min_grade": 4,
+            "max_grade": 9,
+            "language": "en",
+            "active": true,
+            "id": "71ab437d-0ccb-44cd-b9f3-47ce5dfb0808",
+            "kind": "quiz",
+            "title": "What behavior helps bees communicate information?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Waggle dance"
+                },
+                {
+                    "id": "b",
+                    "label": "Hibernation"
+                },
+                {
+                    "id": "c",
+                    "label": "Shedding skin"
+                }
+            ],
+            "correct": "a",
+            "explain": "Bees can communicate using a behavior known as the waggle dance.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "8. How Do Bees Communicate?",
+                "source_reference": "Waggle dance",
+                "source_url": "",
+                "concept_key": "science:bee_dance:communication",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "microbes",
+            "topic_name": "Microorganisms",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "77d25d26-eede-5ec9-8089-06f0eb548360",
+            "kind": "choice",
+            "title": "Where do useful microbes help humans?",
+            "subtitle": "Connect microorganisms to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "cells",
+            "topic_name": "Cells",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "798e6c60-439f-5fba-99da-c9c8399f8c7a",
+            "kind": "quiz",
+            "title": "Which is a basic unit of life?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Cell"
+                },
+                {
+                    "id": "b",
+                    "label": "Atom only"
+                },
+                {
+                    "id": "c",
+                    "label": "Mountain"
+                }
+            ],
+            "correct": "a",
+            "explain": "Cells are the basic structural and functional units of living organisms."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "climate",
+            "topic_name": "Weather and climate",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "7ad1a50d-2334-51b0-b0b5-e718bda057cf",
+            "kind": "reveal",
+            "title": "Weather and climate",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Weather describes short-term atmospheric conditions; climate describes longer-term patterns."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "crispr",
+            "topic_name": "CRISPR gene editing",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "7e2160aa-bc93-4b68-bff9-58aa18cf4040",
+            "kind": "quiz",
+            "title": "What is CRISPR used to help scientists do?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Edit genes"
+                },
+                {
+                    "id": "b",
+                    "label": "Measure earthquakes"
+                },
+                {
+                    "id": "c",
+                    "label": "Create rainbows"
+                }
+            ],
+            "correct": "a",
+            "explain": "The supplied source describes CRISPR as a technology scientists use to edit genes.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "40. What Is CRISPR?",
+                "source_reference": "Technology scientists use to edit genes",
+                "source_url": "",
+                "concept_key": "science:crispr:gene_editing",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "fossilization",
+            "topic_name": "Fossil formation",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "7e4f61b0-0a4c-4bcd-a975-6613a2d12424",
+            "kind": "reveal",
+            "title": "What process can preserve traces of dinosaurs for millions of years?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Fossilization can preserve ancient remains, creating the long-term record we study as fossils.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "24. How Dinosaurs Became Fossils",
+                "source_reference": "Journey from bone to stone",
+                "source_url": "",
+                "concept_key": "science:fossilization:dinosaur_remains",
+                "educational_value": 89,
+                "confidence": 0.96,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "sound",
+            "topic_name": "Sound waves",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "83159464-8ba6-5ac7-9f3f-5dde51379406",
+            "kind": "choice",
+            "title": "Why is there no ordinary sound in a vacuum?",
+            "subtitle": "Connect sound waves to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "orbit",
+            "topic_name": "Orbits and gravity",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "83248fa1-12ea-5344-9543-c4f5fa22962c",
+            "kind": "action",
+            "title": "Imagine changing orbital speed: predict what might happen.",
+            "subtitle": "A tiny action linked to orbits and gravity.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "cells",
+            "topic_name": "Cells",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "832b42bb-0574-58f8-b2f6-ef4f539861e9",
+            "kind": "reveal",
+            "title": "Cells",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Cells are the basic structural and functional units of living organisms."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "password_salts",
+            "topic_name": "Password salts",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "84a3c27b-73db-41b5-a89c-b2944c0a3897",
+            "kind": "quiz",
+            "title": "What is a salt in password hashing?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Random data added during hashing"
+                },
+                {
+                    "id": "b",
+                    "label": "A reusable password"
+                },
+                {
+                    "id": "c",
+                    "label": "A security question"
+                }
+            ],
+            "correct": "a",
+            "explain": "A salt is random data added during password hashing to make precomputed password attacks more difficult.",
+            "meta": {
+                "source_title": "Password security source notes",
+                "source_section": "Password storage",
+                "source_reference": "Item 42",
+                "source_url": "",
+                "concept_key": "science:password_salts:purpose",
+                "educational_value": 90,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "dna",
+            "topic_name": "DNA and information",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "867b6d4d-0a93-5ffe-a0c7-9a1e478b8ccf",
+            "kind": "quiz",
+            "title": "DNA is best described as…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "A carrier of biological information"
+                },
+                {
+                    "id": "b",
+                    "label": "A type of planet"
+                },
+                {
+                    "id": "c",
+                    "label": "A metal"
+                }
+            ],
+            "correct": "a",
+            "explain": "DNA carries biological information used by cells, although traits also depend on complex interactions and environment."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "lightning",
+            "topic_name": "Lightning",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "8956e873-8dbf-4e80-b033-069c1a4d0909",
+            "kind": "reveal",
+            "title": "What kind of phenomenon is lightning?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Lightning is a powerful electrical phenomenon that forms during storms.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "9. What Causes Lightning?",
+                "source_reference": "Powerful electrical storms",
+                "source_url": "",
+                "concept_key": "science:lightning:electrical_storm",
+                "educational_value": 87,
+                "confidence": 0.98,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "watercycle",
+            "topic_name": "Water cycle",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "8b92b6c2-76e3-5860-8ec6-5e9b5cfbf10d",
+            "kind": "choice",
+            "title": "Where can water be stored between stages?",
+            "subtitle": "Connect water cycle to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "sanskrit_energy",
+            "topic_name": "Sanskrit word for energy",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "8e720adf-f6c5-4bd0-aecd-6d1bd73457b4",
+            "kind": "quiz",
+            "title": "What does “ऊर्जा” mean?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Energy"
+                },
+                {
+                    "id": "b",
+                    "label": "Light"
+                },
+                {
+                    "id": "c",
+                    "label": "Air"
+                }
+            ],
+            "correct": "a",
+            "explain": "ऊर्जा (ūrjā) means “energy.” The source uses it in a sentence stating that the Sun gives us energy.",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Mathematics and science",
+                "source_reference": "Entry 107",
+                "source_url": "",
+                "concept_key": "science:sanskrit_energy:urja",
+                "educational_value": 90,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "subatomic_particles",
+            "topic_name": "Atoms and subatomic particles",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "8f3271bb-a688-4f1d-9982-7cecb5d34141",
+            "kind": "reveal",
+            "title": "What kinds of tiny things do particle physicists investigate?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Scientists investigate atoms and even smaller components such as quarks and other subatomic particles.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "41. The Smallest Things in the Universe",
+                "source_reference": "Atoms, quarks and subatomic particles",
+                "source_url": "",
+                "concept_key": "science:subatomic_particles:small_scales",
+                "educational_value": 92,
+                "confidence": 0.98,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "earthquakes",
+            "topic_name": "Earthquakes",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "8f501b43-d619-44df-906d-3cb927992525",
+            "kind": "quiz",
+            "title": "What major Earth process is linked to earthquakes?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Moving tectonic plates"
+                },
+                {
+                    "id": "b",
+                    "label": "Moonlight"
+                },
+                {
+                    "id": "c",
+                    "label": "Cloud formation"
+                }
+            ],
+            "correct": "a",
+            "explain": "Earthquakes are strongly linked to movement within Earth's tectonic plate system.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "25. The Science of Earthquakes",
+                "source_reference": "Moving tectonic plates shake the planet",
+                "source_url": "",
+                "concept_key": "science:earthquakes:tectonic_plates",
+                "educational_value": 95,
+                "confidence": 0.99,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "solar_panels",
+            "topic_name": "Solar electricity",
+            "min_grade": 6,
+            "max_grade": 11,
+            "language": "en",
+            "active": true,
+            "id": "904382cc-21f4-4611-9d70-116708c44242",
+            "kind": "quiz",
+            "title": "What energy source do solar panels use to make electricity?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Sunlight"
+                },
+                {
+                    "id": "b",
+                    "label": "Sound"
+                },
+                {
+                    "id": "c",
+                    "label": "Gravity alone"
+                }
+            ],
+            "correct": "a",
+            "explain": "Solar panels convert energy from sunlight into usable electrical energy.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "42. How Do Solar Panels Make Electricity?",
+                "source_reference": "Sunlight becomes usable power",
+                "source_url": "",
+                "concept_key": "science:solar_panels:sunlight_to_electricity",
+                "educational_value": 95,
+                "confidence": 0.99,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "de_extinction",
+            "topic_name": "De-extinction",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "90a3db75-4e93-4cbe-9b22-9806f50f2626",
+            "kind": "reveal",
+            "title": "What does de-extinction research explore?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "De-extinction explores whether science might recreate or restore features of animals that have disappeared.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "26. Can We Bring Extinct Animals Back?",
+                "source_reference": "Possibilities of de-extinction",
+                "source_url": "",
+                "concept_key": "science:de_extinction:possibility",
+                "educational_value": 88,
+                "confidence": 0.93,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "atoms",
+            "topic_name": "Atoms",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "98be9b8b-3b41-522d-85a0-68f5e2943510",
+            "kind": "reveal",
+            "title": "Atoms",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Atoms are tiny units of matter made of smaller particles, and they combine in different ways to form substances."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "ecosystems",
+            "topic_name": "Ecosystems",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "98ed51c6-31d9-5d39-accb-2efd69e00d81",
+            "kind": "choice",
+            "title": "Why can removing one species matter?",
+            "subtitle": "Connect ecosystems to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "rainbows",
+            "topic_name": "Rainbows",
+            "min_grade": 4,
+            "max_grade": 9,
+            "language": "en",
+            "active": true,
+            "id": "9aee30b4-c037-41ba-87c5-f495f9f41010",
+            "kind": "quiz",
+            "title": "What helps separate sunlight into the colors of a rainbow?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Water droplets"
+                },
+                {
+                    "id": "b",
+                    "label": "Dust alone"
+                },
+                {
+                    "id": "c",
+                    "label": "Sound waves"
+                }
+            ],
+            "correct": "a",
+            "explain": "Water droplets interact with sunlight in ways that separate it into the colors seen in a rainbow.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "10. The Science of Rainbows",
+                "source_reference": "Water droplets split sunlight into colors",
+                "source_url": "",
+                "concept_key": "science:rainbows:water_light",
+                "educational_value": 92,
+                "confidence": 0.98,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "aging",
+            "topic_name": "Biology of aging",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "a15493dd-8a9d-4dce-971b-484ef22c4343",
+            "kind": "reveal",
+            "title": "At what level can scientists study aging?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Scientists can study aging by investigating changes that happen in cells over time.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "43. Why Do We Age?",
+                "source_reference": "What happens to cells as time passes",
+                "source_url": "",
+                "concept_key": "science:aging:cell_changes",
+                "educational_value": 90,
+                "confidence": 0.96,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "time_travel",
+            "topic_name": "Time travel in physics",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "a1846dd8-9f5a-4bc8-b863-065158bc1111",
+            "kind": "reveal",
+            "title": "Is time travel a question that physics can explore?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Yes. Physics provides a framework for asking what kinds of travel through time might or might not be possible.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "11. Could Time Travel Be Possible?",
+                "source_reference": "What physics says about traveling through time",
+                "source_url": "",
+                "concept_key": "science:time_travel:physics_question",
+                "educational_value": 84,
+                "confidence": 0.93,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "chameleon_color",
+            "topic_name": "Chameleon color change",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "a1b49e60-e55b-4738-bd88-bdb581ce2727",
+            "kind": "reveal",
+            "title": "What helps chameleons produce striking color changes?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "The supplied source highlights tiny structures in chameleons as an important part of how their color transformation works.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "27. How Do Chameleons Change Color?",
+                "source_reference": "Tiny structures behind their transformation",
+                "source_url": "",
+                "concept_key": "science:chameleon_color:tiny_structures",
+                "educational_value": 89,
+                "confidence": 0.94,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "water_hyacinth",
+            "topic_name": "Water hyacinth",
+            "min_grade": 6,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "a719c2ca-3fa0-4326-967e-d37af3db25a3",
+            "kind": "quiz",
+            "title": "Why is water hyacinth considered an invasive aquatic species?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "It spreads rapidly and forms dense mats"
+                },
+                {
+                    "id": "b",
+                    "label": "It grows only in deserts"
+                },
+                {
+                    "id": "c",
+                    "label": "It cannot reproduce"
+                }
+            ],
+            "correct": "a",
+            "explain": "Water hyacinth is a free-floating invasive freshwater plant that can reproduce rapidly and cover large areas of water with dense mats.",
+            "meta": {
+                "source_title": "Water Hyacinth Menace in Vembanad Lake",
+                "source_section": "Water Hyacinth",
+                "source_reference": "Pasted markdown.md",
+                "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/water-hyacinth-menace-in-vembanad-lake",
+                "concept_key": "science:water_hyacinth:invasive_growth",
+                "educational_value": 94,
+                "confidence": 0.99,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "hyacinth_origin",
+            "topic_name": "Origin of water hyacinth",
+            "min_grade": 6,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "a7f81f5c-f70f-466f-aa8a-2328ffb4ce95",
+            "kind": "quiz",
+            "title": "Where is water hyacinth native to?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Amazon Basin"
+                },
+                {
+                    "id": "b",
+                    "label": "Himalayas"
+                },
+                {
+                    "id": "c",
+                    "label": "Sahara Desert"
+                }
+            ],
+            "correct": "a",
+            "explain": "Water hyacinth is native to the Amazon Basin of South America and was introduced elsewhere partly as an ornamental plant.",
+            "meta": {
+                "source_title": "Water Hyacinth Menace in Vembanad Lake",
+                "source_section": "Water Hyacinth",
+                "source_reference": "Pasted markdown.md",
+                "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/water-hyacinth-menace-in-vembanad-lake",
+                "concept_key": "science:hyacinth_origin:amazon_basin",
+                "educational_value": 82,
+                "confidence": 0.99,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "sanskrit_experiment",
+            "topic_name": "Sanskrit word for experiment",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "a9542eeb-26ad-47d5-bfd6-1b2d95bdc010",
+            "kind": "quiz",
+            "title": "Which Sanskrit word means “experiment”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "प्रयोगः"
+                },
+                {
+                    "id": "b",
+                    "label": "विचारः"
+                },
+                {
+                    "id": "c",
+                    "label": "अभ्यासः"
+                }
+            ],
+            "correct": "a",
+            "explain": "प्रयोगः (prayogaḥ) means “experiment.” The source describes an experiment as testing a theory.",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Mathematics and science",
+                "source_reference": "Entry 106",
+                "source_url": "",
+                "concept_key": "science:sanskrit_experiment:prayogah",
+                "educational_value": 92,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "atoms",
+            "topic_name": "Atoms",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "a96ef9f3-0e29-5cb5-9766-7704ce4c49e0",
+            "kind": "quiz",
+            "title": "Water is made from…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Atoms combined into molecules"
+                },
+                {
+                    "id": "b",
+                    "label": "Only light"
+                },
+                {
+                    "id": "c",
+                    "label": "No matter at all"
+                }
+            ],
+            "correct": "a",
+            "explain": "Atoms are tiny units of matter made of smaller particles, and they combine in different ways to form substances."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "optical_illusions",
+            "topic_name": "Optical illusions",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "b265a4ee-65a8-45a6-8ad9-90db76da4444",
+            "kind": "reveal",
+            "title": "Why are optical illusions useful for learning about the brain?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Optical illusions reveal that what we perceive depends on how the brain interprets visual information.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "44. The Science Behind Optical Illusions",
+                "source_reference": "How your brain can be tricked",
+                "source_url": "",
+                "concept_key": "science:optical_illusions:brain_interpretation",
+                "educational_value": 94,
+                "confidence": 0.98,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "moon_influence",
+            "topic_name": "Moon's influence on Earth",
+            "min_grade": 5,
+            "max_grade": 11,
+            "language": "en",
+            "active": true,
+            "id": "b2c57619-6539-4df4-a3af-3214c89d2828",
+            "kind": "reveal",
+            "title": "Why would losing the Moon matter to Earth?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "The Moon influences Earth, so imagining Earth without it helps scientists and students think about the Moon's role in our planet's system.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "28. What Would Happen Without the Moon?",
+                "source_reference": "Moon influences Earth",
+                "source_url": "",
+                "concept_key": "science:moon_influence:earth_system",
+                "educational_value": 86,
+                "confidence": 0.95,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "universe_age",
+            "topic_name": "Age of the universe",
+            "min_grade": 6,
+            "max_grade": 11,
+            "language": "en",
+            "active": true,
+            "id": "b2e90a13-c52d-48e9-a6bc-bcb865e61212",
+            "kind": "quiz",
+            "title": "About how old is the universe?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "13.8 billion years"
+                },
+                {
+                    "id": "b",
+                    "label": "13.8 million years"
+                },
+                {
+                    "id": "c",
+                    "label": "13,800 years"
+                }
+            ],
+            "correct": "a",
+            "explain": "The supplied source gives the age of the universe as nearly 13.8 billion years.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "12. How Old Is the Universe?",
+                "source_reference": "Nearly 13.8 billion years",
+                "source_url": "",
+                "concept_key": "science:universe_age:13_8_billion",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "dna",
+            "topic_name": "DNA and information",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "b80016e6-2816-5441-9a05-4ff9f5cd3b36",
+            "kind": "reveal",
+            "title": "DNA and information",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "DNA carries biological information used by cells, although traits also depend on complex interactions and environment."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "climate",
+            "topic_name": "Weather and climate",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "be8d1cdc-425c-5376-9045-b2adbeac73ad",
+            "kind": "choice",
+            "title": "Why does timescale matter?",
+            "subtitle": "Connect weather and climate to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "watercycle",
+            "topic_name": "Water cycle",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "c078b18e-781a-50f9-98fa-3838b88529a6",
+            "kind": "reveal",
+            "title": "Water cycle",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Water moves through evaporation, condensation, precipitation and collection, powered largely by solar energy and gravity."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "octopus_color",
+            "topic_name": "Octopus camouflage",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "c376b5ff-b8fb-4605-9072-35cab7fd4545",
+            "kind": "reveal",
+            "title": "What remarkable ability helps many octopuses camouflage themselves?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Octopuses can change their appearance, including color, making them impressive examples of natural camouflage.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "45. How Do Octopuses Change Color?",
+                "source_reference": "Nature's greatest camouflage experts",
+                "source_url": "",
+                "concept_key": "science:octopus_color:camouflage",
+                "educational_value": 91,
+                "confidence": 0.97,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "cat_reflex",
+            "topic_name": "Cat righting reflex",
+            "min_grade": 4,
+            "max_grade": 9,
+            "language": "en",
+            "active": true,
+            "id": "c39b0f51-74a3-49bc-8045-a9d275d11313",
+            "kind": "reveal",
+            "title": "What helps cats turn their bodies while falling?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Cats have an impressive mid-air reflex that helps them reorient their bodies during a fall.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "13. Why Do Cats Always Land on Their Feet?",
+                "source_reference": "Amazing mid-air reflex",
+                "source_url": "",
+                "concept_key": "science:cat_reflex:midair_reorientation",
+                "educational_value": 85,
+                "confidence": 0.96,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "ice_slippery",
+            "topic_name": "Why ice is slippery",
+            "min_grade": 6,
+            "max_grade": 11,
+            "language": "en",
+            "active": true,
+            "id": "c3d6930e-578d-4d68-a12a-b5d086c52929",
+            "kind": "reveal",
+            "title": "Is the slipperiness of ice a physics question?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Yes. The slipperiness of ice can be explored through the physics of what happens at the surface beneath your feet.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "29. Why Is Ice Slippery?",
+                "source_reference": "Physics beneath your feet",
+                "source_url": "",
+                "concept_key": "science:ice_slippery:surface_physics",
+                "educational_value": 82,
+                "confidence": 0.94,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "electricity",
+            "topic_name": "Electric circuits",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "c862dc41-ba68-544a-adb9-2a1276e5ac58",
+            "kind": "action",
+            "title": "Trace the closed path in one battery-powered device.",
+            "subtitle": "A tiny action linked to electric circuits.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "watercycle",
+            "topic_name": "Water cycle",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "c95b7fec-0e70-5ce3-8fce-e0d5effdb6f4",
+            "kind": "quiz",
+            "title": "What drives evaporation in the water cycle?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Energy from the Sun"
+                },
+                {
+                    "id": "b",
+                    "label": "Moonlight only"
+                },
+                {
+                    "id": "c",
+                    "label": "Magnetism"
+                }
+            ],
+            "correct": "a",
+            "explain": "Water moves through evaporation, condensation, precipitation and collection, powered largely by solar energy and gravity."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "light",
+            "topic_name": "Light",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "cd96968b-0771-5132-9bc2-d78a00d86ff8",
+            "kind": "choice",
+            "title": "Why do different materials look different?",
+            "subtitle": "Connect light to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "password_hashing",
+            "topic_name": "Password hashing",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "cf03ed8e-9854-4ae5-a6a2-b3c8a6fb7a36",
+            "kind": "reveal",
+            "title": "Why are password-specific hashing functions intentionally expensive?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "They are designed to require more computation, which helps slow password-cracking attempts.",
+            "meta": {
+                "source_title": "Password security source notes",
+                "source_section": "Password storage",
+                "source_reference": "Item 43",
+                "source_url": "",
+                "concept_key": "science:password_hashing:computational_cost",
+                "educational_value": 90,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "microbes",
+            "topic_name": "Microorganisms",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "cf5566ed-e776-5bb9-8517-6f94481e4597",
+            "kind": "reveal",
+            "title": "Microorganisms",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Microorganisms include bacteria, fungi, protozoa and microscopic algae; many are useful, while some can cause disease."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "stellar_fusion",
+            "topic_name": "Nuclear fusion in stars",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "d487c600-2cd6-4d4f-9c60-3a8f12df4646",
+            "kind": "quiz",
+            "title": "What process powers stars?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Nuclear fusion"
+                },
+                {
+                    "id": "b",
+                    "label": "Evaporation"
+                },
+                {
+                    "id": "c",
+                    "label": "Friction with air"
+                }
+            ],
+            "correct": "a",
+            "explain": "The supplied source identifies nuclear fusion as the process that powers stars.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "46. What Happens Inside a Star?",
+                "source_reference": "Nuclear fusion powers the cosmos",
+                "source_url": "",
+                "concept_key": "science:stellar_fusion:star_energy",
+                "educational_value": 97,
+                "confidence": 0.99,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "dark_matter",
+            "topic_name": "Dark matter",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "d4dd2c87-3db8-460c-a3b4-ddc8a0eb1414",
+            "kind": "reveal",
+            "title": "Why is dark matter scientifically important?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Dark matter is invisible to ordinary observation but is thought to play an important role in shaping galaxies.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "14. The Mystery of Dark Matter",
+                "source_reference": "Invisible material shaping galaxies",
+                "source_url": "",
+                "concept_key": "science:dark_matter:galaxy_structure",
+                "educational_value": 94,
+                "confidence": 0.95,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "alien_life",
+            "topic_name": "Search for alien life",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "d4e73952-df98-474b-b3db-2d9e95463030",
+            "kind": "reveal",
+            "title": "What are scientists searching for beyond Earth?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Scientists search for signs that could indicate life beyond Earth.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "30. The Search for Alien Life",
+                "source_reference": "Scientists hunt for signs of life beyond Earth",
+                "source_url": "",
+                "concept_key": "science:alien_life:search_for_signs",
+                "educational_value": 91,
+                "confidence": 0.98,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "atoms",
+            "topic_name": "Atoms",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "d506c46a-9225-5693-9124-084d95ec658e",
+            "kind": "action",
+            "title": "Look at a chemical formula and identify its element symbols.",
+            "subtitle": "A tiny action linked to atoms.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "orbit",
+            "topic_name": "Orbits and gravity",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "d8ea1619-4632-558e-8313-00e8588307eb",
+            "kind": "choice",
+            "title": "What does orbit teach about motion?",
+            "subtitle": "Connect orbits and gravity to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "password_algorithms",
+            "topic_name": "Password hashing algorithms",
+            "min_grade": 10,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "da574dd5-d1a5-46d4-8798-b28a6e25cc6f",
+            "kind": "reveal",
+            "title": "Name some algorithms designed for password hashing or key derivation.",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Argon2id, scrypt, bcrypt and PBKDF2 are examples used for password hashing or password-based key derivation.",
+            "meta": {
+                "source_title": "Password security source notes",
+                "source_section": "Password storage",
+                "source_reference": "Item 44",
+                "source_url": "",
+                "concept_key": "science:password_algorithms:examples",
+                "educational_value": 79,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "energy",
+            "topic_name": "Energy transformation",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "dc36517b-6563-5701-9d13-d9cbf77cc104",
+            "kind": "action",
+            "title": "Identify two energy changes in one appliance.",
+            "subtitle": "A tiny action linked to energy transformation.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "vaccines",
+            "topic_name": "Vaccines and immunity",
+            "min_grade": 6,
+            "max_grade": 11,
+            "language": "en",
+            "active": true,
+            "id": "e52fca3d-7957-4b46-b29c-85f066261515",
+            "kind": "quiz",
+            "title": "What is a key purpose of vaccination?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Prepare the immune system"
+                },
+                {
+                    "id": "b",
+                    "label": "Replace the immune system"
+                },
+                {
+                    "id": "c",
+                    "label": "Stop all microbes existing"
+                }
+            ],
+            "correct": "a",
+            "explain": "Vaccines help prepare the immune system to respond to particular infections.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "15. How Vaccines Train the Immune System",
+                "source_reference": "Body prepares to fight infections",
+                "source_url": "",
+                "concept_key": "science:vaccines:immune_preparation",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "weather_prediction",
+            "topic_name": "Weather prediction",
+            "min_grade": 6,
+            "max_grade": 11,
+            "language": "en",
+            "active": true,
+            "id": "e598d711-7d88-4ac7-a491-0a72574b4747",
+            "kind": "quiz",
+            "title": "Which tools help scientists predict weather?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Satellites, sensors and computer models"
+                },
+                {
+                    "id": "b",
+                    "label": "Only calendars"
+                },
+                {
+                    "id": "c",
+                    "label": "Only telescopes"
+                }
+            ],
+            "correct": "a",
+            "explain": "The supplied source highlights satellites, sensors and computer models as tools used in weather prediction.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "47. Can We Predict the Weather?",
+                "source_reference": "Satellites, sensors and computer models",
+                "source_url": "",
+                "concept_key": "science:weather_prediction:forecast_tools",
+                "educational_value": 95,
+                "confidence": 0.99,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "rocket_thrust",
+            "topic_name": "Rocket thrust",
+            "min_grade": 6,
+            "max_grade": 11,
+            "language": "en",
+            "active": true,
+            "id": "e5f87c64-aac2-45ad-b364-112928ea3131",
+            "kind": "quiz",
+            "title": "What force-producing effect helps rockets rise away from Earth?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Thrust"
+                },
+                {
+                    "id": "b",
+                    "label": "Refraction"
+                },
+                {
+                    "id": "c",
+                    "label": "Buoyancy alone"
+                }
+            ],
+            "correct": "a",
+            "explain": "The supplied source highlights thrust as the key idea that enables rockets to overcome Earth's gravitational pull.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "31. How Do Rockets Escape Earth?",
+                "source_reference": "Thrust defeats gravity",
+                "source_url": "",
+                "concept_key": "science:rocket_thrust:gravity",
+                "educational_value": 94,
+                "confidence": 0.98,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "quantum_crypto",
+            "topic_name": "Quantum computing and cryptography",
+            "min_grade": 10,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "e89b5946-b66c-4b95-b463-a0b97fb4af30",
+            "kind": "reveal",
+            "title": "Why could large-scale quantum computers matter for cryptography?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Large-scale quantum computers could threaten widely used public-key systems such as RSA and ECC, although cryptographically relevant machines at that scale are not currently available.",
+            "meta": {
+                "source_title": "User-supplied cryptography notes",
+                "source_section": "Quantum computing",
+                "source_reference": "Item 48",
+                "source_url": "",
+                "concept_key": "science:quantum_crypto:public_key_threat",
+                "educational_value": 94,
+                "confidence": 0.96,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": true,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "light",
+            "topic_name": "Light",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "e8d66744-1d02-597a-88a0-8fb2914e2b94",
+            "kind": "quiz",
+            "title": "A mirror mainly demonstrates…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Reflection"
+                },
+                {
+                    "id": "b",
+                    "label": "Evaporation"
+                },
+                {
+                    "id": "c",
+                    "label": "Fermentation"
+                }
+            ],
+            "correct": "a",
+            "explain": "Light can be reflected, absorbed or transmitted when it meets matter."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "aquatic_oxygen",
+            "topic_name": "Aquatic oxygen and plant mats",
+            "min_grade": 6,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "eb4d9564-3ab1-4af1-bf8e-8e27b858947c",
+            "kind": "reveal",
+            "title": "How can dense water-hyacinth mats harm aquatic life?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Dense mats can block sunlight and reduce dissolved oxygen in the water, creating conditions that can harm aquatic biodiversity.",
+            "meta": {
+                "source_title": "Water Hyacinth Menace in Vembanad Lake",
+                "source_section": "Rapid Growth and Spread",
+                "source_reference": "Pasted markdown.md",
+                "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/water-hyacinth-menace-in-vembanad-lake",
+                "concept_key": "science:aquatic_oxygen:hyacinth_mats",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "light",
+            "topic_name": "Light",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "eda3217a-0087-5466-abf6-90cb06f51374",
+            "kind": "reveal",
+            "title": "Light",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Light can be reflected, absorbed or transmitted when it meets matter."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "electricity",
+            "topic_name": "Electric circuits",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "f1f44f2f-bbfb-5c28-b550-438bdc2d6931",
+            "kind": "quiz",
+            "title": "Why does a simple bulb go off when the circuit opens?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "The conducting path is broken"
+                },
+                {
+                    "id": "b",
+                    "label": "Gravity stops"
+                },
+                {
+                    "id": "c",
+                    "label": "The bulb forgets its charge"
+                }
+            ],
+            "correct": "a",
+            "explain": "Electric current needs a closed conducting path to flow through a simple circuit."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "cells",
+            "topic_name": "Cells",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "f3fa6a09-b009-5a7a-b44d-460d227f20ae",
+            "kind": "choice",
+            "title": "Why do tissues contain many cells?",
+            "subtitle": "Connect cells to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "hiccups",
+            "topic_name": "Hiccups",
+            "min_grade": 4,
+            "max_grade": 9,
+            "language": "en",
+            "active": true,
+            "id": "f609ac27-14d7-40f6-bef8-695e01553232",
+            "kind": "reveal",
+            "title": "What kind of body event is a hiccup?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "A hiccup is a reflex, making it one of the body's curious automatic responses.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "32. Why Do We Get Hiccups?",
+                "source_reference": "One of the body's strangest reflexes",
+                "source_url": "",
+                "concept_key": "science:hiccups:reflex",
+                "educational_value": 83,
+                "confidence": 0.97,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "habitability",
+            "topic_name": "Planet habitability",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "f643fa7e-a04c-40fa-bc14-8990997c1616",
+            "kind": "reveal",
+            "title": "What does 'planet habitability' ask scientists to investigate?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "It asks what conditions or ingredients a planet would need to support life.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "16. What Makes a Planet Habitable?",
+                "source_reference": "Ingredients needed for life",
+                "source_url": "",
+                "concept_key": "science:habitability:conditions_for_life",
+                "educational_value": 92,
+                "confidence": 0.96,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "bioluminescence",
+            "topic_name": "Bioluminescence",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "f6a9e822-f0d4-45d1-b6f8-58f1918f4848",
+            "kind": "quiz",
+            "title": "What is the scientific term for light produced by living organisms?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Bioluminescence"
+                },
+                {
+                    "id": "b",
+                    "label": "Evaporation"
+                },
+                {
+                    "id": "c",
+                    "label": "Refraction"
+                }
+            ],
+            "correct": "a",
+            "explain": "Bioluminescence is the phenomenon highlighted in the source to explain why some animals glow.",
+            "meta": {
+                "source_title": "User-supplied Science & Discovery topic list",
+                "source_section": "48. Why Do Some Animals Glow?",
+                "source_reference": "Science of bioluminescence",
+                "source_url": "",
+                "concept_key": "science:bioluminescence:animal_glow",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "modern_science",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "ecosystems",
+            "topic_name": "Ecosystems",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "f80775f9-82fe-5fa9-b93b-5bb98da04b91",
+            "kind": "quiz",
+            "title": "Which belongs to an ecosystem?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Organisms plus their environment"
+                },
+                {
+                    "id": "b",
+                    "label": "Only animals"
+                },
+                {
+                    "id": "c",
+                    "label": "Only soil"
+                }
+            ],
+            "correct": "a",
+            "explain": "An ecosystem includes living organisms and their interactions with air, water, soil and other non-living factors."
+        },
+        {
+            "pillar": "science",
+            "pillar_name": "Science & Discovery",
+            "label": "SCIENCE & DISCOVERY",
+            "topic": "orbit",
+            "topic_name": "Orbits and gravity",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "f918acdc-5582-5d31-bfc8-6c4fbacc6d0b",
+            "kind": "quiz",
+            "title": "What keeps a satellite in orbit?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Forward motion plus gravity"
+                },
+                {
+                    "id": "b",
+                    "label": "No gravity at all"
+                },
+                {
+                    "id": "c",
+                    "label": "Air pushing it upward"
+                }
+            ],
+            "correct": "a",
+            "explain": "An orbiting satellite is continually falling under gravity while moving sideways fast enough to keep missing Earth."
+        }
+    ],
+    "sha256": "671138424b3a3f3bd0a8aa4fc0c373a812fcf92089707d11e920cd5e9a4465a7",
+    "signature_alg": "Ed25519",
+    "signing_key_id": "76f1f50a291c1ec5",
+    "signature": "sPZhPQX7tj_Smi3zdfCgEIhZEsmWAEzbdEUtKd9QDw78iY5jKsO2O4CqWfiHgNHVcSuThT6N-6Vs_m4B7GY8CQ"
+}

@@ -1,0 +1,158 @@
+{
+    "schema_version": 1,
+    "distribution": "centralize-trust-decentralize-distribution",
+    "generated_at": "2026-09-04T12:27:07+05:30",
+    "bank_version": "2026.09.import20260904011537",
+    "bank_sha256": "78b437573152c0dc113c6bb5439dc77c665f6215f545684d0e9e460dbb043ab1",
+    "total_cards": 1129,
+    "pillar_count": 9,
+    "pack_size": 112,
+    "pack_count": 14,
+    "signature_alg": "Ed25519",
+    "signing_key_id": "76f1f50a291c1ec5",
+    "public_key": "AU6j1jjwCMLvkUNfDmhFGfH1X1nAivBE6xqOcGdfPOI",
+    "packs": [
+        {
+            "pack_id": "build-001",
+            "pillar": "build",
+            "sequence": 1,
+            "cards": 112,
+            "bytes": 148157,
+            "sha256": "b03a44e63296a2f5c14bd952f8bba3855e52078f6b0aa6a85c5438963acd671e",
+            "signature": "jctDuZIGrQ67v0v_u-4BcL1YyUiBZx5ThxX9ohcIotVgfFe5ANm7BgqpwsZRkRSJo95uLjFKjV8LmdFp-h4FAw",
+            "url": "/ver/udan/content/pack/build-001"
+        },
+        {
+            "pack_id": "build-002",
+            "pillar": "build",
+            "sequence": 2,
+            "cards": 6,
+            "bytes": 6956,
+            "sha256": "94677ddb492ff9a5d1e887c420b978d98acd4862a7866e3a97f9edde7c50f686",
+            "signature": "ukGRMUO0HX5Cj-Z4huQjy11gPtdMF-02GtWct0NxBJ-7CZXSfamuI_hzufgwSHdk4Fjooq2cHOZrj22cjuBSBQ",
+            "url": "/ver/udan/content/pack/build-002"
+        },
+        {
+            "pack_id": "future-001",
+            "pillar": "future",
+            "sequence": 1,
+            "cards": 87,
+            "bytes": 108071,
+            "sha256": "42924fbe8c751fbc25be836cd9cbc59eca566790c19dfac7375fc474a69fd92e",
+            "signature": "Gzvj3WYjKSlq7SkQz_nc2OOAQwEq7INVcv0ArSxf6T_jH0tGuUtab7SovwrNXiLqutX2BCRZ_CY8OXfXJ69TDw",
+            "url": "/ver/udan/content/pack/future-001"
+        },
+        {
+            "pack_id": "life-001",
+            "pillar": "life",
+            "sequence": 1,
+            "cards": 112,
+            "bytes": 164804,
+            "sha256": "b6e618adba2c09afe3d073bebc546d00fcbd959a507d1df11e953c156634e84b",
+            "signature": "YPMRPF7yqzXq4J727C3EwChAXBISO9GpdBjTYwCNOsvwfIV8eU1yjUSYZOadHtyxzTo-uAwzYhUXwGCbImywAg",
+            "url": "/ver/udan/content/pack/life-001"
+        },
+        {
+            "pack_id": "life-002",
+            "pillar": "life",
+            "sequence": 2,
+            "cards": 112,
+            "bytes": 162865,
+            "sha256": "599554877870ce2891eb76aeac5847a2e28c010e5cfcfc3b11c6741ce858e771",
+            "signature": "7ql0DpI-pjltYn5K9ekjNxt5d2sYUsmdy_5GwLGNBXGvDokNMouFyBn9YD8wV2_JoGLM4ptK3FSMvDHbZoRFCw",
+            "url": "/ver/udan/content/pack/life-002"
+        },
+        {
+            "pack_id": "life-003",
+            "pillar": "life",
+            "sequence": 3,
+            "cards": 112,
+            "bytes": 167845,
+            "sha256": "b567509cb98ad049f3a4a881161778e37644b94cc501a97c323eb652dd091a8f",
+            "signature": "ly0UvMBXtbpBrh4j7a8kqjaZXqpOKzfLYhxtPYfhcAmaoNcEPgw4eQmXqkX3cGbgNrPxIps6fF-P4A0t4pSkBw",
+            "url": "/ver/udan/content/pack/life-003"
+        },
+        {
+            "pack_id": "life-004",
+            "pillar": "life",
+            "sequence": 4,
+            "cards": 20,
+            "bytes": 31134,
+            "sha256": "d365b3376ccb1c3b2a0dc22b5d7fcefe4766ee87625f5ce196a05decaa5a942f",
+            "signature": "8jz87e0OnFe73_VbZ-1pjeRFpgDCbY-3XIInYQ25SEwMrvem0FoVf4P9IrtBz4w3fPLf5Lav4f3McMk3PmQSAA",
+            "url": "/ver/udan/content/pack/life-004"
+        },
+        {
+            "pack_id": "math-001",
+            "pillar": "math",
+            "sequence": 1,
+            "cards": 50,
+            "bytes": 46453,
+            "sha256": "449dd83ce9469dc1642950bdb0e856cd6c5770a114b1c8a01be8ad7994fa9e7f",
+            "signature": "oFkLIHdAC5qJ7lsT2OKGgaTabG82KAcSSuVLeo4gD-IdstM_2i-Lhu4HhN665FQdD1fcZhLZstWoY-havxZvAw",
+            "url": "/ver/udan/content/pack/math-001"
+        },
+        {
+            "pack_id": "roots-001",
+            "pillar": "roots",
+            "sequence": 1,
+            "cards": 112,
+            "bytes": 151181,
+            "sha256": "c2a158d1c25af55c17148dcbebc1c52b710d10dbd271ea3da59079cd830c976d",
+            "signature": "RC3_hdDdUnAc3VcjRJNKaBISvD5k3HxOFiPjD_YhlsYh3ukYZFB-icOLbi-dO4Ifg6bte6OedKCRj6xSo-BsAw",
+            "url": "/ver/udan/content/pack/roots-001"
+        },
+        {
+            "pack_id": "science-001",
+            "pillar": "science",
+            "sequence": 1,
+            "cards": 112,
+            "bytes": 141890,
+            "sha256": "671138424b3a3f3bd0a8aa4fc0c373a812fcf92089707d11e920cd5e9a4465a7",
+            "signature": "sPZhPQX7tj_Smi3zdfCgEIhZEsmWAEzbdEUtKd9QDw78iY5jKsO2O4CqWfiHgNHVcSuThT6N-6Vs_m4B7GY8CQ",
+            "url": "/ver/udan/content/pack/science-001"
+        },
+        {
+            "pack_id": "science-002",
+            "pillar": "science",
+            "sequence": 2,
+            "cards": 1,
+            "bytes": 1497,
+            "sha256": "9fc6732a67a8d3ecf164fa95b7fab9f6a305e91eb3a7befa82f9f721d022fad5",
+            "signature": "PDO0Y4-Gb11L_4aQmBiBLaNWyFaP_wFat4CMMykKKfPK_qOgtpY2WzBY_hILfDlnMFM9PnrWab9TwticNZ99DA",
+            "url": "/ver/udan/content/pack/science-002"
+        },
+        {
+            "pack_id": "think-001",
+            "pillar": "think",
+            "sequence": 1,
+            "cards": 104,
+            "bytes": 136174,
+            "sha256": "e9dbcd310779e699edf128c66fd67ffbcdeb7f74ec77c9391cd07599678bb210",
+            "signature": "JAs1zLCuHxp3lAoYu6Hqyuw957gR27Y4iGFcblAjyISnqHjyq8s6ad44JVlMOvW8tQ_GYslnmY41fbdO4SoyCQ",
+            "url": "/ver/udan/content/pack/think-001"
+        },
+        {
+            "pack_id": "values-001",
+            "pillar": "values",
+            "sequence": 1,
+            "cards": 99,
+            "bytes": 124753,
+            "sha256": "25d836d907c17aca3168b6267b93fe6d4fdb2cd394246812fea4e4914af6e7b9",
+            "signature": "uo4dwAWLmTgkaOqdDM23hD3rQOq-Brc5TzHEWrkKBPT6Stv1ACbmTxYObp0YS-6EgJIXRba6QjboqGonMk8WAw",
+            "url": "/ver/udan/content/pack/values-001"
+        },
+        {
+            "pack_id": "world-001",
+            "pillar": "world",
+            "sequence": 1,
+            "cards": 90,
+            "bytes": 112409,
+            "sha256": "c67584f74cb72940d30bc4e886e1b932ce0d993bb26efaa68e04afa624a1ac47",
+            "signature": "fkone1OFWQ3zRFkiTMOVI3bN6R42qFo95mrrpx95sDi5Mey09ltg2PUQ7P66hXG9wwfK0vleTTvHvPnL5vSQDw",
+            "url": "/ver/udan/content/pack/world-001"
+        }
+    ],
+    "manifest_sha256": "425333e7ff23f58a32a116dd23a042b9259476ffe814446865eedae3e0f582cd",
+    "manifest_signature": "t4B2Y3Nwq54yoNDadgtYy2NUURnAHH7Eg9fDwxf1x-U_k0R1HbFyXW6NXCP3_VJ0yGHnPFdvs1hw7tkKzdeEDg"
+}

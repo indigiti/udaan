@@ -1,0 +1,564 @@
+{
+    "token": "69ef6b5d-f896-4c81-8197-6e564e4baad1",
+    "session_hash": "5a44e1d332e852d181beec29b9d6e00532b25e9d457ed4732aa3774f80368f69",
+    "created_at": 1788455440,
+    "expires_at": 1788457240,
+    "result": {
+        "submitted": 14,
+        "ready": [
+            {
+                "pillar": "world",
+                "pillar_name": "India & World",
+                "label": "INDIA & WORLD",
+                "topic": "sco",
+                "topic_name": "Shanghai Cooperation Organisation",
+                "min_grade": 8,
+                "max_grade": 12,
+                "language": "en",
+                "active": true,
+                "id": "c79e95bb-2846-4a5e-9c17-bcd0d3c90e68",
+                "kind": "quiz",
+                "title": "What are the SCO's 'Three Evils'?",
+                "subtitle": "Choose quickly, then learn from the explanation.",
+                "options": [
+                    {
+                        "id": "a",
+                        "label": "Terrorism, separatism and extremism"
+                    },
+                    {
+                        "id": "b",
+                        "label": "Poverty, pollution and inflation"
+                    },
+                    {
+                        "id": "c",
+                        "label": "War, trade barriers and migration"
+                    }
+                ],
+                "correct": "a",
+                "explain": "The SCO identifies terrorism, separatism and extremism as the 'Three Evils' that member states seek to address through regional security cooperation.",
+                "meta": {
+                    "source_title": "26th Shanghai Cooperation Organisation Summit",
+                    "source_section": "Shanghai Cooperation Organisation",
+                    "source_reference": "Pasted markdown.md",
+                    "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/26th-shanghai-cooperation-organisation-summit",
+                    "concept_key": "world:sco:three_evils",
+                    "educational_value": 91,
+                    "confidence": 0.99,
+                    "evidence_class": "general_knowledge",
+                    "time_sensitive": false,
+                    "expires_at": null,
+                    "generated_from_source": true
+                }
+            },
+            {
+                "pillar": "world",
+                "pillar_name": "India & World",
+                "label": "INDIA & WORLD",
+                "topic": "sco_rats",
+                "topic_name": "SCO Regional Anti-Terrorist Structure",
+                "min_grade": 8,
+                "max_grade": 12,
+                "language": "en",
+                "active": true,
+                "id": "14863fc2-753a-4d22-9bb4-f93af61001d9",
+                "kind": "quiz",
+                "title": "What is the main role of the SCO's RATS?",
+                "subtitle": "Choose quickly, then learn from the explanation.",
+                "options": [
+                    {
+                        "id": "a",
+                        "label": "Coordinate security efforts"
+                    },
+                    {
+                        "id": "b",
+                        "label": "Set global interest rates"
+                    },
+                    {
+                        "id": "c",
+                        "label": "Manage international airlines"
+                    }
+                ],
+                "correct": "a",
+                "explain": "The Regional Anti-Terrorist Structure, headquartered in Tashkent, coordinates member-state efforts against terrorism, separatism and extremism.",
+                "meta": {
+                    "source_title": "26th Shanghai Cooperation Organisation Summit",
+                    "source_section": "Shanghai Cooperation Organisation",
+                    "source_reference": "Pasted markdown.md",
+                    "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/26th-shanghai-cooperation-organisation-summit",
+                    "concept_key": "world:sco_rats:security_coordination",
+                    "educational_value": 89,
+                    "confidence": 0.99,
+                    "evidence_class": "general_knowledge",
+                    "time_sensitive": false,
+                    "expires_at": null,
+                    "generated_from_source": true
+                }
+            },
+            {
+                "pillar": "world",
+                "pillar_name": "India & World",
+                "label": "INDIA & WORLD",
+                "topic": "sco_india",
+                "topic_name": "India and the SCO",
+                "min_grade": 9,
+                "max_grade": 12,
+                "language": "en",
+                "active": true,
+                "id": "bd373e3e-81bb-43bb-a50c-01f6f900f54e",
+                "kind": "reveal",
+                "title": "Why does the SCO matter for India's links with Central Asia?",
+                "subtitle": "Tap to reveal one useful idea.",
+                "reveal": "The SCO gives India a diplomatic and economic platform for engaging Central Asian countries despite India's lack of direct land access to the region.",
+                "meta": {
+                    "source_title": "26th Shanghai Cooperation Organisation Summit",
+                    "source_section": "Why is the SCO Significant for India?",
+                    "source_reference": "Pasted markdown.md",
+                    "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/26th-shanghai-cooperation-organisation-summit",
+                    "concept_key": "world:sco_india:central_asia",
+                    "educational_value": 92,
+                    "confidence": 0.98,
+                    "evidence_class": "interpretation",
+                    "time_sensitive": false,
+                    "expires_at": null,
+                    "generated_from_source": true
+                }
+            },
+            {
+                "pillar": "world",
+                "pillar_name": "India & World",
+                "label": "INDIA & WORLD",
+                "topic": "connectivity_sovereignty",
+                "topic_name": "Sovereignty in connectivity",
+                "min_grade": 9,
+                "max_grade": 12,
+                "language": "en",
+                "active": true,
+                "id": "f61c30e1-4268-4e2f-85c7-c8e58fa74623",
+                "kind": "reveal",
+                "title": "What principle did India stress for international connectivity projects?",
+                "subtitle": "Tap to reveal one useful idea.",
+                "reveal": "India stated that connectivity projects should respect the sovereignty and territorial integrity of nations.",
+                "meta": {
+                    "source_title": "26th Shanghai Cooperation Organisation Summit",
+                    "source_section": "India at 26th SCO Summit",
+                    "source_reference": "Pasted markdown.md",
+                    "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/26th-shanghai-cooperation-organisation-summit",
+                    "concept_key": "world:connectivity_sovereignty:territorial_integrity",
+                    "educational_value": 87,
+                    "confidence": 0.99,
+                    "evidence_class": "official_notice",
+                    "time_sensitive": false,
+                    "expires_at": null,
+                    "generated_from_source": true
+                }
+            },
+            {
+                "pillar": "world",
+                "pillar_name": "India & World",
+                "label": "INDIA & WORLD",
+                "topic": "article_17",
+                "topic_name": "Article 17 of the Constitution",
+                "min_grade": 7,
+                "max_grade": 12,
+                "language": "en",
+                "active": true,
+                "id": "42929bb1-3b6e-47ad-bd31-63908e87876f",
+                "kind": "quiz",
+                "title": "What does Article 17 of India's Constitution abolish?",
+                "subtitle": "Choose quickly, then learn from the explanation.",
+                "options": [
+                    {
+                        "id": "a",
+                        "label": "Untouchability"
+                    },
+                    {
+                        "id": "b",
+                        "label": "All taxation"
+                    },
+                    {
+                        "id": "c",
+                        "label": "Local government"
+                    }
+                ],
+                "correct": "a",
+                "explain": "Article 17 abolishes untouchability in all forms and makes its enforcement punishable. It forms part of the constitutional Right to Equality.",
+                "meta": {
+                    "source_title": "Untouchability in India",
+                    "source_section": "How Do the Constitution and Law Address Untouchability?",
+                    "source_reference": "Pasted markdown.md",
+                    "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/untouchability-in-india",
+                    "concept_key": "world:article_17:abolition_untouchability",
+                    "educational_value": 97,
+                    "confidence": 0.99,
+                    "evidence_class": "historical_documentation",
+                    "time_sensitive": false,
+                    "expires_at": null,
+                    "generated_from_source": true
+                }
+            },
+            {
+                "pillar": "world",
+                "pillar_name": "India & World",
+                "label": "INDIA & WORLD",
+                "topic": "civil_rights_act",
+                "topic_name": "Protection of Civil Rights Act",
+                "min_grade": 8,
+                "max_grade": 12,
+                "language": "en",
+                "active": true,
+                "id": "840a359c-9ed7-4380-8c82-17b9d32ecfac",
+                "kind": "quiz",
+                "title": "Which 1955 law was enacted to help enforce Article 17?",
+                "subtitle": "Choose quickly, then learn from the explanation.",
+                "options": [
+                    {
+                        "id": "a",
+                        "label": "Protection of Civil Rights Act"
+                    },
+                    {
+                        "id": "b",
+                        "label": "Right to Information Act"
+                    },
+                    {
+                        "id": "c",
+                        "label": "Consumer Protection Act"
+                    }
+                ],
+                "correct": "a",
+                "explain": "The Untouchability (Offences) Act, 1955, later renamed the Protection of Civil Rights Act, was enacted to give effect to Article 17.",
+                "meta": {
+                    "source_title": "Untouchability in India",
+                    "source_section": "How Do the Constitution and Law Address Untouchability?",
+                    "source_reference": "Pasted markdown.md",
+                    "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/untouchability-in-india",
+                    "concept_key": "world:civil_rights_act:article_17",
+                    "educational_value": 93,
+                    "confidence": 0.99,
+                    "evidence_class": "historical_documentation",
+                    "time_sensitive": false,
+                    "expires_at": null,
+                    "generated_from_source": true
+                }
+            },
+            {
+                "pillar": "world",
+                "pillar_name": "India & World",
+                "label": "INDIA & WORLD",
+                "topic": "ncsc",
+                "topic_name": "National Commission for Scheduled Castes",
+                "min_grade": 8,
+                "max_grade": 12,
+                "language": "en",
+                "active": true,
+                "id": "75ccfbb7-08ea-457f-b09f-d175c7bd4ef6",
+                "kind": "reveal",
+                "title": "What does the National Commission for Scheduled Castes do?",
+                "subtitle": "Tap to reveal one useful idea.",
+                "reveal": "Established under Article 338, the NCSC monitors safeguards for Scheduled Castes, investigates complaints and has powers of a civil court while conducting inquiries.",
+                "meta": {
+                    "source_title": "Untouchability in India",
+                    "source_section": "How Do the Constitution and Law Address Untouchability?",
+                    "source_reference": "Pasted markdown.md",
+                    "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/untouchability-in-india",
+                    "concept_key": "world:ncsc:constitutional_role",
+                    "educational_value": 90,
+                    "confidence": 0.99,
+                    "evidence_class": "general_knowledge",
+                    "time_sensitive": false,
+                    "expires_at": null,
+                    "generated_from_source": true
+                }
+            },
+            {
+                "pillar": "values",
+                "pillar_name": "Values & Character",
+                "label": "VALUES & CHARACTER",
+                "topic": "social_equality",
+                "topic_name": "Social equality",
+                "min_grade": 6,
+                "max_grade": 12,
+                "language": "en",
+                "active": true,
+                "id": "1e546f19-d482-48f1-a815-b98b27c8cc41",
+                "kind": "choice",
+                "title": "A class activity separates students because of caste. What would you focus on first?",
+                "subtitle": "Think about dignity, fairness and inclusion.",
+                "options": [
+                    {
+                        "id": "a",
+                        "label": "Question the unequal treatment"
+                    },
+                    {
+                        "id": "b",
+                        "label": "Ask how everyone can participate equally"
+                    },
+                    {
+                        "id": "c",
+                        "label": "Seek help from a responsible adult"
+                    }
+                ],
+                "meta": {
+                    "source_title": "Untouchability in India",
+                    "source_section": "Constitutional morality and social integration",
+                    "source_reference": "Pasted markdown.md",
+                    "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/untouchability-in-india",
+                    "concept_key": "values:social_equality:inclusive_response",
+                    "educational_value": 90,
+                    "confidence": 0.97,
+                    "evidence_class": "not_applicable",
+                    "time_sensitive": false,
+                    "expires_at": null,
+                    "generated_from_source": true
+                }
+            },
+            {
+                "pillar": "science",
+                "pillar_name": "Science & Discovery",
+                "label": "SCIENCE & DISCOVERY",
+                "topic": "river_ecosystems",
+                "topic_name": "River ecosystem restoration",
+                "min_grade": 6,
+                "max_grade": 10,
+                "language": "en",
+                "active": true,
+                "id": "09ebc403-7f7c-4547-a9e1-f8e7e12ea782",
+                "kind": "quiz",
+                "title": "Why can planting trees along riverbanks help a river ecosystem?",
+                "subtitle": "Choose quickly, then learn from the explanation.",
+                "options": [
+                    {
+                        "id": "a",
+                        "label": "It can reduce soil erosion"
+                    },
+                    {
+                        "id": "b",
+                        "label": "It stops the water cycle"
+                    },
+                    {
+                        "id": "c",
+                        "label": "It removes all aquatic life"
+                    }
+                ],
+                "correct": "a",
+                "explain": "Riverbank plantation can help stabilise soil, reduce erosion and support restoration of riverine ecosystems.",
+                "meta": {
+                    "source_title": "Namami Gange Programme",
+                    "source_section": "Community Participation",
+                    "source_reference": "Pasted markdown.md",
+                    "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/namami-gange-programme-3",
+                    "concept_key": "science:river_ecosystems:riverbank_planting",
+                    "educational_value": 91,
+                    "confidence": 0.98,
+                    "evidence_class": "modern_science",
+                    "time_sensitive": false,
+                    "expires_at": null,
+                    "generated_from_source": true
+                }
+            },
+            {
+                "pillar": "world",
+                "pillar_name": "India & World",
+                "label": "INDIA & WORLD",
+                "topic": "namami_gange",
+                "topic_name": "Namami Gange Programme",
+                "min_grade": 6,
+                "max_grade": 12,
+                "language": "en",
+                "active": true,
+                "id": "955994ae-a146-45ba-b207-3fb584e8461c",
+                "kind": "reveal",
+                "title": "What is the Namami Gange Programme designed to achieve?",
+                "subtitle": "Tap to reveal one useful idea.",
+                "reveal": "Launched in 2014, Namami Gange is an integrated conservation mission for pollution abatement, conservation and rejuvenation of the Ganga and its tributaries.",
+                "meta": {
+                    "source_title": "Namami Gange Programme",
+                    "source_section": "Key Facts About the Namami Gange Programme",
+                    "source_reference": "Pasted markdown.md",
+                    "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/namami-gange-programme-3",
+                    "concept_key": "world:namami_gange:mission",
+                    "educational_value": 94,
+                    "confidence": 0.99,
+                    "evidence_class": "official_notice",
+                    "time_sensitive": false,
+                    "expires_at": null,
+                    "generated_from_source": true
+                }
+            },
+            {
+                "pillar": "world",
+                "pillar_name": "India & World",
+                "label": "INDIA & WORLD",
+                "topic": "jan_ganga",
+                "topic_name": "Jan Ganga",
+                "min_grade": 6,
+                "max_grade": 12,
+                "language": "en",
+                "active": true,
+                "id": "12b120ef-d67c-48c9-851d-421be790a030",
+                "kind": "quiz",
+                "title": "What is Jan Ganga within the Namami Gange Programme?",
+                "subtitle": "Choose quickly, then learn from the explanation.",
+                "options": [
+                    {
+                        "id": "a",
+                        "label": "Its public participation pillar"
+                    },
+                    {
+                        "id": "b",
+                        "label": "A new tributary"
+                    },
+                    {
+                        "id": "c",
+                        "label": "A hydropower company"
+                    }
+                ],
+                "correct": "a",
+                "explain": "Jan Ganga promotes Jan Bhagidari, or people's participation, so communities become active partners in long-term river conservation.",
+                "meta": {
+                    "source_title": "Namami Gange Programme",
+                    "source_section": "Community Participation",
+                    "source_reference": "Pasted markdown.md",
+                    "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/namami-gange-programme-3",
+                    "concept_key": "world:jan_ganga:public_participation",
+                    "educational_value": 92,
+                    "confidence": 0.99,
+                    "evidence_class": "official_notice",
+                    "time_sensitive": false,
+                    "expires_at": null,
+                    "generated_from_source": true
+                }
+            },
+            {
+                "pillar": "values",
+                "pillar_name": "Values & Character",
+                "label": "VALUES & CHARACTER",
+                "topic": "environment_stewardship",
+                "topic_name": "Environmental stewardship",
+                "min_grade": 5,
+                "max_grade": 10,
+                "language": "en",
+                "active": true,
+                "id": "e66af7d5-c571-4426-9f06-f0d190513778",
+                "kind": "action",
+                "title": "Turn river conservation into a small community habit.",
+                "subtitle": "A tiny action linked to this idea.",
+                "options": [
+                    {
+                        "id": "today",
+                        "label": "I'll try it today"
+                    },
+                    {
+                        "id": "already",
+                        "label": "I already do this"
+                    },
+                    {
+                        "id": "learn",
+                        "label": "I want to learn more"
+                    }
+                ],
+                "meta": {
+                    "source_title": "Namami Gange Programme",
+                    "source_section": "Community Participation",
+                    "source_reference": "Pasted markdown.md",
+                    "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/namami-gange-programme-3",
+                    "concept_key": "values:environment_stewardship:community_participation",
+                    "educational_value": 85,
+                    "confidence": 0.97,
+                    "evidence_class": "not_applicable",
+                    "time_sensitive": false,
+                    "expires_at": null,
+                    "generated_from_source": true
+                }
+            },
+            {
+                "pillar": "roots",
+                "pillar_name": "Roots & India",
+                "label": "ROOTS & INDIA",
+                "topic": "interim_government_1946",
+                "topic_name": "Interim Government of 1946",
+                "min_grade": 8,
+                "max_grade": 12,
+                "language": "en",
+                "active": true,
+                "id": "f76b4db8-5bf5-4586-860d-7d58d0d128d4",
+                "kind": "quiz",
+                "title": "Why was the Interim Government formed in 1946 historically important?",
+                "subtitle": "Choose quickly, then learn from the explanation.",
+                "options": [
+                    {
+                        "id": "a",
+                        "label": "Indian leaders took executive charge"
+                    },
+                    {
+                        "id": "b",
+                        "label": "It began British rule in India"
+                    },
+                    {
+                        "id": "c",
+                        "label": "It dissolved the freedom movement"
+                    }
+                ],
+                "correct": "a",
+                "explain": "The Interim Government provided an institutional framework in which Indian leaders took executive charge of British India during the transition toward independence.",
+                "meta": {
+                    "source_title": "Interim Government of 1946",
+                    "source_section": "Why in News?",
+                    "source_reference": "Pasted markdown.md",
+                    "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/interim-government-of-1946",
+                    "concept_key": "roots:interim_government_1946:transfer_of_power",
+                    "educational_value": 94,
+                    "confidence": 0.99,
+                    "evidence_class": "historical_documentation",
+                    "time_sensitive": false,
+                    "expires_at": null,
+                    "generated_from_source": true
+                }
+            },
+            {
+                "pillar": "roots",
+                "pillar_name": "Roots & India",
+                "label": "ROOTS & INDIA",
+                "topic": "cabinet_mission",
+                "topic_name": "Cabinet Mission Plan",
+                "min_grade": 9,
+                "max_grade": 12,
+                "language": "en",
+                "active": true,
+                "id": "3650f3f9-a409-4b60-ae6c-a88c416954c4",
+                "kind": "reveal",
+                "title": "What constitutional body did the 1946 Cabinet Mission Plan provide for?",
+                "subtitle": "Tap to reveal one useful idea.",
+                "reveal": "The Cabinet Mission Plan provided for a 389-member Constituent Assembly as part of its proposed arrangements for India's constitutional future.",
+                "meta": {
+                    "source_title": "Interim Government of 1946",
+                    "source_section": "Cabinet Mission Plan (1946)",
+                    "source_reference": "Pasted markdown.md",
+                    "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/interim-government-of-1946",
+                    "concept_key": "roots:cabinet_mission:constituent_assembly",
+                    "educational_value": 90,
+                    "confidence": 0.99,
+                    "evidence_class": "historical_documentation",
+                    "time_sensitive": false,
+                    "expires_at": null,
+                    "generated_from_source": true
+                }
+            }
+        ],
+        "review": [],
+        "rejected": [],
+        "pillar_counts": {
+            "world": 9,
+            "values": 2,
+            "science": 1,
+            "roots": 2
+        },
+        "kind_counts": {
+            "quiz": 7,
+            "reveal": 5,
+            "choice": 1,
+            "action": 1
+        },
+        "verified_at": "2026-09-03T22:40:40+05:30",
+        "bank_before": 432
+    }
+}

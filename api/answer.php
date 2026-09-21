@@ -1,0 +1,17 @@
+<?php
+require dirname(__DIR__).'/bootstrap.php';
+if($_SERVER['REQUEST_METHOD']!=='POST')json_response(['ok'=>false,'error'=>'POST only'],405);
+$payload=json_decode(file_get_contents('php://input'),true);if(!is_array($payload))$payload=[];
+$roomId=require_room_id($_GET['room']??($payload['room']??''));$pid=participant_id_for($roomId);if(!$pid)json_response(['ok'=>false,'error'=>'Join again'],401);
+if(!csrf_matches($roomId,$_SERVER['HTTP_X_CSRF']??null))json_response(['ok'=>false,'error'=>'Session token mismatch'],403);
+$cardId=(string)($payload['card']??'');$answer=is_string($payload['answer']??null)?trim($payload['answer']):'';$bank=cards_by_id();if(!isset($bank[$cardId]))json_response(['ok'=>false,'error'=>'Unknown card'],400);$card=$bank[$cardId];if(!card_answer_valid($card,$answer))json_response(['ok'=>false,'error'=>'Invalid answer'],422);
+$earned=0;$correct=null;$already=false;$last=false;$explain=(string)($card['explain']??$card['reveal']??'');$answerRecord=[];$finalScore=0;$finalCount=0;$learningKey='';$deviceHash='';
+$room=$store->mutate($roomId,function($r)use($pid,$cardId,$answer,$card,&$earned,&$correct,&$already,&$last,&$answerRecord,&$finalScore,&$finalCount,&$learningKey,&$deviceHash){
+    if(!isset($r['participants'][$pid])||!is_array($r['participants'][$pid]))return $r;$p=&$r['participants'][$pid];$learningKey=(string)($p['learning_key']??'');$deviceHash=(string)($p['device_hash']??'');$ref=null;foreach(($p['journey']??[])as$j)if(is_array($j)&&($j['id']??null)===$cardId){$ref=$j;break;}if(!$ref)return $r;
+    if(isset($p['answers'][$cardId])){$already=true;$answerRecord=$p['answers'][$cardId];$finalScore=(int)($p['score']??0);$finalCount=(int)($p['answered_count']??0);$last=$finalCount>=(int)($p['journey_total']??0);return $r;}
+    $earned=(int)($ref['points']??0);$correct=($card['kind']??'')==='quiz'?hash_equals((string)($card['correct']??''),$answer):null;$answerRecord=['answer'=>$answer,'correct'=>$correct,'points'=>$earned,'at'=>now_iso()];$p['answers'][$cardId]=$answerRecord;$p['score']=(int)($p['score']??0)+$earned;$p['answered_count']=(int)($p['answered_count']??0)+1;$p['stage']='journey';$p['last_seen']=now_iso();if(($card['aggregate']??'')==='future_interest'&&in_array($answer,['yes','maybe','strong','curious','try'],true)){$r['signals']['future_topics'][]=(string)$card['topic'];}$last=$p['answered_count']>=(int)($p['journey_total']??0);if($last)$p['stage']='complete-ready';$finalScore=(int)$p['score'];$finalCount=(int)$p['answered_count'];return $r;
+});
+if(!$room)json_response(['ok'=>false,'error'=>'Room expired'],404);
+if($learningKey!==''&&$answerRecord){$store->cacheAnswer($learningKey,$roomId,$cardId,$answerRecord,$finalScore,$finalCount);if(!$already)$store->appendSyncEvent(['event_type'=>'card_answered','user_hash'=>$learningKey,'device_hash'=>$deviceHash,'room_id'=>$roomId,'card_id'=>$cardId,'answer_id'=>$answer,'correct'=>$correct,'points'=>$earned,'score'=>$finalScore,'answered_count'=>$finalCount]);}
+$aggregate=$already?$store->getAggregate('card:'.$cardId):$store->recordAggregateResponse('card:'.$cardId,$answer,$learningKey!==''?$learningKey:$pid);
+json_response(['ok'=>true,'points'=>$earned,'correct'=>$correct,'correctAnswer'=>(($card['kind']??'')==='quiz'?(string)($card['correct']??''):null),'already'=>$already,'last'=>$last,'explain'=>$explain,'score'=>$finalScore,'answered_count'=>$finalCount,'aggregate'=>$aggregate]);

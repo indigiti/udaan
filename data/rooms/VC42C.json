@@ -1,0 +1,261 @@
+{
+    "code": "VC42C",
+    "title": "Future India · Live Learning",
+    "host_key": "859d3d15c5fb73a0d969bb09",
+    "created_at": "2026-09-03T20:51:46+05:30",
+    "expires_at": "2026-09-04T02:51:46+05:30",
+    "participants": {
+        "a57a47f4effbc0cc3f58": {
+            "id": "a57a47f4effbc0cc3f58",
+            "nickname": "Arav",
+            "phone_mask": "+91 ••••••1001",
+            "phone_hash": "4e44d1c2bc055e0a591772909922104a13035deeef5db3d74f21ba7f1f571d0c",
+            "joined_at": "2026-09-03T20:52:10+05:30",
+            "verified_at": "2026-09-03T20:52:14+05:30",
+            "score": 10,
+            "stage": "think",
+            "completed": false,
+            "answers": []
+        },
+        "demo_1": {
+            "id": "demo_1",
+            "nickname": "Riya",
+            "phone_mask": "+91 ••••••1100",
+            "phone_hash": "591ef21e8a64013a750637a41cb6b896d092537450d7c511b823834739fa7f0b",
+            "joined_at": "2026-09-03T20:52:26+05:30",
+            "verified_at": "2026-09-03T20:52:33+05:30",
+            "score": 70,
+            "stage": "complete",
+            "completed": true,
+            "answers": {
+                "future": "ai"
+            }
+        },
+        "demo_2": {
+            "id": "demo_2",
+            "nickname": "Kabir",
+            "phone_mask": "+91 ••••••1101",
+            "phone_hash": "e9b5a5628ee965045969f0798815d02599988863ea33ce1feab8083c04c43ea1",
+            "joined_at": "2026-09-03T20:52:19+05:30",
+            "verified_at": "2026-09-03T20:52:33+05:30",
+            "score": 77,
+            "stage": "complete",
+            "completed": true,
+            "answers": {
+                "future": "energy"
+            }
+        },
+        "demo_3": {
+            "id": "demo_3",
+            "nickname": "Anaya",
+            "phone_mask": "+91 ••••••1102",
+            "phone_hash": "09a38142b129efa3c6cfec6a162fe2c196f18a74a0677d1b04ba735e1c8b59dd",
+            "joined_at": "2026-09-03T20:52:12+05:30",
+            "verified_at": "2026-09-03T20:52:33+05:30",
+            "score": 84,
+            "stage": "complete",
+            "completed": true,
+            "answers": {
+                "future": "space"
+            }
+        },
+        "demo_4": {
+            "id": "demo_4",
+            "nickname": "Vihaan",
+            "phone_mask": "+91 ••••••1103",
+            "phone_hash": "34db02ebc048389c6dc287c3652e4bc91b35840bf3c3de91d338b4243b289501",
+            "joined_at": "2026-09-03T20:52:05+05:30",
+            "verified_at": "2026-09-03T20:52:33+05:30",
+            "score": 91,
+            "stage": "complete",
+            "completed": true,
+            "answers": {
+                "future": "health"
+            }
+        },
+        "demo_5": {
+            "id": "demo_5",
+            "nickname": "Meera",
+            "phone_mask": "+91 ••••••1104",
+            "phone_hash": "98b841e3196ccc3d97579d191b0b6ea986c942a111e950a92f55ed11a2e97b41",
+            "joined_at": "2026-09-03T20:51:58+05:30",
+            "verified_at": "2026-09-03T20:52:33+05:30",
+            "score": 98,
+            "stage": "complete",
+            "completed": true,
+            "answers": {
+                "future": "water"
+            }
+        },
+        "demo_6": {
+            "id": "demo_6",
+            "nickname": "Ishaan",
+            "phone_mask": "+91 ••••••1105",
+            "phone_hash": "2a0f5d4a94367da881ba568628a417c28c2058e0520c287903eec48f4953429a",
+            "joined_at": "2026-09-03T20:51:51+05:30",
+            "verified_at": "2026-09-03T20:52:33+05:30",
+            "score": 74,
+            "stage": "complete",
+            "completed": true,
+            "answers": {
+                "future": "agri"
+            }
+        },
+        "demo_7": {
+            "id": "demo_7",
+            "nickname": "Tara",
+            "phone_mask": "+91 ••••••1106",
+            "phone_hash": "2c7c3f1e1360e2936c8f76e04f6158576f0f34d2332ff1cac7e0cf1c2b53222b",
+            "joined_at": "2026-09-03T20:51:44+05:30",
+            "verified_at": "2026-09-03T20:52:33+05:30",
+            "score": 81,
+            "stage": "complete",
+            "completed": true,
+            "answers": {
+                "future": "education"
+            }
+        },
+        "demo_8": {
+            "id": "demo_8",
+            "nickname": "Arjun",
+            "phone_mask": "+91 ••••••1107",
+            "phone_hash": "fa989caeb046d927d6c0b3916e2e530f0fd4eed2fe876d2c8ed056765257845a",
+            "joined_at": "2026-09-03T20:51:37+05:30",
+            "verified_at": "2026-09-03T20:52:33+05:30",
+            "score": 88,
+            "stage": "complete",
+            "completed": true,
+            "answers": {
+                "future": "ai"
+            }
+        },
+        "demo_9": {
+            "id": "demo_9",
+            "nickname": "Sara",
+            "phone_mask": "+91 ••••••1108",
+            "phone_hash": "5b702ab675ba10554f4810a0ce8942d70bdc3adf77f85b813914d356f2bb375b",
+            "joined_at": "2026-09-03T20:51:30+05:30",
+            "verified_at": "2026-09-03T20:52:33+05:30",
+            "score": 95,
+            "stage": "future",
+            "completed": false,
+            "answers": {
+                "future": "energy"
+            }
+        },
+        "demo_10": {
+            "id": "demo_10",
+            "nickname": "Neil",
+            "phone_mask": "+91 ••••••1109",
+            "phone_hash": "f6fcf9b91d912c96df97953da682dc8834f8ae9579bdf4afa016e1da27218228",
+            "joined_at": "2026-09-03T20:51:23+05:30",
+            "verified_at": "2026-09-03T20:52:33+05:30",
+            "score": 71,
+            "stage": "future",
+            "completed": false,
+            "answers": {
+                "future": "space"
+            }
+        },
+        "demo_11": {
+            "id": "demo_11",
+            "nickname": "Aditi",
+            "phone_mask": "+91 ••••••1110",
+            "phone_hash": "0a196ba8f7e0bcfa781702fda837fac55cd1a1d2d590842923ddaa9394e4617f",
+            "joined_at": "2026-09-03T20:51:16+05:30",
+            "verified_at": "2026-09-03T20:52:33+05:30",
+            "score": 78,
+            "stage": "future",
+            "completed": false,
+            "answers": {
+                "future": "health"
+            }
+        },
+        "demo_12": {
+            "id": "demo_12",
+            "nickname": "Dev",
+            "phone_mask": "+91 ••••••1111",
+            "phone_hash": "78b5c98cc7f404d707915aced5034fefc78c5aea4509908fe2ea833e0c4df320",
+            "joined_at": "2026-09-03T20:51:09+05:30",
+            "verified_at": "2026-09-03T20:52:33+05:30",
+            "score": 85,
+            "stage": "future",
+            "completed": false,
+            "answers": {
+                "future": "water"
+            }
+        },
+        "87b4420476991931b990": {
+            "id": "87b4420476991931b990",
+            "nickname": "Amol",
+            "phone_mask": "+91 ••••••0302",
+            "phone_hash": "3518fbf482bca9bc4d8fd9bbe1cf60e4a2902d2d5128570f026c23386d850503",
+            "joined_at": "2026-09-03T20:52:51+05:30",
+            "verified_at": "2026-09-03T20:52:55+05:30",
+            "score": 10,
+            "stage": "think",
+            "completed": false,
+            "answers": []
+        }
+    },
+    "polls": {
+        "think": [],
+        "roots": [],
+        "future": [
+            "ai",
+            "energy",
+            "space",
+            "health",
+            "water",
+            "agri",
+            "education",
+            "ai",
+            "energy",
+            "space",
+            "health",
+            "water"
+        ]
+    },
+    "commitments": [
+        {
+            "pid": "demo_1",
+            "text": "Demo commitment",
+            "at": "2026-09-03T20:52:33+05:30"
+        },
+        {
+            "pid": "demo_2",
+            "text": "Demo commitment",
+            "at": "2026-09-03T20:52:33+05:30"
+        },
+        {
+            "pid": "demo_3",
+            "text": "Demo commitment",
+            "at": "2026-09-03T20:52:33+05:30"
+        },
+        {
+            "pid": "demo_4",
+            "text": "Demo commitment",
+            "at": "2026-09-03T20:52:33+05:30"
+        },
+        {
+            "pid": "demo_5",
+            "text": "Demo commitment",
+            "at": "2026-09-03T20:52:33+05:30"
+        },
+        {
+            "pid": "demo_6",
+            "text": "Demo commitment",
+            "at": "2026-09-03T20:52:33+05:30"
+        },
+        {
+            "pid": "demo_7",
+            "text": "Demo commitment",
+            "at": "2026-09-03T20:52:33+05:30"
+        },
+        {
+            "pid": "demo_8",
+            "text": "Demo commitment",
+            "at": "2026-09-03T20:52:33+05:30"
+        }
+    ]
+}

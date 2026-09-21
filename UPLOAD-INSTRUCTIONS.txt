@@ -1,0 +1,10 @@
+Udaan Live v0.4.1 — QR hotfix only
+
+Upload these files over the matching paths in your existing /ver/udan/ installation.
+Do NOT delete or replace your existing data/app-secret.key, data/history/, or data/rooms/ folders.
+
+After upload:
+1. Hard refresh the presenter page (Ctrl+Shift+R).
+2. Open /ver/udan/health.php and confirm version 0.4.1.
+3. Confirm qr_engine says: Browser-local JavaScript SVG (no shell_exec)
+4. Create a new room and scan the QR.

@@ -1,0 +1,1363 @@
+{
+    "schema_version": 1,
+    "pack_id": "math-001",
+    "pillar": "math",
+    "pillar_name": "Maths & Logic",
+    "sequence": 1,
+    "card_count": 50,
+    "bank_version": "2026.09.import20260904011537",
+    "cards": [
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "ratio",
+            "topic_name": "Ratios",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "0dab3b0e-afcb-58df-9cce-4ab4cdef9e4d",
+            "kind": "quiz",
+            "title": "If red:blue is 2:3, then for 4 red you need…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "6 blue"
+                },
+                {
+                    "id": "b",
+                    "label": "5 blue"
+                },
+                {
+                    "id": "c",
+                    "label": "8 blue"
+                }
+            ],
+            "correct": "a",
+            "explain": "A ratio compares quantities using division or relative size."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "mentalestimate",
+            "topic_name": "Mental estimation",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "1c61af36-544c-5f8c-9852-566f09c9c20e",
+            "kind": "action",
+            "title": "Estimate the total cost of three everyday items.",
+            "subtitle": "A tiny action linked to mental estimation.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "patterns",
+            "topic_name": "Patterns",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "22900e61-e22c-50e1-91f1-740409d151c2",
+            "kind": "action",
+            "title": "Invent two different patterns beginning 1, 2, 3.",
+            "subtitle": "A tiny action linked to patterns.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "logic",
+            "topic_name": "Logical implication",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "22e3fb4e-5671-5ab4-a078-d154ddf171d2",
+            "kind": "action",
+            "title": "Write one “if…then…” statement and test its logic.",
+            "subtitle": "A tiny action linked to logical implication.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "coordinates",
+            "topic_name": "Coordinates",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "233b516a-2054-5f6c-8395-efc8629f1fd8",
+            "kind": "choice",
+            "title": "Where are coordinates used outside maths?",
+            "subtitle": "Connect coordinates to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "geometry",
+            "topic_name": "Geometry",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "25365f42-ea51-50b5-9503-6fdb0e68dab2",
+            "kind": "reveal",
+            "title": "Geometry",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Geometry studies shapes, sizes, positions and spatial relationships."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "percent",
+            "topic_name": "Percentages",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "2a1de0d5-6720-548e-bc2d-afe701bb86c6",
+            "kind": "reveal",
+            "title": "Percentages",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Percent means “per hundred,” making it useful for comparing proportions."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "sanskrit_number",
+            "topic_name": "Sanskrit mathematics vocabulary",
+            "min_grade": 4,
+            "max_grade": 9,
+            "language": "en",
+            "active": true,
+            "id": "2d7b87c2-a31f-476a-a5e6-6d28f971ac6c",
+            "kind": "quiz",
+            "title": "What does “संख्या” mean?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Number"
+                },
+                {
+                    "id": "b",
+                    "label": "Mathematics"
+                },
+                {
+                    "id": "c",
+                    "label": "Experiment"
+                }
+            ],
+            "correct": "a",
+            "explain": "संख्या (saṃkhyā) means “number.” The source illustrates it by saying that ten is a number.",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Mathematics and science",
+                "source_reference": "Entry 103",
+                "source_url": "",
+                "concept_key": "math:sanskrit_number:samkhya",
+                "educational_value": 88,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "chance",
+            "topic_name": "Chance",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "35756a32-3319-58e2-87eb-80e4418faba8",
+            "kind": "choice",
+            "title": "Why does repeating trials help reveal patterns?",
+            "subtitle": "Connect chance to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "coordinates",
+            "topic_name": "Coordinates",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "3ba5ac3f-87b8-5559-858d-274ab229d268",
+            "kind": "action",
+            "title": "Locate one point on a simple x-y grid.",
+            "subtitle": "A tiny action linked to coordinates.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "logic",
+            "topic_name": "Logical implication",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "3f22fc9f-ca8e-52e5-830c-2f470bc62753",
+            "kind": "choice",
+            "title": "Why separate premises from assumptions?",
+            "subtitle": "Connect logical implication to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "chance",
+            "topic_name": "Chance",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "476c3cba-1e0b-5610-8999-7bf2b8080318",
+            "kind": "reveal",
+            "title": "Chance",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "For equally likely outcomes, probability can often be computed as favourable outcomes divided by total outcomes."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "chance",
+            "topic_name": "Chance",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "4b2918d7-4e3e-5168-809e-70a4c6d0faf6",
+            "kind": "quiz",
+            "title": "Probability of heads on a fair coin is…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "1/2"
+                },
+                {
+                    "id": "b",
+                    "label": "1/3"
+                },
+                {
+                    "id": "c",
+                    "label": "1"
+                }
+            ],
+            "correct": "a",
+            "explain": "For equally likely outcomes, probability can often be computed as favourable outcomes divided by total outcomes."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "patterns",
+            "topic_name": "Patterns",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "4f895fe7-3add-5e05-b1f3-6a1f6d209318",
+            "kind": "reveal",
+            "title": "Patterns",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Recognizing a rule in a sequence helps predict later terms, but the rule must fit all known terms."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "fractions",
+            "topic_name": "Fractions",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "58e9dad6-9e05-5fc2-b8fe-940dab388694",
+            "kind": "reveal",
+            "title": "Fractions",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Fractions represent parts of a whole or ratios between quantities."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "mentalestimate",
+            "topic_name": "Mental estimation",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "62b4d27f-6a1d-5578-9ce9-a8f465f6293e",
+            "kind": "choice",
+            "title": "When is an estimate enough?",
+            "subtitle": "Connect mental estimation to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "patterns",
+            "topic_name": "Patterns",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "63ffe567-a260-558f-bd4b-9afff15e05e6",
+            "kind": "choice",
+            "title": "Why can several rules fit a short sequence?",
+            "subtitle": "Connect patterns to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "primes",
+            "topic_name": "Prime numbers",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "64c4cc77-1147-541e-8558-6d27a9d1208d",
+            "kind": "reveal",
+            "title": "Prime numbers",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "A prime number greater than 1 has exactly two positive factors: 1 and itself."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "fractions",
+            "topic_name": "Fractions",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "68be4be2-79a4-56d6-bd08-cce80c954323",
+            "kind": "quiz",
+            "title": "Which fraction equals one half?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "3/6"
+                },
+                {
+                    "id": "b",
+                    "label": "2/3"
+                },
+                {
+                    "id": "c",
+                    "label": "4/5"
+                }
+            ],
+            "correct": "a",
+            "explain": "Fractions represent parts of a whole or ratios between quantities."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "algebra",
+            "topic_name": "Algebra",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "76aa4190-3b73-5432-b4e3-44962a061b13",
+            "kind": "quiz",
+            "title": "If x + 5 = 12, x is…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "7"
+                },
+                {
+                    "id": "b",
+                    "label": "17"
+                },
+                {
+                    "id": "c",
+                    "label": "5"
+                }
+            ],
+            "correct": "a",
+            "explain": "Algebra uses symbols to represent unknown or variable quantities and relationships."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "logic",
+            "topic_name": "Logical implication",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "79f605e5-bb18-514e-bc0a-19cb1a25acd6",
+            "kind": "reveal",
+            "title": "Logical implication",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "A valid logical conclusion must follow from the stated premises, not from extra assumptions."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "patterns",
+            "topic_name": "Patterns",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "7da2f926-c4b5-5622-b796-de3f908b059a",
+            "kind": "quiz",
+            "title": "What comes next in 2, 4, 8, 16…?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "32"
+                },
+                {
+                    "id": "b",
+                    "label": "18"
+                },
+                {
+                    "id": "c",
+                    "label": "20"
+                }
+            ],
+            "correct": "a",
+            "explain": "Recognizing a rule in a sequence helps predict later terms, but the rule must fit all known terms."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "average",
+            "topic_name": "Averages",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "836823a5-b43e-5494-9f12-f7f0cd689568",
+            "kind": "choice",
+            "title": "Why can an average hide differences?",
+            "subtitle": "Connect averages to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "ratio",
+            "topic_name": "Ratios",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "8cd99e53-fade-5444-be2d-4ab969dc8b02",
+            "kind": "reveal",
+            "title": "Ratios",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "A ratio compares quantities using division or relative size."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "primes",
+            "topic_name": "Prime numbers",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "8fdfa6a8-3139-5d3f-8b8b-6cbd2adb3e0e",
+            "kind": "quiz",
+            "title": "Which number is prime?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "13"
+                },
+                {
+                    "id": "b",
+                    "label": "15"
+                },
+                {
+                    "id": "c",
+                    "label": "21"
+                }
+            ],
+            "correct": "a",
+            "explain": "A prime number greater than 1 has exactly two positive factors: 1 and itself."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "logic",
+            "topic_name": "Logical implication",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "921c6821-f833-5270-9a1b-3d92f13d4ae8",
+            "kind": "quiz",
+            "title": "All squares are rectangles. This shape is a square. Therefore it is…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "A rectangle"
+                },
+                {
+                    "id": "b",
+                    "label": "A circle"
+                },
+                {
+                    "id": "c",
+                    "label": "Not a polygon"
+                }
+            ],
+            "correct": "a",
+            "explain": "A valid logical conclusion must follow from the stated premises, not from extra assumptions."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "average",
+            "topic_name": "Averages",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "98ad951d-d34c-5b31-bd7a-1200bfe51fd7",
+            "kind": "reveal",
+            "title": "Averages",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "The arithmetic mean is the sum of values divided by the number of values."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "mentalestimate",
+            "topic_name": "Mental estimation",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "9fe56b13-52d1-57db-99a5-c1ec2818d205",
+            "kind": "quiz",
+            "title": "49 × 21 is closest to…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "1000"
+                },
+                {
+                    "id": "b",
+                    "label": "100"
+                },
+                {
+                    "id": "c",
+                    "label": "10000"
+                }
+            ],
+            "correct": "a",
+            "explain": "Rounding numbers can make quick approximate calculations easier."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "ratio",
+            "topic_name": "Ratios",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "a16a04ed-a690-5f10-ba47-e1af10a3d772",
+            "kind": "choice",
+            "title": "Why are ratios useful in recipes and maps?",
+            "subtitle": "Connect ratios to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "algebra",
+            "topic_name": "Algebra",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "a51cd199-2d2d-560e-8c58-b894dc696928",
+            "kind": "reveal",
+            "title": "Algebra",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Algebra uses symbols to represent unknown or variable quantities and relationships."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "coordinates",
+            "topic_name": "Coordinates",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "a527c25c-58cd-5a88-9db6-3a99399932b4",
+            "kind": "quiz",
+            "title": "In (3, 2), the first number usually gives…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Horizontal x-position"
+                },
+                {
+                    "id": "b",
+                    "label": "Vertical y-position"
+                },
+                {
+                    "id": "c",
+                    "label": "Distance from origin only"
+                }
+            ],
+            "correct": "a",
+            "explain": "Coordinates locate points using ordered values along axes."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "percent",
+            "topic_name": "Percentages",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "aeb88306-785f-5c9a-9fdd-c6b999cc9779",
+            "kind": "quiz",
+            "title": "25% is equal to…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "1/4"
+                },
+                {
+                    "id": "b",
+                    "label": "1/3"
+                },
+                {
+                    "id": "c",
+                    "label": "3/4"
+                }
+            ],
+            "correct": "a",
+            "explain": "Percent means “per hundred,” making it useful for comparing proportions."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "average",
+            "topic_name": "Averages",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "af6e8acf-ba4b-527e-b00b-9bd21ec7966d",
+            "kind": "action",
+            "title": "Compare two sets with the same mean but different spread.",
+            "subtitle": "A tiny action linked to averages.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "chance",
+            "topic_name": "Chance",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "b0baeebe-1561-5d50-bad6-3c5d14159b18",
+            "kind": "action",
+            "title": "Flip a coin ten times and compare results with expectation.",
+            "subtitle": "A tiny action linked to chance.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "percent",
+            "topic_name": "Percentages",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "b887b81e-762f-5d3c-8b72-c932b1e1965a",
+            "kind": "choice",
+            "title": "Where do percentages appear daily?",
+            "subtitle": "Connect percentages to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "primes",
+            "topic_name": "Prime numbers",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "c05ed86f-1704-531a-94dc-002e7470c1fd",
+            "kind": "action",
+            "title": "Find the next prime number after 20.",
+            "subtitle": "A tiny action linked to prime numbers.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "geometry",
+            "topic_name": "Geometry",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "cabb2a6e-47ce-5471-b4d0-4e823f12202d",
+            "kind": "quiz",
+            "title": "The angles in a triangle add to…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "180°"
+                },
+                {
+                    "id": "b",
+                    "label": "90°"
+                },
+                {
+                    "id": "c",
+                    "label": "360°"
+                }
+            ],
+            "correct": "a",
+            "explain": "Geometry studies shapes, sizes, positions and spatial relationships."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "algebra",
+            "topic_name": "Algebra",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "cf01fbdf-da68-5d86-a085-bf7d84bd0e3c",
+            "kind": "action",
+            "title": "Write an expression for “three more than a number.”",
+            "subtitle": "A tiny action linked to algebra.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "fractions",
+            "topic_name": "Fractions",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "d0798cc3-3143-5448-adc5-e04283264bff",
+            "kind": "action",
+            "title": "Find two fractions equivalent to 1/4.",
+            "subtitle": "A tiny action linked to fractions.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "mentalestimate",
+            "topic_name": "Mental estimation",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "d53dc84f-3fd2-5ec3-831a-d02f415ba68c",
+            "kind": "reveal",
+            "title": "Mental estimation",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Rounding numbers can make quick approximate calculations easier."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "fractions",
+            "topic_name": "Fractions",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "d8f84e04-64ee-5d6a-9dd1-49d77a2a9597",
+            "kind": "choice",
+            "title": "Why can different fractions represent the same value?",
+            "subtitle": "Connect fractions to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "average",
+            "topic_name": "Averages",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "e113b38b-7f15-547e-a3f0-d7fa7fb6c9b3",
+            "kind": "quiz",
+            "title": "Mean of 2, 4 and 6 is…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "4"
+                },
+                {
+                    "id": "b",
+                    "label": "3"
+                },
+                {
+                    "id": "c",
+                    "label": "6"
+                }
+            ],
+            "correct": "a",
+            "explain": "The arithmetic mean is the sum of values divided by the number of values."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "coordinates",
+            "topic_name": "Coordinates",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "e60dbeac-ceb3-54ab-8020-77e83023db9d",
+            "kind": "reveal",
+            "title": "Coordinates",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Coordinates locate points using ordered values along axes."
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "ratio",
+            "topic_name": "Ratios",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "e7aeb854-e9e3-5337-be53-1a6a654e1217",
+            "kind": "action",
+            "title": "Double a simple recipe ratio mentally.",
+            "subtitle": "A tiny action linked to ratios.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "sanskrit_mathematics",
+            "topic_name": "Sanskrit word for mathematics",
+            "min_grade": 4,
+            "max_grade": 9,
+            "language": "en",
+            "active": true,
+            "id": "ec57eaf3-92a4-40bc-9b76-23c48d340bc9",
+            "kind": "quiz",
+            "title": "Which Sanskrit word means “mathematics”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "गणितम्"
+                },
+                {
+                    "id": "b",
+                    "label": "विज्ञानम्"
+                },
+                {
+                    "id": "c",
+                    "label": "प्रयोगः"
+                }
+            ],
+            "correct": "a",
+            "explain": "गणितम् (gaṇitam) means “mathematics.” The source connects mathematics with developing logical thinking.",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Mathematics and science",
+                "source_reference": "Entry 104",
+                "source_url": "",
+                "concept_key": "math:sanskrit_mathematics:ganitam",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "geometry",
+            "topic_name": "Geometry",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "f363b1af-03ad-55fd-ab34-e59ca6ebad2d",
+            "kind": "choice",
+            "title": "Where does geometry appear in design?",
+            "subtitle": "Connect geometry to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "geometry",
+            "topic_name": "Geometry",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "f6a144d2-0794-528a-96e8-1604237cd6f3",
+            "kind": "action",
+            "title": "Find three different triangles around you.",
+            "subtitle": "A tiny action linked to geometry.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "primes",
+            "topic_name": "Prime numbers",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "fbeba101-73b3-514e-948f-dacd50f16a82",
+            "kind": "choice",
+            "title": "Why are primes important in patterns and computing?",
+            "subtitle": "Connect prime numbers to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "percent",
+            "topic_name": "Percentages",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "fdec1fed-cc66-56b7-bbc7-16d214d42773",
+            "kind": "action",
+            "title": "Estimate 10% of one price without a calculator.",
+            "subtitle": "A tiny action linked to percentages.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "math",
+            "pillar_name": "Maths & Logic",
+            "label": "MATHS & LOGIC",
+            "topic": "algebra",
+            "topic_name": "Algebra",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "ff56361d-0a7b-5658-b9a7-910187feb500",
+            "kind": "choice",
+            "title": "Why are variables useful?",
+            "subtitle": "Connect algebra to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        }
+    ],
+    "sha256": "449dd83ce9469dc1642950bdb0e856cd6c5770a114b1c8a01be8ad7994fa9e7f",
+    "signature_alg": "Ed25519",
+    "signing_key_id": "76f1f50a291c1ec5",
+    "signature": "oFkLIHdAC5qJ7lsT2OKGgaTabG82KAcSSuVLeo4gD-IdstM_2i-Lhu4HhN665FQdD1fcZhLZstWoY-havxZvAw"
+}

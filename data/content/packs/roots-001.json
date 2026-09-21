@@ -1,0 +1,3826 @@
+{
+    "schema_version": 1,
+    "pack_id": "roots-001",
+    "pillar": "roots",
+    "pillar_name": "Roots & India",
+    "sequence": 1,
+    "card_count": 112,
+    "bank_version": "2026.09.import20260904011537",
+    "cards": [
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_school",
+            "topic_name": "Sanskrit school vocabulary",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "01af994d-f900-4a0e-87b5-b25bca68b9c4",
+            "kind": "quiz",
+            "title": "What does “विद्यालयः” mean?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "School"
+                },
+                {
+                    "id": "b",
+                    "label": "Home"
+                },
+                {
+                    "id": "c",
+                    "label": "Teacher"
+                }
+            ],
+            "correct": "a",
+            "explain": "विद्यालयः (vidyālayaḥ) means “school.” The source uses it in the sentence “मम विद्यालयः सुन्दरः अस्ति.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "School",
+                "source_reference": "Entry 22",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_school:vidyalayah",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "niti_meaning",
+            "topic_name": "Meaning of niti",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "01f42e68-f3ed-45b9-8553-1b9522200ef8",
+            "kind": "reveal",
+            "title": "Does niti mean only 'politics'?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "No. In the historical tradition, niti can cover practical conduct, ethics, governance, welfare and judgment, depending on context.",
+            "meta": {
+                "source_title": "Canakyaniti",
+                "source_section": "Book topics",
+                "source_reference": "Description of nitishastra's scope",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "roots:niti_meaning:broader_conduct",
+                "educational_value": 93,
+                "confidence": 0.97,
+                "evidence_class": "historical_documentation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "nalanda",
+            "topic_name": "Nalanda",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "04e4f1fe-b92a-513f-97ca-2cfb88f77bbd",
+            "kind": "reveal",
+            "title": "Nalanda",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Nalanda in present-day Bihar became a major centre of learning in the first millennium CE and attracted scholars from different regions."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "historical_context",
+            "topic_name": "Historical context",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "090717c9-ad41-4ead-b8bd-3e9ccab7774c",
+            "kind": "reveal",
+            "title": "Should every ancient social rule be copied directly today?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "No. Ancient advice reflects its historical society. We can study it respectfully while rejecting ideas that conflict with equality, safety, evidence or modern rights.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Multiple chapters",
+                "source_reference": "Modern evidence-conscious interpretation of historically situated social advice",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-2",
+                "concept_key": "roots:historical_context:critical_reading",
+                "educational_value": 100,
+                "confidence": 0.99,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sushruta",
+            "topic_name": "Sushruta tradition",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "0a01af0d-458e-5fee-9767-e8ed6379e4db",
+            "kind": "reveal",
+            "title": "Sushruta tradition",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "The Sushruta Samhita is an important historical Sanskrit medical text associated with surgical knowledge and medical practice."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_time",
+            "topic_name": "Sanskrit time vocabulary",
+            "min_grade": 4,
+            "max_grade": 9,
+            "language": "en",
+            "active": true,
+            "id": "0ca378e6-c00e-4b39-a547-fbf5eb8dbcb6",
+            "kind": "quiz",
+            "title": "What does “समयः” mean?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Time"
+                },
+                {
+                    "id": "b",
+                    "label": "Day"
+                },
+                {
+                    "id": "c",
+                    "label": "Work"
+                }
+            ],
+            "correct": "a",
+            "explain": "समयः (samayaḥ) means “time.” The source uses “समयः अमूल्यः अस्ति” — “Time is precious.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Time",
+                "source_reference": "Entry 42",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_time:samayah",
+                "educational_value": 89,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_practice",
+            "topic_name": "Sanskrit word for practice",
+            "min_grade": 4,
+            "max_grade": 9,
+            "language": "en",
+            "active": true,
+            "id": "117e3589-7b18-41e1-8e13-774e89173ca2",
+            "kind": "quiz",
+            "title": "What does “अभ्यासः” mean?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Practice"
+                },
+                {
+                    "id": "b",
+                    "label": "Decision"
+                },
+                {
+                    "id": "c",
+                    "label": "Result"
+                }
+            ],
+            "correct": "a",
+            "explain": "अभ्यासः (abhyāsaḥ) means “practice.” The source states that practice improves skill.",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Learning and thinking",
+                "source_reference": "Entry 38",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_practice:abhyasah",
+                "educational_value": 90,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "placevalue",
+            "topic_name": "Place-value mathematics",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "122cff01-e312-50c3-a369-efd42dd1c19a",
+            "kind": "reveal",
+            "title": "Place-value mathematics",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Indian mathematical traditions played a major role in developing and transmitting decimal place-value notation, including the use of zero as a number."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_politeness",
+            "topic_name": "Sanskrit polite expressions",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "13e404e5-8b18-40ec-92d6-c835dd347d27",
+            "kind": "quiz",
+            "title": "Which Sanskrit word means “please”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "कृपया"
+                },
+                {
+                    "id": "b",
+                    "label": "अद्य"
+                },
+                {
+                    "id": "c",
+                    "label": "मित्रम्"
+                }
+            ],
+            "correct": "a",
+            "explain": "कृपया (kṛpayā) means “please.” The example “कृपया उपविशतु” means “Please sit down.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Greetings and courtesy",
+                "source_reference": "Entry 2",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_politeness:kripaya",
+                "educational_value": 90,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "indus",
+            "topic_name": "Indus urban planning",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "166c64dd-7381-5feb-bbdc-529d544fca0f",
+            "kind": "reveal",
+            "title": "Indus urban planning",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Cities of the Indus civilisation are known for planned streets, drainage systems and standardized construction features."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_animals",
+            "topic_name": "Sanskrit animal vocabulary",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "17145454-d291-49c5-a06f-f85bb32ca399",
+            "kind": "quiz",
+            "title": "Which Sanskrit word means “bird”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "पक्षी"
+                },
+                {
+                    "id": "b",
+                    "label": "पशुः"
+                },
+                {
+                    "id": "c",
+                    "label": "तारा"
+                }
+            ],
+            "correct": "a",
+            "explain": "पक्षी (pakṣī) means “bird.” The source uses it in “पक्षी आकाशे उड्डयति” — “The bird flies in the sky.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Animals",
+                "source_reference": "Entry 74",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_animals:pakshi",
+                "educational_value": 89,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "aphorism",
+            "topic_name": "Aphorisms",
+            "min_grade": 6,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "17ca4fa7-c42b-449b-8525-9d4583dc1b59",
+            "kind": "reveal",
+            "title": "What is an aphorism?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "An aphorism is a short statement expressing a general principle or observation. Chanakya Niti is known for this compact style.",
+            "meta": {
+                "source_title": "Canakyaniti",
+                "source_section": "Introduction",
+                "source_reference": "Description as a collection of aphorisms",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "roots:aphorism:definition",
+                "educational_value": 88,
+                "confidence": 0.99,
+                "evidence_class": "historical_documentation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "ecology",
+            "topic_name": "Traditional ecological knowledge",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "181880cd-6c5c-5953-bd5b-a49b050d6d89",
+            "kind": "choice",
+            "title": "How can old and new knowledge interact?",
+            "subtitle": "Connect traditional ecological knowledge to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "oceantrade",
+            "topic_name": "Indian Ocean trade",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "1841bf53-9d89-5b01-9de4-5c037ef70584",
+            "kind": "action",
+            "title": "Think of ideas, languages and technologies that can travel with people.",
+            "subtitle": "A tiny action linked to indian ocean trade.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "oceantrade",
+            "topic_name": "Indian Ocean trade",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "1899a989-f470-56d8-88ca-b922237a0831",
+            "kind": "reveal",
+            "title": "Indian Ocean trade",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "For centuries, ports around the Indian Ocean connected South Asia with Africa, West Asia and Southeast Asia through trade and cultural exchange."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_farewell",
+            "topic_name": "Sanskrit farewell expression",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "1d89ad6e-8f39-4e58-b84f-48b9cf9b10dc",
+            "kind": "quiz",
+            "title": "“पुनर्मिलामः” is closest to which English phrase?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "See you again"
+                },
+                {
+                    "id": "b",
+                    "label": "Please sit"
+                },
+                {
+                    "id": "c",
+                    "label": "I am studying"
+                }
+            ],
+            "correct": "a",
+            "explain": "पुनर्मिलामः (punarmilāmaḥ) means “we will meet again” or “see you again.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Greetings",
+                "source_reference": "Entry 7",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_farewell:punarmilamah",
+                "educational_value": 88,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "nitishastra",
+            "topic_name": "Nitishastra tradition",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "1e46ec38-c777-441d-aa1c-829359819337",
+            "kind": "quiz",
+            "title": "What broad subjects are associated with the niti tradition?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Conduct and statecraft"
+                },
+                {
+                    "id": "b",
+                    "label": "Only astronomy"
+                },
+                {
+                    "id": "c",
+                    "label": "Only grammar"
+                }
+            ],
+            "correct": "a",
+            "explain": "Nitishastra is associated with conduct, ethics, welfare, political thought and responsibilities of governance.",
+            "meta": {
+                "source_title": "Canakyaniti",
+                "source_section": "Book topics",
+                "source_reference": "Description of nitishastra",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "roots:nitishastra:scope",
+                "educational_value": 94,
+                "confidence": 0.98,
+                "evidence_class": "historical_documentation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "translation",
+            "topic_name": "Translation and interpretation",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "25bd1738-e526-44fa-81d6-3b386b7e48a8",
+            "kind": "reveal",
+            "title": "Why can two translations of an ancient maxim sound different?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Translators make choices about vocabulary, tone and context. Comparing translations can help separate the underlying idea from one translator's wording.",
+            "meta": {
+                "source_title": "Canakyaniti",
+                "source_section": "Translated verses and editions",
+                "source_reference": "Multiple editions and translations are documented",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "roots:translation:translation_choices",
+                "educational_value": 95,
+                "confidence": 0.97,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_book",
+            "topic_name": "Sanskrit classroom objects",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "27ceba15-350b-4f50-bd7c-bd55c4f99009",
+            "kind": "quiz",
+            "title": "In “अहं पुस्तकं पठामि,” what is being read?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "A book"
+                },
+                {
+                    "id": "b",
+                    "label": "A question"
+                },
+                {
+                    "id": "c",
+                    "label": "A letter"
+                }
+            ],
+            "correct": "a",
+            "explain": "पुस्तकम् means “book.” The source translates “अहं पुस्तकं पठामि” as “I read a book.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "School",
+                "source_reference": "Entry 27",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_book:pustakam",
+                "educational_value": 92,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_water",
+            "topic_name": "Sanskrit word for water",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "28bf7cbf-738c-4982-bc69-b0269bd28fd7",
+            "kind": "quiz",
+            "title": "What does “जलम्” mean?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Water"
+                },
+                {
+                    "id": "b",
+                    "label": "Air"
+                },
+                {
+                    "id": "c",
+                    "label": "Fire"
+                }
+            ],
+            "correct": "a",
+            "explain": "जलम् (jalam) means “water.” The source uses the idea that water is a basis of life.",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Food and health",
+                "source_reference": "Entry 50",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_water:jalam",
+                "educational_value": 88,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_elements",
+            "topic_name": "Sanskrit nature elements",
+            "min_grade": 4,
+            "max_grade": 9,
+            "language": "en",
+            "active": true,
+            "id": "2a21408a-389d-4b6f-a2ae-6916fd221dc0",
+            "kind": "quiz",
+            "title": "Which Sanskrit word means “air”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "वायुः"
+                },
+                {
+                    "id": "b",
+                    "label": "अग्निः"
+                },
+                {
+                    "id": "c",
+                    "label": "वर्षा"
+                }
+            ],
+            "correct": "a",
+            "explain": "वायुः (vāyuḥ) means “air.” The source gives अग्निः for “fire” and वर्षा for “rain.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Nature",
+                "source_reference": "Entries 70–72",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_elements:vayuh",
+                "educational_value": 93,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "ecology",
+            "topic_name": "Traditional ecological knowledge",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "30abeb08-3809-5a9e-9664-f5fe35a4f4ee",
+            "kind": "reveal",
+            "title": "Traditional ecological knowledge",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Communities across India developed local knowledge about water, crops, forests and seasons; such knowledge should be studied alongside modern evidence."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_body",
+            "topic_name": "Sanskrit body vocabulary",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "3117ac50-4d03-43f1-8af2-c69658f357c1",
+            "kind": "quiz",
+            "title": "Which Sanskrit word means “body”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "शरीरम्"
+                },
+                {
+                    "id": "b",
+                    "label": "स्वास्थ्यम्"
+                },
+                {
+                    "id": "c",
+                    "label": "मनः"
+                }
+            ],
+            "correct": "a",
+            "explain": "शरीरम् (śarīram) means “body.” The source uses it in a sentence about exercise keeping the body healthy.",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Body and health",
+                "source_reference": "Entry 56",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_body:shariram",
+                "educational_value": 90,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "historical_values",
+            "topic_name": "Changing social values",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "315b69a5-93bf-4ad1-aeb9-65c8326244d3",
+            "kind": "reveal",
+            "title": "Why do some Chanakya Niti verses need strong historical qualification today?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Some verses reflect ancient assumptions about gender, caste, hierarchy and punishment. These should be studied historically, not presented as modern facts or ethical rules.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Multiple historical social verses",
+                "source_reference": "Historically situated claims visible in surviving translations",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-2",
+                "concept_key": "roots:historical_values:contextual_limits",
+                "educational_value": 100,
+                "confidence": 0.99,
+                "evidence_class": "historical_documentation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "interim_leadership",
+            "topic_name": "Leadership of the Interim Government",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "3334eca2-bdfd-4601-ad46-a274e1e803dd",
+            "kind": "reveal",
+            "title": "What role did Jawaharlal Nehru hold in the 1946 Interim Government?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Nehru was Vice-President of the Viceroy's Executive Council and effectively acted as the de facto head of the Interim Government's internal administration.",
+            "meta": {
+                "source_title": "Interim Government of 1946",
+                "source_section": "Leadership",
+                "source_reference": "Pasted markdown.md",
+                "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/interim-government-of-1946",
+                "concept_key": "roots:interim_leadership:nehru_role",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "historical_documentation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "nalanda",
+            "topic_name": "Nalanda",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "3b884b0b-faf8-51ef-adc6-4a25ad1e99b3",
+            "kind": "choice",
+            "title": "What makes a learning centre influential?",
+            "subtitle": "Connect nalanda to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_question_answer",
+            "topic_name": "Sanskrit question and answer",
+            "min_grade": 4,
+            "max_grade": 9,
+            "language": "en",
+            "active": true,
+            "id": "4446ac04-66b8-419a-bf5f-d1a01f55ce49",
+            "kind": "quiz",
+            "title": "Which pair means “question” and “answer”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "प्रश्नः — उत्तरम्"
+                },
+                {
+                    "id": "b",
+                    "label": "दिनम् — रात्रिः"
+                },
+                {
+                    "id": "c",
+                    "label": "कारणम् — परिणामः"
+                }
+            ],
+            "correct": "a",
+            "explain": "प्रश्नः (praśnaḥ) means “question,” while उत्तरम् (uttaram) means “answer.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Learning",
+                "source_reference": "Entries 31–32",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_question_answer:prashna_uttara",
+                "educational_value": 94,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_yes_no",
+            "topic_name": "Sanskrit yes and no",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "44cf0696-a393-44f8-bdb1-1cde20d389dd",
+            "kind": "quiz",
+            "title": "Which Sanskrit word means “yes”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "आम्"
+                },
+                {
+                    "id": "b",
+                    "label": "न"
+                },
+                {
+                    "id": "c",
+                    "label": "श्वः"
+                }
+            ],
+            "correct": "a",
+            "explain": "आम् (ām) means “yes.” By contrast, न (na) is used for “no” or “not.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Basic conversation",
+                "source_reference": "Entries 9–10",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_yes_no:aam_na",
+                "educational_value": 92,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "stepwells",
+            "topic_name": "Stepwells",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "4566755c-c4fe-5032-9741-a4388834ad9c",
+            "kind": "choice",
+            "title": "What design lesson can stepwells offer?",
+            "subtitle": "Connect stepwells to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "literature",
+            "topic_name": "Classical literature",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "485a9105-0812-5f89-adf3-1f3bd23ca46c",
+            "kind": "action",
+            "title": "Learn one word from an Indian language different from your own.",
+            "subtitle": "A tiny action linked to classical literature.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "text_tradition",
+            "topic_name": "Text traditions",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "48d92073-7cca-4f03-8bd9-8374aadf1b3e",
+            "kind": "reveal",
+            "title": "Why should we be careful about saying there is only one fixed Chanakya Niti text?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Scholarly references describe multiple textual versions and collections of Chanakya maxims. Historical texts can have transmission traditions rather than one simple modern edition.",
+            "meta": {
+                "source_title": "Canakyaniti",
+                "source_section": "Book editions",
+                "source_reference": "Reference to six versions reconstructed and critically edited by Ludwik Sternbach",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "roots:text_tradition:multiple_versions",
+                "educational_value": 98,
+                "confidence": 0.98,
+                "evidence_class": "historical_documentation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "ancient_modern",
+            "topic_name": "Ancient ideas in modern life",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "48f3132a-8c7c-467a-9901-bb2e5b56ca63",
+            "kind": "quiz",
+            "title": "What is the best test for whether an ancient maxim is useful today?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Evidence, ethics and context"
+                },
+                {
+                    "id": "b",
+                    "label": "Its age alone"
+                },
+                {
+                    "id": "c",
+                    "label": "Its popularity alone"
+                }
+            ],
+            "correct": "a",
+            "explain": "Age neither proves nor disproves an idea. Modern use should consider evidence, ethical standards, context and likely consequences.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Modern adaptation",
+                "source_reference": "Evidence-conscious interpretation of historical maxims",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "roots:ancient_modern:evidence_ethics_context",
+                "educational_value": 100,
+                "confidence": 0.99,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "source_comparison",
+            "topic_name": "Comparing historical sources",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "49b44cba-54bc-47f9-97e8-c67a9b0c2e49",
+            "kind": "action",
+            "title": "Compare one Chanakya maxim across two translations before quoting it.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I'll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Canakyaniti",
+                "source_section": "Editions and translated verses",
+                "source_reference": "Multiple textual and translation traditions",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "roots:source_comparison:compare_translation",
+                "educational_value": 98,
+                "confidence": 0.98,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "historical_language",
+            "topic_name": "Historical language",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "4ba9f50c-afde-4e93-931e-e3636f63f7d7",
+            "kind": "reveal",
+            "title": "Why should old translations sometimes be read cautiously?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Older translations may use social labels or assumptions that sound harsh today. Separate the historical wording from the underlying claim and evaluate both.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "English translations",
+                "source_reference": "Historical translations contain period-specific terminology",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-8",
+                "concept_key": "roots:historical_language:period_wording",
+                "educational_value": 97,
+                "confidence": 0.97,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "modern_adaptation",
+            "topic_name": "Responsible modern adaptation",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "4f77037d-42a2-4099-a37a-a1a16f22f71f",
+            "kind": "quiz",
+            "title": "Which is a responsible way to modernise historical wisdom?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Preserve the idea, update unsafe assumptions"
+                },
+                {
+                    "id": "b",
+                    "label": "Invent quotes"
+                },
+                {
+                    "id": "c",
+                    "label": "Call every claim scientific"
+                }
+            ],
+            "correct": "a",
+            "explain": "Modern adaptation should identify the original principle clearly, avoid invented attribution and reject unsupported, discriminatory or unsafe claims.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Modern adaptation",
+                "source_reference": "Evidence-conscious transformation of historical advice",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "roots:modern_adaptation:update_assumptions",
+                "educational_value": 100,
+                "confidence": 0.99,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "literature",
+            "topic_name": "Classical literature",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "4f7f8815-cef7-5f0e-b789-594036330943",
+            "kind": "reveal",
+            "title": "Classical literature",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "India’s literary traditions include works in Sanskrit, Tamil, Pali, Prakrit and many other languages across long periods."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "architecture",
+            "topic_name": "Temple architecture",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "52d22a2c-5a8f-5e73-ac17-f4ad1c9eefa6",
+            "kind": "choice",
+            "title": "What can architecture reveal about a society?",
+            "subtitle": "Connect temple architecture to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "placevalue",
+            "topic_name": "Place-value mathematics",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "539fba57-8a99-50be-b7bc-6073a4d487de",
+            "kind": "action",
+            "title": "Write 505 and explain why the two 5s have different values.",
+            "subtitle": "A tiny action linked to place-value mathematics.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "heritage_evidence",
+            "topic_name": "Evidence in heritage",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "544c3df2-8e1d-4d95-a746-6a1bfe44a991",
+            "kind": "quiz",
+            "title": "A viral post claims an ancient text predicted a modern technology. What should you do?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Check the original text and evidence"
+                },
+                {
+                    "id": "b",
+                    "label": "Share it immediately"
+                },
+                {
+                    "id": "c",
+                    "label": "Assume it is scientific proof"
+                }
+            ],
+            "correct": "a",
+            "explain": "Respect for Indian heritage does not require exaggeration. Verify the text, translation, historical context and modern scientific evidence separately.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Historical source study",
+                "source_reference": "Evidence-conscious treatment of ancient Indian texts",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "roots:heritage_evidence:verify_claim",
+                "educational_value": 100,
+                "confidence": 0.99,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "ancient_ethics",
+            "topic_name": "Ancient ethics literature",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "54bd9ee3-8d39-47d3-8862-1ae795482dba",
+            "kind": "quiz",
+            "title": "What is a good way to study an ancient ethical maxim?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Read context and test its relevance"
+                },
+                {
+                    "id": "b",
+                    "label": "Accept every line literally"
+                },
+                {
+                    "id": "c",
+                    "label": "Reject it without reading"
+                }
+            ],
+            "correct": "a",
+            "explain": "Historical wisdom is best studied with context. Ask what problem a maxim addressed, what assumptions it used and whether its principle remains defensible today.",
+            "meta": {
+                "source_title": "Canakyaniti",
+                "source_section": "Introduction",
+                "source_reference": "Collection of historical aphorisms in the niti tradition",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "roots:ancient_ethics:contextual_reading",
+                "educational_value": 99,
+                "confidence": 0.98,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "heritage_critique",
+            "topic_name": "Respectful heritage critique",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "58b4d345-b231-4cb1-82d8-ccf8ff152ee2",
+            "kind": "choice",
+            "title": "Can you value a historical work while disagreeing with some of its ideas?",
+            "subtitle": "Choose the response closest to your view.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Yes, with evidence and context"
+                },
+                {
+                    "id": "b",
+                    "label": "No, never"
+                },
+                {
+                    "id": "c",
+                    "label": "Only if every idea is modern"
+                }
+            ],
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Historical social maxims",
+                "source_reference": "Modern evidence-conscious interpretation of ancient material",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-2",
+                "concept_key": "roots:heritage_critique:respect_and_question",
+                "educational_value": 100,
+                "confidence": 0.98,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "textiles",
+            "topic_name": "Textiles and dyes",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "5a0c00d6-bd89-588f-a791-7081eabfc9ce",
+            "kind": "reveal",
+            "title": "Textiles and dyes",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Indian cotton textiles and dyeing traditions were historically traded widely and influenced global markets."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "textiles",
+            "topic_name": "Textiles and dyes",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "5a51fa8a-5624-511d-946c-14b88b8b5141",
+            "kind": "quiz",
+            "title": "Indian textiles were historically important in…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Regional and global trade"
+                },
+                {
+                    "id": "b",
+                    "label": "Only private diaries"
+                },
+                {
+                    "id": "c",
+                    "label": "Space missions"
+                }
+            ],
+            "correct": "a",
+            "explain": "Indian cotton textiles and dyeing traditions were historically traded widely and influenced global markets."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "architecture",
+            "topic_name": "Temple architecture",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "5bd5a9de-86f8-5204-8f9b-e85e6eb3e8fb",
+            "kind": "reveal",
+            "title": "Temple architecture",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Indian temple architecture developed diverse regional forms, materials and engineering solutions over centuries."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "nalanda",
+            "topic_name": "Nalanda",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "5d2039a0-77ec-5b32-8e9b-421b9383eeec",
+            "kind": "action",
+            "title": "Name one thing a great learning community needs besides buildings.",
+            "subtitle": "A tiny action linked to nalanda.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_teacher",
+            "topic_name": "Sanskrit teacher vocabulary",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "5d740f3c-029c-4d7d-a8ed-5392f358994d",
+            "kind": "quiz",
+            "title": "Which pair means “teacher” and “female teacher”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "शिक्षकः — शिक्षिका"
+                },
+                {
+                    "id": "b",
+                    "label": "छात्रः — छात्रा"
+                },
+                {
+                    "id": "c",
+                    "label": "भ्राता — भगिनी"
+                }
+            ],
+            "correct": "a",
+            "explain": "The source gives शिक्षकः for “teacher” and शिक्षिका for “female teacher.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "School",
+                "source_reference": "Entries 23–24",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_teacher:shikshaka_shikshika",
+                "educational_value": 94,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "learning_tradition",
+            "topic_name": "Learning in Indian wisdom literature",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "5db05aa2-d6e3-435a-bec1-2cfb69974be2",
+            "kind": "reveal",
+            "title": "What repeated theme in Chanakya Niti still fits education today?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Learning matters when it shapes judgment and can be put into practice. The text repeatedly connects knowledge with capability and respect.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapters 1, 2 and 8",
+                "source_reference": "Repeated praise of study, learning and applied knowledge",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-8",
+                "concept_key": "roots:learning_tradition:applied_knowledge",
+                "educational_value": 97,
+                "confidence": 0.98,
+                "evidence_class": "historical_documentation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_thanks",
+            "topic_name": "Sanskrit expressions of thanks",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "5f45f25c-35aa-423c-b155-e2aefc754833",
+            "kind": "quiz",
+            "title": "What does “धन्यवादः” express?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Thanks"
+                },
+                {
+                    "id": "b",
+                    "label": "A question"
+                },
+                {
+                    "id": "c",
+                    "label": "A greeting at dawn"
+                }
+            ],
+            "correct": "a",
+            "explain": "धन्यवादः (dhanyavādaḥ) means “thank you.” It is a useful Sanskrit expression for showing gratitude.",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Greetings and courtesy",
+                "source_reference": "Entry 3",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_thanks:dhanyavadah",
+                "educational_value": 88,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "nalanda",
+            "topic_name": "Nalanda",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "62e5d5bc-6867-5a1c-aebe-ff62cc822a02",
+            "kind": "quiz",
+            "title": "Nalanda is remembered primarily as…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "A historic centre of learning"
+                },
+                {
+                    "id": "b",
+                    "label": "A modern airport"
+                },
+                {
+                    "id": "c",
+                    "label": "A seaport"
+                }
+            ],
+            "correct": "a",
+            "explain": "Nalanda in present-day Bihar became a major centre of learning in the first millennium CE and attracted scholars from different regions."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "indus",
+            "topic_name": "Indus urban planning",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "644590c1-3d7a-51e7-a9b4-0819b6e3b763",
+            "kind": "choice",
+            "title": "Why does drainage matter to a city?",
+            "subtitle": "Connect indus urban planning to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "chanakya_niti",
+            "topic_name": "Chanakya Niti",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "6933c325-eb63-4468-9fe1-2843982b0ab7",
+            "kind": "reveal",
+            "title": "What kind of work is Chanakya Niti?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "It is a Sanskrit collection of aphoristic teachings associated with the niti tradition, dealing with conduct, ethics, practical judgment and social life.",
+            "meta": {
+                "source_title": "Canakyaniti",
+                "source_section": "Introduction and authorship",
+                "source_reference": "Description as a collection of aphorisms in the nitishastra tradition",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "roots:chanakya_niti:text_type",
+                "educational_value": 97,
+                "confidence": 0.98,
+                "evidence_class": "historical_documentation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "aryabhata",
+            "topic_name": "Aryabhata",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "69ec4ccd-a0af-5b2b-9b26-da7a7f5b545b",
+            "kind": "choice",
+            "title": "What does his work illustrate?",
+            "subtitle": "Connect aryabhata to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_learning",
+            "topic_name": "Sanskrit learning vocabulary",
+            "min_grade": 4,
+            "max_grade": 9,
+            "language": "en",
+            "active": true,
+            "id": "6a96a037-cd43-4617-b68e-2f2732b86bb1",
+            "kind": "quiz",
+            "title": "Which Sanskrit word means “study”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "अध्ययनम्"
+                },
+                {
+                    "id": "b",
+                    "label": "उत्तरम्"
+                },
+                {
+                    "id": "c",
+                    "label": "समयः"
+                }
+            ],
+            "correct": "a",
+            "explain": "अध्ययनम् (adhyayanam) means “study.” The source says नियमितम् अध्ययनम् आवश्यकम् अस्ति — regular study is necessary.",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Learning",
+                "source_reference": "Entry 30",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_learning:adhyayanam",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "literature",
+            "topic_name": "Classical literature",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "6bbaa815-7f8f-54c2-b482-5bdea491dd7e",
+            "kind": "choice",
+            "title": "Why does language diversity matter?",
+            "subtitle": "Connect classical literature to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "interim_structure",
+            "topic_name": "Structure of the Interim Government",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "6bec28ef-6986-43a8-96cc-63df6b42ad70",
+            "kind": "quiz",
+            "title": "Who remained the formal head of the 1946 Executive Council?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Viceroy Lord Wavell"
+                },
+                {
+                    "id": "b",
+                    "label": "Jawaharlal Nehru"
+                },
+                {
+                    "id": "c",
+                    "label": "Liaquat Ali Khan"
+                }
+            ],
+            "correct": "a",
+            "explain": "Lord Wavell remained the formal constitutional head and President of the Executive Council, while Indian leaders were expected to exercise real executive authority.",
+            "meta": {
+                "source_title": "Interim Government of 1946",
+                "source_section": "Legal Framework and Leadership",
+                "source_reference": "Pasted markdown.md",
+                "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/interim-government-of-1946",
+                "concept_key": "roots:interim_structure:formal_head",
+                "educational_value": 89,
+                "confidence": 0.99,
+                "evidence_class": "historical_documentation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "aryabhata",
+            "topic_name": "Aryabhata",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "70696d5a-f681-5cba-a144-f0b499570b23",
+            "kind": "action",
+            "title": "Link historical achievement with the methods—observation and calculation—that made it possible.",
+            "subtitle": "A tiny action linked to aryabhata.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_curiosity",
+            "topic_name": "Sanskrit word for curiosity",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "7202a21c-54af-4d72-9c63-ef43c81c8339",
+            "kind": "quiz",
+            "title": "Which Sanskrit word means “curiosity”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "जिज्ञासा"
+                },
+                {
+                    "id": "b",
+                    "label": "स्मृतिः"
+                },
+                {
+                    "id": "c",
+                    "label": "शान्तिः"
+                }
+            ],
+            "correct": "a",
+            "explain": "जिज्ञासा (jijñāsā) means “curiosity.” The source connects curiosity with seeking knowledge.",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Learning and thinking",
+                "source_reference": "Entry 37",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_curiosity:jijnasa",
+                "educational_value": 90,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "stepwells",
+            "topic_name": "Stepwells",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "7a8c4043-e149-56e3-b801-b13a74cc77d0",
+            "kind": "action",
+            "title": "Look for how architecture responds to climate and local needs.",
+            "subtitle": "A tiny action linked to stepwells.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "indus",
+            "topic_name": "Indus urban planning",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "7bec8ebd-d694-5db0-8527-f200c5b78d59",
+            "kind": "quiz",
+            "title": "A notable feature of many Indus cities was…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Planned drainage"
+                },
+                {
+                    "id": "b",
+                    "label": "Skyscraper elevators"
+                },
+                {
+                    "id": "c",
+                    "label": "Railway stations"
+                }
+            ],
+            "correct": "a",
+            "explain": "Cities of the Indus civilisation are known for planned streets, drainage systems and standardized construction features."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_day_night",
+            "topic_name": "Sanskrit day and night",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "7c27fb2e-2014-4804-b610-49c9482e78aa",
+            "kind": "quiz",
+            "title": "Which pair means “day” and “night”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "दिनम् — रात्रिः"
+                },
+                {
+                    "id": "b",
+                    "label": "प्रातः — सायम्"
+                },
+                {
+                    "id": "c",
+                    "label": "अद्य — श्वः"
+                }
+            ],
+            "correct": "a",
+            "explain": "दिनम् (dinam) means “day,” and रात्रिः (rātriḥ) means “night.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Time",
+                "source_reference": "Entries 43–44",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_day_night:dinam_ratrih",
+                "educational_value": 93,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "textiles",
+            "topic_name": "Textiles and dyes",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "7d8f39da-c8c7-5c8e-b2d3-29f15cf7ba13",
+            "kind": "action",
+            "title": "Look at one fabric and identify material, pattern and method.",
+            "subtitle": "A tiny action linked to textiles and dyes.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "heritage_discussion",
+            "topic_name": "Discussing heritage",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "7ea45300-1d4d-4fa9-b6d4-1c8ab90c5736",
+            "kind": "choice",
+            "title": "How would you prefer to discuss a controversial ancient verse?",
+            "subtitle": "Choose the response closest to your approach.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Context, evidence and respect"
+                },
+                {
+                    "id": "b",
+                    "label": "Mock everyone"
+                },
+                {
+                    "id": "c",
+                    "label": "Ban all questions"
+                }
+            ],
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Historically situated verses",
+                "source_reference": "Evidence-conscious heritage discussion",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-2",
+                "concept_key": "roots:heritage_discussion:respectful_inquiry",
+                "educational_value": 99,
+                "confidence": 0.98,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "placevalue",
+            "topic_name": "Place-value mathematics",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "832a3a1d-923c-5ee3-83c8-3cd64b71e9fb",
+            "kind": "choice",
+            "title": "Why is place value powerful?",
+            "subtitle": "Connect place-value mathematics to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_food",
+            "topic_name": "Sanskrit food vocabulary",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "834ff2bb-d92b-4f92-bb3c-0caea66508c1",
+            "kind": "quiz",
+            "title": "Which Sanskrit word means “fruit”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "फलम्"
+                },
+                {
+                    "id": "b",
+                    "label": "दुग्धम्"
+                },
+                {
+                    "id": "c",
+                    "label": "अन्नम्"
+                }
+            ],
+            "correct": "a",
+            "explain": "फलम् (phalam) means “fruit.” The source uses it in “अहं प्रतिदिनं फलं खादामि” — “I eat fruit every day.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Food and health",
+                "source_reference": "Entry 52",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_food:phalam",
+                "educational_value": 89,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "heritage_application",
+            "topic_name": "Applying heritage wisely",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "837086d9-6435-415b-80ca-597964fb2030",
+            "kind": "reveal",
+            "title": "What is a strong way to keep Chanakya Niti relevant today?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Keep defensible principles such as learning, preparation, integrity and prudent judgment while rejecting prejudice, violence, superstition and unsupported health claims.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Modern adaptation",
+                "source_reference": "Evidence-conscious synthesis of supported themes",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "roots:heritage_application:selective_modernisation",
+                "educational_value": 100,
+                "confidence": 0.99,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "source_attribution",
+            "topic_name": "Historical attribution",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "8437af7e-b2b3-4ba6-a1d2-74feb54c3bc0",
+            "kind": "reveal",
+            "title": "Why is 'traditionally attributed to' sometimes better than absolute certainty?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Ancient works can pass through long textual traditions. Careful historical language distinguishes traditional attribution from what surviving evidence can establish with certainty.",
+            "meta": {
+                "source_title": "Canakyaniti",
+                "source_section": "Introduction and editions",
+                "source_reference": "Traditional authorship and multiple textual versions",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "roots:source_attribution:historical_caution",
+                "educational_value": 100,
+                "confidence": 0.97,
+                "evidence_class": "historical_documentation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_wisdom",
+            "topic_name": "Sanskrit wisdom literature",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "85cd3938-e761-4c4e-b09a-bbfae034e865",
+            "kind": "reveal",
+            "title": "Why were short maxims useful in oral and literary traditions?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Compact statements are easier to remember, discuss and transmit. Their brevity also means context matters when interpreting them.",
+            "meta": {
+                "source_title": "Canakyaniti",
+                "source_section": "Introduction",
+                "source_reference": "Collection of Sanskrit aphorisms",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "roots:sanskrit_wisdom:compact_maxims",
+                "educational_value": 93,
+                "confidence": 0.96,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "oceantrade",
+            "topic_name": "Indian Ocean trade",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "874a6dac-5b18-5d06-8f70-3e44e8a95f70",
+            "kind": "quiz",
+            "title": "Indian Ocean trade connected India with…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Multiple regions across Africa and Asia"
+                },
+                {
+                    "id": "b",
+                    "label": "Only one nearby village"
+                },
+                {
+                    "id": "c",
+                    "label": "No overseas regions"
+                }
+            ],
+            "correct": "a",
+            "explain": "For centuries, ports around the Indian Ocean connected South Asia with Africa, West Asia and Southeast Asia through trade and cultural exchange."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "league_interim",
+            "topic_name": "Muslim League in the Interim Government",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "885d7505-b420-42b3-90d5-298557721ebd",
+            "kind": "quiz",
+            "title": "Which portfolio did Liaquat Ali Khan hold after the Muslim League joined the Interim Government?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Finance"
+                },
+                {
+                    "id": "b",
+                    "label": "Defence"
+                },
+                {
+                    "id": "c",
+                    "label": "Food and Agriculture"
+                }
+            ],
+            "correct": "a",
+            "explain": "The Muslim League joined the Interim Government in October 1946, and Liaquat Ali Khan became its Finance Member.",
+            "meta": {
+                "source_title": "Interim Government of 1946",
+                "source_section": "Entry of Muslim League",
+                "source_reference": "Pasted markdown.md",
+                "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/interim-government-of-1946",
+                "concept_key": "roots:league_interim:liaquat_finance",
+                "educational_value": 85,
+                "confidence": 0.99,
+                "evidence_class": "historical_documentation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_tree_flower",
+            "topic_name": "Sanskrit plant vocabulary",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "890ff3d9-3fb5-4a2e-b65f-20e2c6c05a51",
+            "kind": "quiz",
+            "title": "Which pair means “tree” and “flower”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "वृक्षः — पुष्पम्"
+                },
+                {
+                    "id": "b",
+                    "label": "नदी — वायुः"
+                },
+                {
+                    "id": "c",
+                    "label": "पशुः — पक्षी"
+                }
+            ],
+            "correct": "a",
+            "explain": "वृक्षः (vṛkṣaḥ) means “tree,” and पुष्पम् (puṣpam) means “flower.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Nature",
+                "source_reference": "Entries 67–68",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_tree_flower:vrikshah_pushpam",
+                "educational_value": 93,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_pronouns",
+            "topic_name": "Sanskrit personal pronouns",
+            "min_grade": 4,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "8f2df170-6cc8-4fd2-8b19-14e67c6438aa",
+            "kind": "quiz",
+            "title": "Which Sanskrit word means “we”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "अहम्"
+                },
+                {
+                    "id": "b",
+                    "label": "त्वम्"
+                },
+                {
+                    "id": "c",
+                    "label": "वयम्"
+                }
+            ],
+            "correct": "c",
+            "explain": "वयम् (vayam) means “we.” The source contrasts it with अहम्, “I,” and त्वम्, “you.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "People and pronouns",
+                "source_reference": "Entries 11–13",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_pronouns:vayam",
+                "educational_value": 94,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "stepwells",
+            "topic_name": "Stepwells",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "90a331d9-5862-5908-90b9-b27a23f0b43a",
+            "kind": "reveal",
+            "title": "Stepwells",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Stepwells in parts of India combined water access, architecture and adaptation to seasonal conditions."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "textual_evidence",
+            "topic_name": "Textual evidence",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "9390ce53-58d6-4eea-bd04-ff7aa0223033",
+            "kind": "reveal",
+            "title": "What counts as stronger evidence for a quote from an ancient text?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "A traceable edition, manuscript tradition or reputable translation is stronger than an unattributed social-media image.",
+            "meta": {
+                "source_title": "Canakyaniti",
+                "source_section": "Book editions and digital links",
+                "source_reference": "Documented editions and manuscript links",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "roots:textual_evidence:traceable_edition",
+                "educational_value": 100,
+                "confidence": 0.99,
+                "evidence_class": "historical_documentation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "architecture",
+            "topic_name": "Temple architecture",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "94d7c88a-52a3-5ac0-9b03-7dcce00684a5",
+            "kind": "action",
+            "title": "Notice how material, climate, craft and belief shape a building.",
+            "subtitle": "A tiny action linked to temple architecture.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_body_parts",
+            "topic_name": "Sanskrit body-part vocabulary",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "9554086d-0fb5-4740-9ef2-cd75539c59a0",
+            "kind": "quiz",
+            "title": "Which Sanskrit word means “eye”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "नेत्रम्"
+                },
+                {
+                    "id": "b",
+                    "label": "हस्तः"
+                },
+                {
+                    "id": "c",
+                    "label": "पादः"
+                }
+            ],
+            "correct": "a",
+            "explain": "नेत्रम् (netram) means “eye.” The source also gives हस्तः for “hand” and पादः for “foot.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Body and health",
+                "source_reference": "Entries 57–59",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_body_parts:netram",
+                "educational_value": 93,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_welcome",
+            "topic_name": "Sanskrit welcome expression",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "972292c6-f4fb-465b-b1db-f24aebea80cf",
+            "kind": "quiz",
+            "title": "What does “स्वागतम्” mean?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Welcome"
+                },
+                {
+                    "id": "b",
+                    "label": "Good night"
+                },
+                {
+                    "id": "c",
+                    "label": "Forgive me"
+                }
+            ],
+            "correct": "a",
+            "explain": "स्वागतम् (svāgatam) means “welcome.” The source uses it in a sentence welcoming someone to a school.",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Greetings and courtesy",
+                "source_reference": "Entry 4",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_welcome:svagatam",
+                "educational_value": 88,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_nature",
+            "topic_name": "Sanskrit nature vocabulary",
+            "min_grade": 4,
+            "max_grade": 9,
+            "language": "en",
+            "active": true,
+            "id": "97e5a86a-0367-489f-90e4-cdd73790ec5c",
+            "kind": "quiz",
+            "title": "What does “प्रकृतिः” mean?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Nature"
+                },
+                {
+                    "id": "b",
+                    "label": "Earth"
+                },
+                {
+                    "id": "c",
+                    "label": "Sky"
+                }
+            ],
+            "correct": "a",
+            "explain": "प्रकृतिः (prakṛtiḥ) means “nature.” The source describes nature as a foundation of our life.",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Nature",
+                "source_reference": "Entry 61",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_nature:prakritih",
+                "educational_value": 89,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_possessive",
+            "topic_name": "Sanskrit possessive word",
+            "min_grade": 4,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "9972d255-00f5-4bb5-945d-d2858a4c7e42",
+            "kind": "quiz",
+            "title": "In “एतत् मम पुस्तकम् अस्ति,” what does “मम” mean?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "My"
+                },
+                {
+                    "id": "b",
+                    "label": "Book"
+                },
+                {
+                    "id": "c",
+                    "label": "School"
+                }
+            ],
+            "correct": "a",
+            "explain": "मम (mama) means “my.” The sentence is translated in the source as “This is my book.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "People and pronouns",
+                "source_reference": "Entry 14",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_possessive:mama",
+                "educational_value": 93,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "placevalue",
+            "topic_name": "Place-value mathematics",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "99ad6e5e-90a0-5bb6-9d35-a7b08389d1d7",
+            "kind": "quiz",
+            "title": "In a place-value system, the value of a digit depends on…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Its position"
+                },
+                {
+                    "id": "b",
+                    "label": "Its colour"
+                },
+                {
+                    "id": "c",
+                    "label": "Its handwriting style"
+                }
+            ],
+            "correct": "a",
+            "explain": "Indian mathematical traditions played a major role in developing and transmitting decimal place-value notation, including the use of zero as a number."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "textiles",
+            "topic_name": "Textiles and dyes",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "9b76048b-057d-555d-8b9a-b170c8fd3e49",
+            "kind": "choice",
+            "title": "What makes a craft economically important?",
+            "subtitle": "Connect textiles and dyes to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "aryabhata",
+            "topic_name": "Aryabhata",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "9e7e616a-05c3-5556-967a-655c622188fa",
+            "kind": "reveal",
+            "title": "Aryabhata",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Aryabhata wrote the Aryabhatiya in 499 CE, covering mathematics and astronomy."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_today_tomorrow",
+            "topic_name": "Sanskrit relative days",
+            "min_grade": 4,
+            "max_grade": 9,
+            "language": "en",
+            "active": true,
+            "id": "a19744c9-5ea6-4629-9a7e-8b4386502c98",
+            "kind": "quiz",
+            "title": "Which Sanskrit word means “tomorrow”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "अद्य"
+                },
+                {
+                    "id": "b",
+                    "label": "श्वः"
+                },
+                {
+                    "id": "c",
+                    "label": "ह्यः"
+                }
+            ],
+            "correct": "b",
+            "explain": "श्वः (śvaḥ) means “tomorrow.” In the source, अद्य means “today” and ह्यः means “yesterday.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Time",
+                "source_reference": "Entries 47–49",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_today_tomorrow:shvah",
+                "educational_value": 95,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_student",
+            "topic_name": "Sanskrit student vocabulary",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "a49a6227-d19b-4387-9868-9d99d44ee4f4",
+            "kind": "quiz",
+            "title": "Which Sanskrit word in the source means “student”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "छात्रः"
+                },
+                {
+                    "id": "b",
+                    "label": "पाठः"
+                },
+                {
+                    "id": "c",
+                    "label": "लेखनी"
+                }
+            ],
+            "correct": "a",
+            "explain": "छात्रः (chātraḥ) means “student.” The source also gives छात्रा for a female student.",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "School",
+                "source_reference": "Entries 25–26",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_student:chatrah",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "ironpillar",
+            "topic_name": "Metallurgy and the Iron Pillar",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "a6db7f9b-faca-5549-bf36-8c700c72d010",
+            "kind": "reveal",
+            "title": "Metallurgy and the Iron Pillar",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "The Iron Pillar in Delhi is notable for its ancient ironworking and unusual resistance to corrosion."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "critical_heritage",
+            "topic_name": "Critical heritage study",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "aad222fb-c705-4a71-9b40-093946f6bbbd",
+            "kind": "action",
+            "title": "Take one ancient maxim and separate its timeless principle from its historical assumptions.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I'll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Modern adaptation",
+                "source_reference": "Method for evidence-conscious study of historical maxims",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "roots:critical_heritage:principle_vs_context",
+                "educational_value": 100,
+                "confidence": 0.98,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "stepwells",
+            "topic_name": "Stepwells",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "aefb4349-d7d3-5693-8c91-dde6ac946b87",
+            "kind": "quiz",
+            "title": "Stepwells were primarily connected with…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Water access and storage"
+                },
+                {
+                    "id": "b",
+                    "label": "Space travel"
+                },
+                {
+                    "id": "c",
+                    "label": "Ocean navigation"
+                }
+            ],
+            "correct": "a",
+            "explain": "Stepwells in parts of India combined water access, architecture and adaptation to seasonal conditions."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "chanakya_kautilya",
+            "topic_name": "Chanakya and Kautilya",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "c0780a2e-e149-40ae-bc4a-3861f9ae9269",
+            "kind": "reveal",
+            "title": "How is Chanakya traditionally connected with Kautilya?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Chanakya is traditionally identified with Kautilya and Vishnugupta, the name associated with the Arthashastra tradition.",
+            "meta": {
+                "source_title": "Canakyaniti",
+                "source_section": "About the author",
+                "source_reference": "Traditional identification with Kautilya and Vishnugupta",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "roots:chanakya_kautilya:traditional_identity",
+                "educational_value": 91,
+                "confidence": 0.95,
+                "evidence_class": "historical_documentation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "ecology",
+            "topic_name": "Traditional ecological knowledge",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "c7affd61-32ef-531a-a451-d216a5a5a139",
+            "kind": "quiz",
+            "title": "Traditional ecological knowledge is most responsibly approached by…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Studying context and testing evidence"
+                },
+                {
+                    "id": "b",
+                    "label": "Accepting every claim automatically"
+                },
+                {
+                    "id": "c",
+                    "label": "Rejecting all tradition automatically"
+                }
+            ],
+            "correct": "a",
+            "explain": "Communities across India developed local knowledge about water, crops, forests and seasons; such knowledge should be studied alongside modern evidence."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_apology",
+            "topic_name": "Sanskrit apology expression",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "c93b8dd7-fd15-4910-994c-c64e43c05e13",
+            "kind": "quiz",
+            "title": "When might you say “क्षम्यताम्”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "After making a mistake"
+                },
+                {
+                    "id": "b",
+                    "label": "When naming a number"
+                },
+                {
+                    "id": "c",
+                    "label": "When describing the sky"
+                }
+            ],
+            "correct": "a",
+            "explain": "क्षम्यताम् (kṣamyatām) means “please forgive me” or “sorry.” The source uses it after acknowledging a mistake.",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Greetings and courtesy",
+                "source_reference": "Entry 8",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_apology:kshamyatam",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "oceantrade",
+            "topic_name": "Indian Ocean trade",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "cbb6f874-d8cb-5ede-91cd-520459093c79",
+            "kind": "choice",
+            "title": "What travels besides goods in trade networks?",
+            "subtitle": "Connect indian ocean trade to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_morning",
+            "topic_name": "Sanskrit morning greeting",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "cbb8331a-6cc8-435a-b1cc-6cb20fd675d4",
+            "kind": "quiz",
+            "title": "Which expression means “good morning”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "सुप्रभातम्"
+                },
+                {
+                    "id": "b",
+                    "label": "पुनर्मिलामः"
+                },
+                {
+                    "id": "c",
+                    "label": "क्षम्यताम्"
+                }
+            ],
+            "correct": "a",
+            "explain": "सुप्रभातम् (suprabhātam) means “good morning.” It can be used as a morning greeting.",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Greetings",
+                "source_reference": "Entry 6",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_morning:suprabhatam",
+                "educational_value": 89,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sushruta",
+            "topic_name": "Sushruta tradition",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "cd1e02c9-6093-5005-8150-c60154e19949",
+            "kind": "action",
+            "title": "Respect historical context while separating it from modern clinical evidence.",
+            "subtitle": "A tiny action linked to sushruta tradition.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "cultural_confidence",
+            "topic_name": "Informed cultural confidence",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "d031100b-5e65-46ef-80ef-7d7c2a649c87",
+            "kind": "reveal",
+            "title": "What is informed cultural confidence?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Knowing your heritage well enough to appreciate achievements, examine limitations and distinguish historical evidence from exaggeration.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Historical text study",
+                "source_reference": "Modern evidence-conscious approach to heritage",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "roots:cultural_confidence:knowledge_not_exaggeration",
+                "educational_value": 99,
+                "confidence": 0.98,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "ecology",
+            "topic_name": "Traditional ecological knowledge",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "d05dd922-bd80-529f-87e6-89cd21f4eeb5",
+            "kind": "action",
+            "title": "Compare one local practice with what modern science says about it.",
+            "subtitle": "A tiny action linked to traditional ecological knowledge.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sushruta",
+            "topic_name": "Sushruta tradition",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "d180e49c-4850-500f-b7af-21fa7ab2c489",
+            "kind": "choice",
+            "title": "How should historical medical knowledge be studied today?",
+            "subtitle": "Connect sushruta tradition to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "arthashastra_difference",
+            "topic_name": "Chanakya Niti and Arthashastra",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "d2401af5-127f-4747-a0fd-7d9bbdca3c08",
+            "kind": "quiz",
+            "title": "Are Chanakya Niti and the Arthashastra simply the same text?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "No"
+                },
+                {
+                    "id": "b",
+                    "label": "Yes, exactly identical"
+                },
+                {
+                    "id": "c",
+                    "label": "They are modern novels"
+                }
+            ],
+            "correct": "a",
+            "explain": "They are distinct works or textual traditions. Chanakya Niti is a collection of maxims, while the Arthashastra is a much larger treatise on governance and statecraft.",
+            "meta": {
+                "source_title": "Canakyaniti and Kautilya Arthashastra",
+                "source_section": "Introductions",
+                "source_reference": "Distinct descriptions of the two works",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "roots:arthashastra_difference:distinct_texts",
+                "educational_value": 98,
+                "confidence": 0.98,
+                "evidence_class": "historical_documentation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "ironpillar",
+            "topic_name": "Metallurgy and the Iron Pillar",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "d7d22ef6-2168-5e3c-b8a9-4e1ebd4f8fa3",
+            "kind": "choice",
+            "title": "What should we study in historical technology?",
+            "subtitle": "Connect metallurgy and the iron pillar to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "quote_verification",
+            "topic_name": "Verifying historical quotes",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "d8e164d8-d1f5-4002-85ef-ff0105622ae8",
+            "kind": "action",
+            "title": "Before sharing a 'Chanakya quote', check whether a traceable text or translation supports it.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I'll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already verify quotes"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Canakyaniti",
+                "source_section": "Editions and translated verses",
+                "source_reference": "Textual tradition contains traceable editions and translations",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "roots:quote_verification:trace_source",
+                "educational_value": 100,
+                "confidence": 0.99,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "architecture",
+            "topic_name": "Temple architecture",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "dac100a1-3eaa-599b-978a-c3fa1d4c3f49",
+            "kind": "quiz",
+            "title": "Temple architecture in India is…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Regionally diverse"
+                },
+                {
+                    "id": "b",
+                    "label": "Identical everywhere"
+                },
+                {
+                    "id": "c",
+                    "label": "Made only from wood"
+                }
+            ],
+            "correct": "a",
+            "explain": "Indian temple architecture developed diverse regional forms, materials and engineering solutions over centuries."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "indus",
+            "topic_name": "Indus urban planning",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "ddab5704-0633-515f-81c3-975d29570ac0",
+            "kind": "action",
+            "title": "Observe how water leaves a street or building during rain.",
+            "subtitle": "A tiny action linked to indus urban planning.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "ironpillar",
+            "topic_name": "Metallurgy and the Iron Pillar",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "e12d1211-ab26-5efb-b265-a3d5a7bd908b",
+            "kind": "action",
+            "title": "Ask what materials, processes and environment produced the result.",
+            "subtitle": "A tiny action linked to metallurgy and the iron pillar.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_sun_moon",
+            "topic_name": "Sanskrit Sun and Moon vocabulary",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "e2f49522-8745-41b8-bd3d-c845d948754b",
+            "kind": "quiz",
+            "title": "Which Sanskrit word means “Sun”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "सूर्यः"
+                },
+                {
+                    "id": "b",
+                    "label": "चन्द्रः"
+                },
+                {
+                    "id": "c",
+                    "label": "तारा"
+                }
+            ],
+            "correct": "a",
+            "explain": "सूर्यः (sūryaḥ) means “Sun.” The source gives चन्द्रः for “Moon” and तारा for “star.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Nature",
+                "source_reference": "Entries 64–66",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_sun_moon:suryah",
+                "educational_value": 93,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sushruta",
+            "topic_name": "Sushruta tradition",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "e5505bd3-229c-5e30-a5a0-89ec71bddb26",
+            "kind": "quiz",
+            "title": "The Sushruta Samhita is linked to the history of…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Medicine and surgery"
+                },
+                {
+                    "id": "b",
+                    "label": "Navigation satellites"
+                },
+                {
+                    "id": "c",
+                    "label": "Printing presses"
+                }
+            ],
+            "correct": "a",
+            "explain": "The Sushruta Samhita is an important historical Sanskrit medical text associated with surgical knowledge and medical practice."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_greetings",
+            "topic_name": "Sanskrit greetings",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "e8db00f8-df22-4f7d-873c-6bb96929a472",
+            "kind": "quiz",
+            "title": "What does “नमस्ते” mean?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Hello"
+                },
+                {
+                    "id": "b",
+                    "label": "Thank you"
+                },
+                {
+                    "id": "c",
+                    "label": "Tomorrow"
+                }
+            ],
+            "correct": "a",
+            "explain": "नमस्ते (namaste) is used as a greeting meaning “hello.” The source uses it in “नमस्ते, भवान् कथम् अस्ति?”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Greetings",
+                "source_reference": "Entry 1",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_greetings:namaste",
+                "educational_value": 90,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_family",
+            "topic_name": "Sanskrit family vocabulary",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "e90dc7e6-74ad-40e0-8c46-56fa859ed510",
+            "kind": "quiz",
+            "title": "Which Sanskrit word means “family”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "परिवारः"
+                },
+                {
+                    "id": "b",
+                    "label": "विद्यालयः"
+                },
+                {
+                    "id": "c",
+                    "label": "समयः"
+                }
+            ],
+            "correct": "a",
+            "explain": "परिवारः (parivāraḥ) means “family.” The source uses it in “मम परिवारः मम बलम् अस्ति” — “My family is my strength.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Family",
+                "source_reference": "Entry 20",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_family:parivarah",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_earth_sky",
+            "topic_name": "Sanskrit Earth and sky vocabulary",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "f005984b-5c3e-48c9-a54a-49322ca01343",
+            "kind": "quiz",
+            "title": "Which pair means “Earth” and “sky”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "पृथ्वी — आकाशः"
+                },
+                {
+                    "id": "b",
+                    "label": "सूर्यः — चन्द्रः"
+                },
+                {
+                    "id": "c",
+                    "label": "नदी — वर्षा"
+                }
+            ],
+            "correct": "a",
+            "explain": "पृथ्वी (pṛthvī) means “Earth,” while आकाशः (ākāśaḥ) means “sky.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Nature",
+                "source_reference": "Entries 62–63",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_earth_sky:prithvi_akashah",
+                "educational_value": 94,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "ironpillar",
+            "topic_name": "Metallurgy and the Iron Pillar",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "f065a90f-87ba-519b-83f4-40c2390d8365",
+            "kind": "quiz",
+            "title": "The Iron Pillar is often discussed in relation to…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Metallurgy"
+                },
+                {
+                    "id": "b",
+                    "label": "Marine biology"
+                },
+                {
+                    "id": "c",
+                    "label": "Aeronautics"
+                }
+            ],
+            "correct": "a",
+            "explain": "The Iron Pillar in Delhi is notable for its ancient ironworking and unusual resistance to corrosion."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "cabinet_government",
+            "topic_name": "Cabinet government in 1946",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "f48add3e-d031-4a07-908e-e444198d96cf",
+            "kind": "reveal",
+            "title": "How was the Interim Government intended to operate?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "It was intended to function as a cabinet government, rather than merely as separate departmental heads operating under the Viceroy.",
+            "meta": {
+                "source_title": "Interim Government of 1946",
+                "source_section": "Interim Government",
+                "source_reference": "Pasted markdown.md",
+                "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/interim-government-of-1946",
+                "concept_key": "roots:cabinet_government:interim_model",
+                "educational_value": 88,
+                "confidence": 0.98,
+                "evidence_class": "historical_documentation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "literature",
+            "topic_name": "Classical literature",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "f7044891-328a-564f-9574-0af275394774",
+            "kind": "quiz",
+            "title": "India’s literary past is best described as…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Multilingual and diverse"
+                },
+                {
+                    "id": "b",
+                    "label": "Written in only one language"
+                },
+                {
+                    "id": "c",
+                    "label": "Entirely modern"
+                }
+            ],
+            "correct": "a",
+            "explain": "India’s literary traditions include works in Sanskrit, Tamil, Pali, Prakrit and many other languages across long periods."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "sanskrit_knowledge",
+            "topic_name": "Sanskrit knowledge vocabulary",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "f92776cb-39a1-41b7-80c5-9034d16ec7aa",
+            "kind": "quiz",
+            "title": "What does “ज्ञानम्” mean?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Knowledge"
+                },
+                {
+                    "id": "b",
+                    "label": "Memory"
+                },
+                {
+                    "id": "c",
+                    "label": "Practice"
+                }
+            ],
+            "correct": "a",
+            "explain": "ज्ञानम् (jñānam) means “knowledge.” The source connects it with the idea of illuminating life.",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Learning and thinking",
+                "source_reference": "Entry 33",
+                "source_url": "",
+                "concept_key": "roots:sanskrit_knowledge:jnanam",
+                "educational_value": 89,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "aryabhata",
+            "topic_name": "Aryabhata",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "f9a19a13-882c-500d-be45-8827c0d93871",
+            "kind": "quiz",
+            "title": "Aryabhata is especially associated with…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Mathematics and astronomy"
+                },
+                {
+                    "id": "b",
+                    "label": "Steam engines"
+                },
+                {
+                    "id": "c",
+                    "label": "Modern photography"
+                }
+            ],
+            "correct": "a",
+            "explain": "Aryabhata wrote the Aryabhatiya in 499 CE, covering mathematics and astronomy."
+        },
+        {
+            "pillar": "roots",
+            "pillar_name": "Roots & India",
+            "label": "ROOTS & INDIA",
+            "topic": "timeless_claim",
+            "topic_name": "Testing timeless claims",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "fe15229f-f6b5-468c-ab97-9f3973134304",
+            "kind": "quiz",
+            "title": "When someone calls an ancient teaching 'timeless', what should that mean?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Its principle still survives careful testing"
+                },
+                {
+                    "id": "b",
+                    "label": "Every sentence must be copied"
+                },
+                {
+                    "id": "c",
+                    "label": "It cannot be questioned"
+                }
+            ],
+            "correct": "a",
+            "explain": "A principle earns modern relevance when it remains useful under current evidence and ethics—not simply because it is old.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Modern adaptation",
+                "source_reference": "Evidence-conscious evaluation of ancient wisdom",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "roots:timeless_claim:test_relevance",
+                "educational_value": 100,
+                "confidence": 0.99,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        }
+    ],
+    "sha256": "c2a158d1c25af55c17148dcbebc1c52b710d10dbd271ea3da59079cd830c976d",
+    "signature_alg": "Ed25519",
+    "signing_key_id": "76f1f50a291c1ec5",
+    "signature": "RC3_hdDdUnAc3VcjRJNKaBISvD5k3HxOFiPjD_YhlsYh3ukYZFB-icOLbi-dO4Ifg6bte6OedKCRj6xSo-BsAw"
+}

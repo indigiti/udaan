@@ -1,0 +1,3449 @@
+{
+    "schema_version": 1,
+    "pack_id": "think-001",
+    "pillar": "think",
+    "pillar_name": "Think & Reason",
+    "sequence": 1,
+    "card_count": 104,
+    "bank_version": "2026.09.import20260904011537",
+    "cards": [
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "cause",
+            "topic_name": "Cause and effect",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "04a58c7f-9c2f-5107-a903-3739b8d52f7f",
+            "kind": "choice",
+            "title": "What is the difference between “after” and “because”?",
+            "subtitle": "Connect cause and effect to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "evidence",
+            "topic_name": "Evidence vs opinion",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "04b61865-19bc-5c1d-900c-90d1c3e99dd0",
+            "kind": "choice",
+            "title": "What should you ask before accepting a strong claim?",
+            "subtitle": "Connect evidence vs opinion to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "problem_solving",
+            "topic_name": "Problem-solving",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "064c3e64-f8a8-498b-8a29-69b2572512bf",
+            "kind": "reveal",
+            "title": "What are two basic parts of problem-solving?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "First identify the problem clearly, then look for possible solutions.",
+            "meta": {
+                "source_title": "Life skills statements",
+                "source_section": "Statement 13",
+                "source_reference": "Problem-solving involves identifying a problem and finding possible solutions.",
+                "source_url": "",
+                "concept_key": "think:problem_solving:identify_and_solve",
+                "educational_value": 95,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "https_limits",
+            "topic_name": "Limits of HTTPS",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "06b67580-05fb-4fd7-b8d7-f54f77b8af31",
+            "kind": "quiz",
+            "title": "A website uses HTTPS. What can you safely conclude?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Its connection can be protected in transit"
+                },
+                {
+                    "id": "b",
+                    "label": "The website must be legitimate"
+                },
+                {
+                    "id": "c",
+                    "label": "The website has no vulnerabilities"
+                }
+            ],
+            "correct": "a",
+            "explain": "HTTPS protects traffic in transit, but it does not guarantee that the website itself is legitimate or free from vulnerabilities.",
+            "meta": {
+                "source_title": "Supplied web security notes",
+                "source_section": "HTTPS limitations",
+                "source_reference": "Items 28–30",
+                "source_url": "",
+                "concept_key": "think:https_limits:interpretation",
+                "educational_value": 99,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "systems",
+            "topic_name": "Systems thinking",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "07609056-50f8-58e7-9e8f-25435da270c7",
+            "kind": "choice",
+            "title": "Where do feedback loops appear?",
+            "subtitle": "Connect systems thinking to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "deposit_vs_bond",
+            "topic_name": "Green deposits and green bonds",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "07874fe8-4904-43cd-894f-456360ce31bf",
+            "kind": "quiz",
+            "title": "What is the key difference between a green deposit and a green bond?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "A bond is a debt security"
+                },
+                {
+                    "id": "b",
+                    "label": "A deposit is always a share"
+                },
+                {
+                    "id": "c",
+                    "label": "They are exactly the same instrument"
+                }
+            ],
+            "correct": "a",
+            "explain": "Green deposits are deposits received by regulated entities, while green bonds are debt securities issued to raise funds for eligible green projects.",
+            "meta": {
+                "source_title": "Banks Seek CRR Cut on Green Deposits",
+                "source_section": "Green Deposits",
+                "source_reference": "Pasted markdown.md",
+                "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/banks-seek-crr-cut-on-green-deposits",
+                "concept_key": "think:deposit_vs_bond:financial_instruments",
+                "educational_value": 92,
+                "confidence": 0.98,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "synthetic_media",
+            "topic_name": "AI-generated media",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "0928521e-baa7-409b-b6f7-c5b3552143e8",
+            "kind": "quiz",
+            "title": "A surprising video looks completely real. What should you remember?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Realistic appearance proves it is genuine"
+                },
+                {
+                    "id": "b",
+                    "label": "AI-generated media can look real"
+                },
+                {
+                    "id": "c",
+                    "label": "Videos cannot be artificially generated"
+                }
+            ],
+            "correct": "b",
+            "explain": "AI-generated images, audio and videos can sometimes look or sound real even when they are fake. Appearance alone is not enough to establish authenticity.",
+            "meta": {
+                "source_title": "Internet safety source",
+                "source_section": "AI-generated media",
+                "source_reference": "Item 46",
+                "source_url": "",
+                "concept_key": "think:synthetic_media:appearance_not_proof",
+                "educational_value": 98,
+                "confidence": 1,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "reconnaissance",
+            "topic_name": "Security reconnaissance",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "0f69fb45-2e94-43a7-a095-89544857e8b5",
+            "kind": "quiz",
+            "title": "What is the purpose of reconnaissance in a security assessment?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Gather target information"
+                },
+                {
+                    "id": "b",
+                    "label": "Erase system logs"
+                },
+                {
+                    "id": "c",
+                    "label": "Change user passwords"
+                }
+            ],
+            "correct": "a",
+            "explain": "Reconnaissance is an early assessment stage focused on gathering relevant information about the authorized target.",
+            "meta": {
+                "source_title": "Supplied ethical hacking notes",
+                "source_section": "Reconnaissance",
+                "source_reference": "Items 7–8",
+                "source_url": "",
+                "concept_key": "think:reconnaissance:purpose",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "questions",
+            "topic_name": "Better questions",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "0fdae5e4-fd58-5c35-a325-eb38ee365558",
+            "kind": "choice",
+            "title": "What makes a question productive?",
+            "subtitle": "Connect better questions to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "perspective",
+            "topic_name": "Perspective",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "18218069-5f2e-4a31-83b0-f174c16c8f53",
+            "kind": "quiz",
+            "title": "Before reacting to a problem, what best improves perspective?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Check more than one side"
+                },
+                {
+                    "id": "b",
+                    "label": "Trust the first rumour"
+                },
+                {
+                    "id": "c",
+                    "label": "React immediately"
+                }
+            ],
+            "correct": "a",
+            "explain": "Chanakya Niti values seeing matters in proper perspective. A modern learner can do this by gathering relevant information before judging.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 1",
+                "source_reference": "Verse on understanding matters in proper perspective",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-1",
+                "concept_key": "think:perspective:multiple_sides",
+                "educational_value": 91,
+                "confidence": 0.96,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "systems",
+            "topic_name": "Systems thinking",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "19f9366e-34db-57c8-81e8-e055b67085b7",
+            "kind": "action",
+            "title": "Trace one everyday system: input → process → output.",
+            "subtitle": "A tiny action linked to systems thinking.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "sources",
+            "topic_name": "Source reliability",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "1aed361d-cfda-56e7-818c-abc59eb558e9",
+            "kind": "reveal",
+            "title": "Source reliability",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Reliable claims are easier to trust when the source is identifiable, relevant and supported by evidence."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "questions",
+            "topic_name": "Better questions",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "1b67af5a-ded6-52a8-94fb-6b3d05127ebf",
+            "kind": "action",
+            "title": "Turn one vague question into a specific one today.",
+            "subtitle": "A tiny action linked to better questions.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "overconfidence",
+            "topic_name": "Overconfidence",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "23201986-a9ed-4e3c-aa97-4a3fa20336b0",
+            "kind": "quiz",
+            "title": "What is a danger of excessive confidence?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Ignoring useful warnings"
+                },
+                {
+                    "id": "b",
+                    "label": "Learning faster automatically"
+                },
+                {
+                    "id": "c",
+                    "label": "Always making better choices"
+                }
+            ],
+            "correct": "a",
+            "explain": "Chanakya's warning about excess includes excessive pride. Confidence helps action, but overconfidence can make evidence and feedback easier to ignore.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 3",
+                "source_reference": "Verse 12 on excess and arrogance",
+                "source_url": "https://krishjan.com/en/shloka/chanakya-niti/3/12",
+                "concept_key": "think:overconfidence:ignore_warnings",
+                "educational_value": 96,
+                "confidence": 0.96,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "counterexample",
+            "topic_name": "Counterexamples",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "269debb8-631c-5389-b3bd-df2a0badd6c7",
+            "kind": "reveal",
+            "title": "Counterexamples",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "One valid counterexample can show that a universal claim is false."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "adversity_signal",
+            "topic_name": "Learning from adversity",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "2a78c00f-c870-423f-aafe-ce3970db21ab",
+            "kind": "reveal",
+            "title": "Why can difficult times reveal useful information about relationships?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Support during difficulty can reveal reliability better than promises made when everything is easy. One event is not proof, but repeated behaviour is informative.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 1",
+                "source_reference": "Verses describing testing friends and relatives in adversity",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-1",
+                "concept_key": "think:adversity_signal:relationship_reliability",
+                "educational_value": 92,
+                "confidence": 0.96,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "sources",
+            "topic_name": "Source reliability",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "2c468a33-3c87-5f24-a729-051a5da32627",
+            "kind": "choice",
+            "title": "What makes a source worth checking twice?",
+            "subtitle": "Connect source reliability to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "questions",
+            "topic_name": "Better questions",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "3141ce8e-4e23-5d43-b9c0-5bc5bb6f7219",
+            "kind": "reveal",
+            "title": "Better questions",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Clear questions define what you are trying to understand and make better answers possible."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "appearance_bias",
+            "topic_name": "Appearance bias",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "31801626-a6ed-4442-91dc-b459806440e2",
+            "kind": "quiz",
+            "title": "Which is a better basis for judging someone's ability?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Demonstrated knowledge"
+                },
+                {
+                    "id": "b",
+                    "label": "Looks alone"
+                },
+                {
+                    "id": "c",
+                    "label": "Family status alone"
+                }
+            ],
+            "correct": "a",
+            "explain": "Chanakya Niti repeatedly places learning above appearance or birth. A modern reading rejects inherited status and evaluates people by demonstrated qualities.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 8",
+                "source_reference": "Verses placing learning above beauty and high birth",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-8",
+                "concept_key": "think:appearance_bias:judge_by_ability",
+                "educational_value": 96,
+                "confidence": 0.97,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "systems",
+            "topic_name": "Systems thinking",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "31951dd5-3a18-5dc5-92c1-140ac24c2e91",
+            "kind": "reveal",
+            "title": "Systems thinking",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "In a system, parts interact, so changing one part can create effects elsewhere."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "probability",
+            "topic_name": "Probability thinking",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "32d057ac-1e47-5319-a43f-a6a3de48e092",
+            "kind": "action",
+            "title": "Replace “certain” with a probability when the outcome is uncertain.",
+            "subtitle": "A tiny action linked to probability thinking.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "sources",
+            "topic_name": "Source reliability",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "332701ee-000f-5edb-9482-a0508595b76c",
+            "kind": "action",
+            "title": "Before sharing a claim, find its original source.",
+            "subtitle": "A tiny action linked to source reliability.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "probability",
+            "topic_name": "Probability thinking",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "3383aa0f-32d7-5d81-a76b-ec2223eb1eba",
+            "kind": "choice",
+            "title": "How should probability affect confidence?",
+            "subtitle": "Connect probability thinking to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "cause",
+            "topic_name": "Cause and effect",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "34299bd6-1a07-5464-9a3f-c90e108df635",
+            "kind": "action",
+            "title": "For one event, list more than one possible cause.",
+            "subtitle": "A tiny action linked to cause and effect.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "source_value",
+            "topic_name": "Value of information",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "397e41e2-3f6b-41a5-8d52-9a3940895770",
+            "kind": "reveal",
+            "title": "Can a useful idea come from an imperfect source?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Yes, but test the idea independently. Chanakya uses the metaphor of extracting something valuable from an unlikely place; modern reasoning adds verification.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 1",
+                "source_reference": "Verse about extracting something valuable even from an undesirable source",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-1",
+                "concept_key": "think:source_value:test_useful_idea",
+                "educational_value": 97,
+                "confidence": 0.96,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "scanner_results",
+            "topic_name": "Interpreting scanner results",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "39cc54d9-6b09-4638-a284-f4366ecf1d44",
+            "kind": "quiz",
+            "title": "What is a false negative in security testing?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "A real vulnerability is missed"
+                },
+                {
+                    "id": "b",
+                    "label": "A safe system is flagged"
+                },
+                {
+                    "id": "c",
+                    "label": "A test is authorized"
+                }
+            ],
+            "correct": "a",
+            "explain": "A false negative occurs when a security test fails to identify a vulnerability that actually exists.",
+            "meta": {
+                "source_title": "Supplied ethical hacking notes",
+                "source_section": "Vulnerability scanning",
+                "source_reference": "Item 21",
+                "source_url": "",
+                "concept_key": "think:scanner_results:false_negative",
+                "educational_value": 94,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "evidence",
+            "topic_name": "Evidence vs opinion",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "411e8704-f451-527c-9662-18b436841839",
+            "kind": "reveal",
+            "title": "Evidence vs opinion",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Evidence can be checked; an opinion expresses a judgement or preference."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "defense_in_depth",
+            "topic_name": "Layered cloud security",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "42f3e275-b41a-41a4-91f7-cf9f4193c3c2",
+            "kind": "quiz",
+            "title": "Which approach best matches effective cloud security?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Rely on one security control"
+                },
+                {
+                    "id": "b",
+                    "label": "Combine multiple security controls"
+                },
+                {
+                    "id": "c",
+                    "label": "Avoid continuous assessment"
+                }
+            ],
+            "correct": "b",
+            "explain": "Effective cloud security combines identity controls, least privilege, encryption, secure configuration, monitoring, backups, vulnerability management and continuous assessment.",
+            "meta": {
+                "source_title": "Cloud security notes",
+                "source_section": "Effective cloud security",
+                "source_reference": "Item 50",
+                "source_url": "",
+                "concept_key": "think:defense_in_depth:combined_controls",
+                "educational_value": 99,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "counterexample",
+            "topic_name": "Counterexamples",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "4e449d46-ca22-5c89-b3d0-6efd8a9c0706",
+            "kind": "action",
+            "title": "When someone says “always,” try to find one exception.",
+            "subtitle": "A tiny action linked to counterexamples.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "cause",
+            "topic_name": "Cause and effect",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "4e6ece1a-3ad3-5c6a-9957-eda1f12ba30f",
+            "kind": "quiz",
+            "title": "What strengthens a cause-and-effect explanation?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "A plausible mechanism"
+                },
+                {
+                    "id": "b",
+                    "label": "A louder opinion"
+                },
+                {
+                    "id": "c",
+                    "label": "A coincidence alone"
+                }
+            ],
+            "correct": "a",
+            "explain": "Good causal explanations identify a mechanism, not just a sequence of events."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "evidence",
+            "topic_name": "Evidence vs opinion",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "4f04a4d6-d7e6-514b-bb84-185829433632",
+            "kind": "action",
+            "title": "Look for evidence and how it was obtained.",
+            "subtitle": "A tiny action linked to evidence vs opinion.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "bias",
+            "topic_name": "Bias awareness",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "4f466944-f804-51a5-933c-957f3412c990",
+            "kind": "action",
+            "title": "Read one credible viewpoint that differs from your first instinct.",
+            "subtitle": "A tiny action linked to bias awareness.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "claim_context",
+            "topic_name": "Claims and context",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "4f8e4cf2-f5d0-4183-9876-b47c0a1160d6",
+            "kind": "action",
+            "title": "When you see a strong quote online, ask what context may be missing.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I'll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already check context"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Textual and translation tradition",
+                "source_reference": "Historical maxims require contextual interpretation",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "think:claim_context:missing_context",
+                "educational_value": 99,
+                "confidence": 0.98,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "tradeoff",
+            "topic_name": "Trade-offs",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "503f1cce-038e-4bbb-9f37-37f056dfb65e",
+            "kind": "reveal",
+            "title": "What is a trade-off?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "A trade-off occurs when gaining or protecting one thing requires giving up some of another. Good judgment makes those costs explicit.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 3",
+                "source_reference": "Verse 10 expresses a hierarchy of sacrifice under pressure",
+                "source_url": "https://krishjan.com/en/shloka/chanakya-niti/3/10",
+                "concept_key": "think:tradeoff:explicit_cost",
+                "educational_value": 98,
+                "confidence": 0.98,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "assumptions",
+            "topic_name": "Hidden assumptions",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "5868c13d-6a8c-5810-9c2d-cf270ba8bb4e",
+            "kind": "action",
+            "title": "Pause once today and name an assumption behind a decision.",
+            "subtitle": "A tiny action linked to hidden assumptions.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "estimate",
+            "topic_name": "Estimation",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "5b4fdabe-2586-5c79-9469-6b3390db1773",
+            "kind": "choice",
+            "title": "Where can estimation save time?",
+            "subtitle": "Connect estimation to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "means_ends",
+            "topic_name": "Means and ends",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "5c3859ca-21f9-466b-a489-e8bb0ea9511f",
+            "kind": "reveal",
+            "title": "Is a good goal enough to justify any method?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "No. Modern ethical reasoning evaluates both goals and methods. A successful outcome does not automatically make harmful or dishonest means acceptable.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Modern ethical adaptation",
+                "source_reference": "Applying ethical limits to pragmatic historical advice",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "think:means_ends:ethical_methods",
+                "educational_value": 100,
+                "confidence": 0.99,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "evidence",
+            "topic_name": "Evidence vs opinion",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "5da3070d-820d-559c-a253-960924f74a27",
+            "kind": "quiz",
+            "title": "Which statement is evidence rather than opinion?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "The thermometer reads 30°C"
+                },
+                {
+                    "id": "b",
+                    "label": "Summer is the best season"
+                },
+                {
+                    "id": "c",
+                    "label": "This book feels inspiring"
+                }
+            ],
+            "correct": "a",
+            "explain": "Evidence can be checked; an opinion expresses a judgement or preference."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "source_verification",
+            "topic_name": "Online source verification",
+            "min_grade": 5,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "6424f86f-5b1f-427d-b755-91c49aabde41",
+            "kind": "action",
+            "title": "Before sharing a surprising online claim, check it against reliable sources.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Internet safety source",
+                "source_section": "Information verification",
+                "source_reference": "Item 47",
+                "source_url": "",
+                "concept_key": "think:source_verification:verify_before_sharing",
+                "educational_value": 98,
+                "confidence": 1,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "tradeoffs",
+            "topic_name": "Trade-offs",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "660accfb-e283-5339-9b2b-2c9125c5c0e3",
+            "kind": "reveal",
+            "title": "Trade-offs",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Many decisions improve one thing while costing something else, such as time, money or convenience."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "moderation",
+            "topic_name": "Moderation",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "66823aef-480f-43c5-80aa-b87cf55276ea",
+            "kind": "quiz",
+            "title": "What is the modern lesson behind Chanakya's warning about excess?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Avoid harmful extremes"
+                },
+                {
+                    "id": "b",
+                    "label": "Never aim high"
+                },
+                {
+                    "id": "c",
+                    "label": "Always choose the minimum"
+                }
+            ],
+            "correct": "a",
+            "explain": "The useful principle is moderation: ambition, generosity and confidence can be good, but extremes can create unintended costs.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 3",
+                "source_reference": "Verse 12 warning against excess",
+                "source_url": "https://krishjan.com/en/shloka/chanakya-niti/3/12",
+                "concept_key": "think:moderation:avoid_extremes",
+                "educational_value": 91,
+                "confidence": 0.96,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "rare_quality",
+            "topic_name": "Recognising rare quality",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "6732daf9-1b60-4595-8ae9-acb5bb642214",
+            "kind": "reveal",
+            "title": "What does the 'not every mountain has a jewel' idea teach today?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Valuable qualities are not guaranteed by appearance, title or location. Look carefully for real skill, character and evidence instead of assuming.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 2",
+                "source_reference": "Verse comparing rare people with pearls and sandalwood",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-2",
+                "concept_key": "think:rare_quality:look_beyond_labels",
+                "educational_value": 90,
+                "confidence": 0.96,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "trust_evidence",
+            "topic_name": "Evidence for trust",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "68381eb3-cccb-4f62-a0c3-c0c04319eabb",
+            "kind": "quiz",
+            "title": "What is stronger evidence that someone is trustworthy?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Consistent actions over time"
+                },
+                {
+                    "id": "b",
+                    "label": "Sweet words once"
+                },
+                {
+                    "id": "c",
+                    "label": "Popularity alone"
+                }
+            ],
+            "correct": "a",
+            "explain": "Chanakya warns about people whose words and actions differ. Modern trust should be based more on patterns of behaviour than flattering language.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 2",
+                "source_reference": "Warning about someone who speaks sweetly but acts harmfully",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-2",
+                "concept_key": "think:trust_evidence:actions_over_words",
+                "educational_value": 95,
+                "confidence": 0.97,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "password_changes",
+            "topic_name": "Password change decisions",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "6c84650c-fc13-40a0-9e61-ae4af9c10a68",
+            "kind": "reveal",
+            "title": "Why aren't routine password changes always helpful?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Routine changes without evidence of compromise can be less useful when they encourage people to choose predictable or weaker passwords.",
+            "meta": {
+                "source_title": "Password security source notes",
+                "source_section": "Password changes",
+                "source_reference": "Item 48",
+                "source_url": "",
+                "concept_key": "think:password_changes:routine_change_tradeoff",
+                "educational_value": 91,
+                "confidence": 0.98,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "sanskrit_decision",
+            "topic_name": "Decision vocabulary",
+            "min_grade": 6,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "6e07c01e-f17d-49e1-97ad-d63bd7006742",
+            "kind": "quiz",
+            "title": "What does “निर्णयः” mean?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Decision"
+                },
+                {
+                    "id": "b",
+                    "label": "Cause"
+                },
+                {
+                    "id": "c",
+                    "label": "Problem"
+                }
+            ],
+            "correct": "a",
+            "explain": "निर्णयः (nirṇayaḥ) means “decision.” The source says a good decision should be made thoughtfully.",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Goals and problem solving",
+                "source_reference": "Entry 98",
+                "source_url": "",
+                "concept_key": "think:sanskrit_decision:nirnayah",
+                "educational_value": 90,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "advice_filter",
+            "topic_name": "Filtering advice",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "6e72d326-381f-410f-86f0-b4f60006a71d",
+            "kind": "quiz",
+            "title": "Before following advice, what question is most useful?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Is it relevant and well-supported?"
+                },
+                {
+                    "id": "b",
+                    "label": "Is it dramatic?"
+                },
+                {
+                    "id": "c",
+                    "label": "Is it popular?"
+                }
+            ],
+            "correct": "a",
+            "explain": "Chanakya Niti values wise counsel, but modern reasoning also asks whether the adviser has relevant knowledge and whether the recommendation is supported.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapters 1 and 2",
+                "source_reference": "Learning, counsel and practical judgment",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-2",
+                "concept_key": "think:advice_filter:relevance_support",
+                "educational_value": 98,
+                "confidence": 0.96,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "assumptions",
+            "topic_name": "Hidden assumptions",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "702839a1-3869-5921-b48a-24be41f1f864",
+            "kind": "choice",
+            "title": "What can an unnoticed assumption change?",
+            "subtitle": "Connect hidden assumptions to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "tradeoffs",
+            "topic_name": "Trade-offs",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "718a9430-ecec-5fcf-a545-e5fd26a95dbe",
+            "kind": "action",
+            "title": "For one decision, write one benefit and one cost.",
+            "subtitle": "A tiny action linked to trade-offs.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "reconnaissance",
+            "topic_name": "Security reconnaissance",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "729aa2e6-e8d9-40bb-8142-d64b61383f58",
+            "kind": "quiz",
+            "title": "Which reconnaissance type directly interacts with target infrastructure?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Active reconnaissance"
+                },
+                {
+                    "id": "b",
+                    "label": "Passive reconnaissance"
+                },
+                {
+                    "id": "c",
+                    "label": "Public documentation"
+                }
+            ],
+            "correct": "a",
+            "explain": "Active reconnaissance directly interacts with target infrastructure, making it more detectable than passive reconnaissance.",
+            "meta": {
+                "source_title": "Supplied ethical hacking notes",
+                "source_section": "Reconnaissance",
+                "source_reference": "Items 9–10",
+                "source_url": "",
+                "concept_key": "think:reconnaissance:active_vs_passive",
+                "educational_value": 93,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "correlation",
+            "topic_name": "Correlation and causation",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "736afa42-471a-5f7e-8990-d6b5a9aea4b1",
+            "kind": "action",
+            "title": "Ask what other factors could explain the pattern.",
+            "subtitle": "A tiny action linked to correlation and causation.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "heritage_platform",
+            "topic_name": "Heritage through multiple formats",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "73e66e0e-e0fc-491a-a170-810ecbe9b737",
+            "kind": "quiz",
+            "title": "Why do the World Nomad Games include sports, culture and research?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "To preserve heritage in several ways"
+                },
+                {
+                    "id": "b",
+                    "label": "To replace all modern sports"
+                },
+                {
+                    "id": "c",
+                    "label": "To focus only on competition results"
+                }
+            ],
+            "correct": "a",
+            "explain": "Combining traditional games, cultural expression and research lets the event celebrate living traditions while also documenting and studying nomadic heritage.",
+            "meta": {
+                "source_title": "6th World Nomad Games",
+                "source_section": "Three Major Components",
+                "source_reference": "Pasted markdown.md",
+                "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/6th-world-nomad-games",
+                "concept_key": "think:heritage_platform:multiple_formats",
+                "educational_value": 93,
+                "confidence": 0.95,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "attack_surface",
+            "topic_name": "Attack surface mapping",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "7592e70c-c48a-4859-916d-ff262e935994",
+            "kind": "reveal",
+            "title": "What does attack surface mapping identify?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "It identifies exposed assets such as systems, applications, domains and services that may form part of an authorized target's attack surface.",
+            "meta": {
+                "source_title": "Supplied ethical hacking notes",
+                "source_section": "Attack surface and scanning",
+                "source_reference": "Item 13",
+                "source_url": "",
+                "concept_key": "think:attack_surface:exposed_assets",
+                "educational_value": 90,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "scanner_results",
+            "topic_name": "Interpreting scanner results",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "78bd2cb7-b7c6-428d-ae0a-f25e36fd3e65",
+            "kind": "quiz",
+            "title": "Why should vulnerability scanner findings be validated?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "They can include false positives"
+                },
+                {
+                    "id": "b",
+                    "label": "They are always harmless"
+                },
+                {
+                    "id": "c",
+                    "label": "They never identify weaknesses"
+                }
+            ],
+            "correct": "a",
+            "explain": "Automated scanner results can contain false positives, so a reported weakness may require careful validation before it is treated as confirmed.",
+            "meta": {
+                "source_title": "Supplied ethical hacking notes",
+                "source_section": "Vulnerability scanning",
+                "source_reference": "Items 19–20",
+                "source_url": "",
+                "concept_key": "think:scanner_results:false_positives",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "sanskrit_problem_solution",
+            "topic_name": "Problem and solution vocabulary",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "78e3285e-c01c-4302-b0e7-df283b1d58af",
+            "kind": "quiz",
+            "title": "Which pair means “problem” and “solution”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "समस्या — समाधानम्"
+                },
+                {
+                    "id": "b",
+                    "label": "कारणम् — परिणामः"
+                },
+                {
+                    "id": "c",
+                    "label": "प्रश्नः — उत्तरम्"
+                }
+            ],
+            "correct": "a",
+            "explain": "समस्या (samasyā) means “problem,” and समाधानम् (samādhānam) means “solution.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Goals and problem solving",
+                "source_reference": "Entries 99–100",
+                "source_url": "",
+                "concept_key": "think:sanskrit_problem_solution:samasya_samadhanam",
+                "educational_value": 95,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "belief_update",
+            "topic_name": "Updating beliefs",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "79b0e2de-ded9-4127-a051-a19662262c94",
+            "kind": "action",
+            "title": "Find one belief today that you could test with better evidence.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I'll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 1",
+                "source_reference": "Opening goal of understanding actions and matters correctly",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-1",
+                "concept_key": "think:belief_update:test_assumptions",
+                "educational_value": 90,
+                "confidence": 0.93,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "counterexample",
+            "topic_name": "Counterexamples",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "7a440019-c721-5874-ba74-9ab830b5ea97",
+            "kind": "quiz",
+            "title": "Which claim is easiest to challenge with one counterexample?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "All birds can fly"
+                },
+                {
+                    "id": "b",
+                    "label": "Some birds migrate"
+                },
+                {
+                    "id": "c",
+                    "label": "Many birds have feathers"
+                }
+            ],
+            "correct": "a",
+            "explain": "One valid counterexample can show that a universal claim is false."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "long_term",
+            "topic_name": "Long-term thinking",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "7eb26e3c-474a-468a-89bd-44474aac9ac7",
+            "kind": "reveal",
+            "title": "Why can protecting long-term value require saying no now?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "A short-term gain can damage something more valuable later. Chanakya's hierarchy of priorities encourages comparing immediate benefits with lasting consequences.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapters 1 and 3",
+                "source_reference": "Protecting higher priorities over lower ones",
+                "source_url": "https://krishjan.com/en/shloka/chanakya-niti/3/10",
+                "concept_key": "think:long_term:protect_future_value",
+                "educational_value": 96,
+                "confidence": 0.95,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "decision_making",
+            "topic_name": "Decision-making",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "80c66a91-f1da-44ea-99ce-d68d339e98dd",
+            "kind": "quiz",
+            "title": "Before making a decision, what should you consider?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Choices and consequences"
+                },
+                {
+                    "id": "b",
+                    "label": "Only the easiest option"
+                },
+                {
+                    "id": "c",
+                    "label": "Nothing beyond the moment"
+                }
+            ],
+            "correct": "a",
+            "explain": "Decision-making involves considering your choices and the consequences that may follow from them.",
+            "meta": {
+                "source_title": "Life skills statements",
+                "source_section": "Statement 15",
+                "source_reference": "Decision-making involves considering choices and their consequences.",
+                "source_url": "",
+                "concept_key": "think:decision_making:choices_consequences",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "security_impact",
+            "topic_name": "Security impact",
+            "min_grade": 10,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "85950cb5-b19d-4bc8-a474-8c4628553ec4",
+            "kind": "reveal",
+            "title": "What question does post-exploitation help answer?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Post-exploitation evaluates what impact could result after a successful compromise, helping testers understand the significance of a validated weakness.",
+            "meta": {
+                "source_title": "Supplied ethical hacking notes",
+                "source_section": "Security impact",
+                "source_reference": "Item 31",
+                "source_url": "",
+                "concept_key": "think:security_impact:post_exploitation",
+                "educational_value": 91,
+                "confidence": 0.98,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "crr_liquidity",
+            "topic_name": "CRR and bank liquidity",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "87e3fb99-87d6-45b7-9290-431e701695b0",
+            "kind": "quiz",
+            "title": "If CRR is lowered, what generally happens to banks' lending capacity?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "It can increase"
+                },
+                {
+                    "id": "b",
+                    "label": "It must fall to zero"
+                },
+                {
+                    "id": "c",
+                    "label": "It cannot change"
+                }
+            ],
+            "correct": "a",
+            "explain": "A lower CRR leaves more funds available with banks, which can increase the amount of money they are able to lend.",
+            "meta": {
+                "source_title": "Banks Seek CRR Cut on Green Deposits",
+                "source_section": "Cash Reserve Ratio",
+                "source_reference": "Pasted markdown.md",
+                "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/banks-seek-crr-cut-on-green-deposits",
+                "concept_key": "think:crr_liquidity:lending_capacity",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "decision_criteria",
+            "topic_name": "Decision criteria",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "88041771-f8a3-4a80-a21e-78a89b9599aa",
+            "kind": "action",
+            "title": "Before one choice, write your top two decision criteria.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I'll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already use criteria"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 1",
+                "source_reference": "Distinguishing desirable from undesirable action",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-1",
+                "concept_key": "think:decision_criteria:define_before_choice",
+                "educational_value": 95,
+                "confidence": 0.94,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "sources",
+            "topic_name": "Source reliability",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "89545635-1e66-5373-bae3-7861dcde0569",
+            "kind": "quiz",
+            "title": "Which source is usually strongest for an exam deadline?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "The official exam authority"
+                },
+                {
+                    "id": "b",
+                    "label": "An anonymous forwarded message"
+                },
+                {
+                    "id": "c",
+                    "label": "A random comment"
+                }
+            ],
+            "correct": "a",
+            "explain": "Reliable claims are easier to trust when the source is identifiable, relevant and supported by evidence."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "status_bias",
+            "topic_name": "Status bias",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "8a50d84c-0522-4e59-9e88-5981942db49b",
+            "kind": "reveal",
+            "title": "Why can status be a poor shortcut for judging merit?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Titles, wealth or family background do not prove competence or character. Evaluate what a person knows, does and contributes.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 8",
+                "source_reference": "Verses saying learning can outweigh high birth",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-8",
+                "concept_key": "think:status_bias:merit_over_rank",
+                "educational_value": 94,
+                "confidence": 0.97,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "signal_noise",
+            "topic_name": "Signal and noise",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "8c33497a-4b07-44f1-8d40-55288808447a",
+            "kind": "reveal",
+            "title": "What is the difference between a signal and noise in decision-making?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "A signal contains information relevant to the decision; noise distracts without improving judgment. Patterns of behaviour are often stronger signals than dramatic words.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 2",
+                "source_reference": "Warnings about misleading speech and emphasis on conduct",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-2",
+                "concept_key": "think:signal_noise:behavior_signal",
+                "educational_value": 94,
+                "confidence": 0.94,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "bias",
+            "topic_name": "Bias awareness",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "8ccf058e-a01e-51fc-830a-9e248f861aaa",
+            "kind": "choice",
+            "title": "How can you reduce confirmation bias?",
+            "subtitle": "Connect bias awareness to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "bias",
+            "topic_name": "Bias awareness",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "8d90b385-dd76-57ef-8cef-ba75e4f875f2",
+            "kind": "quiz",
+            "title": "What is a useful response when evidence challenges your view?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Examine the evidence"
+                },
+                {
+                    "id": "b",
+                    "label": "Reject it immediately"
+                },
+                {
+                    "id": "c",
+                    "label": "Attack the person"
+                }
+            ],
+            "correct": "a",
+            "explain": "Bias can influence which information we notice, remember or prefer."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "consensus_tradeoff",
+            "topic_name": "Consensus decision-making",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "90f065bf-fb77-4746-86fb-df8338586c3c",
+            "kind": "quiz",
+            "title": "Why can consensus-based decision-making become difficult in a regional group?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Major disagreements can block common decisions"
+                },
+                {
+                    "id": "b",
+                    "label": "Every decision becomes automatic"
+                },
+                {
+                    "id": "c",
+                    "label": "Members no longer need to negotiate"
+                }
+            ],
+            "correct": "a",
+            "explain": "The SCO works largely through consensus, so serious disagreements among members can make it harder to reach decisions that everyone accepts.",
+            "meta": {
+                "source_title": "26th Shanghai Cooperation Organisation Summit",
+                "source_section": "Key Challenges Facing the SCO",
+                "source_reference": "Pasted markdown.md",
+                "source_url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/26th-shanghai-cooperation-organisation-summit",
+                "concept_key": "think:consensus_tradeoff:shared_decisions",
+                "educational_value": 94,
+                "confidence": 0.97,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "probability",
+            "topic_name": "Probability thinking",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "910b564c-2793-5126-9940-bdaafabb9a81",
+            "kind": "reveal",
+            "title": "Probability thinking",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Probability describes uncertainty; unlikely events can still happen and likely events can still fail to happen."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "cause",
+            "topic_name": "Cause and effect",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "928a9cd0-5560-5662-bb7f-33453aed7ba7",
+            "kind": "reveal",
+            "title": "Cause and effect",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Good causal explanations identify a mechanism, not just a sequence of events."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "good_judgment",
+            "topic_name": "Good judgment",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "96c12927-4082-4acf-8ba5-e1433702fbe5",
+            "kind": "reveal",
+            "title": "What is a useful modern reading of Chanakya's idea of niti?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Use knowledge to distinguish helpful actions from harmful ones. Today, that means checking evidence, consequences and ethics before deciding.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 1",
+                "source_reference": "Opening verses on learning what should and should not be done",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-1",
+                "concept_key": "think:good_judgment:ethical_decision",
+                "educational_value": 92,
+                "confidence": 0.96,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "estimate",
+            "topic_name": "Estimation",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "97d79638-86ac-5e8c-82be-e47e0e5bbda0",
+            "kind": "quiz",
+            "title": "Why estimate before calculating exactly?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "To check whether an answer is reasonable"
+                },
+                {
+                    "id": "b",
+                    "label": "To avoid thinking"
+                },
+                {
+                    "id": "c",
+                    "label": "To make every answer larger"
+                }
+            ],
+            "correct": "a",
+            "explain": "A quick estimate helps detect impossible or suspicious answers before detailed calculation."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "correlation",
+            "topic_name": "Correlation and causation",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "98fe57da-c744-5107-9f90-9d08712bbd67",
+            "kind": "quiz",
+            "title": "If two trends rise together, what can you safely conclude first?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "They are associated"
+                },
+                {
+                    "id": "b",
+                    "label": "One definitely caused the other"
+                },
+                {
+                    "id": "c",
+                    "label": "They must be identical"
+                }
+            ],
+            "correct": "a",
+            "explain": "Two things changing together does not by itself prove that one caused the other."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "truthful_reasoning",
+            "topic_name": "Truthful reasoning",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "9af50f9c-b065-463d-a5f7-5f963001726f",
+            "kind": "quiz",
+            "title": "When speaking with a knowledgeable person, what approach best supports good reasoning?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Use truthful arguments"
+                },
+                {
+                    "id": "b",
+                    "label": "Use louder arguments"
+                },
+                {
+                    "id": "c",
+                    "label": "Hide weak evidence"
+                }
+            ],
+            "correct": "a",
+            "explain": "One Chanakya verse recommends truthful words when dealing with the learned. Today, strong reasoning still depends on honesty about facts and evidence.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 6",
+                "source_reference": "Verse 12 on approaching different people, including the learned with truth",
+                "source_url": "https://krishjan.com/en/shloka/chanakya-niti/6/12",
+                "concept_key": "think:truthful_reasoning:evidence_honesty",
+                "educational_value": 95,
+                "confidence": 0.97,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "assumptions",
+            "topic_name": "Hidden assumptions",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "a0d7ec62-4262-5a92-86a2-ac5316e15530",
+            "kind": "quiz",
+            "title": "What is the best way to handle an important assumption?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Test it"
+                },
+                {
+                    "id": "b",
+                    "label": "Ignore it"
+                },
+                {
+                    "id": "c",
+                    "label": "Repeat it more confidently"
+                }
+            ],
+            "correct": "a",
+            "explain": "An assumption is something treated as true without being tested."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "sender_identity",
+            "topic_name": "Checking sender identity",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "a26c2545-3f57-4a8c-a46d-294d83e5dd73",
+            "kind": "quiz",
+            "title": "A message displays a familiar sender name. Does that prove it is genuine?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Yes, always"
+                },
+                {
+                    "id": "b",
+                    "label": "No"
+                }
+            ],
+            "correct": "b",
+            "explain": "A displayed sender name alone does not prove who actually sent a message. Treat the name as one clue, not proof of authenticity.",
+            "meta": {
+                "source_title": "Internet safety source",
+                "source_section": "Message verification",
+                "source_reference": "Item 13",
+                "source_url": "",
+                "concept_key": "think:sender_identity:display_name_not_proof",
+                "educational_value": 94,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "tradeoffs",
+            "topic_name": "Trade-offs",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "a70e24ab-6ab5-5c8b-bb94-1682a2f2b918",
+            "kind": "choice",
+            "title": "What should a fair comparison include?",
+            "subtitle": "Connect trade-offs to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "estimate",
+            "topic_name": "Estimation",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "ab2d5dec-3b3d-5723-9824-974e32b03ebd",
+            "kind": "action",
+            "title": "Estimate one quantity before using a calculator today.",
+            "subtitle": "A tiny action linked to estimation.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "words_actions",
+            "topic_name": "Words versus actions",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "ac294c86-e370-4a4d-b39f-58a411f5f17e",
+            "kind": "action",
+            "title": "When judging one claim today, compare the person's words with their actions.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I'll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 2",
+                "source_reference": "Warning about sweet words hiding harmful conduct",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-2",
+                "concept_key": "think:words_actions:compare_behavior",
+                "educational_value": 95,
+                "confidence": 0.98,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "resource_priority",
+            "topic_name": "Priority under pressure",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "aef3b9c5-c08e-4251-846c-847b9ad94942",
+            "kind": "reveal",
+            "title": "When resources are limited, what question matters first?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Ask what must be protected first. Chanakya's hierarchy-of-sacrifice idea can be modernised as prioritising safety and essential needs over replaceable possessions.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapters 1 and 3",
+                "source_reference": "Verses on protecting what matters most during danger",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-1",
+                "concept_key": "think:resource_priority:essential_first",
+                "educational_value": 94,
+                "confidence": 0.94,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "questions",
+            "topic_name": "Better questions",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "b0dfb7b8-bdf5-594c-bfde-9d1d26d9817b",
+            "kind": "quiz",
+            "title": "Which question is most useful for learning?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "What evidence would change my mind?"
+                },
+                {
+                    "id": "b",
+                    "label": "Why is everyone wrong?"
+                },
+                {
+                    "id": "c",
+                    "label": "Can I skip the details?"
+                }
+            ],
+            "correct": "a",
+            "explain": "Clear questions define what you are trying to understand and make better answers possible."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "ethical_filter",
+            "topic_name": "Ethical filter",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "b4a573ac-283a-478e-884b-767fc47ac92c",
+            "kind": "quiz",
+            "title": "An old strategy might be effective but unfair. What should modern judgment add?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "An ethical test"
+                },
+                {
+                    "id": "b",
+                    "label": "Blind obedience"
+                },
+                {
+                    "id": "c",
+                    "label": "More secrecy"
+                }
+            ],
+            "correct": "a",
+            "explain": "Effectiveness alone is not enough. Modern decision-making should also consider rights, fairness, safety and harm.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Modern adaptation",
+                "source_reference": "Responsible application of historical strategic advice",
+                "source_url": "https://www.wisdomlib.org/sanskrit/book/30/canakyaniti",
+                "concept_key": "think:ethical_filter:effectiveness_plus_ethics",
+                "educational_value": 100,
+                "confidence": 0.99,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "uncertainty",
+            "topic_name": "Planning under uncertainty",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "b9332ea5-5f22-485f-9586-1dcfe2f5e3fa",
+            "kind": "quiz",
+            "title": "Can good planning remove all uncertainty?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "No"
+                },
+                {
+                    "id": "b",
+                    "label": "Yes, always"
+                },
+                {
+                    "id": "c",
+                    "label": "Only for rich people"
+                }
+            ],
+            "correct": "a",
+            "explain": "Chanakya advises preparation because uncertainty exists. Good planning reduces avoidable risk and improves options; it does not guarantee outcomes.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 1",
+                "source_reference": "Preparation for calamity despite existing wealth",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-1",
+                "concept_key": "think:uncertainty:planning_limits",
+                "educational_value": 99,
+                "confidence": 0.98,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "cause_effect",
+            "topic_name": "Cause and consequence",
+            "min_grade": 6,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "c91523e6-f80d-459e-b5a2-69a9ed7d5fd1",
+            "kind": "quiz",
+            "title": "Which pair means “cause” and “consequence”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "कारणम् — परिणामः"
+                },
+                {
+                    "id": "b",
+                    "label": "समस्या — समाधानम्"
+                },
+                {
+                    "id": "c",
+                    "label": "ज्ञानम् — स्मृतिः"
+                }
+            ],
+            "correct": "a",
+            "explain": "कारणम् (kāraṇam) means “cause” or “reason,” while परिणामः (pariṇāmaḥ) means “result” or “consequence.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Reasoning",
+                "source_reference": "Entries 101–102",
+                "source_url": "",
+                "concept_key": "think:cause_effect:sanskrit_terms",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "correlation",
+            "topic_name": "Correlation and causation",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "c953d4a6-1dd7-50d6-aa13-6a835cca0539",
+            "kind": "choice",
+            "title": "What extra question helps before claiming cause?",
+            "subtitle": "Connect correlation and causation to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "estimate",
+            "topic_name": "Estimation",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "c9e6feb4-8a7a-54b7-b18f-865563df064e",
+            "kind": "reveal",
+            "title": "Estimation",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "A quick estimate helps detect impossible or suspicious answers before detailed calculation."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "authn_authz",
+            "topic_name": "Authentication and authorization",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "cbd2d7fd-2940-474a-8412-569070f97b01",
+            "kind": "quiz",
+            "title": "Which statement correctly separates authentication and authorization?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Both mean exactly the same thing"
+                },
+                {
+                    "id": "b",
+                    "label": "Authentication checks identity; authorization checks permissions"
+                },
+                {
+                    "id": "c",
+                    "label": "Authorization checks identity; authentication encrypts data"
+                }
+            ],
+            "correct": "b",
+            "explain": "Authentication verifies who a user or system is. Authorization determines what that authenticated identity is permitted to do.",
+            "meta": {
+                "source_title": "Supplied web security notes",
+                "source_section": "Authentication and authorization",
+                "source_reference": "Items 19–20",
+                "source_url": "",
+                "concept_key": "think:authn_authz:difference",
+                "educational_value": 98,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "critical_thinking",
+            "topic_name": "Critical thinking",
+            "min_grade": 5,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "cdb506f2-2285-44ac-b3d8-50f482d663fb",
+            "kind": "quiz",
+            "title": "Which skill helps you evaluate information carefully?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Critical thinking"
+                },
+                {
+                    "id": "b",
+                    "label": "Guessing quickly"
+                },
+                {
+                    "id": "c",
+                    "label": "Accepting every claim"
+                }
+            ],
+            "correct": "a",
+            "explain": "Critical thinking helps you examine information carefully rather than accepting a claim without evaluation.",
+            "meta": {
+                "source_title": "Life skills statements",
+                "source_section": "Statement 14",
+                "source_reference": "Critical thinking helps people evaluate information carefully.",
+                "source_url": "",
+                "concept_key": "think:critical_thinking:evaluate_information",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "systems",
+            "topic_name": "Systems thinking",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "d214efdb-78c0-5b34-aedb-dc5011bc5e4a",
+            "kind": "quiz",
+            "title": "Which question is most “systems thinking”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "What else changes if I change this?"
+                },
+                {
+                    "id": "b",
+                    "label": "Who can I blame?"
+                },
+                {
+                    "id": "c",
+                    "label": "Can I ignore the connections?"
+                }
+            ],
+            "correct": "a",
+            "explain": "In a system, parts interact, so changing one part can create effects elsewhere."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "assumptions",
+            "topic_name": "Hidden assumptions",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "d4079439-2d5c-5c3e-8ec7-b85ca32c6447",
+            "kind": "reveal",
+            "title": "Hidden assumptions",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "An assumption is something treated as true without being tested."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "reputation_evidence",
+            "topic_name": "Reputation as evidence",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "d5552607-8e82-465a-82a5-b99c65e13205",
+            "kind": "reveal",
+            "title": "Is reputation enough to prove someone is right?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "No. Reputation can be useful context, but specific claims still need evidence. Even respected people can be mistaken.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 8",
+                "source_reference": "Learning and honour distinguished from mere appearance or status",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-8",
+                "concept_key": "think:reputation_evidence:claim_still_needs_evidence",
+                "educational_value": 98,
+                "confidence": 0.95,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "pattern_behavior",
+            "topic_name": "Behaviour patterns",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "d95f32d0-dd16-4f2b-83fb-35223f27c48b",
+            "kind": "reveal",
+            "title": "Why is a pattern usually more informative than one incident?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Single events can be unusual. Repeated behaviour provides stronger evidence about habits, reliability and likely future conduct.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapters 1 and 2",
+                "source_reference": "Evaluating people through behaviour and adversity",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-1",
+                "concept_key": "think:pattern_behavior:repeated_evidence",
+                "educational_value": 96,
+                "confidence": 0.96,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "strategic_patience",
+            "topic_name": "Strategic patience",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "d963482a-fdf2-4350-832f-2000d40aef31",
+            "kind": "reveal",
+            "title": "When can waiting be better than immediate action?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Waiting can help when you need more information, preparation or a better opportunity. Strategic patience is purposeful waiting, not endless avoidance.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Practical strategy themes",
+                "source_reference": "Modern interpretation of deliberate, prepared action",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-2",
+                "concept_key": "think:strategic_patience:purposeful_waiting",
+                "educational_value": 94,
+                "confidence": 0.91,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "domain_checking",
+            "topic_name": "Website domain checking",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "d996aa2e-7138-4b4c-a8e5-d44e60ce9fb0",
+            "kind": "quiz",
+            "title": "A website looks exactly like a familiar service. What should you check before entering sensitive information?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Its actual domain name"
+                },
+                {
+                    "id": "b",
+                    "label": "Its background colour"
+                },
+                {
+                    "id": "c",
+                    "label": "Its largest picture"
+                }
+            ],
+            "correct": "a",
+            "explain": "Fake websites can closely imitate genuine ones. Checking the actual domain name can help you notice that a convincing-looking page is not the site you expected.",
+            "meta": {
+                "source_title": "Internet safety source",
+                "source_section": "Web safety",
+                "source_reference": "Items 16–17",
+                "source_url": "",
+                "concept_key": "think:domain_checking:fake_site_verification",
+                "educational_value": 99,
+                "confidence": 1,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "counterexample",
+            "topic_name": "Counterexamples",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "deb8bec9-2d0b-5e31-a4ba-82fb22c3dc9f",
+            "kind": "choice",
+            "title": "Why are counterexamples powerful?",
+            "subtitle": "Connect counterexamples to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "learning_mistakes",
+            "topic_name": "Learning from mistakes",
+            "min_grade": 4,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "e16c9049-5514-4715-9839-f1c24d6bd9bf",
+            "kind": "reveal",
+            "title": "Can a mistake have educational value?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Yes. Mistakes can become opportunities for learning when you use them to improve what you do next.",
+            "meta": {
+                "source_title": "Life skills statements",
+                "source_section": "Statement 29",
+                "source_reference": "Mistakes can become opportunities for learning.",
+                "source_url": "",
+                "concept_key": "think:learning_mistakes:opportunity",
+                "educational_value": 94,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "probability",
+            "topic_name": "Probability thinking",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "e1839202-62f3-5fac-8b84-6f8d7d7dda3e",
+            "kind": "quiz",
+            "title": "A 70% chance means…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "The event is likely but not guaranteed"
+                },
+                {
+                    "id": "b",
+                    "label": "The event must happen"
+                },
+                {
+                    "id": "c",
+                    "label": "The event cannot happen"
+                }
+            ],
+            "correct": "a",
+            "explain": "Probability describes uncertainty; unlikely events can still happen and likely events can still fail to happen."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "source_reliability",
+            "topic_name": "Source reliability",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "e9dcf12c-8dd4-4e8e-9498-35d3597734a0",
+            "kind": "action",
+            "title": "Before sharing an online claim, check whether its information is reliable.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I'll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Life skills statements",
+                "source_section": "Statement 42",
+                "source_reference": "Information found online should be checked for reliability.",
+                "source_url": "",
+                "concept_key": "think:source_reliability:check_online_information",
+                "educational_value": 98,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "bias",
+            "topic_name": "Bias awareness",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "eaada710-4f7b-5b6f-b850-d57d6291c4c1",
+            "kind": "reveal",
+            "title": "Bias awareness",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Bias can influence which information we notice, remember or prefer."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "correlation",
+            "topic_name": "Correlation and causation",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "eb58c595-a215-5d9d-bfe1-463a7906238c",
+            "kind": "reveal",
+            "title": "Correlation and causation",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Two things changing together does not by itself prove that one caused the other."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "consequences",
+            "topic_name": "Thinking about consequences",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "ee98158a-91e2-4955-8417-5ac0c39328be",
+            "kind": "action",
+            "title": "Before one important decision today, ask: What could happen next?",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I'll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 1",
+                "source_reference": "Opening emphasis on distinguishing beneficial and harmful action",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-1",
+                "concept_key": "think:consequences:before_action",
+                "educational_value": 93,
+                "confidence": 0.95,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "priority_matrix",
+            "topic_name": "Priority reasoning",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "ef16ecc0-cbf5-420c-9bf8-b83ff6dedfac",
+            "kind": "action",
+            "title": "Rank three tasks by importance and urgency before starting them.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I'll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 3",
+                "source_reference": "Priority hierarchy in verse 10",
+                "source_url": "https://krishjan.com/en/shloka/chanakya-niti/3/10",
+                "concept_key": "think:priority_matrix:rank_tasks",
+                "educational_value": 94,
+                "confidence": 0.94,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "tradeoffs",
+            "topic_name": "Trade-offs",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "fc06ac3a-8ab4-5f90-9939-68fd61b59434",
+            "kind": "quiz",
+            "title": "A trade-off means…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Gaining one benefit while accepting a cost"
+                },
+                {
+                    "id": "b",
+                    "label": "Getting every benefit with no cost"
+                },
+                {
+                    "id": "c",
+                    "label": "Avoiding all choices"
+                }
+            ],
+            "correct": "a",
+            "explain": "Many decisions improve one thing while costing something else, such as time, money or convenience."
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "ai_validation",
+            "topic_name": "AI-assisted security analysis",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "ff10b05e-4e45-4205-a8ed-6c2509e78c57",
+            "kind": "quiz",
+            "title": "Why should AI-assisted security findings still be validated?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Automation does not remove the need for validation"
+                },
+                {
+                    "id": "b",
+                    "label": "AI cannot analyze data"
+                },
+                {
+                    "id": "c",
+                    "label": "Validation is never useful"
+                }
+            ],
+            "correct": "a",
+            "explain": "Automation and AI can help analyze large amounts of security data, but their findings still require careful validation.",
+            "meta": {
+                "source_title": "Supplied ethical hacking notes",
+                "source_section": "Automation and AI",
+                "source_reference": "Item 48",
+                "source_url": "",
+                "concept_key": "think:ai_validation:security_findings",
+                "educational_value": 95,
+                "confidence": 0.98,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "think",
+            "pillar_name": "Think & Reason",
+            "label": "THINK & REASON",
+            "topic": "risk_signal",
+            "topic_name": "Risk signals",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "ff62ed2c-0f30-4f06-82c8-c58068cd2be0",
+            "kind": "quiz",
+            "title": "A risk seems unlikely but could cause serious harm. What is sensible?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Assess and reduce the risk"
+                },
+                {
+                    "id": "b",
+                    "label": "Pretend it cannot happen"
+                },
+                {
+                    "id": "c",
+                    "label": "Panic immediately"
+                }
+            ],
+            "correct": "a",
+            "explain": "Chanakya uses vivid warnings about dangerous environments. Modern risk thinking means assessing probability, impact and reasonable precautions.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 1",
+                "source_reference": "Vivid warning about living with serious danger",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-1",
+                "concept_key": "think:risk_signal:assess_reduce",
+                "educational_value": 96,
+                "confidence": 0.95,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        }
+    ],
+    "sha256": "e9dbcd310779e699edf128c66fd67ffbcdeb7f74ec77c9391cd07599678bb210",
+    "signature_alg": "Ed25519",
+    "signing_key_id": "76f1f50a291c1ec5",
+    "signature": "JAs1zLCuHxp3lAoYu6Hqyuw957gR27Y4iGFcblAjyISnqHjyq8s6ad44JVlMOvW8tQ_GYslnmY41fbdO4SoyCQ"
+}

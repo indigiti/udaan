@@ -1,0 +1,19 @@
+Udaan Live v0.4.2 — Content Import Hotfix Overlay
+
+Upload these files/folders over the existing v0.4.1 installation.
+
+This overlay intentionally DOES NOT contain:
+- data/content/cards.json
+- data/history/
+- data/app-secret.key
+- data/content-admin.key
+- room data
+
+So your live content bank and no-repeat history are preserved.
+
+After upload:
+1. Ensure data/, data/content/, data/content/backups/, data/imports/pending/ are writable.
+2. Open /admin/content-bank.
+3. On first access, Udaan creates data/content-admin.key.
+4. Read that key using Cloudways SFTP/SSH and sign in.
+5. Paste JSON -> Verify JSON -> Import Verified Cards.

@@ -1,0 +1,4115 @@
+{
+    "schema_version": 1,
+    "pack_id": "life-001",
+    "pillar": "life",
+    "pillar_name": "Life Skills",
+    "sequence": 1,
+    "card_count": 112,
+    "bank_version": "2026.09.import20260904011537",
+    "cards": [
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "media",
+            "topic_name": "Media literacy",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "00081711-d8b6-50ca-a549-b61aa0e5486e",
+            "kind": "quiz",
+            "title": "Before forwarding a surprising claim, you should…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Verify it"
+                },
+                {
+                    "id": "b",
+                    "label": "Forward immediately"
+                },
+                {
+                    "id": "c",
+                    "label": "Remove the source"
+                }
+            ],
+            "correct": "a",
+            "explain": "Media literacy means checking sources, context, evidence and incentives before believing or sharing content."
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "resource_reserve",
+            "topic_name": "Keeping reserves",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "0095fb5f-0746-4b27-bfa5-d0814ca32bda",
+            "kind": "reveal",
+            "title": "Why can using every resource immediately be risky?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Unexpected needs may appear later. Keeping some time, money or capacity in reserve can make you more resilient.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 1",
+                "source_reference": "Saving resources for future calamity",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-1",
+                "concept_key": "life:resource_reserve:future_capacity",
+                "educational_value": 96,
+                "confidence": 0.97,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "learning_time",
+            "topic_name": "Finding learning time",
+            "min_grade": 5,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "011db685-ec12-49db-a865-dd152dbce6bc",
+            "kind": "action",
+            "title": "Use five spare minutes today to revise one useful concept.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I'll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already use small gaps"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 2",
+                "source_reference": "Verse encouraging even very small amounts of daily learning",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-2",
+                "concept_key": "life:learning_time:small_gaps",
+                "educational_value": 98,
+                "confidence": 0.99,
+                "evidence_class": "historical_documentation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "credential_theft",
+            "topic_name": "Credential theft",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "01ee0904-74d8-4424-bf48-c286de293dd2",
+            "kind": "quiz",
+            "title": "What can a keylogger capture?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Passwords as they are typed"
+                },
+                {
+                    "id": "b",
+                    "label": "Only public webpages"
+                },
+                {
+                    "id": "c",
+                    "label": "Only forgotten passwords"
+                }
+            ],
+            "correct": "a",
+            "explain": "Keyloggers can capture passwords as users type them, while other malware may steal credentials stored in browsers or applications.",
+            "meta": {
+                "source_title": "Password security source notes",
+                "source_section": "Credential theft",
+                "source_reference": "Items 12-13",
+                "source_url": "",
+                "concept_key": "life:credential_theft:keyloggers",
+                "educational_value": 88,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "security_impact",
+            "topic_name": "Security impact",
+            "min_grade": 10,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "02bc85bd-3344-4699-a7bb-0f3401c42c83",
+            "kind": "quiz",
+            "title": "What does privilege escalation mean?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Gaining higher permissions"
+                },
+                {
+                    "id": "b",
+                    "label": "Closing an open port"
+                },
+                {
+                    "id": "c",
+                    "label": "Writing a test report"
+                }
+            ],
+            "correct": "a",
+            "explain": "Privilege escalation occurs when an attacker or authorized tester obtains permissions beyond those initially available.",
+            "meta": {
+                "source_title": "Supplied ethical hacking notes",
+                "source_section": "Security impact",
+                "source_reference": "Item 29",
+                "source_url": "",
+                "concept_key": "life:security_impact:privilege_escalation",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "https",
+            "topic_name": "HTTPS and TLS",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "0363ac4e-70ac-405c-8d43-b04c62d85e3e",
+            "kind": "quiz",
+            "title": "What does HTTPS mainly protect while data travels?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Traffic from interception and modification"
+                },
+                {
+                    "id": "b",
+                    "label": "A site from every vulnerability"
+                },
+                {
+                    "id": "c",
+                    "label": "Users from every scam"
+                }
+            ],
+            "correct": "a",
+            "explain": "HTTPS uses TLS to protect web traffic against interception and unauthorized modification while it is in transit.",
+            "meta": {
+                "source_title": "Supplied web security notes",
+                "source_section": "HTTPS and TLS",
+                "source_reference": "Items 28–29",
+                "source_url": "",
+                "concept_key": "life:https:traffic_protection",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "sleep",
+            "topic_name": "Sleep",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "055186ab-4d48-597c-9dee-06c0c6412f0b",
+            "kind": "action",
+            "title": "Choose a realistic fixed wind-down time tonight.",
+            "subtitle": "A tiny action linked to sleep.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "rules_engagement",
+            "topic_name": "Rules of Engagement",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "0653a55f-f6e1-480a-bd76-7c159f9b46f8",
+            "kind": "quiz",
+            "title": "What do penetration-testing Rules of Engagement define?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "How the test will be conducted"
+                },
+                {
+                    "id": "b",
+                    "label": "How to hide unauthorized activity"
+                },
+                {
+                    "id": "c",
+                    "label": "Which findings to ignore"
+                }
+            ],
+            "correct": "a",
+            "explain": "Rules of Engagement define how an authorized penetration test will be conducted, including agreed boundaries and conditions.",
+            "meta": {
+                "source_title": "Supplied ethical hacking notes",
+                "source_section": "Rules of Engagement",
+                "source_reference": "Item 34",
+                "source_url": "",
+                "concept_key": "life:rules_engagement:purpose",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "money",
+            "topic_name": "Money basics",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "072c8c72-879d-5037-84e3-4624692e101a",
+            "kind": "action",
+            "title": "Track one day of spending, even if the amount is small.",
+            "subtitle": "A tiny action linked to money basics.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "reliable_friend",
+            "topic_name": "Reliable friendship",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "07a06c99-a957-46bb-a3f2-437245a645d1",
+            "kind": "choice",
+            "title": "Which quality do you value most in a close friend?",
+            "subtitle": "Choose the response closest to your value.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Reliability"
+                },
+                {
+                    "id": "b",
+                    "label": "Popularity"
+                },
+                {
+                    "id": "c",
+                    "label": "Status"
+                }
+            ],
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 1",
+                "source_reference": "True friendship revealed in difficult circumstances",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-1",
+                "concept_key": "life:reliable_friend:friendship_quality",
+                "educational_value": 92,
+                "confidence": 0.98,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "incident_response",
+            "topic_name": "Incident response",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "07a12e0c-c155-487c-bf5a-169d3bf895f9",
+            "kind": "reveal",
+            "title": "What happens during cybersecurity incident response?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Incident response organizes preparation, detection, containment, removal and recovery so cybersecurity incidents can be handled systematically.",
+            "meta": {
+                "source_title": "Cybersecurity source material",
+                "source_section": "Incident response",
+                "source_reference": "Item 45",
+                "source_url": "",
+                "concept_key": "life:incident_response:process",
+                "educational_value": 92,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "mfa",
+            "topic_name": "Multi-factor authentication",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "07ee04d8-a038-4536-813e-42ca79c73b76",
+            "kind": "quiz",
+            "title": "What does multi-factor authentication add to an account?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Extra protection"
+                },
+                {
+                    "id": "b",
+                    "label": "Public passwords"
+                },
+                {
+                    "id": "c",
+                    "label": "Automatic friend requests"
+                }
+            ],
+            "correct": "a",
+            "explain": "Multi-factor authentication adds an extra layer of protection to an account beyond its usual login process.",
+            "meta": {
+                "source_title": "Internet safety source",
+                "source_section": "Account security",
+                "source_reference": "Item 8",
+                "source_url": "",
+                "concept_key": "life:mfa:extra_protection",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "e2ee",
+            "topic_name": "End-to-end encryption",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "0875d67c-c127-45c0-bff9-b4c91e3f1ab2",
+            "kind": "reveal",
+            "title": "What is end-to-end encryption designed to do?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "E2EE is designed so message content can be decrypted only by the communicating endpoints, assuming their devices and keys remain secure.",
+            "meta": {
+                "source_title": "User-supplied cryptography notes",
+                "source_section": "End-to-end encryption",
+                "source_reference": "Items 40-41",
+                "source_url": "",
+                "concept_key": "life:e2ee:endpoints",
+                "educational_value": 98,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "symmetric_crypto",
+            "topic_name": "Symmetric encryption",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "09676715-c405-4cba-bdea-d700ba2a4c2a",
+            "kind": "quiz",
+            "title": "What distinguishes symmetric encryption?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "It needs no key"
+                },
+                {
+                    "id": "b",
+                    "label": "It uses the same or closely related secret information"
+                },
+                {
+                    "id": "c",
+                    "label": "It only creates hashes"
+                }
+            ],
+            "correct": "b",
+            "explain": "Symmetric encryption uses the same secret key, or closely related secret information, for encryption and decryption. It is generally fast and suitable for large amounts of data.",
+            "meta": {
+                "source_title": "User-supplied cryptography notes",
+                "source_section": "Symmetric encryption",
+                "source_reference": "Items 9-10",
+                "source_url": "",
+                "concept_key": "life:symmetric_crypto:shared_secret",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "network_services",
+            "topic_name": "Network services",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "0ae30a38-a29a-4b52-a1b4-8875fd87b89a",
+            "kind": "quiz",
+            "title": "Which service can automatically provide IP configuration to devices?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "DHCP"
+                },
+                {
+                    "id": "b",
+                    "label": "HTTP"
+                },
+                {
+                    "id": "c",
+                    "label": "TLS"
+                }
+            ],
+            "correct": "a",
+            "explain": "DHCP can automatically provide devices with IP configuration information, reducing the need to configure each device manually.",
+            "meta": {
+                "source_title": "Network security source material",
+                "source_section": "Network services",
+                "source_reference": "Item 24",
+                "source_url": "",
+                "concept_key": "life:network_services:dhcp",
+                "educational_value": 86,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "identity_theft",
+            "topic_name": "Identity theft",
+            "min_grade": 6,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "0d6b6815-3f75-43bd-aab5-b7e457dd8fd8",
+            "kind": "reveal",
+            "title": "What happens in identity theft?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Identity theft involves illegally using another person's personal information. Protecting personal details can reduce opportunities for this type of misuse.",
+            "meta": {
+                "source_title": "Cybercrime student notes",
+                "source_section": "Identity theft",
+                "source_reference": "Item 5",
+                "source_url": "",
+                "concept_key": "life:identity_theft:definition",
+                "educational_value": 86,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "segmentation",
+            "topic_name": "Network segmentation",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "0dd8b39e-a9b6-4562-8d55-b443498cd17e",
+            "kind": "quiz",
+            "title": "Why can network segmentation improve security?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "It can limit movement between systems"
+                },
+                {
+                    "id": "b",
+                    "label": "It removes all network traffic"
+                },
+                {
+                    "id": "c",
+                    "label": "It makes every device public"
+                }
+            ],
+            "correct": "a",
+            "explain": "Segmentation separates a network into smaller zones and can reduce an attacker's ability to move from one compromised system to another.",
+            "meta": {
+                "source_title": "Network security source material",
+                "source_section": "Network segmentation",
+                "source_reference": "Items 31-32",
+                "source_url": "",
+                "concept_key": "life:segmentation:lateral_movement",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "time",
+            "topic_name": "Time management",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "0e0d3764-3603-5566-9bb6-f307bf176046",
+            "kind": "quiz",
+            "title": "Which is more actionable?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Study chapter 2 from 7:00–7:25"
+                },
+                {
+                    "id": "b",
+                    "label": "Study sometime"
+                },
+                {
+                    "id": "c",
+                    "label": "Be more productive"
+                }
+            ],
+            "correct": "a",
+            "explain": "Time management works better when priorities are converted into specific next actions and protected time."
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "ransomware_payment",
+            "topic_name": "Ransomware payment risk",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "0e57a11c-311e-46e4-b9df-35d956442d56",
+            "kind": "reveal",
+            "title": "Does paying a ransomware demand guarantee data recovery?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "No. Paying a ransom does not guarantee that attackers will restore the victim's data.",
+            "meta": {
+                "source_title": "Supplied malware notes",
+                "source_section": "Ransomware",
+                "source_reference": "Item 11",
+                "source_url": "",
+                "concept_key": "life:ransomware_payment:no_recovery_guarantee",
+                "educational_value": 95,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "ip_addresses",
+            "topic_name": "IP addresses",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "0f69acdf-18d4-42db-8735-7054868f64a2",
+            "kind": "quiz",
+            "title": "How long is an IPv6 address?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "32 bits"
+                },
+                {
+                    "id": "b",
+                    "label": "64 bits"
+                },
+                {
+                    "id": "c",
+                    "label": "128 bits"
+                }
+            ],
+            "correct": "c",
+            "explain": "IPv6 addresses are 128 bits long, while IPv4 addresses are 32 bits long.",
+            "meta": {
+                "source_title": "Network security source material",
+                "source_section": "Network addressing",
+                "source_reference": "Items 6-8",
+                "source_url": "",
+                "concept_key": "life:ip_addresses:ipv4_ipv6_length",
+                "educational_value": 88,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "sandboxing",
+            "topic_name": "Malware sandboxing",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "120510ba-a454-4536-9098-a8b159d60422",
+            "kind": "quiz",
+            "title": "Why is a suspicious program run in a sandbox?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "To analyze it in isolation"
+                },
+                {
+                    "id": "b",
+                    "label": "To make it spread faster"
+                },
+                {
+                    "id": "c",
+                    "label": "To remove all passwords"
+                }
+            ],
+            "correct": "a",
+            "explain": "Sandboxing runs suspicious programs or files in an isolated environment so their behavior can be analyzed more safely.",
+            "meta": {
+                "source_title": "Supplied malware notes",
+                "source_section": "Sandboxing",
+                "source_reference": "Item 40",
+                "source_url": "",
+                "concept_key": "life:sandboxing:isolation",
+                "educational_value": 93,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "untrusted_software",
+            "topic_name": "Untrusted software",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "125d920c-5f1f-4d04-a12f-5a8c455a6760",
+            "kind": "action",
+            "title": "Before installing unfamiliar software, verify where it came from.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I'll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Supplied malware notes",
+                "source_section": "Malware exposure",
+                "source_reference": "Items 30 and 49",
+                "source_url": "",
+                "concept_key": "life:untrusted_software:verify_origin",
+                "educational_value": 97,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "needs_wants",
+            "topic_name": "Needs and wants",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "15163f1c-1494-48e8-a1bb-f2a284f63d43",
+            "kind": "quiz",
+            "title": "Are needs and wants always the same?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "No"
+                },
+                {
+                    "id": "b",
+                    "label": "Yes"
+                }
+            ],
+            "correct": "a",
+            "explain": "Needs and wants are not always the same. Recognizing the difference is useful when making money decisions.",
+            "meta": {
+                "source_title": "Life skills statements",
+                "source_section": "Statement 33",
+                "source_reference": "Needs and wants are not always the same.",
+                "source_url": "",
+                "concept_key": "life:needs_wants:difference",
+                "educational_value": 93,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "compromised_passwords",
+            "topic_name": "Compromised passwords",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "153763d9-7e13-4a3a-a69e-82c2cf45c965",
+            "kind": "quiz",
+            "title": "When should a password be changed promptly?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "When compromise is credibly indicated"
+                },
+                {
+                    "id": "b",
+                    "label": "After every login"
+                },
+                {
+                    "id": "c",
+                    "label": "Only when forgotten"
+                }
+            ],
+            "correct": "a",
+            "explain": "A password should be changed promptly when there is credible evidence it has been compromised.",
+            "meta": {
+                "source_title": "Password security source notes",
+                "source_section": "Password changes",
+                "source_reference": "Item 47",
+                "source_url": "",
+                "concept_key": "life:compromised_passwords:change_after_compromise",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "emergency",
+            "topic_name": "Emergency awareness",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "160ba094-91a9-58d8-b012-6e362a611037",
+            "kind": "choice",
+            "title": "Why know emergency contacts?",
+            "subtitle": "Connect emergency awareness to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "malware_persistence",
+            "topic_name": "Malware persistence",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "1a2b7ca8-570d-4f96-a258-b93858d5ad7a",
+            "kind": "reveal",
+            "title": "What does malware persistence mean?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Persistence mechanisms allow malware to remain active or regain execution after restarts or other system changes.",
+            "meta": {
+                "source_title": "Supplied malware notes",
+                "source_section": "Persistence",
+                "source_reference": "Item 44",
+                "source_url": "",
+                "concept_key": "life:malware_persistence:continued_execution",
+                "educational_value": 89,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "mitm",
+            "topic_name": "Man-in-the-Middle attacks",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "1a46c46e-d060-4a18-92ed-14bf0695b2ea",
+            "kind": "quiz",
+            "title": "What describes a Man-in-the-Middle attack?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Intercepting between communicating parties"
+                },
+                {
+                    "id": "b",
+                    "label": "Assigning IP settings automatically"
+                },
+                {
+                    "id": "c",
+                    "label": "Dividing a network into VLANs"
+                }
+            ],
+            "correct": "a",
+            "explain": "In a Man-in-the-Middle attack, an attacker positions themselves between communicating parties to intercept or potentially alter communications.",
+            "meta": {
+                "source_title": "Network security source material",
+                "source_section": "Network attacks",
+                "source_reference": "Item 39",
+                "source_url": "",
+                "concept_key": "life:mitm:interception",
+                "educational_value": 95,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "public_key_crypto",
+            "topic_name": "Public-key cryptography",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "1ab97191-a56e-4526-9e89-fb738d1cc684",
+            "kind": "quiz",
+            "title": "Which key should normally remain protected in public-key cryptography?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Private key"
+                },
+                {
+                    "id": "b",
+                    "label": "Public key"
+                },
+                {
+                    "id": "c",
+                    "label": "Both must always be public"
+                }
+            ],
+            "correct": "a",
+            "explain": "Asymmetric cryptography uses related public and private keys. The public key can normally be distributed openly, while the private key must be protected.",
+            "meta": {
+                "source_title": "User-supplied cryptography notes",
+                "source_section": "Asymmetric cryptography",
+                "source_reference": "Items 13-16",
+                "source_url": "",
+                "concept_key": "life:public_key_crypto:public_private_keys",
+                "educational_value": 97,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "passphrases",
+            "topic_name": "Passphrases",
+            "min_grade": 5,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "1c559ddb-124b-4392-b3cb-c8a3a0c34b61",
+            "kind": "reveal",
+            "title": "What is a passphrase?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "A passphrase uses multiple words or another longer memorable sequence as a password.",
+            "meta": {
+                "source_title": "Password security source notes",
+                "source_section": "Password strength",
+                "source_reference": "Item 4",
+                "source_url": "",
+                "concept_key": "life:passphrases:definition",
+                "educational_value": 83,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "https_trust",
+            "topic_name": "HTTPS and website trust",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "1cc57b91-2eaf-46c8-947d-1f5684f4d78b",
+            "kind": "quiz",
+            "title": "Does a padlock or HTTPS indicator prove a website is trustworthy?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Yes, completely"
+                },
+                {
+                    "id": "b",
+                    "label": "No"
+                }
+            ],
+            "correct": "b",
+            "explain": "HTTPS indicates an encrypted connection to the authenticated site. It does not guarantee that the site's content, offers or intentions are trustworthy.",
+            "meta": {
+                "source_title": "User-supplied cryptography notes",
+                "source_section": "TLS and HTTPS",
+                "source_reference": "Item 39",
+                "source_url": "",
+                "concept_key": "life:https_trust:padlock_limit",
+                "educational_value": 100,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "password_salt",
+            "topic_name": "Password salting",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "1e7b93aa-2b43-4b45-874c-d8c346c8cb6d",
+            "kind": "quiz",
+            "title": "Why is random salt added before password hashing?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "To reduce precomputed hash attacks"
+                },
+                {
+                    "id": "b",
+                    "label": "To make passwords public"
+                },
+                {
+                    "id": "c",
+                    "label": "To remove the need for hashing"
+                }
+            ],
+            "correct": "a",
+            "explain": "Salting adds random data before password hashing, reducing the effectiveness of attacks that rely on precomputed hashes.",
+            "meta": {
+                "source_title": "User-supplied cryptography notes",
+                "source_section": "Password security",
+                "source_reference": "Item 29",
+                "source_url": "",
+                "concept_key": "life:password_salt:purpose",
+                "educational_value": 97,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "security_assessment",
+            "topic_name": "Security assessments",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "1f11cb1a-8a3d-43e9-a708-f68f64013e87",
+            "kind": "quiz",
+            "title": "How does a penetration test differ from a vulnerability assessment?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "It validates selected weaknesses"
+                },
+                {
+                    "id": "b",
+                    "label": "It only lists software"
+                },
+                {
+                    "id": "c",
+                    "label": "It avoids security weaknesses"
+                }
+            ],
+            "correct": "a",
+            "explain": "A vulnerability assessment mainly identifies and prioritizes weaknesses, while penetration testing attempts to validate whether selected weaknesses can actually be exploited.",
+            "meta": {
+                "source_title": "Supplied ethical hacking notes",
+                "source_section": "Security assessments",
+                "source_reference": "Items 5–6",
+                "source_url": "",
+                "concept_key": "life:security_assessment:pentest_vs_assessment",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "mfa_methods",
+            "topic_name": "MFA methods",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "202f14ce-8dcf-4897-a73c-247962880650",
+            "kind": "reveal",
+            "title": "What can an authenticator app provide during login?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Authenticator apps can generate temporary authentication codes that provide an additional authentication step beyond a password.",
+            "meta": {
+                "source_title": "Password security source notes",
+                "source_section": "Multi-factor authentication",
+                "source_reference": "Item 23",
+                "source_url": "",
+                "concept_key": "life:mfa_methods:authenticator_apps",
+                "educational_value": 84,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "privacy",
+            "topic_name": "Personal privacy",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "204292f9-4d75-4204-8c2b-c66545790515",
+            "kind": "quiz",
+            "title": "Which information usually deserves extra care before sharing online?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Passwords and private details"
+                },
+                {
+                    "id": "b",
+                    "label": "A favourite colour"
+                },
+                {
+                    "id": "c",
+                    "label": "A public school fact"
+                }
+            ],
+            "correct": "a",
+            "explain": "Chanakya warns against careless disclosure of secrets. Today, that principle strongly applies to passwords, financial details and sensitive personal information.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 2",
+                "source_reference": "Verses warning that private information may be exposed",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-2",
+                "concept_key": "life:privacy:protect_sensitive_info",
+                "educational_value": 99,
+                "confidence": 0.99,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "hsm",
+            "topic_name": "Hardware Security Modules",
+            "min_grade": 10,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "20a54690-251f-44a1-8700-4d8fbfe15f9e",
+            "kind": "reveal",
+            "title": "What is an HSM designed to protect?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "A Hardware Security Module is a specialized device designed to protect cryptographic keys and perform cryptographic operations with them.",
+            "meta": {
+                "source_title": "User-supplied cryptography notes",
+                "source_section": "Key protection",
+                "source_reference": "Item 47",
+                "source_url": "",
+                "concept_key": "life:hsm:key_protection",
+                "educational_value": 85,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "cybercrime",
+            "topic_name": "Cybercrime basics",
+            "min_grade": 6,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "21dfe962-cbd4-4e64-97b1-0cb76e669f86",
+            "kind": "quiz",
+            "title": "Which activity can be a cybercrime?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Hacking without permission"
+                },
+                {
+                    "id": "b",
+                    "label": "Backing up school files"
+                },
+                {
+                    "id": "c",
+                    "label": "Updating software"
+                }
+            ],
+            "correct": "a",
+            "explain": "Cybercrime is illegal activity involving computers, networks, digital devices or the internet. Hacking a system without permission can be a cybercrime.",
+            "meta": {
+                "source_title": "Cybercrime student notes",
+                "source_section": "Cybercrime basics",
+                "source_reference": "Items 1-4",
+                "source_url": "",
+                "concept_key": "life:cybercrime:definition",
+                "educational_value": 92,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "zero_trust",
+            "topic_name": "Zero Trust",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "227dfd50-61a1-4779-8659-d5e16d24fb72",
+            "kind": "reveal",
+            "title": "Does Zero Trust automatically trust devices inside a network?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "No. Zero Trust does not automatically trust a user or device merely because it is inside a traditional network boundary.",
+            "meta": {
+                "source_title": "Cybersecurity source material",
+                "source_section": "Access security",
+                "source_reference": "Item 42",
+                "source_url": "",
+                "concept_key": "life:zero_trust:no_automatic_trust",
+                "educational_value": 89,
+                "confidence": 0.98,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "media",
+            "topic_name": "Media literacy",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "22d8bce7-cf54-5182-9195-116b48c50931",
+            "kind": "reveal",
+            "title": "Media literacy",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Media literacy means checking sources, context, evidence and incentives before believing or sharing content."
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "conflict",
+            "topic_name": "Conflict resolution",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "2379aa9a-cae4-55ca-85da-c1c57502c13b",
+            "kind": "action",
+            "title": "Summarize the other person’s point before responding.",
+            "subtitle": "A tiny action linked to conflict resolution.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "pii",
+            "topic_name": "Personally identifiable information",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "2385bca8-45d8-41c5-bfed-462db333ba0e",
+            "kind": "reveal",
+            "title": "What does PII mean?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Personally Identifiable Information is information that can identify an individual or be linked to that individual.",
+            "meta": {
+                "source_title": "Cybersecurity source material",
+                "source_section": "Data protection",
+                "source_reference": "Item 39",
+                "source_url": "",
+                "concept_key": "life:pii:definition",
+                "educational_value": 90,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "plaintext_ciphertext",
+            "topic_name": "Plaintext and ciphertext",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "2467c3e8-c66a-4df2-b137-75bd8ca89129",
+            "kind": "quiz",
+            "title": "What is the generally unreadable output of encryption called?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Plaintext"
+                },
+                {
+                    "id": "b",
+                    "label": "Ciphertext"
+                },
+                {
+                    "id": "c",
+                    "label": "Firmware"
+                }
+            ],
+            "correct": "b",
+            "explain": "Plaintext is the original readable information. Ciphertext is the transformed, generally unreadable output produced by encryption.",
+            "meta": {
+                "source_title": "Cybersecurity source material",
+                "source_section": "Data protection",
+                "source_reference": "Items 29–30",
+                "source_url": "",
+                "concept_key": "life:plaintext_ciphertext:distinction",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "data_exfiltration",
+            "topic_name": "Data exfiltration",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "255d2db2-4485-437c-a4c7-a7a887965e67",
+            "kind": "quiz",
+            "title": "What does data exfiltration mean?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Unauthorized transfer of information"
+                },
+                {
+                    "id": "b",
+                    "label": "Deleting duplicate files"
+                },
+                {
+                    "id": "c",
+                    "label": "Compressing a backup"
+                }
+            ],
+            "correct": "a",
+            "explain": "Data exfiltration means the unauthorized transfer of information from a compromised system.",
+            "meta": {
+                "source_title": "Supplied malware notes",
+                "source_section": "Data exfiltration",
+                "source_reference": "Item 46",
+                "source_url": "",
+                "concept_key": "life:data_exfiltration:unauthorized_transfer",
+                "educational_value": 93,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "healthy_routines",
+            "topic_name": "Healthy routines",
+            "min_grade": 4,
+            "max_grade": 9,
+            "language": "en",
+            "active": true,
+            "id": "25752fe4-bb3f-4939-ae9d-a6c5745e8fb2",
+            "kind": "quiz",
+            "title": "Which set contains three useful health habits?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Movement, sleep, balanced diet"
+                },
+                {
+                    "id": "b",
+                    "label": "Less sleep, no movement, skipped meals"
+                },
+                {
+                    "id": "c",
+                    "label": "Only one habit matters"
+                }
+            ],
+            "correct": "a",
+            "explain": "Regular physical activity can support well-being, adequate sleep helps the body and mind function properly, and a balanced diet provides important nutrients.",
+            "meta": {
+                "source_title": "Life skills statements",
+                "source_section": "Statements 21-23",
+                "source_reference": "Physical activity, adequate sleep and a balanced diet are described as supporting health, functioning and nutrition.",
+                "source_url": "",
+                "concept_key": "life:healthy_routines:movement_sleep_food",
+                "educational_value": 94,
+                "confidence": 0.98,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "digital_evidence",
+            "topic_name": "Evidence for reporting",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "26287889-498e-43dc-a6d2-c56d459381d8",
+            "kind": "quiz",
+            "title": "What may be useful when reporting online abuse or fraud?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Relevant messages or screenshots"
+                },
+                {
+                    "id": "b",
+                    "label": "A reused password"
+                },
+                {
+                    "id": "c",
+                    "label": "An unknown USB drive"
+                }
+            ],
+            "correct": "a",
+            "explain": "Evidence such as relevant messages or screenshots can sometimes be useful when reporting online abuse or fraud.",
+            "meta": {
+                "source_title": "Cybercrime student notes",
+                "source_section": "Reporting evidence",
+                "source_reference": "Item 44",
+                "source_url": "",
+                "concept_key": "life:digital_evidence:reporting_evidence",
+                "educational_value": 91,
+                "confidence": 0.98,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "stop_think_verify",
+            "topic_name": "Online safety decision routine",
+            "min_grade": 4,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "264039b1-8170-477b-852a-171596772b12",
+            "kind": "reveal",
+            "title": "What four-step rule can guide a safer online decision?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Stop → Think → Verify → Act. Pause before reacting, consider the situation, check what you can, and only then decide what action to take.",
+            "meta": {
+                "source_title": "Internet safety source",
+                "source_section": "Online safety rule",
+                "source_reference": "Item 50",
+                "source_url": "",
+                "concept_key": "life:stop_think_verify:decision_routine",
+                "educational_value": 99,
+                "confidence": 1,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "scholarship_scams",
+            "topic_name": "Scholarship scams",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "286fbcda-1516-4b3a-9d1e-764c614c0f39",
+            "kind": "reveal",
+            "title": "What can make an online scholarship offer suspicious?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Scholarship scams may promise financial assistance while seeking unnecessary payments or sensitive information. Treat such requests cautiously and verify the offer.",
+            "meta": {
+                "source_title": "Cybercrime student notes",
+                "source_section": "Scholarship scams",
+                "source_reference": "Item 16",
+                "source_url": "",
+                "concept_key": "life:scholarship_scams:warning_signs",
+                "educational_value": 94,
+                "confidence": 0.98,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "network_hardening",
+            "topic_name": "Network hardening",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "28a1a44f-cc73-43b0-a0d8-2af78c3af33c",
+            "kind": "quiz",
+            "title": "Which step is part of network hardening?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Disable unneeded services"
+                },
+                {
+                    "id": "b",
+                    "label": "Enable every service"
+                },
+                {
+                    "id": "c",
+                    "label": "Share default passwords"
+                }
+            ],
+            "correct": "a",
+            "explain": "Network hardening reduces unnecessary exposure by securely configuring devices and disabling services that are not needed.",
+            "meta": {
+                "source_title": "Network security source material",
+                "source_section": "Network hardening",
+                "source_reference": "Item 47",
+                "source_url": "",
+                "concept_key": "life:network_hardening:disable_services",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "firewalls",
+            "topic_name": "Firewalls",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "28d4bd9a-87d0-4ca8-a5ec-0af52ef69981",
+            "kind": "quiz",
+            "title": "What is the basic job of a firewall?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Permit or block traffic by rules"
+                },
+                {
+                    "id": "b",
+                    "label": "Translate every domain name"
+                },
+                {
+                    "id": "c",
+                    "label": "Assign every MAC address"
+                }
+            ],
+            "correct": "a",
+            "explain": "A firewall permits or blocks network traffic according to security rules, helping control which communications are allowed.",
+            "meta": {
+                "source_title": "Network security source material",
+                "source_section": "Firewalls",
+                "source_reference": "Item 12",
+                "source_url": "",
+                "concept_key": "life:firewalls:purpose",
+                "educational_value": 94,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "passwords",
+            "topic_name": "Strong passwords",
+            "min_grade": 4,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "29fb1d12-bb88-4a64-b62b-1b6f68a7952f",
+            "kind": "action",
+            "title": "Check whether you reuse the same password across different accounts.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Cybersecurity source material",
+                "source_section": "Account security",
+                "source_reference": "Item 26",
+                "source_url": "",
+                "concept_key": "life:passwords:avoid_reuse",
+                "educational_value": 98,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "movement",
+            "topic_name": "Physical activity",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "2a711936-e9fb-5c91-baeb-8d49bfa578e5",
+            "kind": "action",
+            "title": "Take a short walk or stretch break after focused study.",
+            "subtitle": "A tiny action linked to physical activity.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "malware",
+            "topic_name": "Malware basics",
+            "min_grade": 6,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "2a7e2db9-98c7-4c49-87a5-149d4c28fc10",
+            "kind": "quiz",
+            "title": "What does malware mean?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Malicious software"
+                },
+                {
+                    "id": "b",
+                    "label": "Managed hardware"
+                },
+                {
+                    "id": "c",
+                    "label": "Manual software"
+                }
+            ],
+            "correct": "a",
+            "explain": "Malware means malicious software: software intentionally designed to harm, disrupt, spy on, or gain unauthorized access to systems.",
+            "meta": {
+                "source_title": "Supplied malware notes",
+                "source_section": "Malware definition",
+                "source_reference": "Item 1",
+                "source_url": "",
+                "concept_key": "life:malware:definition",
+                "educational_value": 92,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "password_attacks",
+            "topic_name": "Password guessing attacks",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "2ac94af9-08a4-4e30-a4b7-c1d09c83d38f",
+            "kind": "quiz",
+            "title": "Which attack systematically tries many possible passwords?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Brute force"
+                },
+                {
+                    "id": "b",
+                    "label": "Shoulder surfing"
+                },
+                {
+                    "id": "c",
+                    "label": "SIM swapping"
+                }
+            ],
+            "correct": "a",
+            "explain": "A brute-force attack systematically tries many possible passwords in an attempt to find the correct one.",
+            "meta": {
+                "source_title": "Password security source notes",
+                "source_section": "Password attacks",
+                "source_reference": "Item 8",
+                "source_url": "",
+                "concept_key": "life:password_attacks:brute_force",
+                "educational_value": 88,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "information_boundary",
+            "topic_name": "Information boundaries",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "2b329c26-6729-4596-b770-533fc80571d9",
+            "kind": "reveal",
+            "title": "Does privacy mean hiding everything?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "No. Healthy privacy means sharing information appropriately. Some things belong with trusted people, some with professionals, and some can be public.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 2",
+                "source_reference": "Discretion about secrets and plans",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-2",
+                "concept_key": "life:information_boundary:appropriate_sharing",
+                "educational_value": 97,
+                "confidence": 0.96,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "website_checks",
+            "topic_name": "Website address checks",
+            "min_grade": 5,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "2b7b6f58-29f8-49a9-a762-7ec8bf23e143",
+            "kind": "action",
+            "title": "Check the website address before entering a password or payment details.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I'll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Cybercrime student notes",
+                "source_section": "Website checks",
+                "source_reference": "Item 35",
+                "source_url": "",
+                "concept_key": "life:website_checks:check_address",
+                "educational_value": 99,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "account_takeover",
+            "topic_name": "Account takeover",
+            "min_grade": 6,
+            "max_grade": 11,
+            "language": "en",
+            "active": true,
+            "id": "2c005eb0-85c4-45cb-8c56-b2942b38d196",
+            "kind": "reveal",
+            "title": "What is an account takeover?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "An account takeover happens when an attacker gains unauthorized control of another person's account.",
+            "meta": {
+                "source_title": "Cybercrime student notes",
+                "source_section": "Account security",
+                "source_reference": "Item 19",
+                "source_url": "",
+                "concept_key": "life:account_takeover:definition",
+                "educational_value": 82,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "attack_surface",
+            "topic_name": "Attack surface",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "2c99a00f-6d27-49c6-a45d-4798db33cf17",
+            "kind": "reveal",
+            "title": "What is a system's attack surface?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "The attack surface is the collection of possible points through which an attacker could try to enter or affect a system.",
+            "meta": {
+                "source_title": "Cybersecurity source material",
+                "source_section": "Threats and risk",
+                "source_reference": "Item 13",
+                "source_url": "",
+                "concept_key": "life:attack_surface:definition",
+                "educational_value": 86,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "conflict_resolution",
+            "topic_name": "Conflict resolution",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "2d794db8-246f-4d58-8380-7dfbb63fc2ef",
+            "kind": "quiz",
+            "title": "What can help resolve many everyday conflicts?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Calm communication"
+                },
+                {
+                    "id": "b",
+                    "label": "Shouting louder"
+                },
+                {
+                    "id": "c",
+                    "label": "Refusing to listen"
+                }
+            ],
+            "correct": "a",
+            "explain": "Calm communication can help people discuss disagreements and work toward resolving conflict.",
+            "meta": {
+                "source_title": "Life skills statements",
+                "source_section": "Statement 12",
+                "source_reference": "Conflict can often be resolved through calm communication.",
+                "source_url": "",
+                "concept_key": "life:conflict_resolution:calm_communication",
+                "educational_value": 94,
+                "confidence": 0.98,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "trusted_downloads",
+            "topic_name": "Safe software downloads",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "2db87574-d739-4076-8499-4a3e8ad49c9c",
+            "kind": "quiz",
+            "title": "Which software-download habit is safer?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Use trusted sources"
+                },
+                {
+                    "id": "b",
+                    "label": "Choose pirated copies"
+                },
+                {
+                    "id": "c",
+                    "label": "Download from any unknown link"
+                }
+            ],
+            "correct": "a",
+            "explain": "Download software from trusted sources. Pirated software can contain malware, creating unnecessary risks for your device and information.",
+            "meta": {
+                "source_title": "Internet safety source",
+                "source_section": "Software safety",
+                "source_reference": "Items 24–25",
+                "source_url": "",
+                "concept_key": "life:trusted_downloads:trusted_sources",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "movement",
+            "topic_name": "Physical activity",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "2dc54345-1cdd-5577-bd44-d4a0cba91836",
+            "kind": "choice",
+            "title": "Why do small routines matter?",
+            "subtitle": "Connect physical activity to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "encryption",
+            "topic_name": "Encryption",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "2df40993-0068-4a8b-b334-482550ff7d78",
+            "kind": "quiz",
+            "title": "What does encryption do to readable information?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Transforms it into a protected form"
+                },
+                {
+                    "id": "b",
+                    "label": "Automatically deletes it"
+                },
+                {
+                    "id": "c",
+                    "label": "Makes it publicly available"
+                }
+            ],
+            "correct": "a",
+            "explain": "Encryption transforms readable information into a protected form so unauthorized parties cannot easily understand it.",
+            "meta": {
+                "source_title": "Cybersecurity source material",
+                "source_section": "Data protection",
+                "source_reference": "Item 28",
+                "source_url": "",
+                "concept_key": "life:encryption:protected_form",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "ids_ips",
+            "topic_name": "IDS and IPS",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "2f852dfc-6076-4fa2-97f2-d369cff12416",
+            "kind": "quiz",
+            "title": "Which system can automatically block certain suspicious traffic?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "IPS"
+                },
+                {
+                    "id": "b",
+                    "label": "IDS"
+                },
+                {
+                    "id": "c",
+                    "label": "DNS"
+                }
+            ],
+            "correct": "a",
+            "explain": "An IPS can detect suspicious traffic and automatically block or prevent certain attacks. An IDS monitors activity and alerts defenders about suspicious behavior.",
+            "meta": {
+                "source_title": "Network security source material",
+                "source_section": "Detection and prevention",
+                "source_reference": "Items 29-30",
+                "source_url": "",
+                "concept_key": "life:ids_ips:prevention",
+                "educational_value": 94,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "antimalware",
+            "topic_name": "Anti-malware protection",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "31c5f26d-a27e-4e04-9866-7052f7c84185",
+            "kind": "reveal",
+            "title": "What can antivirus or anti-malware software help detect?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Antivirus or anti-malware software can help detect many malicious programs. It is one useful part of safer device use.",
+            "meta": {
+                "source_title": "Cybercrime student notes",
+                "source_section": "Anti-malware software",
+                "source_reference": "Item 32",
+                "source_url": "",
+                "concept_key": "life:antimalware:malware_detection",
+                "educational_value": 85,
+                "confidence": 0.98,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "time_management",
+            "topic_name": "Time management",
+            "min_grade": 4,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "31fc52b2-78c5-4f52-9ec3-481aa6d56a27",
+            "kind": "quiz",
+            "title": "What is a key benefit of time management?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Finishing tasks on schedule"
+                },
+                {
+                    "id": "b",
+                    "label": "Avoiding every difficult task"
+                },
+                {
+                    "id": "c",
+                    "label": "Making all tasks equally important"
+                }
+            ],
+            "correct": "a",
+            "explain": "Time management helps you organize your time so important tasks can be completed on schedule.",
+            "meta": {
+                "source_title": "Life skills statements",
+                "source_section": "Statement 3",
+                "source_reference": "Time management helps people complete tasks on schedule.",
+                "source_url": "",
+                "concept_key": "life:time_management:complete_on_schedule",
+                "educational_value": 90,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "ids_ips",
+            "topic_name": "IDS and IPS",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "31fc8e43-7e28-462b-bf31-65006c3454d7",
+            "kind": "quiz",
+            "title": "Which system can automatically act to block suspicious activity?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "IDS"
+                },
+                {
+                    "id": "b",
+                    "label": "IPS"
+                },
+                {
+                    "id": "c",
+                    "label": "Password manager"
+                }
+            ],
+            "correct": "b",
+            "explain": "An IDS monitors activity and generates alerts. An IPS can detect suspicious activity and automatically take actions to block it.",
+            "meta": {
+                "source_title": "Cybersecurity source material",
+                "source_section": "Security controls",
+                "source_reference": "Items 33–34",
+                "source_url": "",
+                "concept_key": "life:ids_ips:blocking_difference",
+                "educational_value": 94,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "digital_responsibility",
+            "topic_name": "Digital responsibility",
+            "min_grade": 5,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "326cfa55-30bd-47bb-8b34-d13ec65bbbd8",
+            "kind": "reveal",
+            "title": "Does responsibility matter online too?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Yes. Digital responsibility includes behaving appropriately when interacting and acting online.",
+            "meta": {
+                "source_title": "Life skills statements",
+                "source_section": "Statement 39",
+                "source_reference": "Digital responsibility includes behaving appropriately online.",
+                "source_url": "",
+                "concept_key": "life:digital_responsibility:online_behavior",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "ethical_hacking",
+            "topic_name": "Ethical hacking",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "34d34fb4-bdd8-44c8-9c91-3e2ec1296c34",
+            "kind": "quiz",
+            "title": "What makes ethical hacking ethical?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Explicit authorization"
+                },
+                {
+                    "id": "b",
+                    "label": "Technical skill alone"
+                },
+                {
+                    "id": "c",
+                    "label": "Keeping the test secret"
+                }
+            ],
+            "correct": "a",
+            "explain": "Ethical hacking is authorized security testing. Testers must have explicit permission and stay within the agreed scope.",
+            "meta": {
+                "source_title": "Supplied ethical hacking notes",
+                "source_section": "Authorization and ethics",
+                "source_reference": "Items 1–4, 50",
+                "source_url": "",
+                "concept_key": "life:ethical_hacking:authorization",
+                "educational_value": 98,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "device_updates",
+            "topic_name": "Network device updates",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "34f4688d-f843-40f1-a7b4-9329b90039f8",
+            "kind": "quiz",
+            "title": "Why should network devices be updated regularly?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "To address known vulnerabilities"
+                },
+                {
+                    "id": "b",
+                    "label": "To remove all security rules"
+                },
+                {
+                    "id": "c",
+                    "label": "To disable every network"
+                }
+            ],
+            "correct": "a",
+            "explain": "Regular updates for routers, firewalls, switches, wireless access points and other network devices help address known vulnerabilities.",
+            "meta": {
+                "source_title": "Network security source material",
+                "source_section": "Updates and patching",
+                "source_reference": "Item 49",
+                "source_url": "",
+                "concept_key": "life:device_updates:vulnerabilities",
+                "educational_value": 97,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "livelihood",
+            "topic_name": "Livelihood planning",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "34f78b94-589f-44b7-8817-5da6a6e527be",
+            "kind": "reveal",
+            "title": "Why should livelihood be considered when planning a move?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "A place can be attractive yet unsuitable if you cannot sustainably study, work or meet basic needs there. Opportunity is part of practical planning.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 1",
+                "source_reference": "Verse warning against living where one cannot earn a livelihood",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-1",
+                "concept_key": "life:livelihood:practical_location",
+                "educational_value": 91,
+                "confidence": 0.97,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "media",
+            "topic_name": "Media literacy",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "35418835-f7eb-52af-bbd1-ab4b0504247f",
+            "kind": "choice",
+            "title": "Why do emotional posts spread quickly?",
+            "subtitle": "Connect media literacy to the way you think or act.",
+            "options": [
+                {
+                    "id": "yes",
+                    "label": "Yes — I want to explore this"
+                },
+                {
+                    "id": "maybe",
+                    "label": "Maybe — show me more"
+                },
+                {
+                    "id": "later",
+                    "label": "Not right now"
+                }
+            ]
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "security_impact",
+            "topic_name": "Security impact",
+            "min_grade": 10,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "35cc8416-89a8-4818-9876-b30fc44883f9",
+            "kind": "reveal",
+            "title": "What does lateral movement mean in cybersecurity?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Lateral movement means moving from one compromised system or account to other resources within an environment.",
+            "meta": {
+                "source_title": "Supplied ethical hacking notes",
+                "source_section": "Security impact",
+                "source_reference": "Item 30",
+                "source_url": "",
+                "concept_key": "life:security_impact:lateral_movement",
+                "educational_value": 89,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "social_engineering",
+            "topic_name": "Social engineering",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "385cb4cc-76c4-478b-897f-b4fb33b79977",
+            "kind": "reveal",
+            "title": "Why can people become part of a cyberattack?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Social engineering manipulates people into revealing information, granting access or taking actions that benefit an attacker.",
+            "meta": {
+                "source_title": "Cybersecurity source material",
+                "source_section": "Social engineering",
+                "source_reference": "Item 23",
+                "source_url": "",
+                "concept_key": "life:social_engineering:human_manipulation",
+                "educational_value": 95,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "data_breach",
+            "topic_name": "Data breaches",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "3a6e07b9-cf23-4a28-966a-df8af4e98a86",
+            "kind": "quiz",
+            "title": "When does a data breach occur?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Sensitive data is exposed without authorization"
+                },
+                {
+                    "id": "b",
+                    "label": "A user changes their own password"
+                },
+                {
+                    "id": "c",
+                    "label": "A backup finishes successfully"
+                }
+            ],
+            "correct": "a",
+            "explain": "A data breach occurs when protected, confidential or sensitive information is accessed, exposed, stolen or disclosed without authorization.",
+            "meta": {
+                "source_title": "Cybersecurity source material",
+                "source_section": "Data protection",
+                "source_reference": "Item 38",
+                "source_url": "",
+                "concept_key": "life:data_breach:unauthorized_exposure",
+                "educational_value": 95,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "ethical_hacking",
+            "topic_name": "Ethical cybersecurity practice",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "3c385145-c083-4509-a498-b7f53bbcd608",
+            "kind": "quiz",
+            "title": "Where should a student practise cybersecurity testing?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "A permitted lab or CTF"
+                },
+                {
+                    "id": "b",
+                    "label": "A classmate's account"
+                },
+                {
+                    "id": "c",
+                    "label": "The school network without permission"
+                }
+            ],
+            "correct": "a",
+            "explain": "Cybersecurity testing should only be performed where there is clear permission. Ethical hacking labs and CTFs provide legal environments for practising cybersecurity skills.",
+            "meta": {
+                "source_title": "Cybercrime student notes",
+                "source_section": "Ethical hacking",
+                "source_reference": "Items 45-47",
+                "source_url": "",
+                "concept_key": "life:ethical_hacking:authorized_practice",
+                "educational_value": 100,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "firewall_types",
+            "topic_name": "Firewall types",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "3c7f284d-7d17-4f23-bd50-faf55a91c112",
+            "kind": "reveal",
+            "title": "What makes a stateful firewall different?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "A stateful firewall tracks the state of network connections when deciding whether traffic should be allowed.",
+            "meta": {
+                "source_title": "Network security source material",
+                "source_section": "Firewalls",
+                "source_reference": "Items 13-15",
+                "source_url": "",
+                "concept_key": "life:firewall_types:stateful",
+                "educational_value": 89,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "credential_stuffing",
+            "topic_name": "Credential stuffing",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "3d34f659-7fe4-4279-b824-3508b76c810b",
+            "kind": "reveal",
+            "title": "How can one stolen login threaten accounts on other websites?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Credential stuffing involves trying stolen login details on other websites. This is one reason using different passwords for different accounts matters.",
+            "meta": {
+                "source_title": "Cybercrime student notes",
+                "source_section": "Credential stuffing",
+                "source_reference": "Items 20-21",
+                "source_url": "",
+                "concept_key": "life:credential_stuffing:reused_credentials",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "online_scams",
+            "topic_name": "Online scams",
+            "min_grade": 6,
+            "max_grade": 11,
+            "language": "en",
+            "active": true,
+            "id": "3d4a0ec6-0544-4b1c-8945-055390a67b67",
+            "kind": "quiz",
+            "title": "A job offer asks a student for money and personal details. What should raise concern?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "It may be a scam"
+                },
+                {
+                    "id": "b",
+                    "label": "It must be genuine"
+                },
+                {
+                    "id": "c",
+                    "label": "Payment proves the job"
+                }
+            ],
+            "correct": "a",
+            "explain": "Fake job offers can be used to collect personal details or money from students. Online scams often try to trick people into giving away money or information.",
+            "meta": {
+                "source_title": "Cybercrime student notes",
+                "source_section": "Online scams",
+                "source_reference": "Items 13, 15",
+                "source_url": "",
+                "concept_key": "life:online_scams:fake_job_offer",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "mfa",
+            "topic_name": "Multi-factor authentication",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "3f66c584-78e4-4617-90bf-c7881ce94a54",
+            "kind": "quiz",
+            "title": "What does MFA add beyond a password?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Another authentication factor"
+                },
+                {
+                    "id": "b",
+                    "label": "A public password"
+                },
+                {
+                    "id": "c",
+                    "label": "Automatic password sharing"
+                }
+            ],
+            "correct": "a",
+            "explain": "Multi-Factor Authentication adds protection beyond a password by combining factors based on something you know, have, or are.",
+            "meta": {
+                "source_title": "Password security source notes",
+                "source_section": "Multi-factor authentication",
+                "source_reference": "Items 21-22",
+                "source_url": "",
+                "concept_key": "life:mfa:authentication_factors",
+                "educational_value": 97,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "polymorphic_malware",
+            "topic_name": "Polymorphic malware",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "3f83c59b-cda7-4a3e-9d60-c557d6e60bcb",
+            "kind": "quiz",
+            "title": "What can polymorphic malware change?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Its code or appearance"
+                },
+                {
+                    "id": "b",
+                    "label": "Its malicious purpose must disappear"
+                },
+                {
+                    "id": "c",
+                    "label": "Only the computer's wallpaper"
+                }
+            ],
+            "correct": "a",
+            "explain": "Polymorphic malware can modify aspects of its code or appearance while preserving its malicious functionality.",
+            "meta": {
+                "source_title": "Supplied malware notes",
+                "source_section": "Polymorphic malware",
+                "source_reference": "Item 43",
+                "source_url": "",
+                "concept_key": "life:polymorphic_malware:changing_appearance",
+                "educational_value": 89,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "stress_management",
+            "topic_name": "Stress management",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "3f850b78-a099-4638-a6e8-12cc7bff1262",
+            "kind": "reveal",
+            "title": "What is the purpose of stress-management skills?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Stress-management skills can help people cope with pressure.",
+            "meta": {
+                "source_title": "Life skills statements",
+                "source_section": "Statement 24",
+                "source_reference": "Stress-management skills can help people cope with pressure.",
+                "source_url": "",
+                "concept_key": "life:stress_management:cope_with_pressure",
+                "educational_value": 88,
+                "confidence": 0.98,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "antimalware",
+            "topic_name": "Anti-malware software",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "407dc5ad-0e75-4d40-a785-14bd49d7ce62",
+            "kind": "reveal",
+            "title": "What can anti-malware software do?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Anti-malware software can detect, block, quarantine and remove many known or suspicious malicious programs.",
+            "meta": {
+                "source_title": "Cybersecurity source material",
+                "source_section": "Security controls",
+                "source_reference": "Item 32",
+                "source_url": "",
+                "concept_key": "life:antimalware:detection_response",
+                "educational_value": 87,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "malware",
+            "topic_name": "Malware",
+            "min_grade": 6,
+            "max_grade": 11,
+            "language": "en",
+            "active": true,
+            "id": "40fc660f-0a04-4e04-a22f-8194957a6f4d",
+            "kind": "quiz",
+            "title": "Which group contains only types of malware?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Viruses, worms, Trojans"
+                },
+                {
+                    "id": "b",
+                    "label": "Backups, passwords, updates"
+                },
+                {
+                    "id": "c",
+                    "label": "HTTPS, Wi-Fi, QR codes"
+                }
+            ],
+            "correct": "a",
+            "explain": "Malware is software intentionally created for harmful or unauthorized activities. Viruses, worms, Trojans, spyware and ransomware are common malware types.",
+            "meta": {
+                "source_title": "Cybercrime student notes",
+                "source_section": "Malware",
+                "source_reference": "Items 11-12",
+                "source_url": "",
+                "concept_key": "life:malware:types",
+                "educational_value": 89,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "sleep",
+            "topic_name": "Sleep",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "422e8676-8d3f-5369-9cf9-e7073b079853",
+            "kind": "quiz",
+            "title": "Sleep is important for…",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Learning and recovery"
+                },
+                {
+                    "id": "b",
+                    "label": "Eliminating the need for food"
+                },
+                {
+                    "id": "c",
+                    "label": "Making time unlimited"
+                }
+            ],
+            "correct": "a",
+            "explain": "Regular sufficient sleep supports attention, learning, mood and physical health."
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "cloud_iam",
+            "topic_name": "Cloud identity and access",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "42cf4a63-c52c-4af4-bbeb-6b2168c175d9",
+            "kind": "reveal",
+            "title": "What does IAM control in a cloud environment?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Identity and Access Management controls who or what can access cloud resources.",
+            "meta": {
+                "source_title": "Cloud security notes",
+                "source_section": "Identity and access",
+                "source_reference": "Item 16",
+                "source_url": "",
+                "concept_key": "life:cloud_iam:access_control",
+                "educational_value": 93,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "continuous_learning",
+            "topic_name": "Daily learning",
+            "min_grade": 5,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "4365853e-4ed5-443c-a12f-e498725fab62",
+            "kind": "action",
+            "title": "Learn one small useful thing today and write it in one sentence.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I'll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 2",
+                "source_reference": "Verse urging learning every day, even in small amounts",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-2",
+                "concept_key": "life:continuous_learning:daily_progress",
+                "educational_value": 99,
+                "confidence": 0.99,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "behavior_detection",
+            "topic_name": "Behavior-based detection",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "437b77b5-68ef-4552-91ae-bd4b59693846",
+            "kind": "quiz",
+            "title": "What does behavior-based malware detection focus on?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Suspicious actions"
+                },
+                {
+                    "id": "b",
+                    "label": "File names only"
+                },
+                {
+                    "id": "c",
+                    "label": "Screen color"
+                }
+            ],
+            "correct": "a",
+            "explain": "Behavior-based detection looks for suspicious actions rather than relying only on known malware signatures.",
+            "meta": {
+                "source_title": "Supplied malware notes",
+                "source_section": "Malware detection",
+                "source_reference": "Item 38",
+                "source_url": "",
+                "concept_key": "life:behavior_detection:suspicious_actions",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "credential_stuffing",
+            "topic_name": "Credential stuffing",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "43bc66d4-5526-4260-9db2-fb88c7417f15",
+            "kind": "quiz",
+            "title": "What happens in a credential-stuffing attack?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Stolen logins are tried elsewhere"
+                },
+                {
+                    "id": "b",
+                    "label": "Every password is guessed from scratch"
+                },
+                {
+                    "id": "c",
+                    "label": "A screen is watched from nearby"
+                }
+            ],
+            "correct": "a",
+            "explain": "Credential stuffing uses stolen username-password combinations to attempt logins on other services, making password reuse especially risky.",
+            "meta": {
+                "source_title": "Password security source notes",
+                "source_section": "Password attacks",
+                "source_reference": "Item 7",
+                "source_url": "",
+                "concept_key": "life:credential_stuffing:definition",
+                "educational_value": 93,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "keylogger",
+            "topic_name": "Keyloggers",
+            "min_grade": 6,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "447dfe6d-e424-487d-a67f-f7582a3456c8",
+            "kind": "quiz",
+            "title": "What does a keylogger record?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Keystrokes"
+                },
+                {
+                    "id": "b",
+                    "label": "Screen brightness"
+                },
+                {
+                    "id": "c",
+                    "label": "Battery temperature only"
+                }
+            ],
+            "correct": "a",
+            "explain": "A keylogger records keystrokes entered on a device. Attackers can use captured keystrokes to steal usernames, passwords, and other sensitive information.",
+            "meta": {
+                "source_title": "Supplied malware notes",
+                "source_section": "Keyloggers",
+                "source_reference": "Items 14-15",
+                "source_url": "",
+                "concept_key": "life:keylogger:keystrokes",
+                "educational_value": 93,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "cia_triad",
+            "topic_name": "CIA Triad",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "44b29883-74a9-4d99-9945-c49313dc8224",
+            "kind": "quiz",
+            "title": "What does the CIA Triad stand for?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Control, Inspection, Access"
+                },
+                {
+                    "id": "b",
+                    "label": "Confidentiality, Integrity, Availability"
+                },
+                {
+                    "id": "c",
+                    "label": "Computers, Internet, Applications"
+                }
+            ],
+            "correct": "b",
+            "explain": "The CIA Triad represents three fundamental cybersecurity goals: Confidentiality, Integrity and Availability.",
+            "meta": {
+                "source_title": "Cybersecurity source material",
+                "source_section": "Cybersecurity fundamentals",
+                "source_reference": "Items 2–5",
+                "source_url": "",
+                "concept_key": "life:cia_triad:three_goals",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "phishing",
+            "topic_name": "Phishing awareness",
+            "min_grade": 5,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "44bfeb65-3f41-41dd-aeb1-6ea21b3d8bc0",
+            "kind": "quiz",
+            "title": "What is a phishing message trying to do?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Trick you into unsafe action"
+                },
+                {
+                    "id": "b",
+                    "label": "Update your device"
+                },
+                {
+                    "id": "c",
+                    "label": "Back up your files"
+                }
+            ],
+            "correct": "a",
+            "explain": "Phishing messages try to trick people into revealing information or taking unsafe actions, so unexpected messages deserve careful checking.",
+            "meta": {
+                "source_title": "Internet safety source",
+                "source_section": "Phishing",
+                "source_reference": "Items 10–13",
+                "source_url": "",
+                "concept_key": "life:phishing:recognition",
+                "educational_value": 99,
+                "confidence": 1,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "biometrics",
+            "topic_name": "Biometric authentication",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "44c7e357-9094-46bc-93fd-a9575af33313",
+            "kind": "reveal",
+            "title": "Are a password and a fingerprint the same type of authentication factor?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "No. Passwords and biometric information are different authentication factors. A fingerprint or face scan can also be used to unlock credentials stored on a device.",
+            "meta": {
+                "source_title": "Password security source notes",
+                "source_section": "Biometrics",
+                "source_reference": "Items 34-35",
+                "source_url": "",
+                "concept_key": "life:biometrics:factor_types",
+                "educational_value": 88,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "breach_monitoring",
+            "topic_name": "Credential breach monitoring",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "44db4d87-c88b-487b-a1fc-d7d613c85fe0",
+            "kind": "reveal",
+            "title": "How can breach monitoring help account security?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Monitoring for compromised credentials can help organizations respond when passwords appear in known breaches.",
+            "meta": {
+                "source_title": "Password security source notes",
+                "source_section": "Breach response",
+                "source_reference": "Item 49",
+                "source_url": "",
+                "concept_key": "life:breach_monitoring:compromised_credentials",
+                "educational_value": 86,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "arp_security",
+            "topic_name": "ARP security",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "451daf41-715e-4b39-a877-b5b1693191fb",
+            "kind": "reveal",
+            "title": "What happens in ARP spoofing?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "ARP spoofing involves sending deceptive ARP information to manipulate local network traffic.",
+            "meta": {
+                "source_title": "Network security source material",
+                "source_section": "ARP",
+                "source_reference": "Items 25-26",
+                "source_url": "",
+                "concept_key": "life:arp_security:spoofing",
+                "educational_value": 88,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "goals",
+            "topic_name": "Goal setting",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "46cfc546-eff3-59c7-be21-987cae2bd3f6",
+            "kind": "reveal",
+            "title": "Goal setting",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Useful goals connect a meaningful outcome with measurable progress and a clear next action."
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "password_manager",
+            "topic_name": "Password managers",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "486e6bd4-6fb2-41a0-a1fb-c0cf89044d5f",
+            "kind": "reveal",
+            "title": "How can you manage many unique passwords?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "A password manager can securely store many unique passwords, reducing the need to reuse the same password across important accounts.",
+            "meta": {
+                "source_title": "Internet safety source",
+                "source_section": "Passwords",
+                "source_reference": "Item 7",
+                "source_url": "",
+                "concept_key": "life:password_manager:unique_password_storage",
+                "educational_value": 92,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "cloud_mfa",
+            "topic_name": "Multi-factor authentication",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "4a53c046-70cb-427e-b251-1722d0cc7719",
+            "kind": "action",
+            "title": "Strengthen an important account with MFA.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Cloud security notes",
+                "source_section": "Identity and access",
+                "source_reference": "Items 19-20",
+                "source_url": "",
+                "concept_key": "life:cloud_mfa:account_protection",
+                "educational_value": 97,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "cyber_risk",
+            "topic_name": "Threats, vulnerabilities and risk",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "4b07d5d8-7b3a-4dc3-91c1-d970847d58d4",
+            "kind": "quiz",
+            "title": "What is a vulnerability in cybersecurity?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "A weakness that could be exploited"
+                },
+                {
+                    "id": "b",
+                    "label": "Any security rule"
+                },
+                {
+                    "id": "c",
+                    "label": "A backup copy"
+                }
+            ],
+            "correct": "a",
+            "explain": "A vulnerability is a weakness that a threat actor could exploit. Risk describes the potential for harm when a threat can exploit such a weakness.",
+            "meta": {
+                "source_title": "Cybersecurity source material",
+                "source_section": "Threats and risk",
+                "source_reference": "Items 7–10",
+                "source_url": "",
+                "concept_key": "life:cyber_risk:vulnerability",
+                "educational_value": 94,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "support_network",
+            "topic_name": "Support networks",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "4b2ad60c-a0b1-489a-89ec-dda7c71b4ff4",
+            "kind": "action",
+            "title": "Identify two trustworthy people you could contact when you need help.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I'll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 1",
+                "source_reference": "Importance of friends and support during adversity",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-1",
+                "concept_key": "life:support_network:trusted_contacts",
+                "educational_value": 96,
+                "confidence": 0.96,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "personal_hygiene",
+            "topic_name": "Personal hygiene",
+            "min_grade": 3,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "4b62fb29-c4cf-4059-91cc-1d4f1d77ce57",
+            "kind": "reveal",
+            "title": "Where does personal hygiene fit into everyday life?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Personal hygiene is an important part of taking care of yourself.",
+            "meta": {
+                "source_title": "Life skills statements",
+                "source_section": "Statement 20",
+                "source_reference": "Personal hygiene is an important part of self-care.",
+                "source_url": "",
+                "concept_key": "life:personal_hygiene:self_care",
+                "educational_value": 86,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "ransomware",
+            "topic_name": "Ransomware",
+            "min_grade": 6,
+            "max_grade": 11,
+            "language": "en",
+            "active": true,
+            "id": "4bb43d55-153c-4854-b389-66472f7b4d31",
+            "kind": "reveal",
+            "title": "What can ransomware do to your files?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Ransomware can lock or encrypt files and demand money. Keeping important files backed up can help with recovery after ransomware or other data loss.",
+            "meta": {
+                "source_title": "Cybercrime student notes",
+                "source_section": "Ransomware and backups",
+                "source_reference": "Items 10, 33-34",
+                "source_url": "",
+                "concept_key": "life:ransomware:file_locking",
+                "educational_value": 94,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "command_control",
+            "topic_name": "Command-and-Control",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "4dc2685b-684f-4360-b697-623cf5c33db0",
+            "kind": "reveal",
+            "title": "What role can Command-and-Control infrastructure play?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Command-and-Control, or C2, infrastructure allows some malware to communicate with attacker-controlled systems.",
+            "meta": {
+                "source_title": "Supplied malware notes",
+                "source_section": "Command-and-Control",
+                "source_reference": "Item 47",
+                "source_url": "",
+                "concept_key": "life:command_control:attacker_communication",
+                "educational_value": 89,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "priorities",
+            "topic_name": "Setting priorities",
+            "min_grade": 4,
+            "max_grade": 8,
+            "language": "en",
+            "active": true,
+            "id": "4ed3fc6e-956d-4c8d-80e7-ec3b6ca46289",
+            "kind": "action",
+            "title": "Pick your most important task for today.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I'll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Life skills statements",
+                "source_section": "Statement 5",
+                "source_reference": "Setting priorities helps people focus on important tasks.",
+                "source_url": "",
+                "concept_key": "life:priorities:important_tasks",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "healthy_boundaries",
+            "topic_name": "Healthy boundaries",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "5136909e-a9a2-425b-89fd-1531180c8962",
+            "kind": "reveal",
+            "title": "What is a modern alternative to Chanakya's harsh warnings about unreliable people?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Use boundaries rather than hostility. Limit access to private information, money or responsibility when repeated behaviour shows someone is unreliable.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapters 1 and 2",
+                "source_reference": "Warnings about false friends and harmful associates",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-2",
+                "concept_key": "life:healthy_boundaries:unreliable_people",
+                "educational_value": 97,
+                "confidence": 0.95,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "verify_before_click",
+            "topic_name": "Verify before clicking",
+            "min_grade": 5,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "51df5ef7-3119-4f85-99df-c5ca04c08f74",
+            "kind": "action",
+            "title": "Before acting on an unexpected link or message, use: Think → Check → Verify → Click.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I'll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Cybercrime student notes",
+                "source_section": "Student safety rule",
+                "source_reference": "Item 50",
+                "source_url": "",
+                "concept_key": "life:verify_before_click:think_check_verify_click",
+                "educational_value": 100,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "dns_security",
+            "topic_name": "DNS security",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "51fa063c-27e1-48d8-878b-d3654b03cc13",
+            "kind": "quiz",
+            "title": "What can DNS spoofing or cache poisoning cause?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "False DNS information"
+                },
+                {
+                    "id": "b",
+                    "label": "Longer IPv6 addresses"
+                },
+                {
+                    "id": "c",
+                    "label": "New MAC hardware"
+                }
+            ],
+            "correct": "a",
+            "explain": "DNS spoofing or cache poisoning can cause users or systems to receive false DNS information instead of the expected name-resolution data.",
+            "meta": {
+                "source_title": "Network security source material",
+                "source_section": "DNS",
+                "source_reference": "Items 22-23",
+                "source_url": "",
+                "concept_key": "life:dns_security:spoofing",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "movement",
+            "topic_name": "Physical activity",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "543df684-e328-5771-8fab-98c58a6c114f",
+            "kind": "reveal",
+            "title": "Physical activity",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Regular physical activity supports cardiovascular health, strength, mobility and mental wellbeing."
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "emergency",
+            "topic_name": "Emergency awareness",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "5472eb60-cdf9-5e2b-b0a5-080f06308f52",
+            "kind": "action",
+            "title": "Save the appropriate local emergency number in your phone.",
+            "subtitle": "A tiny action linked to emergency awareness.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ]
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "sanskrit_goal",
+            "topic_name": "Goal in Sanskrit",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "55a3c6d2-c0a4-45d5-986f-77acda3e0389",
+            "kind": "quiz",
+            "title": "Which Sanskrit word means “goal”?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "लक्ष्यम्"
+                },
+                {
+                    "id": "b",
+                    "label": "निर्णयः"
+                },
+                {
+                    "id": "c",
+                    "label": "समाधानम्"
+                }
+            ],
+            "correct": "a",
+            "explain": "लक्ष्यम् (lakṣyam) means “goal.” The source illustrates it with “मम लक्ष्यं स्पष्टम् अस्ति” — “My goal is clear.”",
+            "meta": {
+                "source_title": "Supplied Sanskrit vocabulary list",
+                "source_section": "Goals and problem solving",
+                "source_reference": "Entry 97",
+                "source_url": "",
+                "concept_key": "life:sanskrit_goal:lakshyam",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "household_skills",
+            "topic_name": "Household skills",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "55d90945-6225-4f1f-847a-983a3a22186a",
+            "kind": "reveal",
+            "title": "Why are basic household skills useful?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Basic household skills encourage independence by helping you handle appropriate everyday tasks yourself.",
+            "meta": {
+                "source_title": "Life skills statements",
+                "source_section": "Statements 35-36",
+                "source_reference": "Basic household skills encourage independence; cooking simple meals is a useful practical skill.",
+                "source_url": "",
+                "concept_key": "life:household_skills:independence",
+                "educational_value": 91,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "backups",
+            "topic_name": "Data backups",
+            "min_grade": 5,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "56a60af7-a4e9-49d8-8559-08c2af24778f",
+            "kind": "action",
+            "title": "Back up an important school or personal file.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I'll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Cybercrime student notes",
+                "source_section": "Backups",
+                "source_reference": "Items 33-34",
+                "source_url": "",
+                "concept_key": "life:backups:data_recovery",
+                "educational_value": 98,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "sleep",
+            "topic_name": "Sleep",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "573a367c-c597-57ec-ba68-738b9de07902",
+            "kind": "reveal",
+            "title": "Sleep",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Regular sufficient sleep supports attention, learning, mood and physical health."
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "password_sharing",
+            "topic_name": "Safe password handling",
+            "min_grade": 5,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "57b79ad6-f835-4499-945d-37cb55e40ad8",
+            "kind": "action",
+            "title": "Keep passwords out of insecure messages and public documents.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I'll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Password security source notes",
+                "source_section": "Password handling",
+                "source_reference": "Item 36",
+                "source_url": "",
+                "concept_key": "life:password_sharing:insecure_channels",
+                "educational_value": 94,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "emergency_savings",
+            "topic_name": "Emergency savings",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "57d355a8-1d30-4db8-9ef1-a3a90f197e77",
+            "kind": "quiz",
+            "title": "What is the modern purpose of keeping emergency savings?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Handle unexpected costs"
+                },
+                {
+                    "id": "b",
+                    "label": "Guarantee wealth"
+                },
+                {
+                    "id": "c",
+                    "label": "Avoid all planning"
+                }
+            ],
+            "correct": "a",
+            "explain": "Chanakya advises saving resources for difficult times. Today, an emergency reserve helps absorb unexpected expenses without guaranteeing that every crisis disappears.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 1",
+                "source_reference": "Verses advising preservation of wealth against calamity",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-1",
+                "concept_key": "life:emergency_savings:unexpected_costs",
+                "educational_value": 98,
+                "confidence": 0.98,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        }
+    ],
+    "sha256": "b6e618adba2c09afe3d073bebc546d00fcbd959a507d1df11e953c156634e84b",
+    "signature_alg": "Ed25519",
+    "signing_key_id": "76f1f50a291c1ec5",
+    "signature": "YPMRPF7yqzXq4J727C3EwChAXBISO9GpdBjTYwCNOsvwfIV8eU1yjUSYZOadHtyxzTo-uAwzYhUXwGCbImywAg"
+}

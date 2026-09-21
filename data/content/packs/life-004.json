@@ -1,0 +1,758 @@
+{
+    "schema_version": 1,
+    "pack_id": "life-004",
+    "pillar": "life",
+    "pillar_name": "Life Skills",
+    "sequence": 4,
+    "card_count": 20,
+    "bank_version": "2026.09.import20260904011537",
+    "cards": [
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "usb_malware",
+            "topic_name": "Removable media risks",
+            "min_grade": 6,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "f25e9e86-a43c-4618-8490-a10cc89c098c",
+            "kind": "reveal",
+            "title": "Can a USB drive transfer malware?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Yes. Removable media such as USB drives can be used to transfer malware between systems.",
+            "meta": {
+                "source_title": "Supplied malware notes",
+                "source_section": "Malware distribution",
+                "source_reference": "Item 31",
+                "source_url": "",
+                "concept_key": "life:usb_malware:removable_media",
+                "educational_value": 88,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "backups",
+            "topic_name": "Digital backups",
+            "min_grade": 5,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "f34c2879-d78c-476b-9a75-8bc15b8e5d70",
+            "kind": "action",
+            "title": "Back up one important assignment, document or photograph.",
+            "subtitle": "A tiny action linked to this idea.",
+            "options": [
+                {
+                    "id": "today",
+                    "label": "I’ll try it today"
+                },
+                {
+                    "id": "already",
+                    "label": "I already do this"
+                },
+                {
+                    "id": "learn",
+                    "label": "I want to learn more"
+                }
+            ],
+            "meta": {
+                "source_title": "Internet safety source",
+                "source_section": "Backups",
+                "source_reference": "Items 44–45",
+                "source_url": "",
+                "concept_key": "life:backups:important_files",
+                "educational_value": 93,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "password_hygiene",
+            "topic_name": "Password hygiene",
+            "min_grade": 5,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "f3f9cc6d-7347-4e36-9164-df22a66ce6c7",
+            "kind": "quiz",
+            "title": "Which password choice is easiest to guess?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Password123"
+                },
+                {
+                    "id": "b",
+                    "label": "A long unique password"
+                },
+                {
+                    "id": "c",
+                    "label": "A strong unique passphrase"
+                }
+            ],
+            "correct": "a",
+            "explain": "Predictable passwords such as Password123 provide poor protection. Personal details such as names and birthdays can also make passwords easier to guess.",
+            "meta": {
+                "source_title": "Password security source notes",
+                "source_section": "Weak password patterns",
+                "source_reference": "Items 15-17",
+                "source_url": "",
+                "concept_key": "life:password_hygiene:predictable_passwords",
+                "educational_value": 93,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "aes",
+            "topic_name": "Advanced Encryption Standard",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "f4132ef0-6dcb-40f2-b952-07b96dd8c88d",
+            "kind": "quiz",
+            "title": "Which key sizes does AES support?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "64, 128 and 512 bits"
+                },
+                {
+                    "id": "b",
+                    "label": "128, 192 and 256 bits"
+                },
+                {
+                    "id": "c",
+                    "label": "100, 200 and 300 bits"
+                }
+            ],
+            "correct": "b",
+            "explain": "AES is a widely used symmetric encryption standard that supports 128-bit, 192-bit and 256-bit keys.",
+            "meta": {
+                "source_title": "User-supplied cryptography notes",
+                "source_section": "AES",
+                "source_reference": "Items 11-12",
+                "source_url": "",
+                "concept_key": "life:aes:key_sizes",
+                "educational_value": 87,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "password_attacks",
+            "topic_name": "Password guessing attacks",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "f493abdc-bddc-49aa-90c2-f8c269ba79ef",
+            "kind": "reveal",
+            "title": "How is password spraying different from brute force?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Password spraying tries a small number of common passwords against many accounts, rather than systematically trying many possibilities against one password.",
+            "meta": {
+                "source_title": "Password security source notes",
+                "source_section": "Password attacks",
+                "source_reference": "Items 8 and 10",
+                "source_url": "",
+                "concept_key": "life:password_attacks:password_spraying",
+                "educational_value": 90,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "key_agreement",
+            "topic_name": "Cryptographic key agreement",
+            "min_grade": 10,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "f4ad563c-1812-4d17-8c80-81228f1bd7d0",
+            "kind": "quiz",
+            "title": "What problem does Diffie-Hellman help solve?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Establish shared secret material"
+                },
+                {
+                    "id": "b",
+                    "label": "Compress large files"
+                },
+                {
+                    "id": "c",
+                    "label": "Create digital certificates"
+                }
+            ],
+            "correct": "a",
+            "explain": "Diffie-Hellman allows parties to establish shared secret material over an insecure communication channel. ECDH performs key agreement using elliptic-curve cryptography.",
+            "meta": {
+                "source_title": "User-supplied cryptography notes",
+                "source_section": "Key agreement",
+                "source_reference": "Items 19-20",
+                "source_url": "",
+                "concept_key": "life:key_agreement:diffie_hellman",
+                "educational_value": 93,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "key_management",
+            "topic_name": "Cryptographic key management",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "f596918c-0db7-4f22-93da-44a5a69e76ed",
+            "kind": "reveal",
+            "title": "What is a Key Management Service used for?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Key Management Services help organizations create and manage cryptographic keys used in protecting information.",
+            "meta": {
+                "source_title": "Cloud security notes",
+                "source_section": "Data protection",
+                "source_reference": "Item 28",
+                "source_url": "",
+                "concept_key": "life:key_management:cryptographic_keys",
+                "educational_value": 86,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "online_identity",
+            "topic_name": "Online identity",
+            "min_grade": 5,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "f85c2a43-97af-4cc0-bcff-2d25e0f546ef",
+            "kind": "quiz",
+            "title": "A stranger's online profile looks friendly and convincing. What should you remember?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Profiles may not show real identity"
+                },
+                {
+                    "id": "b",
+                    "label": "Every profile is verified"
+                },
+                {
+                    "id": "c",
+                    "label": "A photo proves identity"
+                }
+            ],
+            "correct": "a",
+            "explain": "Online profiles do not always represent a person's real identity. Do not automatically accept friend or follow requests from strangers.",
+            "meta": {
+                "source_title": "Internet safety source",
+                "source_section": "Online identity",
+                "source_reference": "Items 35–36",
+                "source_url": "",
+                "concept_key": "life:online_identity:stranger_profiles",
+                "educational_value": 97,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "cloud_logging",
+            "topic_name": "Cloud security logging",
+            "min_grade": 9,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "f88c1c84-6d12-43dc-a338-c80ebebd32cb",
+            "kind": "quiz",
+            "title": "Why are cloud activity logs useful for security?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "They help detect and investigate suspicious behavior"
+                },
+                {
+                    "id": "b",
+                    "label": "They eliminate every attack"
+                },
+                {
+                    "id": "c",
+                    "label": "They replace access controls"
+                }
+            ],
+            "correct": "a",
+            "explain": "Cloud logging records activities that can support detection and investigation. Centralizing important logs can also improve security monitoring and incident response.",
+            "meta": {
+                "source_title": "Cloud security notes",
+                "source_section": "Logging and monitoring",
+                "source_reference": "Items 40-41",
+                "source_url": "",
+                "concept_key": "life:cloud_logging:detection_investigation",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "least_privilege",
+            "topic_name": "Least privilege",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "f8e19eb8-d1c9-4f65-b1da-0d7646caa617",
+            "kind": "quiz",
+            "title": "What does least privilege mean?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Give every user admin access"
+                },
+                {
+                    "id": "b",
+                    "label": "Give only required permissions"
+                },
+                {
+                    "id": "c",
+                    "label": "Remove all permissions"
+                }
+            ],
+            "correct": "b",
+            "explain": "Least privilege gives identities only the permissions required for their tasks. Limiting permissions can also reduce the impact of a compromised account.",
+            "meta": {
+                "source_title": "Cloud security notes",
+                "source_section": "Identity and access",
+                "source_reference": "Items 17-18",
+                "source_url": "",
+                "concept_key": "life:least_privilege:required_permissions",
+                "educational_value": 98,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "threat_actors",
+            "topic_name": "Cyber threat actors",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "fae7b810-efea-45b7-a87e-4ea74a1ebfa9",
+            "kind": "reveal",
+            "title": "Who can be a cyber threat actor?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "A threat actor is a person or group involved in malicious cyber activity. Examples include cybercriminals, malicious insiders, hacktivists and state-sponsored groups.",
+            "meta": {
+                "source_title": "Cybersecurity source material",
+                "source_section": "Threat actors",
+                "source_reference": "Items 11–12",
+                "source_url": "",
+                "concept_key": "life:threat_actors:types",
+                "educational_value": 87,
+                "confidence": 0.98,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "phishing",
+            "topic_name": "Phishing",
+            "min_grade": 5,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "fb0a6cf8-2ef1-465b-8f69-b70eec193a8a",
+            "kind": "quiz",
+            "title": "A deceptive message tries to trick you into revealing information. What is this?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Patching"
+                },
+                {
+                    "id": "b",
+                    "label": "Phishing"
+                },
+                {
+                    "id": "c",
+                    "label": "Encryption"
+                }
+            ],
+            "correct": "b",
+            "explain": "Phishing uses deceptive messages or websites to trick people into revealing information or performing unsafe actions.",
+            "meta": {
+                "source_title": "Cybersecurity source material",
+                "source_section": "Social engineering",
+                "source_reference": "Item 21",
+                "source_url": "",
+                "concept_key": "life:phishing:deceptive_message",
+                "educational_value": 98,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "account_recovery",
+            "topic_name": "Account recovery security",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "fbe4a676-410a-45dd-bf7d-403efcba2c9e",
+            "kind": "quiz",
+            "title": "Why must password-reset systems be strongly protected?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "They can bypass the original password"
+                },
+                {
+                    "id": "b",
+                    "label": "They make passwords longer"
+                },
+                {
+                    "id": "c",
+                    "label": "They stop all malware"
+                }
+            ],
+            "correct": "a",
+            "explain": "Attackers may target password-reset mechanisms to bypass the original password, so account recovery needs strong security too.",
+            "meta": {
+                "source_title": "Password security source notes",
+                "source_section": "Account recovery",
+                "source_reference": "Item 45",
+                "source_url": "",
+                "concept_key": "life:account_recovery:reset_security",
+                "educational_value": 95,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "phishing",
+            "topic_name": "Phishing and passwords",
+            "min_grade": 5,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "fbe54ec8-8032-475f-90ca-f1e6ad3a64ea",
+            "kind": "reveal",
+            "title": "Do attackers always need to crack a password?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "No. Attackers may use phishing to trick someone into revealing a password instead of technically cracking it.",
+            "meta": {
+                "source_title": "Password security source notes",
+                "source_section": "Credential theft",
+                "source_reference": "Item 11",
+                "source_url": "",
+                "concept_key": "life:phishing:credential_theft",
+                "educational_value": 94,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "passwords",
+            "topic_name": "Password security",
+            "min_grade": 5,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "fd5e19db-8a65-4d56-9964-cbbd899fd925",
+            "kind": "quiz",
+            "title": "Which usually makes a password harder to guess?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "Making it longer"
+                },
+                {
+                    "id": "b",
+                    "label": "Adding one predictable symbol"
+                },
+                {
+                    "id": "c",
+                    "label": "Using your birthday"
+                }
+            ],
+            "correct": "a",
+            "explain": "Longer passwords are generally more resistant to guessing attacks, and length can matter more than predictable symbols or substitutions.",
+            "meta": {
+                "source_title": "Password security source notes",
+                "source_section": "Password strength",
+                "source_reference": "Items 2-3",
+                "source_url": "",
+                "concept_key": "life:passwords:length",
+                "educational_value": 94,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "password_manager",
+            "topic_name": "Password managers",
+            "min_grade": 6,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "fd63b8dc-124f-430b-b8f5-faa3c1a0f245",
+            "kind": "reveal",
+            "title": "How can a password manager improve password habits?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "A password manager can generate and securely store unique passwords for many accounts, making password reuse less necessary.",
+            "meta": {
+                "source_title": "Cybersecurity source material",
+                "source_section": "Account security",
+                "source_reference": "Items 26–27",
+                "source_url": "",
+                "concept_key": "life:password_manager:unique_passwords",
+                "educational_value": 96,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "independence",
+            "topic_name": "Independence",
+            "min_grade": 5,
+            "max_grade": 10,
+            "language": "en",
+            "active": true,
+            "id": "fda94423-d1e6-4ee1-9e52-fd608b0b52b1",
+            "kind": "reveal",
+            "title": "What does everyday independence mean?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Independence means handling appropriate tasks and decisions yourself rather than depending on others for everything.",
+            "meta": {
+                "source_title": "Life skills statements",
+                "source_section": "Statement 48",
+                "source_reference": "Independence means handling appropriate tasks and decisions yourself.",
+                "source_url": "",
+                "concept_key": "life:independence:appropriate_tasks",
+                "educational_value": 92,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "dos_ddos",
+            "topic_name": "DoS and DDoS attacks",
+            "min_grade": 8,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "fe54fa91-ff4f-49ca-a004-3f86d5087498",
+            "kind": "quiz",
+            "title": "What makes a DDoS attack distributed?",
+            "subtitle": "Choose quickly, then learn from the explanation.",
+            "options": [
+                {
+                    "id": "a",
+                    "label": "It uses multiple traffic sources"
+                },
+                {
+                    "id": "b",
+                    "label": "It uses only one device"
+                },
+                {
+                    "id": "c",
+                    "label": "It changes IPv4 into IPv6"
+                }
+            ],
+            "correct": "a",
+            "explain": "A DDoS attack uses multiple systems or traffic sources to overwhelm a target, while a DoS attack broadly aims to make a service unavailable or degrade it.",
+            "meta": {
+                "source_title": "Network security source material",
+                "source_section": "Network attacks",
+                "source_reference": "Items 40-41",
+                "source_url": "",
+                "concept_key": "life:dos_ddos:distributed",
+                "educational_value": 94,
+                "confidence": 0.99,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "ecc",
+            "topic_name": "Elliptic Curve Cryptography",
+            "min_grade": 10,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "ff4a881d-7fc1-41f1-8b37-ecda9b8eddec",
+            "kind": "reveal",
+            "title": "Why is ECC notable when compared with traditional RSA systems?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "Elliptic Curve Cryptography can provide strong security with comparatively smaller key sizes than traditional RSA systems.",
+            "meta": {
+                "source_title": "User-supplied cryptography notes",
+                "source_section": "Public-key cryptography",
+                "source_reference": "Items 17-18",
+                "source_url": "",
+                "concept_key": "life:ecc:smaller_keys",
+                "educational_value": 86,
+                "confidence": 0.98,
+                "evidence_class": "general_knowledge",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        },
+        {
+            "pillar": "life",
+            "pillar_name": "Life Skills & Responsibility",
+            "label": "LIFE SKILLS",
+            "topic": "contentment",
+            "topic_name": "Contentment",
+            "min_grade": 7,
+            "max_grade": 12,
+            "language": "en",
+            "active": true,
+            "id": "ff5764ed-d324-4ba2-9296-00af271e4e4c",
+            "kind": "reveal",
+            "title": "How can contentment coexist with ambition?",
+            "subtitle": "Tap to reveal one useful idea.",
+            "reveal": "You can appreciate what you have while still working toward meaningful goals. Contentment reduces endless comparison; ambition gives direction.",
+            "meta": {
+                "source_title": "Chanakya Niti",
+                "source_section": "Chapter 8",
+                "source_reference": "Verse describing contentment as a source of happiness",
+                "source_url": "https://krishjan.com/en/scriptures/chanakya-niti/chapter-8",
+                "concept_key": "life:contentment:ambition_balance",
+                "educational_value": 95,
+                "confidence": 0.97,
+                "evidence_class": "interpretation",
+                "time_sensitive": false,
+                "expires_at": null,
+                "generated_from_source": true
+            }
+        }
+    ],
+    "sha256": "d365b3376ccb1c3b2a0dc22b5d7fcefe4766ee87625f5ce196a05decaa5a942f",
+    "signature_alg": "Ed25519",
+    "signing_key_id": "76f1f50a291c1ec5",
+    "signature": "8jz87e0OnFe73_VbZ-1pjeRFpgDCbY-3XIInYQ25SEwMrvem0FoVf4P9IrtBz4w3fPLf5Lav4f3McMk3PmQSAA"
+}
