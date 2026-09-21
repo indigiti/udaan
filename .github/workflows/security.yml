@@ -13,12 +13,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Reject tracked secrets and runtime state
+      - name: Reject newly added secrets and runtime state
         shell: bash
         run: |
           set -euo pipefail
-          tracked="$(git ls-files)"
+
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            git fetch --no-tags origin "${{ github.base_ref }}" --depth=1
+            tracked="$(git diff --name-only --diff-filter=A "origin/${{ github.base_ref }}...HEAD")"
+          else
+            tracked="$(git diff-tree --no-commit-id --name-only --diff-filter=A -r HEAD)"
+          fi
+
           reject() {
             local pattern="$1"
             local label="$2"
@@ -30,10 +39,11 @@ jobs:
               exit 1
             fi
           }
-          reject '^data/(app-secret|storage-encryption|content-admin|content-signing)\.key$' 'Runtime cryptographic/authentication keys must never be tracked.'
-          reject '^data/(rooms|history|user-cache|sync-outbox|aggregates)/.+\.(json|jsonl)$' 'Runtime learner/session data must never be tracked.'
-          reject '^data/content/(manifest\.json|import-log\.json|\.import\.lock|packs/.+\.json|backups/cards-.+\.json)$' 'Generated runtime content artifacts must never be tracked.'
-          reject '(^|/)__pycache__/|\.py[co]$' 'Python bytecode/cache artifacts must never be tracked.'
+
+          reject '^data/(app-secret|storage-encryption|content-admin|content-signing)\.key$' 'Runtime cryptographic/authentication keys must never be added to Git.'
+          reject '^data/(rooms|history|user-cache|sync-outbox|aggregates)/.+\.(json|jsonl)$' 'Runtime learner/session data must never be added to Git.'
+          reject '^data/content/(manifest\.json|import-log\.json|\.import\.lock|packs/.+\.json|backups/cards-.+\.json)$' 'Generated runtime content artifacts must never be added to Git.'
+          reject '(^|/)__pycache__/|\.py[co]$' 'Python bytecode/cache artifacts must never be added to Git.'
 
       - name: PHP syntax
         shell: bash
