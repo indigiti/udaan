@@ -54,7 +54,7 @@ function rebuild_content_packs(?array $bank=null): array {
 
 function content_manifest(bool $ensure=false): array {
     global $config;$file=content_manifest_file();$raw=@file_get_contents($file);$m=is_string($raw)?json_decode($raw,true):null;$bankHash=content_pack_bank_hash();$packSize=max(16,(int)($config['content_pack_size']??112));
-    $stale=!is_array($m)||($m['bank_sha256']??'')!==$bankHash||(int)($m['pack_size']??0)!==$packSize||!is_array($m['packs']??null);
+    $stale=!is_array($m)||($m['bank_sha256']??'')!==$bankHash||(int)($m['pack_size']??0)!==$packSize||(int)($m['trust_epoch']??1)!==content_trust_epoch()||!is_array($m['packs']??null);
     if($stale&&$ensure)return rebuild_content_packs();if($stale)return [];return $m;
 }
 function content_pack_load(string $packId): ?array { if(!content_pack_id_valid($packId))return null;$m=content_manifest(false);if(!$m)return null;$allowed=false;foreach(($m['packs']??[])as$p)if(($p['pack_id']??'')===$packId){$allowed=true;break;}if(!$allowed)return null;$raw=@file_get_contents(content_pack_dir().'/'.$packId.'.json');$d=is_string($raw)?json_decode($raw,true):null;return is_array($d)?$d:null; }
