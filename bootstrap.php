@@ -1,6 +1,11 @@
 <?php
 declare(strict_types=1);
 $config=require __DIR__.'/config.php';date_default_timezone_set('Asia/Kolkata');
+$maintenanceFile=__DIR__.'/data/maintenance.flag';
+if(PHP_SAPI!=='cli'&&is_file($maintenanceFile)){
+    if(!headers_sent()){http_response_code(503);header('Retry-After: 60');header('Cache-Control: no-store');header('Content-Type: text/html; charset=utf-8');}
+    exit('<!doctype html><html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Udaan · Maintenance</title><body style="font-family:system-ui;margin:0;display:grid;place-items:center;min-height:100vh;background:#f4f1e9;color:#171914"><main style="max-width:560px;padding:32px"><small>UDAAN LIVE</small><h1>Security maintenance in progress.</h1><p>Please reopen Udaan shortly.</p></main></body></html>');
+}
 $https=strtolower((string)($_SERVER['HTTP_X_FORWARDED_PROTO']??''))==='https'||(!empty($_SERVER['HTTPS'])&&$_SERVER['HTTPS']!=='off');$doc=str_replace('\\','/',realpath($_SERVER['DOCUMENT_ROOT']??'')?:'');$app=str_replace('\\','/',realpath(__DIR__)?:__DIR__);$cookiePath='/';if($doc!==''&&str_starts_with($app,rtrim($doc,'/'))){$rel=trim(substr($app,strlen(rtrim($doc,'/'))),'/');$cookiePath=$rel===''?'/':'/'.$rel.'/';}
 ini_set('session.use_strict_mode','1');ini_set('session.use_only_cookies','1');session_name('UDAANLIVESESSID');session_set_cookie_params(['lifetime'=>0,'path'=>$cookiePath,'secure'=>$https,'httponly'=>true,'samesite'=>'Lax']);if(session_status()!==PHP_SESSION_ACTIVE)session_start();if(!isset($_SESSION['udaan_live'])||!is_array($_SESSION['udaan_live']))$_SESSION['udaan_live']=[];
 require_once __DIR__.'/lib/helpers.php';require_once __DIR__.'/lib/Store.php';require_once __DIR__.'/lib/ContentImport.php';require_once __DIR__.'/lib/ContentPacks.php';
