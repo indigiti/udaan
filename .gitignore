@@ -1,0 +1,40 @@
+# Environment / local secrets
+.env
+.env.*
+!.env.example
+*.log
+
+# Udaan runtime secrets — NEVER commit
+/data/*.key
+/data/php-error.log
+
+# Runtime learner/session state
+/data/rooms/*
+!/data/rooms/.gitkeep
+/data/history/*
+!/data/history/.gitkeep
+/data/user-cache/*
+!/data/user-cache/.gitkeep
+/data/sync-outbox/*
+!/data/sync-outbox/.gitkeep
+/data/aggregates/*
+
+# Runtime import state
+/data/imports/pending/*
+/data/content/.import.lock
+/data/content/import-log.json
+
+# Generated content artifacts
+/data/content/manifest.json
+/data/content/packs/*
+/data/content/backups/*
+!/data/content/backups/.gitkeep
+
+# Python build/cache artifacts
+__pycache__/
+*.py[cod]
+
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
