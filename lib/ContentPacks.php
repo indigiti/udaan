@@ -7,6 +7,7 @@ function content_signing_key_file(): string { return dirname(__DIR__).'/data/con
 function content_pack_signing_available(): bool { return function_exists('sodium_crypto_sign_keypair') && function_exists('sodium_crypto_sign_detached') && function_exists('sodium_crypto_sign_verify_detached'); }
 function content_pack_bank_hash(): string { $f=content_bank_file(); return is_file($f)?hash_file('sha256',$f):''; }
 function content_pack_id_valid(string $id): bool { return (bool)preg_match('/^[a-z0-9_-]{2,40}-\d{3}$/',$id); }
+function content_trust_epoch(): int { global $config; return max(1,(int)($config['content_trust_epoch']??1)); }
 
 function content_signing_keys(): array {
     if(!content_pack_signing_available()) throw new RuntimeException('Ed25519 signing requires PHP Sodium.');
@@ -47,14 +48,14 @@ function rebuild_content_packs(?array $bank=null): array {
             $manifestPacks[]=['pack_id'=>$packId,'pillar'=>$pillar,'sequence'=>$i+1,'cards'=>count($chunk),'bytes'=>$bytes,'sha256'=>$sha,'signature'=>$sig,'url'=>app_url('content/pack/'.$packId)];
         }}
     foreach(glob($dir.'/*.json')?:[] as$f)if(!isset($keep[basename($f)]))@unlink($f);
-    $manifestBase=['schema_version'=>1,'distribution'=>'centralize-trust-decentralize-distribution','generated_at'=>now_iso(),'bank_version'=>(string)($bank['version']??''),'bank_sha256'=>content_pack_bank_hash(),'total_cards'=>$total,'pillar_count'=>count($groups),'pack_size'=>$packSize,'pack_count'=>count($manifestPacks),'signature_alg'=>'Ed25519','signing_key_id'=>$keys['key_id'],'public_key'=>$keys['public_b64'],'packs'=>$manifestPacks];
+    $manifestBase=['schema_version'=>1,'trust_epoch'=>content_trust_epoch(),'distribution'=>'centralize-trust-decentralize-distribution','generated_at'=>now_iso(),'bank_version'=>(string)($bank['version']??''),'bank_sha256'=>content_pack_bank_hash(),'total_cards'=>$total,'pillar_count'=>count($groups),'pack_size'=>$packSize,'pack_count'=>count($manifestPacks),'signature_alg'=>'Ed25519','signing_key_id'=>$keys['key_id'],'public_key'=>$keys['public_b64'],'packs'=>$manifestPacks];
     $manifestPayload=content_pack_json($manifestBase);$manifest=$manifestBase+['manifest_sha256'=>hash('sha256',$manifestPayload),'manifest_signature'=>content_pack_signature($manifestPayload,$keys)];content_pack_atomic_json(content_manifest_file(),$manifest,true);return $manifest;
 }
 
-function content_manifest(bool $ensure=true): array {
+function content_manifest(bool $ensure=false): array {
     global $config;$file=content_manifest_file();$raw=@file_get_contents($file);$m=is_string($raw)?json_decode($raw,true):null;$bankHash=content_pack_bank_hash();$packSize=max(16,(int)($config['content_pack_size']??112));
     $stale=!is_array($m)||($m['bank_sha256']??'')!==$bankHash||(int)($m['pack_size']??0)!==$packSize||!is_array($m['packs']??null);
     if($stale&&$ensure)return rebuild_content_packs();if($stale)return [];return $m;
 }
-function content_pack_load(string $packId): ?array { if(!content_pack_id_valid($packId))return null;$m=content_manifest(true);$allowed=false;foreach(($m['packs']??[])as$p)if(($p['pack_id']??'')===$packId){$allowed=true;break;}if(!$allowed)return null;$raw=@file_get_contents(content_pack_dir().'/'.$packId.'.json');$d=is_string($raw)?json_decode($raw,true):null;return is_array($d)?$d:null; }
-function content_distribution_stats(): array {try{$m=content_manifest(true);return ['ready'=>true,'mode'=>$m['distribution']??'','signing'=>$m['signature_alg']??'','key_id'=>$m['signing_key_id']??'','pack_size'=>(int)($m['pack_size']??0),'pack_count'=>(int)($m['pack_count']??0),'pack_cards'=>(int)($m['total_cards']??0),'manifest_sha256'=>$m['manifest_sha256']??''];}catch(Throwable $e){return ['ready'=>false,'error'=>$e->getMessage(),'signing'=>content_pack_signing_available()?'Ed25519 available':'Sodium unavailable'];}}
+function content_pack_load(string $packId): ?array { if(!content_pack_id_valid($packId))return null;$m=content_manifest(false);if(!$m)return null;$allowed=false;foreach(($m['packs']??[])as$p)if(($p['pack_id']??'')===$packId){$allowed=true;break;}if(!$allowed)return null;$raw=@file_get_contents(content_pack_dir().'/'.$packId.'.json');$d=is_string($raw)?json_decode($raw,true):null;return is_array($d)?$d:null; }
+function content_distribution_stats(): array {try{$m=content_manifest(false);if(!$m)return ['ready'=>false,'error'=>'Signed content distribution is missing or stale. Rebuild it through the controlled CLI/import path.','signing'=>content_pack_signing_available()?'Ed25519 available':'Sodium unavailable','trust_epoch'=>content_trust_epoch()];return ['ready'=>true,'mode'=>$m['distribution']??'','signing'=>$m['signature_alg']??'','key_id'=>$m['signing_key_id']??'','trust_epoch'=>(int)($m['trust_epoch']??1),'pack_size'=>(int)($m['pack_size']??0),'pack_count'=>(int)($m['pack_count']??0),'pack_cards'=>(int)($m['total_cards']??0),'manifest_sha256'=>$m['manifest_sha256']??''];}catch(Throwable $e){return ['ready'=>false,'error'=>$e->getMessage(),'signing'=>content_pack_signing_available()?'Ed25519 available':'Sodium unavailable','trust_epoch'=>content_trust_epoch()];}}
