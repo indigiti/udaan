@@ -1,6 +1,6 @@
 <?php
 require __DIR__.'/bootstrap.php';header('Content-Type: application/json; charset=utf-8');header('Cache-Control: no-store');$stats=bank_stats();$dist=content_distribution_stats();echo json_encode([
- 'ok'=>true,'app'=>'Udaan Live','version'=>$config['version']??'0.6.0',
+ 'ok'=>true,'app'=>'Udaan Live','version'=>$config['version']??'0.6.1',
  'room_storage'=>$store->backend(),'history_storage'=>$store->historyBackend(),'user_cache_storage'=>$store->userCacheBackend(),
  'user_cache_ttl_seconds'=>(int)($config['user_cache_ttl_seconds']??86400),'room_ttl_seconds'=>(int)($config['room_ttl_seconds']??21600),
  'session_name'=>session_name(),'pretty_urls'=>true,'room_id'=>'uuid-v4','pwa'=>true,'service_worker'=>'sw.js',
@@ -8,7 +8,7 @@ require __DIR__.'/bootstrap.php';header('Content-Type: application/json; charset
  'browser_qna_cache'=>'AES-GCM encrypted IndexedDB','device_install_id'=>'UUID v4 (local only; server stores HMAC)','offline_answer_queue'=>true,
  'offline_reserve_capacity'=>(int)($config['offline_reserve_cards']??1008),'offline_device_bank_capacity'=>(int)($config['offline_device_bank_cards']??1008),'offline_device_bank_balance'=>'up to 112 cards × 9 pillars','offline_shell'=>'offline-learning.php',
  'browser_vault_encryption'=>'Web Crypto AES-GCM 256-bit','server_temp_encryption'=>storage_encryption_available()?'AES-256-GCM':'unavailable','learning_reflection_rail'=>true,'card_reflection_seconds'=>(int)($config['card_reflection_seconds']??3),'sync_outbox'=>'data/sync-outbox/*.jsonl',
- 'content_distribution'=>$dist,'content_manifest'=>app_url('content/manifest'),'content_trust'=>'Ed25519 signed packs + SHA-256 integrity','p2p_status'=>'foundation-ready; direct WebRTC peer transport is future v0.6.x',
+ 'content_distribution'=>$dist,'content_trust_epoch'=>(int)($config['content_trust_epoch']??1),'content_manifest'=>app_url('content/manifest'),'content_trust'=>'Ed25519 signed packs + SHA-256 integrity + trust epoch '.(int)($config['content_trust_epoch']??1),'p2p_status'=>'foundation-ready; direct WebRTC peer transport is future v0.6.x',
  'journey_privacy'=>['room_unique_qna_order'=>true,'sequence_fingerprint'=>'SHA-256','option_order'=>'random per participant and frozen','max_action_cards_per_session'=>1,'quiz_options'=>'3–5','choice_options'=>'3–8','default_kind_targets'=>journey_kind_targets((int)($config['default_journey_length']??27))],
  'growth_loop'=>['daily9'=>true,'daily9_cards'=>9,'friend_challenge'=>true,'safe_share_card'=>true,'anonymous_aggregate_signals'=>true,'mystery_card'=>true,'question_of_india'=>true,'challenge_privacy'=>'same concepts; independently shuffled order/options'],
  'qr_engine'=>'Browser-local JavaScript SVG (no shell_exec)','content_import'=>'paste-verify-import + signed-pack rebuild','content_bank'=>$stats,'journey_lengths'=>journey_length_options(),'time'=>now_iso()

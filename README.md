@@ -1,8 +1,24 @@
-# Udaan Live v0.6.0 — Distributed Daily Learning Foundation
+# Udaan Live v0.6.1 — Security-Recovered Distributed Learning Foundation
 
 **Architectural principle:** **Centralize trust, decentralize distribution.**  
 **Base:** v0.5.2 Encrypted Offline Learning Vault  
 **Database:** **Not required** for this release. PHP + encrypted JSON/Redis + encrypted IndexedDB remain the persistence model until production DB adoption.
+
+
+## v0.6.1 security recovery
+
+v0.6.1 hardens the v0.6.0 distributed-learning foundation after a public-repository exposure of runtime secrets/state.
+
+- Runtime credentials and learner/session state are no longer tracked in Git.
+- Normal branch history was replaced with a clean security baseline.
+- Secret generation and sensitive storage fail closed.
+- Public content delivery is read-only; signing/rebuilds happen only through controlled import/CLI paths.
+- Signed manifests now carry **trust epoch 2** for the approved Ed25519 key transition.
+- The PWA cache is advanced to v0.6.1 so existing devices receive the trust migration.
+- Live recovery is performed with `php ops/rotate-runtime-security.php --confirm-v061-rotation`.
+- The approved content bank `data/content/cards.json` is preserved during rotation.
+
+See `docs/SECURITY_RECOVERY_v0.6.1.md` before production deployment. Do not source-control or package generated key files.
 
 ## What v0.6.0 proves
 
@@ -269,8 +285,8 @@ Use the **hotfix overlay**, not the clean full package.
 
 ## Release status
 
-**v0.6.0 = BUILT + LOCALLY AUDITED.**  
-Do not mark `SERVER VERIFIED` until the live Cloudways checks above pass.
+**v0.6.1 repository/runtime recovery code = BUILT + CI CERTIFIED.**  
+Do not mark `SERVER VERIFIED` until the v0.6.1 live rotation and production checks pass.
 
 ## Student growth loop added to final v0.6.0
 

@@ -1,5 +1,38 @@
 # Udaan Live — Change Log
 
+## v0.6.1 — Security Recovery & Runtime Trust Rotation
+
+### Security
+
+- Removed the compromised runtime key files and learner/session runtime artifacts from the normal Git branch history.
+- Replaced repository history with a clean security baseline and re-certified it with GitHub Actions.
+- Application, storage, Content Bank and Ed25519 signing keys are runtime-only and mode `0600`.
+- Application secret initialization now fails closed; the known static fallback pepper is removed.
+- Sensitive server storage now fails closed when AES-256-GCM is unavailable instead of silently writing plaintext.
+- Encrypted-room cleanup now uses `secure_unpack()` and retains unreadable records for investigation instead of deleting them.
+- Public manifest, pack and health reads no longer rebuild/sign content.
+- Added fail-closed maintenance mode for coordinated live key rotation.
+
+### Content trust recovery
+
+- Added signed content `trust_epoch=2`.
+- Existing epoch-1 clients may accept exactly the approved epoch-2 signing-key transition.
+- Any signing-key change without a strictly newer supported trust epoch is rejected.
+- PWA/static asset cache version advanced to v0.6.1 so existing devices receive the trust migration code.
+- Added controlled CLI commands:
+  - `php ops/rotate-runtime-security.php --confirm-v061-rotation`
+  - `php ops/rebuild-content-packs.php`
+
+### CI
+
+- Rejects any tracked secrets/runtime learner state/generated packs.
+- PHP and JavaScript syntax certification.
+- Verifies public content delivery remains read-only.
+- Rejects stale v0.6.0 runtime asset references.
+- Verifies both `data/` and `ops/` are denied over HTTP.
+
+---
+
 ## v0.6.0 — Distributed Daily Learning Foundation
 
 ### Architectural principle

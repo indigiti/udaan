@@ -40,7 +40,7 @@ function storage_key(): string {
 }
 function secure_pack(array $payload): string {
     $json=json_encode($payload,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES); if(!is_string($json)) throw new RuntimeException('Could not encode secure payload.');
-    if(!storage_encryption_available()) return $json;
+    if(!storage_encryption_available()) throw new RuntimeException('AES-256-GCM is required for sensitive server storage.');
     $iv=random_bytes(12); $tag=''; $ct=openssl_encrypt($json,'aes-256-gcm',storage_key(),OPENSSL_RAW_DATA,$iv,$tag,'udaan:v1',16);
     if(!is_string($ct)) throw new RuntimeException('Could not encrypt secure payload.');
     $env=json_encode(['iv'=>b64url_encode($iv),'tag'=>b64url_encode($tag),'ct'=>b64url_encode($ct)],JSON_UNESCAPED_SLASHES);if(!is_string($env))throw new RuntimeException('Could not encode encryption envelope.');return 'UDENC1.'.b64url_encode($env);
@@ -59,7 +59,7 @@ function offline_sync_token(string $learningKey,string $deviceHash,int $expires)
 function offline_sync_token_parse(string $token): ?array { $p=explode('.',$token,2); if(count($p)!==2)return null; [$payload,$sig]=$p; $expect=b64url_encode(hash_hmac('sha256','offline-sync:'.$payload,app_secret(),true)); if(!hash_equals($expect,$sig))return null; $raw=b64url_decode($payload); $d=is_string($raw)?json_decode($raw,true):null; if(!is_array($d)||empty($d['u'])||empty($d['d'])||(int)($d['exp']??0)<time())return null; return $d; }
 
 function app_base_path(): string {
-    static $base=null;if($base!==null)return $base;$app=str_replace('\\','/',realpath(__DIR__.'/..')?:dirname(__DIR__));$doc=str_replace('\\','/',realpath($_SERVER['DOCUMENT_ROOT']??'')?:'');
+    static $base=null;if($base!==null)return $base;$forced=trim((string)(getenv('UDAAN_BASE_PATH')?:''));if($forced!==''){return $base=$forced==='/'?'':'/'.trim($forced,'/');}if(PHP_SAPI==='cli')return $base='';$app=str_replace('\\','/',realpath(__DIR__.'/..')?:dirname(__DIR__));$doc=str_replace('\\','/',realpath($_SERVER['DOCUMENT_ROOT']??'')?:'');
     if($doc!==''&&str_starts_with($app,rtrim($doc,'/'))){$rel=substr($app,strlen(rtrim($doc,'/')));return $base=rtrim('/'.trim($rel,'/'),'/');}
     $script=str_replace('\\','/',$_SERVER['SCRIPT_NAME']??'');return $base=rtrim(dirname($script),'/.');
 }
@@ -192,5 +192,5 @@ function completion_badges(array $participant,array $room): array {
 
 function theme_boot_script(): string {return '<script>(function(){try{var t=localStorage.getItem("udaan-theme");if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme="light"}})();</script>';}
 function theme_toggle(): string {return '<button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme"><span class="theme-sun" aria-hidden="true">☼</span><span class="theme-moon" aria-hidden="true">◐</span></button>';}
-function common_assets_head(string $themeColor='#f3f0e9'): string {return '<meta name="theme-color" content="'.h($themeColor).'"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="manifest" href="'.h(app_url('manifest.webmanifest')).'"><link rel="apple-touch-icon" href="'.h(app_url('assets/icons/icon-192.png')).'"><link rel="stylesheet" href="'.h(app_url('assets/css/app.css?v=0.6.0')).'">'.theme_boot_script();}
-function common_theme_script(): string {return '<script src="'.h(app_url('assets/js/theme.js?v=0.6.0')).'" defer></script><script src="'.h(app_url('assets/js/learning-progress.js?v=0.6.0')).'" defer></script><script src="'.h(app_url('assets/js/pwa.js?v=0.6.0')).'" defer></script>';}
+function common_assets_head(string $themeColor='#f3f0e9'): string {return '<meta name="theme-color" content="'.h($themeColor).'"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="manifest" href="'.h(app_url('manifest.webmanifest')).'"><link rel="apple-touch-icon" href="'.h(app_url('assets/icons/icon-192.png')).'"><link rel="stylesheet" href="'.h(app_url('assets/css/app.css?v=0.6.1')).'">'.theme_boot_script();}
+function common_theme_script(): string {return '<script src="'.h(app_url('assets/js/theme.js?v=0.6.1')).'" defer></script><script src="'.h(app_url('assets/js/learning-progress.js?v=0.6.1')).'" defer></script><script src="'.h(app_url('assets/js/pwa.js?v=0.6.1')).'" defer></script>';}
