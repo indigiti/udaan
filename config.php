@@ -1,13 +1,14 @@
 <?php
 return [
     'app_name' => 'Udaan Live',
-    'version' => '0.6.0',
+    'version' => '0.6.1',
     'room_ttl_seconds' => 21600,
     'user_cache_ttl_seconds' => 604800,
     'offline_reserve_cards' => 1008,
     'offline_reserve_ttl_seconds' => 604800,
     'offline_device_bank_cards' => 1008,
     'content_pack_size' => 112,
+    'content_trust_epoch' => 2,
     'content_distribution' => 'central-trust-distributed-delivery',
     'default_journey_length' => 27,
     'max_action_cards_per_session' => 1,
