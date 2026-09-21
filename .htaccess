@@ -1,0 +1,40 @@
+Options -Indexes
+RewriteEngine On
+
+# Pretty room URLs. New rooms use UUID v4; 5-character IDs remain readable only for v0.2.0 migration.
+RewriteRule ^admin/content-bank/?$ content_admin.php [L,QSA,NC]
+RewriteRule ^daily/?$ daily.php [L,QSA,NC]
+RewriteRule ^question-of-india/?$ question_of_india.php [L,QSA,NC]
+RewriteRule ^challenge/([0-9a-fA-F-]{36})/?$ challenge.php?room=$1 [L,QSA,NC]
+RewriteRule ^mystery/([0-9a-fA-F-]{36})/?$ mystery.php?room=$1 [L,QSA,NC]
+RewriteRule ^content/manifest/?$ api/content_manifest.php [L,QSA,NC]
+RewriteRule ^content/pack/([a-z0-9_-]+-\d{3})/?$ api/content_pack.php?pack=$1 [L,QSA,NC]
+RewriteRule ^room/([0-9a-fA-F-]{36}|[A-Z2-9]{5})/join/?$ join.php?room=$1 [L,QSA,NC]
+RewriteRule ^room/([0-9a-fA-F-]{36}|[A-Z2-9]{5})/verify/?$ verify.php?room=$1 [L,QSA,NC]
+RewriteRule ^room/([0-9a-fA-F-]{36}|[A-Z2-9]{5})/journey/?$ journey.php?room=$1 [L,QSA,NC]
+RewriteRule ^room/([0-9a-fA-F-]{36}|[A-Z2-9]{5})/complete/?$ done.php?room=$1 [L,QSA,NC]
+RewriteRule ^room/([0-9a-fA-F-]{36}|[A-Z2-9]{5})/present/?$ present.php?room=$1 [L,QSA,NC]
+RewriteRule ^room/([0-9a-fA-F-]{36}|[A-Z2-9]{5})/state/?$ api/state.php?room=$1 [L,QSA,NC]
+RewriteRule ^room/([0-9a-fA-F-]{36}|[A-Z2-9]{5})/answer/?$ api/answer.php?room=$1 [L,QSA,NC]
+RewriteRule ^room/([0-9a-fA-F-]{36}|[A-Z2-9]{5})/offline-pack/?$ api/offline_pack.php?room=$1 [L,QSA,NC]
+RewriteRule ^room/([0-9a-fA-F-]{36}|[A-Z2-9]{5})/offline-sync/?$ api/offline_sync.php?room=$1 [L,QSA,NC]
+RewriteRule ^room/([0-9a-fA-F-]{36}|[A-Z2-9]{5})/qr/?$ qr.php?room=$1 [L,QSA,NC]
+RewriteRule ^room/([0-9a-fA-F-]{36}|[A-Z2-9]{5})/demo-crowd/?$ demo_fill.php?room=$1 [L,QSA,NC]
+RewriteRule ^room/([0-9a-fA-F-]{36}|[A-Z2-9]{5})/reset/?$ reset.php?room=$1 [L,QSA,NC]
+
+<FilesMatch "^(config\.php|cleanup\.php|README\.md|content-admin\.key|import-log\.json|\.import\.lock)$">
+  Require all denied
+</FilesMatch>
+<FilesMatch "^(php-error\.log)$">
+  Require all denied
+</FilesMatch>
+<IfModule mod_headers.c>
+ Header always set X-Content-Type-Options "nosniff"
+ Header always set X-Frame-Options "SAMEORIGIN"
+ Header always set Referrer-Policy "strict-origin-when-cross-origin"
+ Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+ Header always set Cross-Origin-Opener-Policy "same-origin"
+</IfModule>
+<IfModule mod_deflate.c>
+ AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml
+</IfModule>

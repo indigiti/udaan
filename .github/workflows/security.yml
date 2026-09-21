@@ -1,0 +1,60 @@
+name: Udaan Security and Syntax
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  repository-safety:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reject newly added secrets and runtime state
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            git fetch --no-tags origin "${{ github.base_ref }}" --depth=1
+            tracked="$(git diff --name-only --diff-filter=A "origin/${{ github.base_ref }}...HEAD")"
+          else
+            tracked="$(git diff-tree --no-commit-id --name-only --diff-filter=A -r HEAD)"
+          fi
+
+          reject() {
+            local pattern="$1"
+            local label="$2"
+            local hits
+            hits="$(printf '%s\n' "$tracked" | grep -E "$pattern" || true)"
+            if [[ -n "$hits" ]]; then
+              echo "::error::$label"
+              printf '%s\n' "$hits"
+              exit 1
+            fi
+          }
+
+          reject '^data/(app-secret|storage-encryption|content-admin|content-signing)\.key$' 'Runtime cryptographic/authentication keys must never be added to Git.'
+          reject '^data/(rooms|history|user-cache|sync-outbox|aggregates)/.+\.(json|jsonl)$' 'Runtime learner/session data must never be added to Git.'
+          reject '^data/content/(manifest\.json|import-log\.json|\.import\.lock|packs/.+\.json|backups/cards-.+\.json)$' 'Generated runtime content artifacts must never be added to Git.'
+          reject '(^|/)__pycache__/|\.py[co]$' 'Python bytecode/cache artifacts must never be added to Git.'
+
+      - name: PHP syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' file; do
+            php -l "$file"
+          done < <(find . -type f -name '*.php' -print0)
+
+      - name: Verify protected data directory rule
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -Eq 'Require[[:space:]]+all[[:space:]]+denied' data/.htaccess

@@ -1,0 +1,157 @@
+<?php
+declare(strict_types=1);
+
+final class TempStore {
+    private array $config;
+    private ?Redis $redis = null;
+    private string $roomDir;
+    private string $historyDir;
+    private string $userCacheDir;
+    private string $syncOutboxDir;
+    private string $aggregateDir;
+
+    public function __construct(array $config, string $roomDir) {
+        $this->config = $config;
+        $this->roomDir = $roomDir;
+        $this->historyDir = dirname($roomDir).'/history';
+        $this->userCacheDir = dirname($roomDir).'/user-cache';
+        $this->syncOutboxDir = dirname($roomDir).'/sync-outbox';
+        $this->aggregateDir = dirname($roomDir).'/aggregates';
+        foreach([$this->roomDir,$this->historyDir,$this->userCacheDir,$this->syncOutboxDir,$this->aggregateDir] as $dir) if (!is_dir($dir)) @mkdir($dir,0775,true);
+        if (($config['redis']['enabled'] ?? true) && class_exists('Redis')) {
+            try {
+                $r = new Redis();
+                $r->connect((string)$config['redis']['host'],(int)$config['redis']['port'],0.25);
+                if ((string)($config['redis']['password'] ?? '') !== '') $r->auth((string)$config['redis']['password']);
+                $r->select((int)($config['redis']['database'] ?? 0));
+                $this->redis = $r;
+            } catch (Throwable $e) { $this->redis = null; }
+        }
+    }
+
+    public function backend(): string { return $this->redis ? 'Redis' : 'Temporary JSON'; }
+    public function historyBackend(): string { return $this->redis ? 'Redis persistent history' : 'Pseudonymous JSON history'; }
+    public function userCacheBackend(): string { return $this->redis ? 'Redis user-session cache' : 'Temporary per-user JSON cache'; }
+    private function roomKey(string $id): string { return 'udaan:room:'.$id; }
+    private function historyKey(string $identity): string { return 'udaan:history:'.$identity; }
+    private function userCacheKey(string $identity): string { return 'udaan:usercache:'.$identity; }
+    private function roomFile(string $id): string { return $this->roomDir.'/'.$id.'.json'; }
+    private function historyFile(string $identity): string { return $this->historyDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
+    private function userCacheFile(string $identity): string { return $this->userCacheDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
+    private function decode(mixed $raw): ?array { if (!is_string($raw) || $raw === '') return null; return secure_unpack($raw); }
+    private function encode(array $data): string { return secure_pack($data); }
+
+    public function get(string $id): ?array {
+        if ($this->redis) { $v=$this->redis->get($this->roomKey($id)); return $v===false?null:$this->decode($v); }
+        $f=$this->roomFile($id); if(!is_file($f)) return null; $d=$this->decode(@file_get_contents($f));
+        if($d && isset($d['expires_at']) && strtotime((string)$d['expires_at']) < time()){ @unlink($f); return null; }
+        return $d;
+    }
+
+    public function put(string $id,array $room): void {
+        $ttl=(int)($this->config['room_ttl_seconds']??21600);$encoded=$this->encode($room);
+        if($this->redis){$this->redis->setex($this->roomKey($id),$ttl,$encoded);return;}$this->atomicWrite($this->roomFile($id),$encoded);
+    }
+
+    public function mutate(string $id, callable $fn): ?array {
+        if($this->redis){$k=$this->roomKey($id);for($i=0;$i<8;$i++){$this->redis->watch($k);$raw=$this->redis->get($k);if($raw===false){$this->redis->unwatch();return null;}$room=$this->decode($raw);if(!$room){$this->redis->unwatch();return null;}$next=$fn($room);if(!is_array($next)){$this->redis->unwatch();throw new RuntimeException('Invalid room mutation.');}$encoded=$this->encode($next);$this->redis->multi();$this->redis->setex($k,(int)$this->config['room_ttl_seconds'],$encoded);$ok=$this->redis->exec();if($ok!==false)return $next;}throw new RuntimeException('Room state was busy. Please retry.');}
+        $f=$this->roomFile($id);if(!is_file($f))return null;$fh=fopen($f,'c+');if(!$fh)return null;flock($fh,LOCK_EX);rewind($fh);$raw=stream_get_contents($fh);$room=$this->decode($raw);if(!$room){flock($fh,LOCK_UN);fclose($fh);return null;}$next=$fn($room);if(!is_array($next)){flock($fh,LOCK_UN);fclose($fh);throw new RuntimeException('Invalid room mutation.');}$encoded=$this->encode($next);rewind($fh);ftruncate($fh,0);fwrite($fh,$encoded);fflush($fh);flock($fh,LOCK_UN);fclose($fh);return $next;
+    }
+
+    public function delete(string $id): void { if($this->redis)$this->redis->del($this->roomKey($id)); else @unlink($this->roomFile($id)); }
+
+    public function getHistory(string $identity): array {
+        $empty=['seen_cards'=>[],'seen_topics'=>[],'visits'=>0,'updated_at'=>null];
+        if($this->redis){$raw=$this->redis->get($this->historyKey($identity));$d=$raw===false?null:$this->decode($raw);return is_array($d)?array_replace($empty,$d):$empty;}
+        $f=$this->historyFile($identity);if(!is_file($f))return $empty;$d=$this->decode(@file_get_contents($f));return is_array($d)?array_replace($empty,$d):$empty;
+    }
+
+    public function markJourneySeen(string $identity,array $cards): array {
+        $apply=function(array $h)use($cards):array{if(!isset($h['seen_cards'])||!is_array($h['seen_cards']))$h['seen_cards']=[];if(!isset($h['seen_topics'])||!is_array($h['seen_topics']))$h['seen_topics']=[];$at=now_iso();foreach($cards as$c){if(!is_array($c)||empty($c['id']))continue;$h['seen_cards'][(string)$c['id']]=$at;if(!empty($c['pillar'])&&!empty($c['topic']))$h['seen_topics'][(string)$c['pillar'].':'.(string)$c['topic']]=$at;}$h['visits']=(int)($h['visits']??0)+1;$h['updated_at']=$at;return $h;};
+        if($this->redis){$k=$this->historyKey($identity);for($i=0;$i<8;$i++){$this->redis->watch($k);$raw=$this->redis->get($k);$h=$raw===false?[]:($this->decode($raw)??[]);$next=$apply($h);$encoded=$this->encode($next);$this->redis->multi();$this->redis->set($k,$encoded);$ok=$this->redis->exec();if($ok!==false)return $next;}throw new RuntimeException('Learning history was busy. Please retry.');}
+        $f=$this->historyFile($identity);$fh=fopen($f,'c+');if(!$fh)throw new RuntimeException('Learning-history storage is not writable.');flock($fh,LOCK_EX);rewind($fh);$raw=stream_get_contents($fh);$h=$this->decode($raw)??[];$next=$apply($h);$encoded=$this->encode($next);rewind($fh);ftruncate($fh,0);fwrite($fh,$encoded);fflush($fh);flock($fh,LOCK_UN);fclose($fh);return $next;
+    }
+
+    public function getUserCache(string $identity): array {
+        $empty=['version'=>1,'updated_at'=>null,'expires_at'=>null,'sessions'=>[],'seen_cards'=>[]];
+        if($this->redis){$raw=$this->redis->get($this->userCacheKey($identity));$d=$raw===false?null:$this->decode($raw);return is_array($d)?array_replace($empty,$d):$empty;}
+        $f=$this->userCacheFile($identity);if(!is_file($f))return $empty;$d=$this->decode(@file_get_contents($f));if(!is_array($d))return $empty;if(!empty($d['expires_at'])&&strtotime((string)$d['expires_at'])<time()){@unlink($f);return $empty;}return array_replace($empty,$d);
+    }
+
+    private function putUserCache(string $identity,array $cache): void {
+        $ttl=(int)($this->config['user_cache_ttl_seconds']??86400);$cache['updated_at']=now_iso();$cache['expires_at']=date(DATE_ATOM,time()+$ttl);$encoded=$this->encode($cache);
+        if($this->redis){$this->redis->setex($this->userCacheKey($identity),$ttl,$encoded);return;}$this->atomicWrite($this->userCacheFile($identity),$encoded);
+    }
+
+    public function cacheJourneySession(string $identity,string $roomId,array $refs,array $answers=[],int $score=10): array {
+        $c=$this->getUserCache($identity);if(!isset($c['sessions'])||!is_array($c['sessions']))$c['sessions']=[];if(!isset($c['seen_cards'])||!is_array($c['seen_cards']))$c['seen_cards']=[];$seenAt=now_iso();foreach($refs as$r)if(is_array($r)&&!empty($r['id']))$c['seen_cards'][(string)$r['id']]=$seenAt;
+        $c['sessions'][$roomId]=['room_id'=>$roomId,'journey'=>$refs,'answers'=>$answers,'score'=>$score,'answered_count'=>count($answers),'completed'=>false,'created_at'=>$c['sessions'][$roomId]['created_at']??now_iso(),'updated_at'=>now_iso()];$this->putUserCache($identity,$c);return $c['sessions'][$roomId];
+    }
+
+    public function getCachedSession(string $identity,string $roomId): ?array {$c=$this->getUserCache($identity);$s=$c['sessions'][$roomId]??null;return is_array($s)?$s:null;}
+
+    public function cacheAnswer(string $identity,string $roomId,string $cardId,array $answer,int $score,int $answeredCount): void {
+        $c=$this->getUserCache($identity);if(!isset($c['sessions'][$roomId])||!is_array($c['sessions'][$roomId]))return;$c['sessions'][$roomId]['answers'][$cardId]=$answer;$c['sessions'][$roomId]['score']=$score;$c['sessions'][$roomId]['answered_count']=$answeredCount;$c['sessions'][$roomId]['updated_at']=now_iso();$this->putUserCache($identity,$c);
+    }
+
+    public function cacheComplete(string $identity,string $roomId,int $score,int $answeredCount): void {
+        $c=$this->getUserCache($identity);if(!isset($c['sessions'][$roomId])||!is_array($c['sessions'][$roomId]))return;$c['sessions'][$roomId]['completed']=true;$c['sessions'][$roomId]['score']=$score;$c['sessions'][$roomId]['answered_count']=$answeredCount;$c['sessions'][$roomId]['completed_at']=now_iso();$this->putUserCache($identity,$c);
+    }
+
+    public function cacheDevice(string $identity,string $deviceHash): void {
+        if($deviceHash==='')return; $c=$this->getUserCache($identity); if(!isset($c['devices'])||!is_array($c['devices']))$c['devices']=[]; $d=is_array($c['devices'][$deviceHash]??null)?$c['devices'][$deviceHash]:[]; $c['devices'][$deviceHash]=array_replace(['first_seen'=>now_iso()],$d,['last_seen'=>now_iso()]); $this->putUserCache($identity,$c);
+    }
+
+    public function getOfflineReserve(string $identity,string $deviceHash): ?array {
+        $c=$this->getUserCache($identity); $r=$c['devices'][$deviceHash]['offline_reserve']??null; if(!is_array($r))return null; if(!empty($r['expires_at'])&&strtotime((string)$r['expires_at'])<time())return null; return $r;
+    }
+
+    public function cacheOfflineReserve(string $identity,string $deviceHash,array $cardRefs,int $ttl): array {
+        $c=$this->getUserCache($identity); if(!isset($c['devices'])||!is_array($c['devices']))$c['devices']=[]; if(!isset($c['devices'][$deviceHash])||!is_array($c['devices'][$deviceHash]))$c['devices'][$deviceHash]=['first_seen'=>now_iso()];
+        $refs=[];$ids=[]; foreach($cardRefs as$r){if(is_array($r)&&!empty($r['id'])){$id=(string)$r['id'];$refs[]=['id'=>$id,'option_order'=>array_values(array_map('strval',is_array($r['option_order']??null)?$r['option_order']:[]))];$ids[]=$id;}elseif(is_string($r)&&$r!==''){$refs[]=['id'=>$r,'option_order'=>[]];$ids[]=$r;}}
+        $r=['reserve_id'=>uuid_v4(),'card_ids'=>$ids,'card_refs'=>$refs,'created_at'=>now_iso(),'expires_at'=>date(DATE_ATOM,time()+$ttl)]; $c['devices'][$deviceHash]['offline_reserve']=$r; $c['devices'][$deviceHash]['last_seen']=now_iso(); $this->putUserCache($identity,$c); return $r;
+    }
+
+    public function syncOfflineEvents(string $identity,string $deviceHash,array $events): array {
+        $c=$this->getUserCache($identity); if(!isset($c['offline_event_ids'])||!is_array($c['offline_event_ids']))$c['offline_event_ids']=[]; $accepted=[];$duplicates=[];$rejected=[];$bank=cards_by_id();$seenCards=[];
+        foreach(array_slice($events,0,250) as$ev){ if(!is_array($ev)){continue;} $eid=(string)($ev['event_id']??'');$cid=(string)($ev['card_id']??'');$ans=is_string($ev['answer']??null)?(string)$ev['answer']:'';
+            if(!preg_match('/^[0-9a-f-]{36}$/i',$eid)||!isset($bank[$cid])||!card_answer_valid($bank[$cid],$ans)){$rejected[]=$eid?:'invalid';continue;} if(isset($c['offline_event_ids'][$eid])){$duplicates[]=$eid;continue;}
+            $c['offline_event_ids'][$eid]=now_iso();$accepted[]=$eid;$seenCards[]=$bank[$cid]; $this->appendSyncEvent(['event_id'=>$eid,'event_type'=>'offline_card_answered','user_hash'=>$identity,'device_hash'=>$deviceHash,'card_id'=>$cid,'answer_id'=>$ans,'correct'=>(($bank[$cid]['kind']??'')==='quiz'?hash_equals((string)($bank[$cid]['correct']??''),$ans):null),'source'=>(string)($ev['source']??'offline_reserve'),'client_occurred_at'=>(string)($ev['occurred_at']??'')]);
+        }
+        if(count($c['offline_event_ids'])>4000)$c['offline_event_ids']=array_slice($c['offline_event_ids'],-3000,null,true); $this->putUserCache($identity,$c); if($seenCards)$this->markCardsSeen($identity,$seenCards); return ['accepted'=>$accepted,'duplicates'=>$duplicates,'rejected'=>$rejected];
+    }
+
+    public function markCardsSeen(string $identity,array $cards): void {
+        $h=$this->getHistory($identity); if(!isset($h['seen_cards'])||!is_array($h['seen_cards']))$h['seen_cards']=[]; if(!isset($h['seen_topics'])||!is_array($h['seen_topics']))$h['seen_topics']=[]; $at=now_iso(); foreach($cards as$c){if(!is_array($c)||empty($c['id']))continue;$h['seen_cards'][(string)$c['id']]=$at;if(!empty($c['pillar'])&&!empty($c['topic']))$h['seen_topics'][(string)$c['pillar'].':'.(string)$c['topic']]=$at;} $h['updated_at']=$at;
+        if($this->redis){$this->redis->set($this->historyKey($identity),$this->encode($h));return;} $this->atomicWrite($this->historyFile($identity),$this->encode($h));
+    }
+
+    private function aggregateFile(string $key): string { return $this->aggregateDir.'/'.hash('sha256',$key).'.json'; }
+
+    public function recordAggregateResponse(string $key,string $answer,string $responderHash=''): array {
+        $file=$this->aggregateFile($key);$fh=fopen($file,'c+');if(!$fh)throw new RuntimeException('Aggregate storage is not writable.');flock($fh,LOCK_EX);rewind($fh);$raw=stream_get_contents($fh);$d=$this->decode($raw)??['key'=>$key,'total'=>0,'counts'=>[],'responders'=>[],'updated_at'=>null];
+        if(!isset($d['counts'])||!is_array($d['counts']))$d['counts']=[];if(!isset($d['responders'])||!is_array($d['responders']))$d['responders']=[];$dedupe=$responderHash!==''?hash_hmac('sha256','aggregate:'.$key.':'.$responderHash,app_secret()):'';
+        if($dedupe===''||!isset($d['responders'][$dedupe])){$d['total']=(int)($d['total']??0)+1;$d['counts'][$answer]=(int)($d['counts'][$answer]??0)+1;if($dedupe!=='')$d['responders'][$dedupe]=now_iso();}
+        if(count($d['responders'])>25000)$d['responders']=array_slice($d['responders'],-20000,null,true);$d['updated_at']=now_iso();$encoded=$this->encode($d);rewind($fh);ftruncate($fh,0);fwrite($fh,$encoded);fflush($fh);flock($fh,LOCK_UN);fclose($fh);return $this->aggregatePublic($d);
+    }
+
+    public function getAggregate(string $key): array {
+        $f=$this->aggregateFile($key);if(!is_file($f))return ['total'=>0,'counts'=>[],'percentages'=>[],'top'=>null];$d=$this->decode(@file_get_contents($f));return is_array($d)?$this->aggregatePublic($d):['total'=>0,'counts'=>[],'percentages'=>[],'top'=>null];
+    }
+
+    private function aggregatePublic(array $d): array {
+        $total=max(0,(int)($d['total']??0));$counts=is_array($d['counts']??null)?$d['counts']:[];$pct=[];$top=null;$topN=-1;foreach($counts as$k=>$n){$n=(int)$n;$pct[(string)$k]=$total?round($n/$total*100):0;if($n>$topN){$topN=$n;$top=(string)$k;}}return ['total'=>$total,'counts'=>$counts,'percentages'=>$pct,'top'=>$top,'updated_at'=>$d['updated_at']??null];
+    }
+
+    public function appendSyncEvent(array $event): void {
+        $event=array_merge(['event_id'=>uuid_v4(),'occurred_at'=>now_iso(),'schema_version'=>1],$event);
+        $line=secure_pack($event);
+        $file=$this->syncOutboxDir.'/'.date('Y-m-d').'.jsonl';$fh=fopen($file,'ab');if(!$fh)throw new RuntimeException('Sync outbox is not writable.');flock($fh,LOCK_EX);fwrite($fh,$line."\n");fflush($fh);flock($fh,LOCK_UN);fclose($fh);
+    }
+
+    public function cleanupUserCacheFiles(): int {
+        if($this->redis)return 0;$n=0;foreach(glob($this->userCacheDir.'/*.json')?:[] as$f){$d=$this->decode(@file_get_contents($f));if(!$d||(!empty($d['expires_at'])&&strtotime((string)$d['expires_at'])<time())){if(@unlink($f))$n++;}}return $n;
+    }
+
+    private function atomicWrite(string $file,string $encoded): void {$tmp=$file.'.tmp.'.getmypid().'.'.bin2hex(random_bytes(3));if(file_put_contents($tmp,$encoded,LOCK_EX)===false||!@rename($tmp,$file)){@unlink($tmp);throw new RuntimeException('Storage is not writable.');}}
+}

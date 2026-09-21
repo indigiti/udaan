@@ -1,0 +1,112 @@
+# Udaan Live — Change Log
+
+## v0.6.0 — Distributed Daily Learning Foundation
+
+### Architectural principle
+
+**Centralize trust, decentralize distribution.**
+
+### Added
+
+- **Daily 9** everyday learning mode (`/daily`): one card per pillar, nine total, ~1–2 minute ritual.
+- Offline Daily 9 chunks generated from the encrypted signed device reserve.
+- Friend challenge flow using the same nine concepts with independently randomized order/options.
+- Privacy-safe completion share card + local QR challenge link.
+- Encrypted anonymous response aggregates and in-journey percentage signals.
+- **Question of India** prototype with one shared daily approved card and aggregate response percentages.
+- Non-scoring **Mystery Card** after Daily 9 completion.
+- Lightweight session badges: Daily 9 Finisher, 9-Pillar Explorer, Curiosity Champion and Fresh Explorer.
+- Encrypted aggregate storage under protected `data/aggregates/`.
+- Ed25519 content-signing authority.
+- SHA-256 integrity for signed card packs and manifest.
+- Signed content pack builder with default 112-card pack size.
+- Signed master content manifest.
+- `/content/manifest` and `/content/pack/{pack-id}` endpoints.
+- Browser signature verification before storing packs in encrypted IndexedDB.
+- Local signed-pack registry with maximum 1,008-card device capacity.
+- New protected `data/content-signing.key` recovery file.
+- Automatic signed-pack rebuild after verified JSON content import.
+- Automatic card-bank rollback if signed-pack publication fails during import.
+- Room-level unique Q&A sequence fingerprints.
+- Atomic collision protection for concurrent participants.
+- Per-participant shuffled/frozen option order.
+- Variable choice-card support up to 8 options.
+- Five-option Future preference seed cards.
+- Safe Content Bank v0.6 migration for live installations: preserves imported cards, backs up the bank, upgrades only legacy three-option Future-interest seed cards, then rebuilds signed packs.
+
+### Changed
+
+- Offline device bank: 108 → **up to 1,008 cards**.
+- Personalized offline reserve capacity: up to 1,008 unseen cards where appropriate content exists.
+- Offline reserve remains balanced across all nine pillars.
+- Journey content mix now explicitly Q&A/info-first.
+- `action` cards limited to **maximum 1 per session**.
+- 27-card default mix: 13 quiz + 9 reveal + 4 choice + 1 action.
+- Offline response reserve is arranged in 27-card chunks with no more than one action per chunk.
+- Quiz importer accepts 3–5 options.
+- Choice importer accepts 3–8 options.
+- Action importer accepts 2–4 options.
+- Future-interest aggregation accepts new graded-interest option IDs.
+- PWA cache version advanced to `udaan-v0.6.0-static`.
+
+### Preserved
+
+- v0.5.2 encrypted IndexedDB learning vault.
+- Device-install UUID + server HMAC device identity.
+- AES-256-GCM encrypted server temporary storage.
+- Offline answer queue / reconnect sync.
+- v0.5.1 Learning Reflection Rail.
+- v0.4.2 paste → verify → import content bank flow.
+- v0.4.1 browser-local QR generation.
+- v0.4.0 GUID card bank and no-repeat learner history.
+- UUID pretty room routes, screen OTP, dedicated session cookie, CSRF controls, light/dark mode.
+
+### Local audit results
+
+- 200 generated 27-card journeys: 200 unique sequence fingerprints.
+- Max action cards observed/session: 1.
+- 27-card kind mix observed: 13 quiz / 9 reveal / 4 choice / 1 action.
+- Correct-answer visual position distributed across all three positions in the current 3-option quiz seed cards.
+- All supported journey lengths (21/24/27/30/36) retained action cap = 1.
+- 8-option choice import validation: PASS.
+- 5-option quiz import validation: PASS.
+- 1,728-card synthetic scale bank → 1,008-card offline reserve: PASS.
+- Scale reserve balance → exactly 112 × 9 pillars: PASS.
+- Offline 27-card chunks with >1 action: 0.
+- Ed25519 manifest signature: PASS.
+- Ed25519 sample pack signature: PASS.
+- Current production seed bank remains 432 cards / 9 pillars.
+
+### Rollback
+
+v0.6.0 creates `data/content-signing.key` and may generate signed manifest/pack files. Preserve the signing key even if rolling back, because future v0.6.x devices may already trust its public counterpart. Never overwrite any protected `data/` files with a clean package.
+
+---
+
+## v0.5.2 — Encrypted Offline Learning Vault
+
+- Device Install UUID v4; server stores only HMAC device hash.
+- AES-GCM encrypted IndexedDB vault.
+- 108-card initial offline-reserve baseline.
+- Encrypted server temporary storage and sync outbox.
+- Offline response queue / reconnect sync.
+
+## v0.5.1 — Learning Reflection Rail
+
+- 3-second learning/reflection rail after new card interactions.
+
+## v0.5.0 — PWA + Session Q&A Cache
+
+- Frozen random journey, local session cache and reconnect queue.
+
+## v0.4.2 — Verified JSON Content Import
+
+- Paste → Verify → Import, backups and rollback-safe content updates.
+
+## v0.4.1 — QR Reliability / Security Hotfix
+
+- Browser-local QR, namespaced session architecture, UUID routes, themes.
+
+## v0.4.0 — Unlimited Card Bank / No Repeat
+
+- 432 seed cards, 9 pillars × 48, persistent pseudonymous no-repeat history.
