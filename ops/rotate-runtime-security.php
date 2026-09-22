@@ -20,7 +20,7 @@ require_once $root.'/lib/helpers.php';
 require_once $root.'/lib/ContentImport.php';
 require_once $root.'/lib/ContentPacks.php';
 
-$dataDir=$root.'/data';
+$dataDir=udaan_data_dir();
 $maintenance=$dataDir.'/maintenance.flag';
 if(!is_dir($dataDir)&&!@mkdir($dataDir,0775,true)&&!is_dir($dataDir)){
     fwrite(STDERR,"Data directory is unavailable.".PHP_EOL);
@@ -150,6 +150,6 @@ try{
     ],JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT).PHP_EOL;
 }catch(Throwable $e){
     fwrite(STDERR,"SECURITY ROTATION FAILED: ".$e->getMessage().PHP_EOL);
-    fwrite(STDERR,"Maintenance mode remains enabled at data/maintenance.flag. Correct the failure and rerun the command.".PHP_EOL);
+    fwrite(STDERR,"Maintenance mode remains enabled in the configured runtime data directory. Correct the failure and rerun the command.".PHP_EOL);
     exit(1);
 }
