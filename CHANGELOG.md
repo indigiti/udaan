@@ -1,5 +1,25 @@
 # Udaan Live — Change Log
 
+## v0.6.2 — Performance, Abuse Resistance & HTTP Hardening
+
+### Performance
+- APCu-backed content-bank and card-ID caches avoid repeated parsing of the ~1.5 MB card bank on hot PHP requests.
+- Presenter state reuses cached future-topic labels instead of rescanning the content bank every poll.
+
+### Abuse resistance
+- Added privacy-safe HMAC rate-limit buckets backed by runtime-only files.
+- Added room-creation and join throttles sized for shared classroom networks.
+- Added CSRF + network/device throttling to Question of India responses.
+- Added request-size and burst limits to answer and offline-sync APIs.
+- Offline sync now rejects more than 250 events instead of silently truncating.
+
+### HTTP hardening
+- Added HSTS.
+- Added restrictive same-origin CSP while retaining current inline-script/style compatibility.
+- PWA cache advanced to v0.6.2; QOI client script is cache-busted to ensure CSRF-capable code is loaded.
+
+---
+
 ## v0.6.1 — Security Recovery & Runtime Trust Rotation
 
 ### Security
