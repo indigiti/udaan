@@ -2,7 +2,7 @@
   "id":"./",
   "name":"Udaan Live — Daily Learning",
   "short_name":"Udaan",
-  "description":"Daily 9, live learning, friend challenges and encrypted offline-first learning with signed content packs and up to 1,008 cards per device.",
+  "description":"Udaan Player, Daily 9, live learning, friend challenges and encrypted offline-first learning with signed content packs.",
   "start_url":"./",
   "scope":"./",
   "display":"standalone",
