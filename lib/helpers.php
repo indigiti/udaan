@@ -68,6 +68,15 @@ function absolute_app_url(string $path=''): string {$proto=strtolower((string)($
 function route_url(string $name,?string $room=null): string {$map=['home'=>'','join'=>'join','verify'=>'verify','journey'=>'journey','complete'=>'complete','present'=>'present','state'=>'state','answer'=>'answer','qr'=>'qr','demo'=>'demo-crowd','reset'=>'reset','offline_pack'=>'offline-pack','offline_sync'=>'offline-sync'];if($name==='home')return app_url('');if($room===null||!isset($map[$name]))throw new InvalidArgumentException('Invalid route');return app_url('room/'.rawurlencode($room).'/'.$map[$name]);}
 function absolute_route_url(string $name,?string $room=null): string {$path=route_url($name,$room);$proto=strtolower((string)($_SERVER['HTTP_X_FORWARDED_PROTO']??''))==='https'||(!empty($_SERVER['HTTPS'])&&$_SERVER['HTTPS']!=='off')?'https':'http';$host=preg_replace('/[^A-Za-z0-9.:-]/','',(string)($_SERVER['HTTP_HOST']??'localhost'))?:'localhost';return $proto.'://'.$host.$path;}
 function json_response(array $data,int $status=200): never {http_response_code($status);header('Content-Type: application/json; charset=utf-8');header('Cache-Control: no-store');echo json_encode($data,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);exit;}
+function json_request_payload(int $maxBytes=65536): array {
+    $maxBytes=max(1024,$maxBytes);$declared=(int)($_SERVER['CONTENT_LENGTH']??0);if($declared>$maxBytes)json_response(['ok'=>false,'error'=>'Request body too large'],413);
+    $raw=file_get_contents('php://input',false,null,0,$maxBytes+1);if(!is_string($raw))json_response(['ok'=>false,'error'=>'Request body unavailable'],400);if(strlen($raw)>$maxBytes)json_response(['ok'=>false,'error'=>'Request body too large'],413);
+    if($raw==='')return [];try{$decoded=json_decode($raw,true,128,JSON_THROW_ON_ERROR);}catch(JsonException $e){json_response(['ok'=>false,'error'=>'Invalid JSON request'],400);}return is_array($decoded)?$decoded:[];
+}
+function request_fingerprint(string $scope='web'): string {
+    $remote=trim((string)($_SERVER['REMOTE_ADDR']??'unknown'));$ua=text_cut(trim((string)($_SERVER['HTTP_USER_AGENT']??'')),240);return hash_hmac('sha256',$scope.'|'.$remote.'|'.$ua,app_secret());
+}
+function rate_limit_retry_header(array $rate): void { $retry=max(1,(int)($rate['retry_after']??60));header('Retry-After: '.$retry); }
 function require_room_id(?string $id): string {$id=trim((string)$id);$uuid='/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i';$legacy='/^[A-Z2-9]{5}$/';if(preg_match($uuid,$id))return strtolower($id);if(preg_match($legacy,strtoupper($id)))return strtoupper($id);http_response_code(400);exit('Invalid room');}
 function canonicalize_get_route(string $route,string $room): void {if($_SERVER['REQUEST_METHOD']!=='GET')return;$path=parse_url((string)($_SERVER['REQUEST_URI']??''),PHP_URL_PATH)?:'';if(str_ends_with($path,'/'.basename((string)($_SERVER['SCRIPT_NAME']??'')))){header('Location: '.route_url($route,$room),true,302);exit;}}
 
