@@ -1,9 +1,23 @@
-# Udaan Live v0.6.2 — Hardened Distributed Learning Foundation
+# Udaan Live v0.6.3 — Production-Ready Distributed Learning Foundation
 
 **Architectural principle:** **Centralize trust, decentralize distribution.**  
 **Base:** v0.5.2 Encrypted Offline Learning Vault  
 **Database:** **Not required** for this release. PHP + encrypted JSON/Redis + encrypted IndexedDB remain the persistence model until production DB adoption.
 
+
+## v0.6.3 production readiness
+
+v0.6.3 formalizes the production runtime contract without removing the encrypted file fallback used by smaller installations.
+
+- `/ready` returns HTTP 200 only when required runtime dependencies are ready; otherwise HTTP 503 with safe diagnostics.
+- `php ops/preflight.php` runs the same checks from CLI.
+- `REDIS_REQUIRED=1` makes Redis a hard dependency for normal application traffic.
+- When Redis is optional, an outage is surfaced as degraded state while encrypted file storage remains available.
+- `UDAAN_TRUST_PROXY_HEADERS` controls whether reverse-proxy HTTPS headers are trusted.
+- `UDAAN_ENV=production` removes the non-production readiness warning.
+- Runtime key permissions, compiled content cache and signed distribution are validated without creating or printing secrets.
+
+See `docs/PRODUCTION_RUNTIME_v0.6.3.md` and `docs/RELEASE_AUDIT_v0.6.3.md` before marking a deployment SERVER VERIFIED.
 
 ## v0.6.2 performance and abuse hardening
 
