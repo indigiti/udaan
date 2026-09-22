@@ -195,9 +195,15 @@ function udaan_mission_apply_readiness(TempStore $store,string $identity,array $
             $guidance=udaan_daily_readiness_mission_guidance($entry,$arena);
             $mission['readiness_guidance']=$guidance;
             if(($mission['type']??'')!=='daily9'){
-                if(($entry['band']??'')==='low')$mission['difficulty']='light';
-                elseif(($entry['band']??'')==='high'&&in_array($mission['type']??'',['focus','fitness','learning','revision'],true))$mission['difficulty']='challenge';
-                else $mission['difficulty']='standard';
+                $type=(string)($mission['type']??'');
+                $band=(string)($entry['band']??'balanced');
+                if($band==='low'){
+                    $mission['difficulty']='light';
+                }elseif($band==='high'){
+                    $mission['difficulty']=in_array($type,['focus','learning','revision'],true)?'challenge':($type==='fitness'?'standard':'light');
+                }else{
+                    $mission['difficulty']=in_array($type,['fitness','reflection'],true)?'light':'standard';
+                }
             }
             $mission['updated_at']=now_iso();
             $state['missions'][$id]=$mission;
