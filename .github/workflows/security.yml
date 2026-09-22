@@ -333,7 +333,7 @@ jobs:
           grep -q "'team_size_limit'=>8" health.php
           grep -q "'team_challenge_ranking'=>false" health.php
           grep -q "FRIENDS + TEAMS · PRIVATE BY DEFAULT" connect.php
-          grep -q "No public Player search, follower count, open messaging" connect.php
+          grep -q "There is no public Player search, follower count, open messaging" connect.php
           grep -q "There is no speed bonus or top-member rank" team.php
           grep -q "daily_readiness_storage" health.php
           grep -q "data/readiness" ops/package-release.sh
