@@ -1,10 +1,27 @@
-# Udaan Live v0.13.0 — Coach v1
+# Udaan Live v0.14.0 — Friends + Teams
 
 **Architectural principle:** **Centralize trust, decentralize distribution.**  
 **Base:** v0.5.2 Encrypted Offline Learning Vault  
 **Database:** **Not required** for this release. PHP + encrypted JSON/Redis + encrypted IndexedDB remain the persistence model until production DB adoption.
 
 **Master development knowledge:** See `docs/MASTER_DEVELOPMENT_KNOWLEDGE.md` for the current shipped state, live-pending items, next releases, product architecture, safety rules, KPIs and the 2026–2036 roadmap.
+
+## v0.14.0 Friends + Teams
+
+v0.14.0 introduces Udaan's first persistent social layer while keeping discovery and communication deliberately constrained.
+
+- encrypted shared Social Graph;
+- private `/connect` hub;
+- one-time 64-bit friend invites;
+- friend connect/remove;
+- private small teams;
+- one-time team invites;
+- max 8 members/team and max 5 team memberships/Player;
+- nickname-only Team member projection;
+- 7-day Mission-derived team participation challenges;
+- no public discovery, follower counts, open messaging or location sharing;
+- no team-member ranking/speed bonus;
+- under-13 social access disabled pending a verified consent model.
 
 ## v0.13.0 Coach v1
 
