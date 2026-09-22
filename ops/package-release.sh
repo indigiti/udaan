@@ -7,7 +7,7 @@ cd "$ROOT"
 SOURCE_SHA="${SOURCE_SHA:-$(git rev-parse HEAD)}"
 OUTPUT_DIR="${OUTPUT_DIR:-$ROOT/dist}"
 git cat-file -e "$SOURCE_SHA^{commit}"
-VERSION="$(git show "$SOURCE_SHA:config.php" | php -r '$c=require "php://stdin"; echo (string)$c["version"];')"
+VERSION="$(git show "$SOURCE_SHA:config.php" | php -r '$src=stream_get_contents(STDIN); $tmp=tempnam(sys_get_temp_dir(),"udaan-config-"); file_put_contents($tmp,$src); $c=require $tmp; @unlink($tmp); echo (string)$c["version"];')"
 [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+([._-][A-Za-z0-9.-]+)?$ ]] || { echo "Invalid application version: $VERSION" >&2; exit 1; }
 
 SHORT_SHA="${SOURCE_SHA:0:12}"
