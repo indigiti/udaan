@@ -1,6 +1,6 @@
-const VERSION='udaan-v0.14.0';
+const VERSION='udaan-v0.15.0';
 const STATIC=`${VERSION}-static`;
-const CORE=['./offline.html','./manifest.webmanifest','./assets/css/app.css?v=0.14.0','./assets/js/theme.js?v=0.14.0','./assets/js/pwa.js?v=0.14.0','./assets/js/learning-progress.js?v=0.14.0','./assets/js/journey.js?v=0.14.0','./assets/js/vault.js?v=0.14.0','./assets/js/device-id.js?v=0.14.0','./assets/js/content-packs.js?v=0.14.0','./assets/js/offline-learning.js?v=0.14.0','./assets/js/qoi.js?v=0.14.0','./assets/js/share-card.js?v=0.14.0','./offline-learning.php','./assets/js/qr-local.js?v=0.14.0','./assets/icons/icon-192.png','./assets/icons/icon-512.png'];
+const CORE=['./offline.html','./manifest.webmanifest','./assets/css/app.css?v=0.15.0','./assets/js/theme.js?v=0.15.0','./assets/js/pwa.js?v=0.15.0','./assets/js/learning-progress.js?v=0.15.0','./assets/js/journey.js?v=0.15.0','./assets/js/vault.js?v=0.15.0','./assets/js/device-id.js?v=0.15.0','./assets/js/content-packs.js?v=0.15.0','./assets/js/offline-learning.js?v=0.15.0','./assets/js/qoi.js?v=0.15.0','./assets/js/share-card.js?v=0.15.0','./offline-learning.php','./assets/js/qr-local.js?v=0.15.0','./assets/icons/icon-192.png','./assets/icons/icon-512.png'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(STATIC).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('udaan-')&&k!==STATIC).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{
