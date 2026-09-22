@@ -1,6 +1,6 @@
 <?php
 require __DIR__.'/bootstrap.php';header('Content-Type: application/json; charset=utf-8');header('Cache-Control: no-store');$stats=bank_stats();$dist=content_distribution_stats();echo json_encode([
- 'ok'=>true,'app'=>'Udaan Live','version'=>$config['version']??'0.6.1',
+ 'ok'=>true,'app'=>'Udaan Live','version'=>$config['version']??'0.6.2',
  'room_storage'=>$store->backend(),'history_storage'=>$store->historyBackend(),'user_cache_storage'=>$store->userCacheBackend(),
  'user_cache_ttl_seconds'=>(int)($config['user_cache_ttl_seconds']??86400),'room_ttl_seconds'=>(int)($config['room_ttl_seconds']??21600),
  'session_name'=>session_name(),'pretty_urls'=>true,'room_id'=>'uuid-v4','pwa'=>true,'service_worker'=>'sw.js',
