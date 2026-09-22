@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-function content_pack_dir(): string { return dirname(__DIR__).'/data/content/packs'; }
-function content_manifest_file(): string { return dirname(__DIR__).'/data/content/manifest.json'; }
-function content_signing_key_file(): string { return dirname(__DIR__).'/data/content-signing.key'; }
+function content_pack_dir(): string { return udaan_data_path('content/packs'); }
+function content_manifest_file(): string { return udaan_data_path('content/manifest.json'); }
+function content_signing_key_file(): string { return udaan_data_path('content-signing.key'); }
 function content_pack_signing_available(): bool { return function_exists('sodium_crypto_sign_keypair') && function_exists('sodium_crypto_sign_detached') && function_exists('sodium_crypto_sign_verify_detached'); }
 function content_pack_bank_hash(): string { $f=content_bank_file(); return is_file($f)?hash_file('sha256',$f):''; }
 function content_pack_id_valid(string $id): bool { return (bool)preg_match('/^[a-z0-9_-]{2,40}-\d{3}$/',$id); }
