@@ -106,19 +106,21 @@ function content_bank_file_path(): string { return dirname(__DIR__).'/data/conte
 function content_runtime_cache_file(): string { return dirname(__DIR__).'/data/content/runtime-cache.php'; }
 function content_runtime_cache_build(array $bank): array {
     if(!isset($bank['cards'])||!is_array($bank['cards']))throw new RuntimeException('Cannot compile an invalid content bank.');
-    $pillars=[];$futureLabels=[];
+    $pillars=[];$futureLabels=[];$cardMap=[];
     foreach($bank['cards'] as $c){
         if(!is_array($c))continue;
         $p=(string)($c['pillar']??'other');$pillars[$p]=($pillars[$p]??0)+1;
+        if(!empty($c['id']))$cardMap[(string)$c['id']]=$c;
         if($p==='future'&&!empty($c['topic'])&&!isset($futureLabels[(string)$c['topic']]))$futureLabels[(string)$c['topic']]=(string)($c['topic_name']??$c['topic']);
     }
     $source=content_bank_file_path();$compiled=[
-        'schema'=>1,
+        'schema'=>2,
         'source_mtime'=>(int)(@filemtime($source)?:0),
         'source_size'=>(int)(@filesize($source)?:0),
         'bank'=>$bank,
         'stats'=>['count'=>count($bank['cards']),'pillars'=>count($pillars),'by_pillar'=>$pillars,'version'=>$bank['version']??''],
         'future_labels'=>$futureLabels,
+        'card_map'=>$cardMap,
     ];
     $php="<?php\nreturn ".var_export($compiled,true).";\n";$file=content_runtime_cache_file();$tmp=$file.'.tmp-'.bin2hex(random_bytes(5));
     if(@file_put_contents($tmp,$php,LOCK_EX)===false)throw new RuntimeException('Could not write compiled content runtime cache.');
@@ -139,7 +141,7 @@ function content_bank(): array {
     if(!is_array($data)||!isset($data['cards'])||!is_array($data['cards']))throw new RuntimeException('Content bank is unavailable.');
     return $bank=$data;
 }
-function cards_by_id(): array {static $map=null;if(is_array($map))return $map;$map=[];foreach(content_bank()['cards'] as $c)if(is_array($c)&&isset($c['id']))$map[(string)$c['id']]=$c;return $map;}
+function cards_by_id(): array {static $map=null;if(is_array($map))return $map;$compiled=content_runtime_cache();if(is_array($compiled['card_map']??null))return $map=$compiled['card_map'];$map=[];foreach(content_bank()['cards'] as $c)if(is_array($c)&&isset($c['id']))$map[(string)$c['id']]=$c;return $map;}
 function bank_stats(): array {$compiled=content_runtime_cache();if(is_array($compiled['stats']??null))return $compiled['stats'];$b=content_bank();$pillars=[];foreach($b['cards'] as $c){$p=(string)($c['pillar']??'other');$pillars[$p]=($pillars[$p]??0)+1;}return ['count'=>count($b['cards']),'pillars'=>count($pillars),'by_pillar'=>$pillars,'version'=>$b['version']??''];}
 function future_topic_labels(): array {$compiled=content_runtime_cache();if(is_array($compiled['future_labels']??null))return $compiled['future_labels'];$out=[];foreach(content_bank()['cards'] as$c)if(is_array($c)&&($c['pillar']??'')==='future'&&!empty($c['topic'])&&!isset($out[(string)$c['topic']]))$out[(string)$c['topic']]=(string)($c['topic_name']??$c['topic']);return $out;}
 function secure_shuffle(array $items): array {
