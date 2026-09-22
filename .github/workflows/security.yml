@@ -77,6 +77,20 @@ jobs:
           php ops/preflight.php --repository-mode
           php tests/proxy_smoke.php
           php tests/redis_policy_smoke.php
+          php tests/data_root_smoke.php
+
+      - name: Verify runtime data path centralization
+        shell: bash
+        run: |
+          set -euo pipefail
+          hits="$(grep -R -nE "(__DIR__|dirname\(__DIR__\)).*['\"]/data" --include='*.php' . --exclude='config.php' --exclude-dir=tests || true)"
+          if [[ -n "$hits" ]]; then
+            echo "::error::Runtime PHP must use udaan_data_path()/udaan_data_dir()."
+            printf '%s\n' "$hits"
+            exit 1
+          fi
+          grep -q "UDAAN_DATA_DIR" config.php
+          grep -q "UDAAN_PUBLIC_ROOT" config.php
 
       - name: Certified release package smoke
         shell: bash
