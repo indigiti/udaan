@@ -1,5 +1,31 @@
 # Udaan Live — Change Log
 
+## v0.9.0 — Performance Graph & Personal Best
+
+### Performance
+- Added a mission-derived Performance Graph with no synthetic overall student score.
+- Added 14-day and 30-day training summaries.
+- Added meaningful training days, completed Missions, completed minutes and Mission completion rate.
+- Added Arena-level completion/minute breakdown.
+- Added all-time Personal Bests for Missions completed in one day and completed training minutes in one day.
+
+### Personal Best events
+- Genuine Mission completion can emit `performance.personal_best` events when a Player exceeds their prior best.
+- Personal Bests are derived only from completed Mission history.
+- Skips and assigned Missions never inflate performance.
+
+### Experience
+- Added private `/progress` dashboard.
+- Linked Today and Player surfaces to Progress.
+- Advanced app/PWA assets to v0.9.0.
+
+### Safety / product boundaries
+- v0.9.0 deliberately does not create a universal student score.
+- Health/readiness scoring remains out of scope until the dedicated Readiness release.
+- Reflection text remains uncollected.
+
+---
+
 ## v0.8.0 — Universal Mission Engine
 
 ### Mission core
