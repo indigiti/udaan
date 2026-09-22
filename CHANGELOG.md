@@ -1,5 +1,35 @@
 # Udaan Live — Change Log
 
+## v0.11.0 — Udaan Fit v1
+
+### Fit Arena
+- Added a dedicated `/fit` experience using the existing Player, Mission, Readiness and Performance foundations.
+- Added five safe, equipment-free activity choices: study-break reset, gentle mobility, easy walk, light stretching and yoga basics.
+- Added bounded 5 / 10 / 15-minute session lengths.
+- Low-readiness days restrict sessions to recovery-friendly movement and no more than 10 minutes.
+- High readiness never requires harder exercise; any extra challenge remains optional.
+
+### Mission integration
+- Fit Missions now use a structured `fit_session` completion rule instead of blind self-report completion.
+- Completion records activity type and actual minutes in private Mission history.
+- Mission completion events record Fit source/activity/minutes without calorie, weight or BMI data.
+- Performance Graph uses actual completed Fit minutes rather than the planned Mission duration.
+
+### Progress
+- Added 14-day Fit active days and minutes.
+- Added 30-day Fit active days.
+- Added 14-day Fit consistency.
+- Fit remains a separate performance dimension; there is no body-comparison or weight-loss ranking.
+
+### Safety / operations
+- No calorie tracking, weight tracking, BMI target, supplement recommendation or extreme-exercise mechanic.
+- Added Fit safety copy and stop-if-unwell guidance.
+- Added Fit-specific smoke certification for readiness restrictions, structured completion, event metadata and consistency calculations.
+- Added Fit files to certified release packaging.
+- Advanced app/PWA assets to v0.11.0.
+
+---
+
 ## v0.10.0 — Daily Readiness
 
 ### Private check-in
