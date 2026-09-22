@@ -82,6 +82,10 @@ function udaan_player_default(string $identity): array {
         'exam_target'=>'',
         'daily_minutes'=>30,
         'arenas'=>['learn'],
+        'momentum'=>[
+            'weekly_training_days'=>4,
+            'habits'=>['learn'],
+        ],
         'privacy'=>[
             'profile_visibility'=>'private',
             'share_achievements'=>false,

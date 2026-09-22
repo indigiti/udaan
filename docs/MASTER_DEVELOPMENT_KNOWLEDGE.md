@@ -2,7 +2,7 @@
 
 **Document status:** Active source of truth  
 **Last reconciled:** 22 September 2026  
-**Current application version:** v0.11.0  
+**Current application version:** v0.12.0  
 **Current main SHA:** see the repository `main` branch; release SHAs are certified by the artifact pipeline.  
 **Repository:** `indigiti/udaan`
 
@@ -183,7 +183,7 @@ The shared platform underneath should include:
 ## 6.1 Current certified baseline
 
 **Application:** Udaan Live  
-**Version:** v0.10.0  
+**Version:** v0.12.0  
 **main/source SHA:** use the current repository `main` SHA after merge; release SHAs are certified by the artifact pipeline.
 
 Current release contract:
@@ -1441,8 +1441,8 @@ The proposed next release line is:
 | v0.9.0 | Performance Graph + Personal Best | DONE |
 | v0.10.0 | Daily Readiness | DONE |
 | v0.11.0 | Udaan Fit v1 | DONE |
-| v0.12.0 | Momentum + Habit Engine | NEXT |
-| v0.13.0 | Coach v1 | PLANNED |
+| v0.12.0 | Momentum + Habit Engine | DONE |
+| v0.13.0 | Coach v1 | NEXT |
 | v0.14.0 | Friends + Teams | PLANNED |
 | v0.15.0 | Match + League + Season Engine | PLANNED |
 | v0.16.0 | Exam Arena foundation | PLANNED |
@@ -1631,19 +1631,25 @@ Fit v1 is intentionally movement-for-performance, not a weight-loss or body-imag
 
 ---
 
-# 38. v0.12.0 — Momentum / Habits
+# 38. v0.12.0 — Momentum / Habits — DONE
 
-Add:
+Implemented:
 
-- habits
-- streak recovery
-- comeback
-- Personal Best prompts
-- weekly goal
-- milestones
-- achievement cards
+- configurable weekly training-day goal
+- Arena-linked habits from completed Mission history
+- weekly habit days and minutes
+- non-punitive consistency model
+- no “streak lost” state
+- inactivity detection
+- short neutral Core Comeback Mission
+- comeback assignment/completion Event Ledger entries
+- milestone progression from real training days, Missions, minutes and Fit sessions
+- next-milestone prompts
+- explicit achievement sharing that respects Player privacy settings
+- no duplicate habit/activity persistence layer
+- deterministic Momentum/Habit/Comeback smoke certification
 
-Build share cards from real progress.
+Momentum is designed to help users restart, not to punish interruptions.
 
 ---
 
@@ -2205,17 +2211,16 @@ These decisions should be made when the dependent development stage arrives rath
 
 ## NEXT
 
-- Momentum + Habit Engine
-- weekly goals
-- comeback missions
-- non-punitive consistency
-- milestones
-- Personal Best prompts
-- achievement/share cards from real progress
+- Coach v1
+- rules-based recommendations
+- goals + recent Mission history + Performance + Readiness + Momentum inputs
+- recovery recommendation
+- next-Mission recommendation
+- weekly summary
+- transparent recommendation reason codes
 
 ## NEAR TERM
 
-- Momentum
 - Coach v1
 
 ## MEDIUM TERM
@@ -2249,7 +2254,7 @@ The next code release should not jump to JEE/NEET content or a large AI assistan
 
 It should continue with:
 
-> **v0.12.0 — Momentum + Habit Engine**
+> **v0.13.0 — Coach v1**
 
 Recommended development order:
 
@@ -2264,7 +2269,7 @@ Daily Readiness ✅
   ↓
 Udaan Fit ✅
   ↓
-Momentum / Habits
+Momentum / Habits ✅
   ↓
 Coach
   ↓

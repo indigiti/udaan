@@ -1,5 +1,37 @@
 # Udaan Live — Change Log
 
+## v0.12.0 — Momentum + Habit Engine
+
+### Momentum
+- Added a dedicated `/momentum` dashboard.
+- Added configurable weekly training-day goals from 2–7 days.
+- Added weekly progress from real completed Missions only.
+- Missing days never erase historical progress and there is no “streak lost” state.
+
+### Habit Engine
+- Learn, Fit, Mind and Reflect habits are derived from actual completed Missions in those Arenas.
+- Habit tracking is limited to Arenas selected on the Player profile.
+- Added weekly habit-day and minute summaries without creating a second task/activity database.
+
+### Comeback
+- After a genuine inactivity gap, Udaan adds one short neutral Core Comeback Mission.
+- Comeback completion restores a meaningful training day but does not inflate Learn/Fit/Mind/Reflect habit counts.
+- Comeback language explicitly avoids catch-up marathons and punitive streak recovery.
+
+### Milestones / sharing
+- Added earned milestones for training days, completed Missions, training minutes and Fit sessions.
+- Added next-milestone progress.
+- Achievement sharing remains explicit and respects the existing Player share permission.
+- Share text is based only on real earned progress; nothing is posted automatically.
+
+### Operations
+- Added Momentum capability to health diagnostics.
+- Added Momentum runtime files to certified release packaging.
+- Added deterministic Momentum/Habit/Comeback smoke certification.
+- Advanced app/PWA assets to v0.12.0.
+
+---
+
 ## v0.11.0 — Udaan Fit v1
 
 ### Fit Arena
