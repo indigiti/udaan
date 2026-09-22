@@ -1,5 +1,33 @@
 # Udaan Live — Change Log
 
+## v0.8.0 — Universal Mission Engine
+
+### Mission core
+- Added one Mission model shared by Learn, Fit, Mind and Reflect.
+- Added idempotent per-day mission assignment from Player Arena preferences.
+- Added persistent encrypted Mission state with Redis or encrypted JSON fallback.
+- Added mission status, duration, difficulty, completion rule, content references and result metadata.
+- Added bounded recent Mission history.
+
+### Daily experience
+- `/today` now renders live daily missions and actual completion counts.
+- Added simple self-report movement, focus and reflection missions.
+- Added non-punitive skip-for-today actions.
+- Daily 9 remains a verified activity and cannot be completed through self-report.
+- Finishing a real Daily 9 automatically completes its matching mission.
+
+### Events / privacy
+- Mission assignment, completion and skip events enter the encrypted Player Event Ledger.
+- Reflection text is never requested or stored in this release.
+- Mission state remains private runtime data and is excluded from Git and certified artifacts.
+
+### Operations
+- Added Mission storage readiness and health reporting.
+- Added Mission state cleanup during cryptographic rotation.
+- Added Mission lifecycle smoke certification and v0.8 CI contract checks.
+
+---
+
 ## v0.7.0 — Player Foundation
 
 ### Core
