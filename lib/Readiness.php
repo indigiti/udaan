@@ -53,14 +53,17 @@ function udaan_readiness_report(array $config,string $root,bool $repositoryMode=
     $dataDir=udaan_data_dir();$dataExists=is_dir($dataDir);$dataWritable=$dataExists&&is_writable($dataDir);
     $push('data_directory',$dataWritable,$dataWritable?'writable':($dataExists?'not-writable':'missing'));
 
+    $publicRoot=trim((string)($config['public_root']??$root));if($publicRoot==='')$publicRoot=$root;
     $dataInsideApp=$dataExists&&udaan_readiness_path_inside($dataDir,$root);
-    if($dataInsideApp){
+    $dataInsidePublic=$dataExists&&udaan_readiness_path_inside($dataDir,$publicRoot);
+    if($dataInsidePublic){
         $dataDenied=is_file($dataDir.'/.htaccess')&&preg_match('/Require\s+all\s+denied/i',(string)@file_get_contents($dataDir.'/.htaccess'));
-        $push('data_http_denied',(bool)$dataDenied,$dataDenied?'protected':'deny-rule-missing',['root_mode'=>'application-protected']);
+        $push('data_http_denied',(bool)$dataDenied,$dataDenied?'protected':'deny-rule-missing',['root_mode'=>$dataInsideApp?'application-protected':'public-root-protected']);
     }else{
-        $push('data_http_denied',$dataExists,$dataExists?'outside-application-root':'data-root-missing',['root_mode'=>$dataExists?'external-private':'unresolved']);
+        $push('data_http_denied',$dataExists,$dataExists?'outside-public-root':'data-root-missing',['root_mode'=>$dataExists?'external-private':'unresolved']);
     }
-    $checks['runtime_data_root']=['ok'=>$dataExists,'code'=>$dataExists?($dataInsideApp?'application-protected':'external-private'):'missing','outside_application_root'=>$dataExists&&!$dataInsideApp];
+    $rootCode=!$dataExists?'missing':($dataInsidePublic?($dataInsideApp?'application-protected':'public-root-protected'):'external-private');
+    $checks['runtime_data_root']=['ok'=>$dataExists,'code'=>$rootCode,'outside_application_root'=>$dataExists&&!$dataInsideApp,'outside_public_root'=>$dataExists&&!$dataInsidePublic];
     if(!$dataExists)$failures[]='runtime_data_root';
 
     $opsDenied=is_file($root.'/ops/.htaccess')&&preg_match('/Require\s+all\s+denied/i',(string)@file_get_contents($root.'/ops/.htaccess'));
