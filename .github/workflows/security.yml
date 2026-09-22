@@ -34,123 +34,15 @@ jobs:
             fi
           }
 
-          reject_runtime_dir() {
-            local pattern="$1"
-            local label="$2"
-            local hits
-            hits="$(printf '%s\n' "$tracked" | grep -E "$pattern" | grep -vE '/\.gitkeep
-          reject '^data/(app-secret|storage-encryption|content-admin|content-signing)\.key$' 'Runtime cryptographic/authentication keys must never be tracked.'
-          reject '^data/maintenance\.flag$' 'Maintenance state is runtime-only and must never be tracked.'
-          reject_runtime_dir '^data/(rooms|history|user-cache|sync-outbox|aggregates|rate-limit|insights)/.+' 'Runtime learner/session/aggregate state must never be tracked.'
-          reject '^data/imports/pending/.+\.json$' 'Pending import verification snapshots must never be tracked.'
-          reject '^data/content/(manifest\.json|runtime-cache\.php|import-log\.json|\.import\.lock|packs/.+\.json|backups/cards-.+\.json)$' 'Generated runtime content artifacts must never be tracked.'
-          reject '(^|/)__pycache__/|\.py[co]$' 'Python bytecode/cache artifacts must never be tracked.'
-
-      - name: PHP syntax
-        shell: bash
-        run: |
-          set -euo pipefail
-          while IFS= read -r -d '' file; do
-            php -l "$file"
-          done < <(find . -type f -name '*.php' -print0)
-
-      - name: JavaScript syntax
-        shell: bash
-        run: |
-          set -euo pipefail
-          while IFS= read -r -d '' file; do
-            node --check "$file"
-          done < <(find assets/js -type f -name '*.js' -print0)
-          node --check sw.js
-
-      - name: Runtime cache and throttle smoke
-        shell: bash
-        run: |
-          set -euo pipefail
-          php tests/runtime_smoke.php
-
-      - name: Production readiness repository preflight
-        shell: bash
-        run: |
-          set -euo pipefail
-          php ops/preflight.php --repository-mode
-          php tests/proxy_smoke.php
-          php tests/redis_policy_smoke.php
-
-      - name: Certified release package smoke
-        shell: bash
-        run: |
-          set -euo pipefail
-          bash -n ops/package-release.sh
-          SOURCE_SHA="$(git rev-parse HEAD)" OUTPUT_DIR="$RUNNER_TEMP/udaan-release" bash ops/package-release.sh
-          test -f "$RUNNER_TEMP/udaan-release"/udaan-v*.tar.gz
-          test -f "$RUNNER_TEMP/udaan-release"/udaan-v*.tar.gz.sha256
-
-      - name: Verify readiness and Redis-required contract
-        shell: bash
-        run: |
-          set -euo pipefail
-          grep -q "RewriteRule ^ready/?$ ready.php" .htaccess
-          grep -q "Required Redis runtime is unavailable" bootstrap.php
-          grep -q "redisRequired()" bootstrap.php
-          grep -q "UDAAN_TRUST_PROXY_HEADERS" config.php
-          grep -q "REDIS_REQUIRED" config.php
-
-      - name: Verify presenter state guard
-        shell: bash
-        run: |
-          set -euo pipefail
-          grep -q "Presenter state access denied" api/state.php
-          grep -q "state_token" bootstrap.php
-          grep -q "future_topic_labels()" bootstrap.php
-
-      - name: Verify browser security headers
-        shell: bash
-        run: |
-          set -euo pipefail
-          grep -q "Content-Security-Policy" .htaccess
-          grep -q "Strict-Transport-Security" .htaccess
-          grep -q "Cross-Origin-Resource-Policy" .htaccess
-
-      - name: Verify public content delivery is read only
-        shell: bash
-        run: |
-          set -euo pipefail
-          if grep -R -nF 'content_manifest(true)' api health.php; then
-            echo "::error::Public HTTP endpoints must never rebuild/sign content."
+          runtime_hits="$(printf '%s\n' "$tracked" | grep -E '^data/(rooms|history|user-cache|sync-outbox|aggregates|rate-limit|insights)/' | grep -vF '/.gitkeep' || true)"
+          if [[ -n "$runtime_hits" ]]; then
+            echo "::error::Runtime learner/session/aggregate state must never be tracked."
+            printf '%s\n' "$runtime_hits"
             exit 1
           fi
-
-      - name: Reject stale v0.6.0 runtime asset references
-        shell: bash
-        run: |
-          set -euo pipefail
-          if grep -R -n 'v=0\.6\.0' --include='*.php' .; then
-            echo "::error::Runtime PHP still references the old PWA asset cache key."
-            exit 1
-          fi
-          if grep -n 'udaan-v0\.6\.0' sw.js; then
-            echo "::error::Service-worker cache version was not advanced."
-            exit 1
-          fi
-
-      - name: Verify protected operational directories
-        shell: bash
-        run: |
-          set -euo pipefail
-          grep -Eq 'Require[[:space:]]+all[[:space:]]+denied' data/.htaccess
-          grep -Eq 'Require[[:space:]]+all[[:space:]]+denied' ops/.htaccess
- || true)"
-            if [[ -n "$hits" ]]; then
-              echo "::error::$label"
-              printf '%s\n' "$hits"
-              exit 1
-            fi
-          }
 
           reject '^data/(app-secret|storage-encryption|content-admin|content-signing)\.key$' 'Runtime cryptographic/authentication keys must never be tracked.'
           reject '^data/maintenance\.flag$' 'Maintenance state is runtime-only and must never be tracked.'
-          reject '^data/(rooms|history|user-cache|sync-outbox|aggregates|rate-limit|insights)/.+' 'Runtime learner/session/aggregate state must never be tracked.'
           reject '^data/imports/pending/.+\.json$' 'Pending import verification snapshots must never be tracked.'
           reject '^data/content/(manifest\.json|runtime-cache\.php|import-log\.json|\.import\.lock|packs/.+\.json|backups/cards-.+\.json)$' 'Generated runtime content artifacts must never be tracked.'
           reject '(^|/)__pycache__/|\.py[co]$' 'Python bytecode/cache artifacts must never be tracked.'
