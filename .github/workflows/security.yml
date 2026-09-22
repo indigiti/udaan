@@ -34,7 +34,7 @@ jobs:
             fi
           }
 
-          runtime_hits="$(printf '%s\n' "$tracked" | grep -E '^data/(rooms|history|user-cache|sync-outbox|aggregates|rate-limit|insights|players|events|missions|readiness|social)/' | grep -vF '/.gitkeep' || true)"
+          runtime_hits="$(printf '%s\n' "$tracked" | grep -E '^data/(rooms|history|user-cache|sync-outbox|aggregates|rate-limit|insights|players|events|missions|readiness|social|competition)/' | grep -vF '/.gitkeep' || true)"
           if [[ -n "$runtime_hits" ]]; then
             echo "::error::Runtime learner/session/aggregate state must never be tracked."
             printf '%s\n' "$runtime_hits"
@@ -77,6 +77,7 @@ jobs:
           php tests/momentum_habits_smoke.php
           php tests/coach_v1_smoke.php
           php tests/friends_teams_smoke.php
+          php tests/competition_v1_smoke.php
 
       - name: Production readiness repository preflight
         shell: bash
@@ -221,13 +222,26 @@ jobs:
             exit 1
           fi
 
-      - name: Verify v0.14.0 Friends and Teams contract
+      - name: Reject stale v0.14.0 runtime asset references
         shell: bash
         run: |
           set -euo pipefail
-          grep -q "'version' => '0.14.0'" config.php
-          grep -q "udaan-v0.14.0" sw.js
-          grep -q "qoi.js?v=0.14.0" question_of_india.php
+          if grep -R -n 'v=0\.14\.0' --include='*.php' .; then
+            echo "::error::Runtime PHP still references the v0.14.0 asset cache key."
+            exit 1
+          fi
+          if grep -n 'udaan-v0\.14\.0' sw.js; then
+            echo "::error::Service-worker cache version was not advanced to v0.15.0."
+            exit 1
+          fi
+
+      - name: Verify v0.15.0 Match League Season contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q "'version' => '0.15.0'" config.php
+          grep -q "udaan-v0.15.0" sw.js
+          grep -q "qoi.js?v=0.15.0" question_of_india.php
           grep -q "RewriteRule ^player/?$ player.php" .htaccess
           grep -q "RewriteRule ^today/?$ today.php" .htaccess
           grep -q "RewriteRule ^progress/?$ progress.php" .htaccess
@@ -240,6 +254,9 @@ jobs:
           grep -q "RewriteRule ^connect/action/?$ connect_action.php" .htaccess
           grep -q "RewriteRule ^team/(" .htaccess
           grep -q "RewriteRule ^team/action/?$ team_action.php" .htaccess
+          grep -q "RewriteRule ^leagues/?$ leagues.php" .htaccess
+          grep -q "RewriteRule ^league/(" .htaccess
+          grep -q "RewriteRule ^league/action/?$ league_action.php" .htaccess
           grep -q "RewriteRule ^mission/" .htaccess
           grep -q "RewriteRule ^admin/players/?$ admin_players.php" .htaccess
           grep -q "function udaan_player_normalize" lib/Player.php
@@ -281,6 +298,17 @@ jobs:
           grep -q "random_bytes(8)" lib/Social.php
           grep -q "getSocialGraph" lib/Store.php
           grep -q "mutateSocialGraph" lib/Store.php
+          grep -q "function udaan_competition_create_league" lib/Competition.php
+          grep -q "function udaan_competition_join_league" lib/Competition.php
+          grep -q "function udaan_competition_start_season" lib/Competition.php
+          grep -q "function udaan_competition_round_robin" lib/Competition.php
+          grep -q "function udaan_competition_match_status" lib/Competition.php
+          grep -q "function udaan_competition_roster_match_score" lib/Competition.php
+          grep -q "function udaan_competition_standings" lib/Competition.php
+          grep -q "function udaan_competition_awards" lib/Competition.php
+          grep -q "team_rosters" lib/Competition.php
+          grep -q "getCompetitionState" lib/Store.php
+          grep -q "mutateCompetitionState" lib/Store.php
           grep -q "momentum.comeback_assigned" lib/Mission.php
           grep -q "momentum.comeback_completed" lib/Mission.php
           grep -q "performance.personal_best" lib/Mission.php
@@ -326,15 +354,32 @@ jobs:
           grep -q "team_action.php" ops/package-release.sh
           grep -q "data/social" ops/package-release.sh
           grep -q "social_storage_directory" lib/Readiness.php
+          grep -q "competition_storage_directory" lib/Readiness.php
           grep -q "'invite_only'=>true" health.php
           grep -q "'public_discovery'=>false" health.php
           grep -q "'open_messaging'=>false" health.php
           grep -q "'under_13_enabled'=>false" health.php
           grep -q "'team_size_limit'=>8" health.php
           grep -q "'team_challenge_ranking'=>false" health.php
+          grep -q "'private_leagues'=>true" health.php
+          grep -q "'public_leaderboard'=>false" health.php
+          grep -q "'team_normalized_scoring'=>true" health.php
+          grep -q "'member_day_cap'=>3" health.php
+          grep -q "'individual_public_rank'=>false" health.php
+          grep -q "'multiple_awards'=>true" health.php
           grep -q "FRIENDS + TEAMS · PRIVATE BY DEFAULT" connect.php
           grep -q "There is no public Player search, follower count, open messaging" connect.php
           grep -q "There is no speed bonus or top-member rank" team.php
+          grep -q "PRIVATE LEAGUES · V0.15 PILOT" leagues.php
+          grep -q "Each member contributes up to 3 active Arena-days per match" league.php
+          grep -q "Season Champion" lib/Competition.php
+          grep -q "Participation Award" lib/Competition.php
+          grep -q "Consistency Award" lib/Competition.php
+          grep -q "Improvement Award" lib/Competition.php
+          grep -q "lib/Competition.php" ops/package-release.sh
+          grep -q "data/competition" ops/package-release.sh
+          grep -q "leagues.php" ops/package-release.sh
+          grep -q "league_action.php" ops/package-release.sh
           grep -q "daily_readiness_storage" health.php
           grep -q "data/readiness" ops/package-release.sh
           grep -q "udaan_mission_complete_by_source" done.php

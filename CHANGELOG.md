@@ -1,5 +1,38 @@
 # Udaan Live — Change Log
 
+## v0.15.0 — Match + League + Season Engine
+
+### Competition engine
+- Added encrypted competition state separate from the Social Graph.
+- Added private team leagues, one-time league join codes and owner-controlled season start.
+- Added round-robin season scheduling and Match lifecycle: scheduled, live and completed.
+- Added Foundation / Rising / Elite division model with v1 leagues starting in Foundation.
+
+### Fair team scoring
+- Match score is derived from real completed Missions in the league Arena.
+- Each frozen season-roster member can contribute at most 3 active Arena-days per Match.
+- Team scores are normalized to 0–100 by roster size, preventing larger teams from gaining an automatic advantage.
+- Season rosters are frozen at season start so later membership changes cannot manipulate scoring.
+- Win = 3 table points, draw = 1 each, loss = 0.
+- No speed bonus, paid boost or individual public member ranking.
+
+### Standings / awards
+- Added private team standings.
+- Added Season Champion.
+- Added Participation Award.
+- Added Consistency Award.
+- Added Improvement Award.
+- League visibility remains private to participating teams in this pilot.
+
+### Safety / operations
+- Competition remains unavailable to under-13 Players until future verified consent controls exist.
+- Added protected encrypted competition storage.
+- Competition state is excluded from Git and certified release artifacts and purged during security rotation.
+- Added deterministic competition smoke tests covering round-robin scheduling, Match lifecycle, roster freezing, normalized scoring, standings, awards and encryption.
+- Advanced app/PWA assets to v0.15.0.
+
+---
+
 ## v0.14.0 — Friends + Teams
 
 ### Private Social Graph

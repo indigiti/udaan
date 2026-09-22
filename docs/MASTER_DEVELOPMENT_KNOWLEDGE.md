@@ -2,7 +2,7 @@
 
 **Document status:** Active source of truth  
 **Last reconciled:** 22 September 2026  
-**Current application version:** v0.14.0  
+**Current application version:** v0.15.0  
 **Current main SHA:** see the repository `main` branch; release SHAs are certified by the artifact pipeline.  
 **Repository:** `indigiti/udaan`
 
@@ -183,7 +183,7 @@ The shared platform underneath should include:
 ## 6.1 Current certified baseline
 
 **Application:** Udaan Live  
-**Version:** v0.14.0  
+**Version:** v0.15.0  
 **main/source SHA:** use the current repository `main` SHA after merge; release SHAs are certified by the artifact pipeline.
 
 Current release contract:
@@ -213,7 +213,7 @@ Repository certification is complete.
 
 The following are not considered complete until confirmed on the real deployment:
 
-- DigiOps deployment of artifact `10676416116`
+- current certified `digiops-release` production deployment confirmation
 - exact deployed source SHA confirmation
 - `/ready` HTTP 200
 - `/health.php` runtime verification
@@ -1442,8 +1442,8 @@ The proposed next release line is:
 | v0.12.0 | Momentum + Habit Engine | DONE |
 | v0.13.0 | Coach v1 | DONE |
 | v0.14.0 | Friends + Teams | DONE |
-| v0.15.0 | Match + League + Season Engine | NEXT |
-| v0.16.0 | Exam Arena foundation | PLANNED |
+| v0.15.0 | Match + League + Season Engine | DONE |
+| v0.16.0 | Exam Arena foundation | NEXT |
 | v0.17.0 | First deep exam vertical | PLANNED |
 | v0.18.0 | Udaan Mind | PLANNED |
 | v0.19.0 | Reflect / Gita | PLANNED |
@@ -1707,20 +1707,34 @@ Implemented:
 
 ---
 
-# 41. v0.15.0 — Leagues / Seasons
+# 41. v0.15.0 — Leagues / Seasons — DONE
 
-Build:
+Implemented:
 
-- match entity
-- score rules
-- season
-- divisions
-- leaderboard
-- multiple awards
-- improvement-based recognition
-- team leaderboard
+- encrypted Competition state separated from the Social Graph
+- private league entity
+- one-time league team invites
+- team-owner-controlled league entry
+- round-robin Season scheduling
+- Match lifecycle: scheduled / live / completed
+- Foundation / Rising / Elite division model with Foundation as the v1 starting division
+- frozen season rosters to prevent membership-based score manipulation
+- Mission-derived team scoring
+- per-member maximum of 3 active Arena-days per Match
+- team-size-normalized 0–100 score
+- win / draw / loss points
+- private team standings
+- Season Champion
+- Participation Award
+- Consistency Award
+- Improvement Award
+- no speed bonus
+- no pay-to-win
+- no individual public member ranking
+- under-13 social-competition block retained
+- dedicated competition smoke certification
 
-Initial launch can remain small/private before city/state scaling.
+Initial v0.15 remains a small/private league pilot before city/state/national scaling.
 
 ---
 
@@ -2225,20 +2239,19 @@ These decisions should be made when the dependent development stage arrives rath
 
 ## NEXT
 
-- Match + League + Season Engine
-- match entity and lifecycle
-- transparent score rules
-- season entity
-- divisions
-- improvement-based awards
-- team participation / team leaderboard foundation
-- no pay-to-win
-- small/private pilot before geographic scaling
+- Exam Arena foundation
+- Exam → Subject → Chapter → Concept → Skill graph
+- MCQ and numerical question structures
+- provenance / syllabus / PYQ metadata
+- attempt records
+- explanation and revision hooks
+- diagnostic foundation
+- generic structure reusable by NEET, JEE and later exams
 
 ## NEAR TERM
 
-- Match / League / Season Engine
 - Exam Arena foundation
+- first deep exam vertical
 
 ## MEDIUM TERM
 
@@ -2271,7 +2284,7 @@ The next code release should not jump to JEE/NEET content or a large AI assistan
 
 It should continue with:
 
-> **v0.15.0 — Match + League + Season Engine**
+> **v0.16.0 — Exam Arena foundation**
 
 Recommended development order:
 
@@ -2292,7 +2305,7 @@ Coach ✅
   ↓
 Social / Teams ✅
   ↓
-Match / League / Seasons
+Match / League / Seasons ✅
   ↓
 Exam Arena
   ↓
