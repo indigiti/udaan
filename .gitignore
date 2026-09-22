@@ -19,11 +19,13 @@
 /data/sync-outbox/*
 !/data/sync-outbox/.gitkeep
 /data/aggregates/*
+/data/rate-limit/*
 
 # Runtime import state
 /data/imports/pending/*
 /data/content/.import.lock
 /data/content/import-log.json
+/data/content/runtime-cache.php
 
 # Generated content artifacts
 /data/content/manifest.json
