@@ -1,4 +1,4 @@
-# Udaan Live v0.6.1 — Security-Recovered Distributed Learning Foundation
+# Udaan Live v0.6.2 — Hardened Distributed Learning Foundation
 
 **Architectural principle:** **Centralize trust, decentralize distribution.**  
 **Base:** v0.5.2 Encrypted Offline Learning Vault  
@@ -19,6 +19,16 @@ v0.6.1 hardens the v0.6.0 distributed-learning foundation after a public-reposit
 - The approved content bank `data/content/cards.json` is preserved during rotation.
 
 See `docs/SECURITY_RECOVERY_v0.6.1.md` before production deployment. Do not source-control or package generated key files.
+
+## v0.6.2 performance and abuse hardening
+
+- Hot content-bank lookups can use APCu to avoid repeated JSON parsing.
+- Presenter state no longer rescans the full card bank on each poll.
+- Room creation, joins, QOI voting, answers and offline sync now have bounded request/rate controls.
+- QOI submissions require CSRF and retain anonymous aggregate behavior.
+- HSTS and a same-origin CSP are emitted by Apache.
+- PWA cache version is advanced to v0.6.2.
+
 
 ## What v0.6.0 proves
 
