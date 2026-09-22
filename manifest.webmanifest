@@ -2,7 +2,7 @@
   "id":"./",
   "name":"Udaan Live — Daily Learning",
   "short_name":"Udaan",
-  "description":"Udaan Player, Daily 9, live learning, friend challenges and encrypted offline-first learning with signed content packs.",
+  "description":"Udaan Player, daily Missions, Daily 9, live learning and encrypted offline-first learning with signed content packs.",
   "start_url":"./",
   "scope":"./",
   "display":"standalone",
