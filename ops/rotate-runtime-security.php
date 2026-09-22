@@ -97,6 +97,7 @@ try{
         $dataDir.'/missions/*.json',
         $dataDir.'/readiness/*.json',
         $dataDir.'/social/*.json',
+        $dataDir.'/competition/*.json',
         $dataDir.'/imports/pending/*.json',
         $dataDir.'/content/packs/*.json',
     ] as $pattern)$purgedFiles+=udaan_remove_matching($pattern);
