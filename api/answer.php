@@ -2,7 +2,7 @@
 require dirname(__DIR__).'/bootstrap.php';
 if($_SERVER['REQUEST_METHOD']!=='POST')json_response(['ok'=>false,'error'=>'POST only'],405);reject_oversized_json_body(32768);
 $payload=json_decode(file_get_contents('php://input'),true);if(!is_array($payload))$payload=[];
-$roomId=require_room_id($_GET['room']??($payload['room']??''));if(!request_rate_limit('answer',240,60,$roomId))json_response(['ok'=>false,'error'=>'Too many answer requests. Please retry shortly.'],429);$pid=participant_id_for($roomId);if(!$pid)json_response(['ok'=>false,'error'=>'Join again'],401);
+$roomId=require_room_id($_GET['room']??($payload['room']??''));if(!request_rate_limit('answer',1200,60,$roomId))json_response(['ok'=>false,'error'=>'Too many answer requests. Please retry shortly.'],429);$pid=participant_id_for($roomId);if(!$pid)json_response(['ok'=>false,'error'=>'Join again'],401);
 if(!csrf_matches($roomId,$_SERVER['HTTP_X_CSRF']??null))json_response(['ok'=>false,'error'=>'Session token mismatch'],403);
 $cardId=(string)($payload['card']??'');$answer=is_string($payload['answer']??null)?trim($payload['answer']):'';$bank=cards_by_id();if(!isset($bank[$cardId]))json_response(['ok'=>false,'error'=>'Unknown card'],400);$card=$bank[$cardId];if(!card_answer_valid($card,$answer))json_response(['ok'=>false,'error'=>'Invalid answer'],422);
 $earned=0;$correct=null;$already=false;$last=false;$explain=(string)($card['explain']??$card['reveal']??'');$answerRecord=[];$finalScore=0;$finalCount=0;$learningKey='';$deviceHash='';
