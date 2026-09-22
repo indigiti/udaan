@@ -26,6 +26,8 @@
 !/data/players/.gitkeep
 /data/events/*
 !/data/events/.gitkeep
+/data/missions/*
+!/data/missions/.gitkeep
 
 # Runtime import state
 /data/imports/pending/*

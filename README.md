@@ -1,10 +1,26 @@
-# Udaan Live v0.7.0 — Player Foundation
+# Udaan Live v0.8.0 — Universal Mission Engine
 
 **Architectural principle:** **Centralize trust, decentralize distribution.**  
 **Base:** v0.5.2 Encrypted Offline Learning Vault  
 **Database:** **Not required** for this release. PHP + encrypted JSON/Redis + encrypted IndexedDB remain the persistence model until production DB adoption.
 
 **Master development knowledge:** See `docs/MASTER_DEVELOPMENT_KNOWLEDGE.md` for the current shipped state, live-pending items, next releases, product architecture, safety rules, KPIs and the 2026–2036 roadmap.
+
+## v0.8.0 Universal Mission Engine
+
+v0.8.0 turns the v0.7 Player foundation into a real daily training loop.
+
+- one shared Mission model across **Learn, Fit, Mind and Reflect**;
+- idempotent daily assignment based on the Player's selected Arenas;
+- encrypted persistent Mission state through Redis or encrypted-file fallback;
+- live `/today` mission dashboard with real completion counts and recent history;
+- self-report completion for simple movement, focus and reflection missions;
+- non-punitive **Skip today** flow;
+- Daily 9 missions complete only from the verified Daily 9 journey event, never by self-report;
+- Mission assignment/completion/skip events enter the encrypted Player Event Ledger;
+- Mission runtime state is private, Git-ignored, release-excluded and purged during cryptographic security rotation.
+
+This release deliberately does **not** introduce XP, a synthetic overall performance score, adaptive Coach decisions, full fitness programs, or exam-specific mission generation. Those remain later roadmap layers.
 
 ## v0.7.0 Player Foundation
 
