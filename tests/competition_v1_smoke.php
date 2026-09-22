@@ -43,6 +43,12 @@ $joined=udaan_competition_join_league($store,$ids[1],$players[1],$teamB['id'],$i
 if(($joined['league_id']??'')!==$league['id']){fwrite(STDERR,"League team join failed\n");exit(1);}
 
 $season=udaan_competition_start_season($store,$ids[0],$players[0],$league['id'],'2026-09-01');
+if(count((array)($season['team_rosters'][$teamA['id']]['member_identities']??[]))!==2){fwrite(STDERR,"Season roster snapshot failed\n");exit(1);}
+$store->mutateSocialGraph(function(?array $current)use($teamA,$ids):array{
+    $graph=udaan_social_prune_graph(is_array($current)?$current:[]);
+    unset($graph['teams'][$teamA['id']]['members'][$ids[2]]);
+    return udaan_social_prune_graph($graph);
+});
 if(count((array)$season['matches'])!==1){fwrite(STDERR,"Two-team season must create one round-robin match\n");exit(1);}
 $match=array_values($season['matches'])[0];
 if(($match['start_date']??'')!=='2026-09-01'||($match['end_date']??'')!=='2026-09-07'){fwrite(STDERR,"Match dates mismatch\n");exit(1);}
@@ -75,7 +81,7 @@ $leagueNow=$state['leagues'][$league['id']];
 $result=udaan_competition_match_result($store,$leagueNow,$match,'2026-09-08');
 $aId=(string)$match['team_a'];$bId=(string)$match['team_b'];
 $scores=[$aId=>$result['team_a']['score'],$bId=>$result['team_b']['score']];
-if(($scores[$teamA['id']]??-1)!==50){fwrite(STDERR,"Two-member team normalization failed\n");exit(1);}
+if(($scores[$teamA['id']]??-1)!==50){fwrite(STDERR,"Frozen two-member roster normalization failed\n");exit(1);}
 if(($scores[$teamB['id']]??-1)!==67){fwrite(STDERR,"One-member team normalization failed\n");exit(1);}
 if(($result['winner_team_id']??'')!==$teamB['id']){fwrite(STDERR,"Normalized scoring did not determine expected winner\n");exit(1);}
 
