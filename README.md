@@ -1,10 +1,24 @@
-# Udaan Live v0.9.0 — Performance Graph & Personal Best
+# Udaan Live v0.10.0 — Daily Readiness
 
 **Architectural principle:** **Centralize trust, decentralize distribution.**  
 **Base:** v0.5.2 Encrypted Offline Learning Vault  
 **Database:** **Not required** for this release. PHP + encrypted JSON/Redis + encrypted IndexedDB remain the persistence model until production DB adoption.
 
 **Master development knowledge:** See `docs/MASTER_DEVELOPMENT_KNOWLEDGE.md` for the current shipped state, live-pending items, next releases, product architecture, safety rules, KPIs and the 2026–2036 roadmap.
+
+## v0.10.0 Daily Readiness
+
+v0.10.0 adds a private, non-medical readiness signal that can tune pending Missions without altering academic performance.
+
+- private `/readiness` check-in;
+- Sleep, Energy, Stress, Focus and Body on a 1–5 scale;
+- Low / Balanced / High readiness bands;
+- recovery / standard / challenge-ready Mission guidance;
+- completed/skipped Missions are immutable to later readiness changes;
+- encrypted Redis/file readiness storage;
+- readiness history stays separate from the Performance Graph;
+- Admin sees storage status only, never individual responses;
+- raw answers are excluded from the Event Ledger, Git and certified artifacts.
 
 ## v0.9.0 Performance Graph & Personal Best
 

@@ -45,10 +45,11 @@ function udaan_readiness_report(array $config,string $root,bool $repositoryMode=
 
     $dataDir=$root.'/data';$dataWritable=is_dir($dataDir)&&is_writable($dataDir);
     $push('data_directory',$dataWritable,$dataWritable?'writable':'not-writable');
-    $playerDir=$dataDir.'/players';$eventDir=$dataDir.'/events';$missionDir=$dataDir.'/missions';
+    $playerDir=$dataDir.'/players';$eventDir=$dataDir.'/events';$missionDir=$dataDir.'/missions';$dailyReadinessDir=$dataDir.'/readiness';
     $push('player_storage_directory',is_dir($playerDir)&&is_writable($playerDir),(is_dir($playerDir)&&is_writable($playerDir))?'writable':'not-writable');
     $push('event_ledger_directory',is_dir($eventDir)&&is_writable($eventDir),(is_dir($eventDir)&&is_writable($eventDir))?'writable':'not-writable');
     $push('mission_storage_directory',is_dir($missionDir)&&is_writable($missionDir),(is_dir($missionDir)&&is_writable($missionDir))?'writable':'not-writable');
+    $push('daily_readiness_storage_directory',is_dir($dailyReadinessDir)&&is_writable($dailyReadinessDir),(is_dir($dailyReadinessDir)&&is_writable($dailyReadinessDir))?'writable':'not-writable');
 
     $dataDenied=is_file($dataDir.'/.htaccess')&&preg_match('/Require\s+all\s+denied/i',(string)@file_get_contents($dataDir.'/.htaccess'));
     $opsDenied=is_file($root.'/ops/.htaccess')&&preg_match('/Require\s+all\s+denied/i',(string)@file_get_contents($root.'/ops/.htaccess'));

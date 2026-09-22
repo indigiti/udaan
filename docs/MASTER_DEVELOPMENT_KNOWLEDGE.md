@@ -2,7 +2,7 @@
 
 **Document status:** Active source of truth  
 **Last reconciled:** 22 September 2026  
-**Current application version:** v0.9.0  
+**Current application version:** v0.10.0  
 **Current main SHA:** see the repository `main` branch; release SHAs are certified by the artifact pipeline.  
 **Repository:** `indigiti/udaan`
 
@@ -183,26 +183,16 @@ The shared platform underneath should include:
 ## 6.1 Current certified baseline
 
 **Application:** Udaan Live  
-**Version:** v0.6.5  
-**main:** `93f965abaeba30d4dcf8fe4c5cc5722d919285b5`
+**Version:** v0.10.0  
+**main/source SHA:** use the current repository `main` SHA after merge; release SHAs are certified by the artifact pipeline.
 
-Current certification:
+Current release contract:
 
-- Udaan Security and Syntax: **PASS**
-- Main certification run: `35684101671`
-- Certified Release Artifact: **PASS**
-- Release run: `35684117298`
-- DigiOps artifact name: `digiops-release`
-- DigiOps artifact ID: `10676416116`
-- Artifact digest: `sha256:6ffaf48ad332397016f97f91827a48069bd2c7f9aaf00d653ec2bd7cb670814d`
-
-The artifact layout was corrected so DigiOps receives the deployable application tree directly rather than a nested tarball/checksum wrapper.
-
-The certified package now requires an application entry point and preserves hidden files such as:
-
-- root `.htaccess`
-- `data/.htaccess`
-- `ops/.htaccess`
+- Udaan Security and Syntax must be **PASS** on the exact `main` SHA.
+- Udaan Certified Release Artifact must be **PASS** for that same SHA.
+- DigiOps artifact name remains `digiops-release`.
+- The artifact must contain the deployable application tree directly, including `index.php` and protected hidden files.
+- Repository-green is not equivalent to server-verified; the live deployment still requires readiness/health/browser smoke.
 
 ## 6.2 Current repository operating state
 
@@ -1449,8 +1439,8 @@ The proposed next release line is:
 | v0.7.0 | Player Profile + Goals + Event foundation | DONE |
 | v0.8.0 | Universal Mission Engine | DONE |
 | v0.9.0 | Performance Graph + Personal Best | DONE |
-| v0.10.0 | Daily Readiness | NEXT |
-| v0.11.0 | Udaan Fit v1 | PLANNED |
+| v0.10.0 | Daily Readiness | DONE |
+| v0.11.0 | Udaan Fit v1 | NEXT |
 | v0.12.0 | Momentum + Habit Engine | PLANNED |
 | v0.13.0 | Coach v1 | PLANNED |
 | v0.14.0 | Friends + Teams | PLANNED |
@@ -1597,21 +1587,23 @@ No single total-student score.
 
 ---
 
-# 36. v0.10.0 — Daily Readiness
+# 36. v0.10.0 — Daily Readiness — DONE
 
-Add:
+Implemented:
 
-- Sleep
-- Energy
-- Stress
-- Focus
-- Body
+- private Sleep / Energy / Stress / Focus / Body check-in
+- 1–5 age-appropriate self-report scale
+- Low / Balanced / High readiness bands
+- recovery / standard / challenge-ready guidance
+- encrypted Redis/file readiness state
+- raw responses kept out of general Event Ledger metadata
+- pending Mission guidance with completed/skipped Mission immutability
+- private readiness history in Progress
+- operational Admin/health visibility without individual wellbeing responses
+- Git/release exclusion and key-rotation purge
+- dedicated smoke certification
 
-Use simple age-appropriate self-reporting.
-
-Connect to Mission intensity.
-
-Readiness remains non-medical.
+Readiness remains a non-medical workload-planning signal and is not combined with academic ranking.
 
 ---
 
@@ -2204,16 +2196,16 @@ These decisions should be made when the dependent development stage arrives rath
 
 ## NEXT
 
-- Performance Graph
-- Personal Best
-- real aggregation from Player + Mission events
-- weekly progress without a synthetic overall student score
+- Udaan Fit v1
+- study-break movement
+- mobility
+- walking
+- stretching
+- yoga basics
+- completion and consistency integration with Missions/Performance
 
 ## NEAR TERM
 
-- Performance Graph
-- Personal Best
-- Daily Readiness
 - Fit v1
 - Momentum
 - Coach v1
@@ -2245,38 +2237,34 @@ These decisions should be made when the dependent development stage arrives rath
 
 # 58. Recommended next development sequence
 
-The next code release should not begin with JEE/NEET content or a large AI assistant.
+The next code release should not jump to JEE/NEET content or a large AI assistant before the whole-person performance foundation is complete.
 
-It should begin with:
+It should continue with:
 
-> **v0.7.0 — Udaan Player Foundation**
+> **v0.11.0 — Udaan Fit v1**
 
 Recommended development order:
 
 ```text
-Player
+Player ✅
   ↓
-Goals
+Mission Engine ✅
   ↓
-Privacy
+Performance Graph ✅
   ↓
-Arena Preferences
+Daily Readiness ✅
   ↓
-Event Ledger
+Udaan Fit
   ↓
-Today/Home
-  ↓
-Mission Engine
-  ↓
-Performance Graph
+Momentum / Habits
   ↓
 Coach
-  ↓
-Fit / Health / Mind / Reflect
   ↓
 Social / Teams
   ↓
 Exam Arena
+  ↓
+Mind / Reflect / Life
   ↓
 National Network
 ```
