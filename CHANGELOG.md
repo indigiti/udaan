@@ -1,5 +1,37 @@
 # Udaan Live — Change Log
 
+## v0.14.0 — Friends + Teams
+
+### Private Social Graph
+- Added one encrypted Social Graph with Redis/file fallback instead of duplicating friend/team state across Player profiles.
+- Added one-time 64-bit friend and team invite codes; only invite hashes are persisted.
+- Added friend connect/remove flows.
+- Added small private team create/join/leave flows.
+- Added nickname-only Team member projection; internal identity hashes and private Player fields are not exposed.
+
+### Minors / privacy safety
+- No public Player search or public team directory.
+- No follower counts or popularity ranking.
+- No open messaging/chat.
+- No location sharing.
+- Under-13 social access is disabled in v1 pending a verified parent/institution consent model.
+- Friend connections are capped at 50, team memberships at 5 and team size at 8.
+
+### Team challenges
+- Added one active 7-day Arena participation challenge per team.
+- Progress is derived from real completed Missions.
+- Team challenge UI shows participation only; there is no speed bonus, score or top-member rank.
+- Team challenge creation is owner-only.
+
+### Operations / trust
+- Added `/connect`, `/connect/action`, `/team/{id}` and `/team/action`.
+- Added Social Graph readiness checks, runtime health visibility and security-rotation purge.
+- Social runtime state is Git-ignored and excluded from certified release artifacts.
+- Added deterministic Friends/Teams privacy and permission smoke certification.
+- Advanced app/PWA assets to v0.14.0.
+
+---
+
 ## v0.13.0 — Coach v1
 
 ### Transparent recommendation engine
