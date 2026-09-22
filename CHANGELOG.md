@@ -1,5 +1,43 @@
 # Udaan Live — Change Log
 
+## v0.13.0 — Coach v1
+
+### Transparent recommendation engine
+- Added a deterministic rules-based Coach with no generative-model dependency.
+- Coach reads Player goal, current/past Missions, Performance, Daily Readiness band and Momentum.
+- Every recommendation exposes a stable reason code and non-sensitive evidence.
+- Coach never mutates Missions automatically; the Player chooses whether to act.
+
+### Recommendations
+- Added comeback-first guidance after inactivity.
+- Added low-readiness recovery guidance.
+- Added private readiness check-in prompts when readiness is missing.
+- Added goal-aligned pending Mission selection.
+- Added weekly-goal-near and weekly-goal-met guidance.
+- Added near-milestone prompts without encouraging unsafe extra volume.
+
+### Weekly summary
+- Added 7-day training days, completed Missions, minutes and completion rate.
+- Added weekly-goal progress.
+- Added readiness-check-in count and latest readiness band.
+- Added top active Arena and next milestone context.
+
+### Telemetry / privacy
+- Added deduplicated `coach.recommendation_shown` events.
+- Added validated `coach.recommendation_accepted` events.
+- Raw Sleep, Energy, Stress, Focus and Body values are never copied into Coach evidence or Coach telemetry.
+- Recommendation acceptance is revalidated against current Coach output before redirecting.
+
+### Experience / operations
+- Added `/coach` and `/coach/action`.
+- Added the top Coach recommendation to Today.
+- Added Coach navigation across Player, Fit, Readiness, Momentum and Progress.
+- Added Coach capability to health diagnostics and certified release packaging.
+- Added deterministic Coach v1 smoke certification.
+- Advanced app/PWA assets to v0.13.0.
+
+---
+
 ## v0.12.0 — Momentum + Habit Engine
 
 ### Momentum
