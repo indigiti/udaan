@@ -19,6 +19,8 @@
 /data/sync-outbox/*
 !/data/sync-outbox/.gitkeep
 /data/aggregates/*
+/data/insights/*
+!/data/insights/.gitkeep
 /data/rate-limit/*
 
 # Runtime import state
