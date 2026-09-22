@@ -147,6 +147,13 @@ jobs:
           grep -q "Too many offline events in one sync request" api/offline_sync.php
           grep -q "'card_map'" lib/helpers.php
 
+      - name: Verify DigiOps release contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q 'artifact_name=digiops-release' .github/workflows/release-artifact.yml
+          grep -q 'name: ${{ steps.package.outputs.artifact_name }}' .github/workflows/release-artifact.yml
+
       - name: Verify protected operational directories
         shell: bash
         run: |
