@@ -13,8 +13,7 @@ function phone_mask(string $phone): string {$p=normalized_phone($phone);if(strle
 
 function request_actor_key(string $extra=''): string {
     $ip=trim((string)($_SERVER['REMOTE_ADDR']??'unknown'));
-    $session=session_status()===PHP_SESSION_ACTIVE?session_id():'';
-    return hash_hmac('sha256','request-actor:'.$ip.'|'.$session.'|'.$extra,app_secret());
+    return hash_hmac('sha256','request-actor:'.$ip.'|'.$extra,app_secret());
 }
 function request_rate_limit(string $scope,int $limit,int $windowSeconds,string $extra=''): bool {
     $limit=max(1,$limit);$windowSeconds=max(1,$windowSeconds);
