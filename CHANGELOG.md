@@ -1,5 +1,35 @@
 # Udaan Live — Change Log
 
+## v0.10.0 — Daily Readiness
+
+### Private check-in
+- Added a private five-signal Daily Readiness check-in: Sleep, Energy, Stress, Focus and Body.
+- Uses a simple 1–5 self-report scale and returns Low, Balanced or High readiness.
+- Readiness is explicitly non-medical and is never combined into an academic or universal Player score.
+- Raw answers are stored only in encrypted readiness state.
+
+### Mission guidance
+- Pending Missions receive recovery, standard or challenge-ready guidance from today’s check-in.
+- Daily 9 keeps its verified standard difficulty.
+- Completed and skipped Missions are never rewritten by a later readiness update.
+- High readiness makes extra challenge optional; it never requires more screen time.
+
+### Experience / privacy
+- Added private `/readiness` check-in and seven-day history.
+- Added readiness card and Mission guidance to `/today`.
+- Added separate readiness history to `/progress`.
+- Admin shows readiness storage health only, never individual wellbeing answers.
+- Event Ledger stores only readiness band/intensity metadata, not raw answers.
+
+### Operations
+- Added encrypted Redis/file readiness storage.
+- Added production readiness checks for the readiness directory.
+- Readiness runtime state is Git-ignored, release-excluded and purged during security rotation.
+- Added Daily Readiness privacy and Mission-guidance smoke certification.
+- Advanced app/PWA assets to v0.10.0.
+
+---
+
 ## v0.9.0 — Performance Graph & Personal Best
 
 ### Performance
