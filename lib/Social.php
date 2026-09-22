@@ -16,12 +16,12 @@ function udaan_social_enabled_for_player(array $player): bool {
 }
 
 function udaan_social_invite_code(): string {
-    return strtoupper(bin2hex(random_bytes(6)));
+    return strtoupper(bin2hex(random_bytes(8)));
 }
 
 function udaan_social_invite_hash(string $code): string {
     $normalized=strtoupper(preg_replace('/[^A-F0-9]/','',$code)??'');
-    if(!preg_match('/^[A-F0-9]{12}$/',$normalized))return '';
+    if(!preg_match('/^[A-F0-9]{16}$/',$normalized))return '';
     return hash_hmac('sha256','social-invite:'.$normalized,app_secret());
 }
 
