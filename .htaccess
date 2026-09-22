@@ -3,6 +3,9 @@ RewriteEngine On
 
 # Pretty room URLs. New rooms use UUID v4; 5-character IDs remain readable only for v0.2.0 migration.
 RewriteRule ^admin/content-bank/?$ content_admin.php [L,QSA,NC]
+RewriteRule ^admin/players/?$ admin_players.php [L,QSA,NC]
+RewriteRule ^player/?$ player.php [L,QSA,NC]
+RewriteRule ^today/?$ today.php [L,QSA,NC]
 RewriteRule ^ready/?$ ready.php [L,QSA,NC]
 RewriteRule ^daily/?$ daily.php [L,QSA,NC]
 RewriteRule ^question-of-india/?$ question_of_india.php [L,QSA,NC]
