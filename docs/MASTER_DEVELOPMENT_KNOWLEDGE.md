@@ -2,8 +2,8 @@
 
 **Document status:** Active source of truth  
 **Last reconciled:** 22 September 2026  
-**Current application version:** v0.6.5  
-**Current main SHA:** `93f965abaeba30d4dcf8fe4c5cc5722d919285b5`  
+**Current application version:** v0.8.0  
+**Current main SHA:** see the repository `main` branch; release SHAs are certified by the artifact pipeline.  
 **Repository:** `indigiti/udaan`
 
 ---
@@ -1430,9 +1430,9 @@ The proposed next release line is:
 
 | Release | Scope | Status |
 |---|---|---|
-| v0.6.5 | current certified baseline | DONE |
-| v0.7.0 | Player Profile + Goals + Event foundation | NEXT |
-| v0.8.0 | Universal Mission Engine | PLANNED |
+| v0.6.5 | security/performance certified baseline | DONE |
+| v0.7.0 | Player Profile + Goals + Event foundation | DONE |
+| v0.8.0 | Universal Mission Engine | DONE |
 | v0.9.0 | Performance Graph + Personal Best | PLANNED |
 | v0.10.0 | Daily Readiness | PLANNED |
 | v0.11.0 | Udaan Fit v1 | PLANNED |
@@ -1454,7 +1454,7 @@ Version numbers may move if urgent maintenance releases are required, but the de
 
 ---
 
-# 33. v0.7.0 — NEXT RELEASE
+# 33. v0.7.0 — DONE
 
 Recommended branch:
 
@@ -1527,7 +1527,11 @@ Keep current storage operational, but avoid hard-coding the future Player model 
 
 ---
 
-# 34. v0.8.0 — Mission Engine
+# 34. v0.8.0 — Mission Engine — DONE
+
+### v0.8 implementation status
+
+Implemented: one shared Mission model, idempotent daily assignment, encrypted persistent Mission state, Today mission dashboard, non-punitive skip, self-report completion for foundation movement/focus/reflection, verified-event completion for Daily 9, mission history, Event Ledger lifecycle events, readiness/health integration, release hygiene and Mission smoke certification.
 
 Build:
 
@@ -2056,7 +2060,7 @@ For product features:
 
 ---
 
-# 54. Immediate operational backlog before v0.7.0
+# 54. Immediate operational backlog before v0.9.0
 
 Status: **LIVE-PENDING / REPOSITORY HYGIENE**
 
@@ -2109,7 +2113,7 @@ Do not enable rules that break the certified artifact workflow without testing.
 
 Update older README wording that still describes the v0.6.4 tarball/checksum upload model now that the DigiOps artifact is the direct staged application tree.
 
-Then begin v0.7.0.
+Then begin v0.9.0 Performance Graph after live v0.8.0 verification.
 
 ---
 
@@ -2185,16 +2189,13 @@ These decisions should be made when the dependent development stage arrives rath
 
 ## NEXT
 
-- Player Profile
-- Goals
-- Arena Preferences
-- Event Ledger
-- Privacy foundation
-- Today/Home shell
+- Performance Graph
+- Personal Best
+- real aggregation from Player + Mission events
+- weekly progress without a synthetic overall student score
 
 ## NEAR TERM
 
-- Mission Engine
 - Performance Graph
 - Personal Best
 - Daily Readiness
