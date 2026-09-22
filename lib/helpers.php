@@ -33,6 +33,19 @@ function udaan_data_is_default(): bool {
     $default=str_replace('\\','/',udaan_app_root().'/data');
     return rtrim(udaan_data_dir(),'/')===rtrim($default,'/');
 }
+function udaan_path_inside(string $path,string $root): bool {
+    $pathReal=realpath($path);$rootReal=realpath($root);
+    if(!is_string($pathReal)||!is_string($rootReal))return false;
+    $p=rtrim(str_replace('\\','/',$pathReal),'/');$r=rtrim(str_replace('\\','/',$rootReal),'/');
+    return $p===$r||str_starts_with($p,$r.'/');
+}
+function udaan_data_root_mode(): string {
+    global $config;
+    $data=udaan_data_dir();if(!is_dir($data))return 'missing';
+    $app=udaan_app_root();$public=trim((string)($config['public_root']??$app));if($public==='')$public=$app;
+    if(udaan_path_inside($data,$public))return udaan_path_inside($data,$app)?'application-protected':'public-root-protected';
+    return 'external-private';
+}
 
 function app_secret(): string {
     static $secret=null; if(is_string($secret))return $secret;
