@@ -73,8 +73,11 @@ function json_request_payload(int $maxBytes=65536): array {
     $raw=file_get_contents('php://input',false,null,0,$maxBytes+1);if(!is_string($raw))json_response(['ok'=>false,'error'=>'Request body unavailable'],400);if(strlen($raw)>$maxBytes)json_response(['ok'=>false,'error'=>'Request body too large'],413);
     if($raw==='')return [];try{$decoded=json_decode($raw,true,128,JSON_THROW_ON_ERROR);}catch(JsonException $e){json_response(['ok'=>false,'error'=>'Invalid JSON request'],400);}return is_array($decoded)?$decoded:[];
 }
-function request_fingerprint(string $scope='web'): string {
+function request_network_fingerprint(string $scope='web'): string {
     $remote=trim((string)($_SERVER['REMOTE_ADDR']??'unknown'));$ua=text_cut(trim((string)($_SERVER['HTTP_USER_AGENT']??'')),240);return hash_hmac('sha256',$scope.'|'.$remote.'|'.$ua,app_secret());
+}
+function request_fingerprint(string $scope='web'): string {
+    $session=session_status()===PHP_SESSION_ACTIVE?session_id():'';return hash_hmac('sha256',$scope.'|'.request_network_fingerprint($scope).'|'.$session,app_secret());
 }
 function rate_limit_retry_header(array $rate): void { $retry=max(1,(int)($rate['retry_after']??60));header('Retry-After: '.$retry); }
 function require_room_id(?string $id): string {$id=trim((string)$id);$uuid='/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i';$legacy='/^[A-Z2-9]{5}$/';if(preg_match($uuid,$id))return strtolower($id);if(preg_match($legacy,strtoupper($id)))return strtoupper($id);http_response_code(400);exit('Invalid room');}
