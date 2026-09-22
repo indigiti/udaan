@@ -19,12 +19,13 @@ function udaan_momentum_normalize_settings(array $input,array $player): array {
     $goal=(int)($input['weekly_training_days']??4);
     if($goal<2||$goal>7)throw new InvalidArgumentException('Choose a weekly goal between 2 and 7 training days.');
     $allowed=udaan_player_arenas();
+    $playerArenas=array_fill_keys(array_values(array_filter(array_map('strval',(array)($player['arenas']??['learn'])),fn($a)=>isset($allowed[$a]))),true);
     $selected=[];
     foreach((array)($input['habits']??[]) as$habit){
         $habit=(string)$habit;
-        if(isset($allowed[$habit]))$selected[$habit]=true;
+        if(isset($allowed[$habit])&&isset($playerArenas[$habit]))$selected[$habit]=true;
     }
-    if(!$selected)$selected=array_fill_keys((array)($player['arenas']??['learn']),true);
+    if(!$selected)$selected=$playerArenas?:['learn'=>true];
     return [
         'weekly_training_days'=>$goal,
         'habits'=>array_keys($selected),
