@@ -252,7 +252,7 @@ function udaan_social_create_team_challenge(TempStore $store,string $identity,ar
     if(!isset(udaan_player_arenas()[$arena]))throw new InvalidArgumentException('Choose a supported Arena.');
     if(!preg_match('/^\d{4}-\d{2}-\d{2}$/',$date))throw new InvalidArgumentException('Invalid challenge date.');
     $challenge=null;
-    $store->mutateSocialGraph(function(?array $current)use($identity,$teamId,$arena,$date,&$challenge):array{
+    $store->mutateSocialGraph(function(?array $current)use($store,$identity,$teamId,$arena,$date,&$challenge):array{
         $graph=udaan_social_prune_graph(is_array($current)?$current:[]);
         $team=$graph['teams'][$teamId]??null;
         if(!is_array($team)||!isset($team['members'][$identity]))throw new RuntimeException('Team not found.');
