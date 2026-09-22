@@ -16,6 +16,7 @@ final class TempStore {
     private string $missionDir;
     private string $readinessDir;
     private string $socialDir;
+    private string $competitionDir;
 
     public function __construct(array $config, string $roomDir) {
         $this->config = $config;
@@ -30,7 +31,8 @@ final class TempStore {
         $this->missionDir = dirname($roomDir).'/missions';
         $this->readinessDir = dirname($roomDir).'/readiness';
         $this->socialDir = dirname($roomDir).'/social';
-        foreach([$this->roomDir,$this->historyDir,$this->userCacheDir,$this->syncOutboxDir,$this->aggregateDir,$this->rateLimitDir,$this->playerDir,$this->eventDir,$this->missionDir,$this->readinessDir,$this->socialDir] as $dir) if (!is_dir($dir)) @mkdir($dir,0775,true);
+        $this->competitionDir = dirname($roomDir).'/competition';
+        foreach([$this->roomDir,$this->historyDir,$this->userCacheDir,$this->syncOutboxDir,$this->aggregateDir,$this->rateLimitDir,$this->playerDir,$this->eventDir,$this->missionDir,$this->readinessDir,$this->socialDir,$this->competitionDir] as $dir) if (!is_dir($dir)) @mkdir($dir,0775,true);
         if ($config['redis']['enabled'] ?? true) {
             if (!class_exists('Redis')) {
                 $this->redisError = 'extension-unavailable';
@@ -57,6 +59,7 @@ final class TempStore {
     public function missionBackend(): string { return $this->redis ? 'Redis persistent mission state' : 'Encrypted JSON mission state'; }
     public function readinessBackend(): string { return $this->redis ? 'Redis private readiness state' : 'Encrypted JSON readiness state'; }
     public function socialBackend(): string { return $this->redis ? 'Redis encrypted social graph' : 'Encrypted JSON social graph'; }
+    public function competitionBackend(): string { return $this->redis ? 'Redis encrypted competition state' : 'Encrypted JSON competition state'; }
     public function redisConfigured(): bool { return (bool)($this->config['redis']['enabled'] ?? true); }
     public function redisRequired(): bool { return (bool)($this->config['redis']['required'] ?? false); }
     public function redisConnected(): bool { return $this->redis instanceof Redis; }
@@ -77,6 +80,7 @@ final class TempStore {
             'user_cache_backend'=>$this->userCacheBackend(),
             'readiness_backend'=>$this->readinessBackend(),
             'social_backend'=>$this->socialBackend(),
+            'competition_backend'=>$this->competitionBackend(),
         ];
     }
     private function roomKey(string $id): string { return 'udaan:room:'.$id; }
@@ -86,6 +90,7 @@ final class TempStore {
     private function missionKey(string $identity): string { return 'udaan:missions:'.$identity; }
     private function readinessKey(string $identity): string { return 'udaan:readiness:'.$identity; }
     private function socialKey(): string { return 'udaan:social:graph'; }
+    private function competitionKey(): string { return 'udaan:competition:state'; }
     private function roomFile(string $id): string { return $this->roomDir.'/'.$id.'.json'; }
     private function historyFile(string $identity): string { return $this->historyDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
     private function userCacheFile(string $identity): string { return $this->userCacheDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
@@ -93,6 +98,7 @@ final class TempStore {
     private function missionFile(string $identity): string { return $this->missionDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
     private function readinessFile(string $identity): string { return $this->readinessDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
     private function socialFile(): string { return $this->socialDir.'/graph.json'; }
+    private function competitionFile(): string { return $this->competitionDir.'/state.json'; }
     private function decode(mixed $raw): ?array { if (!is_string($raw) || $raw === '') return null; return secure_unpack($raw); }
     private function encode(array $data): string { return secure_pack($data); }
 
@@ -218,6 +224,29 @@ final class TempStore {
         $file=$this->socialFile();$fh=fopen($file,'c+');if(!$fh)throw new RuntimeException('Social graph storage is unavailable.');
         flock($fh,LOCK_EX);rewind($fh);$raw=stream_get_contents($fh);$current=$this->decode($raw);$next=$fn($current);
         if(!is_array($next)){flock($fh,LOCK_UN);fclose($fh);throw new RuntimeException('Invalid social graph mutation.');}
+        $encoded=$this->encode($next);rewind($fh);ftruncate($fh,0);fwrite($fh,$encoded);fflush($fh);flock($fh,LOCK_UN);fclose($fh);return $next;
+    }
+
+
+    public function getCompetitionState(): array {
+        $empty=['schema_version'=>1,'updated_at'=>null,'leagues'=>[]];
+        if($this->redis){$raw=$this->redis->get($this->competitionKey());$d=$raw===false?null:$this->decode($raw);return is_array($d)?array_replace($empty,$d):$empty;}
+        $f=$this->competitionFile();if(!is_file($f))return $empty;$d=$this->decode(@file_get_contents($f));return is_array($d)?array_replace($empty,$d):$empty;
+    }
+
+    public function mutateCompetitionState(callable $fn): array {
+        if($this->redis){
+            $key=$this->competitionKey();
+            for($i=0;$i<8;$i++){
+                $this->redis->watch($key);$raw=$this->redis->get($key);$current=$raw===false?null:$this->decode($raw);
+                $next=$fn($current);if(!is_array($next)){$this->redis->unwatch();throw new RuntimeException('Invalid competition state mutation.');}
+                $this->redis->multi();$this->redis->set($key,$this->encode($next));$ok=$this->redis->exec();if($ok!==false)return $next;
+            }
+            throw new RuntimeException('Competition state was busy. Please retry.');
+        }
+        $file=$this->competitionFile();$fh=fopen($file,'c+');if(!$fh)throw new RuntimeException('Competition storage is unavailable.');
+        flock($fh,LOCK_EX);rewind($fh);$raw=stream_get_contents($fh);$current=$this->decode($raw);$next=$fn($current);
+        if(!is_array($next)){flock($fh,LOCK_UN);fclose($fh);throw new RuntimeException('Invalid competition state mutation.');}
         $encoded=$this->encode($next);rewind($fh);ftruncate($fh,0);fwrite($fh,$encoded);fflush($fh);flock($fh,LOCK_UN);fclose($fh);return $next;
     }
 
