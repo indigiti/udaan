@@ -28,6 +28,8 @@
 !/data/events/.gitkeep
 /data/missions/*
 !/data/missions/.gitkeep
+/data/readiness/*
+!/data/readiness/.gitkeep
 
 # Runtime import state
 /data/imports/pending/*
