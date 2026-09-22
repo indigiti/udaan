@@ -12,6 +12,13 @@ function udaan_readiness_file_mode(string $path,int $requiredMax=0600): array {
     return ['ok'=>(($mode&~$requiredMax)===0),'exists'=>true,'mode'=>udaan_readiness_mode($mode),'code'=>(($mode&~$requiredMax)===0?'ok':'permissions-too-open')];
 }
 
+function udaan_readiness_path_inside(string $path,string $root): bool {
+    $pathReal=realpath($path);$rootReal=realpath($root);
+    if(!is_string($pathReal)||!is_string($rootReal))return false;
+    $p=rtrim(str_replace('\\','/',$pathReal),'/');$r=rtrim(str_replace('\\','/',$rootReal),'/');
+    return $p===$r||str_starts_with($p,$r.'/');
+}
+
 function udaan_readiness_redis(array $redis): array {
     $enabled=(bool)($redis['enabled']??true);$required=(bool)($redis['required']??false);
     if(!$enabled)return ['configured'=>false,'required'=>$required,'connected'=>false,'status'=>'disabled','error_code'=>null];
@@ -43,12 +50,20 @@ function udaan_readiness_report(array $config,string $root,bool $repositoryMode=
     $aes=storage_encryption_available();$push('aes_256_gcm',$aes,$aes?'available':'unavailable');
     $sodium=content_pack_signing_available();$push('ed25519_sodium',$sodium,$sodium?'available':'unavailable');
 
-    $dataDir=$root.'/data';$dataWritable=is_dir($dataDir)&&is_writable($dataDir);
-    $push('data_directory',$dataWritable,$dataWritable?'writable':'not-writable');
+    $dataDir=udaan_data_dir();$dataExists=is_dir($dataDir);$dataWritable=$dataExists&&is_writable($dataDir);
+    $push('data_directory',$dataWritable,$dataWritable?'writable':($dataExists?'not-writable':'missing'));
 
-    $dataDenied=is_file($dataDir.'/.htaccess')&&preg_match('/Require\s+all\s+denied/i',(string)@file_get_contents($dataDir.'/.htaccess'));
+    $dataInsideApp=$dataExists&&udaan_readiness_path_inside($dataDir,$root);
+    if($dataInsideApp){
+        $dataDenied=is_file($dataDir.'/.htaccess')&&preg_match('/Require\s+all\s+denied/i',(string)@file_get_contents($dataDir.'/.htaccess'));
+        $push('data_http_denied',(bool)$dataDenied,$dataDenied?'protected':'deny-rule-missing',['root_mode'=>'application-protected']);
+    }else{
+        $push('data_http_denied',$dataExists,$dataExists?'outside-application-root':'data-root-missing',['root_mode'=>$dataExists?'external-private':'unresolved']);
+    }
+    $checks['runtime_data_root']=['ok'=>$dataExists,'code'=>$dataExists?($dataInsideApp?'application-protected':'external-private'):'missing','outside_application_root'=>$dataExists&&!$dataInsideApp];
+    if(!$dataExists)$failures[]='runtime_data_root';
+
     $opsDenied=is_file($root.'/ops/.htaccess')&&preg_match('/Require\s+all\s+denied/i',(string)@file_get_contents($root.'/ops/.htaccess'));
-    $push('data_http_denied',(bool)$dataDenied,$dataDenied?'protected':'deny-rule-missing');
     $push('ops_http_denied',(bool)$opsDenied,$opsDenied?'protected':'deny-rule-missing');
 
     $maintenance=is_file($dataDir.'/maintenance.flag');
