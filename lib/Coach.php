@@ -145,7 +145,7 @@ function udaan_coach_generate(array $missionState,array $player,array $readiness
     }
 
     $mission=udaan_coach_prioritized_pending_mission($missions,$player);
-    if(is_array($mission)){
+    if(is_array($mission)&&($mission['type']??'')!=='comeback'){
         $action=udaan_coach_action_for_mission($mission);
         $goalLabel=udaan_player_goals()[(string)($player['main_goal']??'general')]??'your goal';
         $readinessBand=(string)($todayReadiness['band']??'balanced');
