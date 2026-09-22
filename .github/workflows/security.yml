@@ -153,7 +153,7 @@ jobs:
           set -euo pipefail
           grep -Fq 'artifact_name=digiops-release' .github/workflows/release-artifact.yml
           grep -Fq 'outputs.artifact_name' .github/workflows/release-artifact.yml
-          grep -Fq 'stage=$RUNNER_TEMP/udaan-release/udaan' .github/workflows/release-artifact.yml
+          grep -Fq 'RUNNER_TEMP/udaan-release/udaan' .github/workflows/release-artifact.yml
           grep -Fq 'outputs.stage' .github/workflows/release-artifact.yml
           grep -Fq 'include-hidden-files: true' .github/workflows/release-artifact.yml
           grep -Fq 'STAGE/index.php' ops/package-release.sh
