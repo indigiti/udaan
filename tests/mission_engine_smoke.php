@@ -5,6 +5,7 @@ $root=dirname(__DIR__);
 require_once $root.'/lib/helpers.php';
 require_once $root.'/lib/Player.php';
 require_once $root.'/lib/Store.php';
+require_once $root.'/lib/Fit.php';
 require_once $root.'/lib/Mission.php';
 
 $tmp=$root.'/data/test-mission-'.bin2hex(random_bytes(4));
@@ -28,8 +29,8 @@ if(count(udaan_missions_for_date($state2,$date))!==4){fwrite(STDERR,"Daily assig
 $byType=[];foreach(udaan_missions_for_date($state2,$date) as$m)$byType[$m['type']]=$m;
 foreach(['daily9','fitness','focus','reflection'] as$type)if(!isset($byType[$type])){fwrite(STDERR,"Missing mission type: $type\n");exit(1);}
 
-$fit=udaan_mission_apply_status($store,$identity,$player,$byType['fitness']['id'],'completed');
-if(($fit['mission']['status']??'')!=='completed'||($fit['mission']['result']['source']??'')!=='self_report'){fwrite(STDERR,"Self-report completion failed\n");exit(1);}
+$fit=udaan_mission_apply_status($store,$identity,$player,$byType['fitness']['id'],'completed',['activity_id'=>'mobility','activity_label'=>'Gentle mobility','category'=>'mobility','actual_minutes'=>10,'readiness_band'=>'balanced']);
+if(($fit['mission']['status']??'')!=='completed'||($fit['mission']['result']['source']??'')!=='fit_session'){fwrite(STDERR,"Fit-session completion failed\n");exit(1);}
 
 $blocked=false;
 try{udaan_mission_apply_status($store,$identity,$player,$byType['daily9']['id'],'completed');}catch(RuntimeException $e){$blocked=true;}
