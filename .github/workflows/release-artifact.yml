@@ -50,7 +50,7 @@ jobs:
           echo "version=$version" >> "$GITHUB_OUTPUT"
           echo "archive=$archive" >> "$GITHUB_OUTPUT"
           echo "checksum=$checksum" >> "$GITHUB_OUTPUT"
-          echo "artifact_name=udaan-v${version}-${short_sha}-certified" >> "$GITHUB_OUTPUT"
+          echo "artifact_name=digiops-release" >> "$GITHUB_OUTPUT"
 
       - name: Upload certified deployment artifact
         uses: actions/upload-artifact@v4
