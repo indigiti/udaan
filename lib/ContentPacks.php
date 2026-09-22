@@ -49,7 +49,7 @@ function rebuild_content_packs(?array $bank=null): array {
         }}
     foreach(glob($dir.'/*.json')?:[] as$f)if(!isset($keep[basename($f)]))@unlink($f);
     $manifestBase=['schema_version'=>1,'trust_epoch'=>content_trust_epoch(),'distribution'=>'centralize-trust-decentralize-distribution','generated_at'=>now_iso(),'bank_version'=>(string)($bank['version']??''),'bank_sha256'=>content_pack_bank_hash(),'total_cards'=>$total,'pillar_count'=>count($groups),'pack_size'=>$packSize,'pack_count'=>count($manifestPacks),'signature_alg'=>'Ed25519','signing_key_id'=>$keys['key_id'],'public_key'=>$keys['public_b64'],'packs'=>$manifestPacks];
-    $manifestPayload=content_pack_json($manifestBase);$manifest=$manifestBase+['manifest_sha256'=>hash('sha256',$manifestPayload),'manifest_signature'=>content_pack_signature($manifestPayload,$keys)];content_pack_atomic_json(content_manifest_file(),$manifest,true);return $manifest;
+    $manifestPayload=content_pack_json($manifestBase);$manifest=$manifestBase+['manifest_sha256'=>hash('sha256',$manifestPayload),'manifest_signature'=>content_pack_signature($manifestPayload,$keys)];content_pack_atomic_json(content_manifest_file(),$manifest,true);content_runtime_cache_build($bank);return $manifest;
 }
 
 function content_manifest(bool $ensure=false): array {
