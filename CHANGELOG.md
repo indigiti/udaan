@@ -1,5 +1,32 @@
 # Udaan Live — Change Log
 
+## v0.7.0 — Player Foundation
+
+### Core
+- Added persistent pseudonymous Udaan Player profiles anchored to secure device HMAC identity.
+- Added goal, exam target, age band, learning stage, preferred language, daily time budget and Arena preferences.
+- Player privacy defaults to private; parent/institution sharing remains disabled in this release.
+- Added Learn, Fit, Mind and Reflect Arena preferences without creating separate identity systems.
+
+### Event foundation
+- Added encrypted append-only Player Event Ledger.
+- Player create/update events use a structured envelope ready for future Performance Graph, Coach and analytics.
+
+### Experience
+- Added `/player` onboarding/profile editing.
+- Added `/today` mission-first foundation shell.
+- Added protected `/admin/players` operational visibility.
+- Connected the public home and Content Bank admin to the new Player surfaces.
+
+### Operations / security
+- Player and event runtime files are Git-ignored, CI-rejected and excluded from certified release packages.
+- Production readiness checks Player/event directories.
+- Runtime health reports Player/event storage mode.
+- Security rotation purges encrypted Player/event state when cryptographic identity/storage keys must be replaced.
+- Added Player foundation smoke certification.
+
+---
+
 ## v0.6.5 — QOI CSRF, Strict Offline Sync & Card Lookup Cache
 
 ### Security
