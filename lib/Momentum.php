@@ -158,7 +158,7 @@ function udaan_momentum_comeback_template(array $player,string $date): ?array {
             'arena'=>'fit','type'=>'comeback','title'=>'Restart today',
             'objective'=>'Do one gentle 5-minute movement reset. The goal is simply to return.',
             'duration_minutes'=>5,'difficulty'=>'light','content_refs'=>[],
-            'completion_rule'=>['mode'=>'fit_session'],
+            'completion_rule'=>['mode'=>'self_report'],
         ],
         'mind'=>[
             'source_key'=>'daily:'.$date.':comeback',
