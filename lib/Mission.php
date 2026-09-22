@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+require_once __DIR__.'/Performance.php';
+
 function udaan_mission_types(): array {
     return [
         'learning'=>'Learning',
@@ -164,9 +166,24 @@ function udaan_mission_history(array $state,int $limit=30): array {
     return array_slice($rows,0,max(1,min(200,$limit)));
 }
 
+
+function udaan_mission_emit_personal_bests(TempStore $store,array $player,array $before,array $after,array $mission): void {
+    $date=(string)($mission['scheduled_date']??'');
+    foreach(udaan_performance_personal_best_events($before,$after,$date) as $best){
+        $store->appendPlayerEvent(udaan_player_event('performance.personal_best',$player,[
+            'arena'=>(string)($mission['arena']??'core'),
+            'mission_id'=>(string)($mission['id']??''),
+            'kind'=>(string)($best['kind']??''),
+            'value'=>(int)($best['value']??0),
+            'previous_best'=>(int)($best['previous_best']??0),
+            'date'=>$date,
+        ]));
+    }
+}
+
 function udaan_mission_apply_status(TempStore $store,string $identity,array $player,string $missionId,string $status,array $result=[]): array {
     if(!in_array($status,['completed','skipped'],true))throw new InvalidArgumentException('Unsupported mission action.');
-    $changed=false;$mission=null;
+    $changed=false;$mission=null;$before=$store->getMissionState($identity);
     $state=$store->mutateMissionState($identity,function(?array $current)use($missionId,$status,$result,&$changed,&$mission):array{
         $state=is_array($current)?array_replace(udaan_mission_state_default(),$current):udaan_mission_state_default();
         if(!isset($state['missions'][$missionId])||!is_array($state['missions'][$missionId]))throw new RuntimeException('Mission not found.');
@@ -186,12 +203,13 @@ function udaan_mission_apply_status(TempStore $store,string $identity,array $pla
             'scheduled_date'=>$mission['scheduled_date'],'duration_minutes'=>$mission['duration_minutes'],
             'completion_source'=>'self_report',
         ]));
+        if($status==='completed')udaan_mission_emit_personal_bests($store,$player,$before,$state,$mission);
     }
     return ['state'=>$state,'mission'=>$mission,'changed'=>$changed];
 }
 
 function udaan_mission_complete_by_source(TempStore $store,string $identity,array $player,string $sourceKey,array $result=[]): ?array {
-    $changed=false;$mission=null;
+    $changed=false;$mission=null;$before=$store->getMissionState($identity);
     $state=$store->mutateMissionState($identity,function(?array $current)use($sourceKey,$result,&$changed,&$mission):array{
         $state=is_array($current)?array_replace(udaan_mission_state_default(),$current):udaan_mission_state_default();
         foreach((array)($state['missions']??[])as$id=>$candidate){
@@ -209,6 +227,7 @@ function udaan_mission_complete_by_source(TempStore $store,string $identity,arra
             'scheduled_date'=>$mission['scheduled_date'],'duration_minutes'=>$mission['duration_minutes'],
             'completion_source'=>'verified_event',
         ]));
+        udaan_mission_emit_personal_bests($store,$player,$before,$state,$mission);
     }
     return is_array($mission)?$mission:null;
 }
