@@ -11,6 +11,25 @@ function text_cut(string $value,int $max): string { return function_exists('mb_s
 function normalized_phone(string $phone): string { return preg_replace('/\D+/', '', $phone) ?? ''; }
 function phone_mask(string $phone): string {$p=normalized_phone($phone);if(strlen($p)<4)return '••••';return (strlen($p)===10?'+91 ':'').'••••••'.substr($p,-4);}
 
+function request_actor_key(string $extra=''): string {
+    $ip=trim((string)($_SERVER['REMOTE_ADDR']??'unknown'));
+    $session=session_status()===PHP_SESSION_ACTIVE?session_id():'';
+    return hash_hmac('sha256','request-actor:'.$ip.'|'.$session.'|'.$extra,app_secret());
+}
+function request_rate_limit(string $scope,int $limit,int $windowSeconds,string $extra=''): bool {
+    $limit=max(1,$limit);$windowSeconds=max(1,$windowSeconds);
+    $dir=dirname(__DIR__).'/data/rate-limit';if(!is_dir($dir)&&!@mkdir($dir,0775,true)&&!is_dir($dir))return false;
+    $bucket=(int)floor(time()/$windowSeconds);$actor=request_actor_key($extra);$id=hash('sha256',$scope.'|'.$bucket.'|'.$actor);$file=$dir.'/'.$id.'.json';
+    $fh=@fopen($file,'c+');if(!$fh)return false;if(!flock($fh,LOCK_EX)){fclose($fh);return false;}
+    rewind($fh);$raw=stream_get_contents($fh);$d=is_string($raw)?json_decode($raw,true):null;$count=is_array($d)?(int)($d['count']??0):0;$count++;
+    rewind($fh);ftruncate($fh,0);fwrite($fh,json_encode(['count'=>$count,'expires'=>($bucket+1)*$windowSeconds],JSON_UNESCAPED_SLASHES));fflush($fh);flock($fh,LOCK_UN);fclose($fh);
+    if(random_int(1,100)===1){foreach(glob($dir.'/*.json')?:[] as $old){$j=json_decode((string)@file_get_contents($old),true);if(!is_array($j)||(int)($j['expires']??0)<time())@unlink($old);}}
+    return $count<=$limit;
+}
+function reject_oversized_json_body(int $maxBytes): void {
+    $len=(int)($_SERVER['CONTENT_LENGTH']??0);if($len>$maxBytes)json_response(['ok'=>false,'error'=>'Request body too large'],413);
+}
+
 function app_secret(): string {
     static $secret=null; if(is_string($secret))return $secret;
     $file=dirname(__DIR__).'/data/app-secret.key';
@@ -90,11 +109,19 @@ function journey_length_options(): array { return [21,24,27,30,36]; }
 function normalize_journey_length(mixed $n): int {$n=(int)$n;return in_array($n,journey_length_options(),true)?$n:27;}
 function normalize_learning_length(mixed $n): int {$n=(int)$n;if($n===9)return 9;return normalize_journey_length($n);}
 function content_bank(): array {
-    static $bank=null;if(is_array($bank))return $bank;$file=dirname(__DIR__).'/data/content/cards.json';$raw=@file_get_contents($file);$data=is_string($raw)?json_decode($raw,true):null;
-    if(!is_array($data)||!isset($data['cards'])||!is_array($data['cards']))throw new RuntimeException('Content bank is unavailable.');
-    $bank=$data;return $bank;
+    static $bank=null;if(is_array($bank))return $bank;$file=dirname(__DIR__).'/data/content/cards.json';$mtime=(int)(@filemtime($file)?:0);$size=(int)(@filesize($file)?:0);$cacheKey='udaan:content-bank:'.$mtime.':'.$size;
+    if(function_exists('apcu_fetch')){$hit=false;$cached=apcu_fetch($cacheKey,$hit);if($hit&&is_array($cached)&&isset($cached['cards'])&&is_array($cached['cards']))return $bank=$cached;}
+    $raw=@file_get_contents($file);$data=is_string($raw)?json_decode($raw,true):null;if(!is_array($data)||!isset($data['cards'])||!is_array($data['cards']))throw new RuntimeException('Content bank is unavailable.');
+    if(function_exists('apcu_store'))@apcu_store($cacheKey,$data,3600);return $bank=$data;
 }
-function cards_by_id(): array {static $map=null;if(is_array($map))return $map;$map=[];foreach(content_bank()['cards'] as $c)if(is_array($c)&&isset($c['id']))$map[(string)$c['id']]=$c;return $map;}
+function cards_by_id(): array {
+    static $map=null;if(is_array($map))return $map;$b=content_bank();$version=(string)($b['version']??'');$cacheKey='udaan:cards-by-id:'.hash('sha256',$version.'|'.count($b['cards']));
+    if(function_exists('apcu_fetch')){$hit=false;$cached=apcu_fetch($cacheKey,$hit);if($hit&&is_array($cached))return $map=$cached;}
+    $map=[];foreach($b['cards'] as $c)if(is_array($c)&&isset($c['id']))$map[(string)$c['id']]=$c;if(function_exists('apcu_store'))@apcu_store($cacheKey,$map,3600);return $map;
+}
+function future_topic_labels(): array {
+    static $labels=null;if(is_array($labels))return $labels;$labels=[];foreach(content_bank()['cards'] as $c)if(is_array($c)&&($c['pillar']??'')==='future'&&!empty($c['topic'])&&!isset($labels[$c['topic']]))$labels[(string)$c['topic']]=(string)($c['topic_name']??$c['topic']);return $labels;
+}
 function bank_stats(): array {$b=content_bank();$pillars=[];foreach($b['cards'] as $c){$p=(string)($c['pillar']??'other');$pillars[$p]=($pillars[$p]??0)+1;}return ['count'=>count($b['cards']),'pillars'=>count($pillars),'by_pillar'=>$pillars,'version'=>$b['version']??''];}
 function secure_shuffle(array $items): array {
     for($i=count($items)-1;$i>0;$i--){$j=random_int(0,$i);if($i!==$j){$tmp=$items[$i];$items[$i]=$items[$j];$items[$j]=$tmp;}}
