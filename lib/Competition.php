@@ -174,8 +174,8 @@ function udaan_competition_round_robin(array $teamIds): array {
 
 function udaan_competition_start_season(TempStore $store,string $identity,array $player,string $leagueId,string $date): array {
     if(!preg_match('/^\d{4}-\d{2}-\d{2}$/',$date))throw new InvalidArgumentException('Invalid season date.');
-    $season=null;
-    $store->mutateCompetitionState(function(?array $current)use($identity,$leagueId,$date,&$season):array{
+    $social=$store->getSocialGraph();$season=null;
+    $store->mutateCompetitionState(function(?array $current)use($identity,$leagueId,$date,$social,&$season):array{
         $state=udaan_competition_prune_state(is_array($current)?$current:[]);
         $league=$state['leagues'][$leagueId]??null;
         if(!is_array($league)||!empty($league['archived_at']))throw new RuntimeException('League not found.');
