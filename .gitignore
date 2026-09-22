@@ -43,3 +43,6 @@ __pycache__/
 Thumbs.db
 .idea/
 .vscode/
+
+# Local certified release output
+/dist/
