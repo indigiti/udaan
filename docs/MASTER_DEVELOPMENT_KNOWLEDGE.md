@@ -2,7 +2,7 @@
 
 **Document status:** Active source of truth  
 **Last reconciled:** 22 September 2026  
-**Current application version:** v0.12.0  
+**Current application version:** v0.13.0  
 **Current main SHA:** see the repository `main` branch; release SHAs are certified by the artifact pipeline.  
 **Repository:** `indigiti/udaan`
 
@@ -183,7 +183,7 @@ The shared platform underneath should include:
 ## 6.1 Current certified baseline
 
 **Application:** Udaan Live  
-**Version:** v0.12.0  
+**Version:** v0.13.0  
 **main/source SHA:** use the current repository `main` SHA after merge; release SHAs are certified by the artifact pipeline.
 
 Current release contract:
@@ -437,7 +437,6 @@ The following ideas belong to the approved future vision but are not yet impleme
 - long-term achievement graph
 - Daily Home / mission-first dashboard
 - Coach memory
-- Coach recommendations across Arenas
 - persistent team/social graph
 - league/season system
 - institution accounts
@@ -1442,8 +1441,8 @@ The proposed next release line is:
 | v0.10.0 | Daily Readiness | DONE |
 | v0.11.0 | Udaan Fit v1 | DONE |
 | v0.12.0 | Momentum + Habit Engine | DONE |
-| v0.13.0 | Coach v1 | NEXT |
-| v0.14.0 | Friends + Teams | PLANNED |
+| v0.13.0 | Coach v1 | DONE |
+| v0.14.0 | Friends + Teams | NEXT |
 | v0.15.0 | Match + League + Season Engine | PLANNED |
 | v0.16.0 | Exam Arena foundation | PLANNED |
 | v0.17.0 | First deep exam vertical | PLANNED |
@@ -1653,28 +1652,32 @@ Momentum is designed to help users restart, not to punish interruptions.
 
 ---
 
-# 39. v0.13.0 — Coach v1
+# 39. v0.13.0 — Coach v1 — DONE
 
-Rules-based first.
+Implemented:
 
-Coach inputs:
+- deterministic rules engine with no generative-model dependency
+- Player goal input
+- Mission state/history input
+- Performance input
+- Daily Readiness band input
+- Momentum input
+- comeback/recovery recommendations
+- readiness-aware workload guidance
+- goal-aligned pending Mission selection
+- weekly-goal guidance
+- near-milestone guidance
+- 7-day weekly Coach summary
+- stable reason codes
+- visible recommendation evidence
+- deduplicated recommendation-shown telemetry
+- validated recommendation-accepted telemetry
+- raw readiness values excluded from Coach evidence/events
+- no automatic Mission mutation by Coach
+- dedicated `/coach` experience and Today integration
+- deterministic Coach smoke certification
 
-- goals
-- recent attempts
-- mastery
-- revision due
-- readiness
-- activity
-- available time
-
-Coach output:
-
-- today's recommendations
-- recovery recommendation
-- next mission
-- weekly summary
-
-AI text generation may be layered later.
+Persistent Coach memory and generative explanations remain future layers.
 
 ---
 
@@ -2211,17 +2214,18 @@ These decisions should be made when the dependent development stage arrives rath
 
 ## NEXT
 
-- Coach v1
-- rules-based recommendations
-- goals + recent Mission history + Performance + Readiness + Momentum inputs
-- recovery recommendation
-- next-Mission recommendation
-- weekly summary
-- transparent recommendation reason codes
+- Friends + Teams
+- safe friend relationship/invite
+- team create/join
+- team membership
+- team profile
+- team challenge foundation
+- privacy and minors-safety controls
 
 ## NEAR TERM
 
-- Coach v1
+- Friends + Teams
+- Match / League foundation
 
 ## MEDIUM TERM
 
@@ -2254,7 +2258,7 @@ The next code release should not jump to JEE/NEET content or a large AI assistan
 
 It should continue with:
 
-> **v0.13.0 — Coach v1**
+> **v0.14.0 — Friends + Teams**
 
 Recommended development order:
 
@@ -2271,7 +2275,7 @@ Udaan Fit ✅
   ↓
 Momentum / Habits ✅
   ↓
-Coach
+Coach ✅
   ↓
 Social / Teams
   ↓

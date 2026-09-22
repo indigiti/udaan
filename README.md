@@ -1,10 +1,27 @@
-# Udaan Live v0.12.0 — Momentum + Habit Engine
+# Udaan Live v0.13.0 — Coach v1
 
 **Architectural principle:** **Centralize trust, decentralize distribution.**  
 **Base:** v0.5.2 Encrypted Offline Learning Vault  
 **Database:** **Not required** for this release. PHP + encrypted JSON/Redis + encrypted IndexedDB remain the persistence model until production DB adoption.
 
 **Master development knowledge:** See `docs/MASTER_DEVELOPMENT_KNOWLEDGE.md` for the current shipped state, live-pending items, next releases, product architecture, safety rules, KPIs and the 2026–2036 roadmap.
+
+## v0.13.0 Coach v1
+
+v0.13.0 adds a transparent, deterministic Coach on top of the Player/Mission/Performance/Readiness/Momentum foundation.
+
+- dedicated `/coach` dashboard;
+- rules-based engine, no generative-model dependency;
+- stable reason codes and visible evidence;
+- comeback and recovery guidance;
+- readiness-aware workload guidance;
+- goal-aligned next-Mission recommendation;
+- weekly summary;
+- weekly-goal and milestone prompts;
+- deduplicated recommendation-shown telemetry;
+- validated recommendation-accepted telemetry;
+- raw readiness values never copied into Coach evidence or Coach events;
+- no automatic Mission mutation by Coach.
 
 ## v0.12.0 Momentum + Habit Engine
 
