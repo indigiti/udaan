@@ -2,7 +2,7 @@
 
 **Document status:** Active source of truth  
 **Last reconciled:** 22 September 2026  
-**Current application version:** v0.8.0  
+**Current application version:** v0.9.0  
 **Current main SHA:** see the repository `main` branch; release SHAs are certified by the artifact pipeline.  
 **Repository:** `indigiti/udaan`
 
@@ -383,6 +383,21 @@ Implemented:
 - service-worker cache v0.6.5
 - QOI script cache bust
 - release CI assertions
+
+## 7.10 v0.9.0 Performance Graph — DONE
+
+Implemented:
+
+- mission-derived Performance Graph
+- 14-day and 30-day progress windows
+- meaningful training days
+- completed Mission totals and completed minutes
+- Mission completion rate
+- Arena activity breakdown
+- Personal Best records
+- Personal Best event emission from genuine completion
+- private `/progress` surface
+- no synthetic overall student score
 
 ## 7.9 DigiOps artifact compatibility fixes — DONE
 
@@ -1433,8 +1448,8 @@ The proposed next release line is:
 | v0.6.5 | security/performance certified baseline | DONE |
 | v0.7.0 | Player Profile + Goals + Event foundation | DONE |
 | v0.8.0 | Universal Mission Engine | DONE |
-| v0.9.0 | Performance Graph + Personal Best | PLANNED |
-| v0.10.0 | Daily Readiness | PLANNED |
+| v0.9.0 | Performance Graph + Personal Best | DONE |
+| v0.10.0 | Daily Readiness | NEXT |
 | v0.11.0 | Udaan Fit v1 | PLANNED |
 | v0.12.0 | Momentum + Habit Engine | PLANNED |
 | v0.13.0 | Coach v1 | PLANNED |
