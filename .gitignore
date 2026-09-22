@@ -19,6 +19,8 @@
 /data/sync-outbox/*
 !/data/sync-outbox/.gitkeep
 /data/aggregates/*
+/data/insights/*
+!/data/insights/.gitkeep
 /data/rate-limit/*
 
 # Runtime import state
@@ -41,3 +43,6 @@ __pycache__/
 Thumbs.db
 .idea/
 .vscode/
+
+# Local certified release output
+/dist/

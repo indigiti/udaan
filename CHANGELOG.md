@@ -1,5 +1,23 @@
 # Udaan Live — Change Log
 
+## v0.6.4 — Certified Deployment Artifact
+
+### Release integrity
+
+- Added deterministic deployment package builder at `ops/package-release.sh`.
+- Every PR now smoke-builds the deployable package before merge.
+- A separate workflow publishes an artifact only after the exact `main` SHA passes **Udaan Security and Syntax**.
+- Release packages embed `RELEASE.json` with version + source SHA and `SHA256SUMS` for every packaged file.
+- Tarballs use normalized file ordering, timestamps and ownership for reproducible output.
+- Deployment artifacts exclude repository-only CI/tests and reject runtime keys, learner/session state, pending imports, generated content state, environment files and Python bytecode.
+
+### Repository hygiene
+
+- Removed a residual tracked pending-import verification snapshot containing an expired runtime session hash/result payload.
+- Expanded CI to reject pending imports, rate-limit files, runtime cache files and generated insights in addition to existing runtime state families.
+
+---
+
 ## v0.6.3 — Production Readiness & Runtime Policy
 
 ### Runtime policy
