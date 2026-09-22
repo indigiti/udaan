@@ -95,7 +95,7 @@ function udaan_player_default(string $identity): array {
 
 function udaan_player_normalize(array $input,array $existing): array {
     $nickname=text_cut(trim((string)($input['nickname']??($existing['nickname']??'Learner'))),24);
-    if(strlen($nickname)<2||!preg_match('/^[p{L}p{N} ._-]{2,24}$/u',$nickname))throw new InvalidArgumentException('Choose a nickname using 2–24 letters, numbers, spaces, dot, dash or underscore.');
+    if(strlen($nickname)<2||!preg_match('/^[\p{L}\p{N} ._-]{2,24}$/u',$nickname))throw new InvalidArgumentException('Choose a nickname using 2–24 letters, numbers, spaces, dot, dash or underscore.');
 
     $age=(string)($input['age_group']??($existing['age_group']??''));
     if(!isset(udaan_player_age_groups()[$age]))throw new InvalidArgumentException('Choose an age group.');
