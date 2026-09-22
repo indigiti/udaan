@@ -32,7 +32,8 @@ function udaan_social_friendship_id(string $a,string $b): string {
 
 function udaan_social_team_name(string $name): string {
     $name=trim(preg_replace('/\s+/u',' ',$name)??'');
-    if(mb_strlen($name)<3||mb_strlen($name)>32)throw new InvalidArgumentException('Team name must be 3–32 characters.');
+    $length=function_exists('mb_strlen')?mb_strlen($name,'UTF-8'):strlen($name);
+    if($length<3||$length>32)throw new InvalidArgumentException('Team name must be 3–32 characters.');
     if(!preg_match('/^[\p{L}\p{N} ._-]+$/u',$name))throw new InvalidArgumentException('Team name can use letters, numbers, spaces, dot, dash or underscore.');
     return $name;
 }
@@ -228,7 +229,7 @@ function udaan_social_team_members(TempStore $store,array $team): array {
     foreach((array)($team['members']??[]) as$identity=>$membership){
         $player=$store->getPlayer((string)$identity);if(!is_array($player))continue;
         $rows[]=[
-            'identity'=>(string)$identity,'player_id'=>(string)($player['id']??''),
+            'player_id'=>(string)($player['id']??''),
             'nickname'=>(string)($player['nickname']??'Player'),'role'=>(string)($membership['role']??'member'),
             'joined_at'=>(string)($membership['joined_at']??''),
         ];
