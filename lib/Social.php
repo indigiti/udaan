@@ -238,6 +238,16 @@ function udaan_social_team_members(TempStore $store,array $team): array {
     return $rows;
 }
 
+function udaan_social_team_common_arenas(TempStore $store,array $team): array {
+    $common=null;
+    foreach(array_keys((array)($team['members']??[])) as$identity){
+        $player=$store->getPlayer((string)$identity);if(!is_array($player))continue;
+        $arenas=array_values(array_filter(array_map('strval',(array)($player['arenas']??[])),fn($a)=>isset(udaan_player_arenas()[$a])));
+        $common=$common===null?$arenas:array_values(array_intersect($common,$arenas));
+    }
+    return array_values(array_unique($common??[]));
+}
+
 function udaan_social_create_team_challenge(TempStore $store,string $identity,array $player,string $teamId,string $arena,string $date): array {
     if(!isset(udaan_player_arenas()[$arena]))throw new InvalidArgumentException('Choose a supported Arena.');
     if(!preg_match('/^\d{4}-\d{2}-\d{2}$/',$date))throw new InvalidArgumentException('Invalid challenge date.');
@@ -247,6 +257,8 @@ function udaan_social_create_team_challenge(TempStore $store,string $identity,ar
         $team=$graph['teams'][$teamId]??null;
         if(!is_array($team)||!isset($team['members'][$identity]))throw new RuntimeException('Team not found.');
         if(($team['members'][$identity]['role']??'member')!=='owner')throw new RuntimeException('Only the team owner can start a challenge.');
+        $common=udaan_social_team_common_arenas($store,$team);
+        if(!in_array($arena,$common,true))throw new RuntimeException('Choose an Arena enabled by every current team member.');
         $existing=$team['active_challenge']??null;
         if(is_array($existing)&&($existing['end_date']??'')>=$date)throw new RuntimeException('Finish the current team challenge before starting another.');
         $start=new DateTimeImmutable($date,new DateTimeZone('Asia/Kolkata'));
