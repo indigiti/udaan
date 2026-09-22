@@ -71,6 +71,7 @@ jobs:
           php tests/runtime_smoke.php
           php tests/player_foundation_smoke.php
           php tests/mission_engine_smoke.php
+          php tests/performance_graph_smoke.php
 
       - name: Production readiness repository preflight
         shell: bash
@@ -137,15 +138,29 @@ jobs:
             exit 1
           fi
 
-      - name: Verify v0.8.0 Mission Engine contract
+      - name: Reject stale v0.8.0 runtime asset references
         shell: bash
         run: |
           set -euo pipefail
-          grep -q "'version' => '0.8.0'" config.php
-          grep -q "udaan-v0.8.0" sw.js
-          grep -q "qoi.js?v=0.8.0" question_of_india.php
+          if grep -R -n 'v=0\.8\.0' --include='*.php' .; then
+            echo "::error::Runtime PHP still references the v0.8.0 asset cache key."
+            exit 1
+          fi
+          if grep -n 'udaan-v0\.8\.0' sw.js; then
+            echo "::error::Service-worker cache version was not advanced to v0.9.0."
+            exit 1
+          fi
+
+      - name: Verify v0.9.0 Performance Graph contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q "'version' => '0.9.0'" config.php
+          grep -q "udaan-v0.9.0" sw.js
+          grep -q "qoi.js?v=0.9.0" question_of_india.php
           grep -q "RewriteRule ^player/?$ player.php" .htaccess
           grep -q "RewriteRule ^today/?$ today.php" .htaccess
+          grep -q "RewriteRule ^progress/?$ progress.php" .htaccess
           grep -q "RewriteRule ^mission/" .htaccess
           grep -q "RewriteRule ^admin/players/?$ admin_players.php" .htaccess
           grep -q "function udaan_player_normalize" lib/Player.php
@@ -154,6 +169,10 @@ jobs:
           grep -q "function udaan_mission_ensure_daily" lib/Mission.php
           grep -q "function udaan_mission_apply_status" lib/Mission.php
           grep -q "function udaan_mission_complete_by_source" lib/Mission.php
+          grep -q "function udaan_performance_window" lib/Performance.php
+          grep -q "function udaan_performance_personal_bests" lib/Performance.php
+          grep -q "performance.personal_best" lib/Mission.php
+          grep -q "PERFORMANCE GRAPH · 14 DAYS" progress.php
           grep -q "getMissionState" lib/Store.php
           grep -q "mutateMissionState" lib/Store.php
           grep -q "mission_storage_directory" lib/Readiness.php
