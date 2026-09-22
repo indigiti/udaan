@@ -82,6 +82,11 @@ foreach($members as$m){
     }
 }
 
+$common=udaan_social_team_common_arenas($store,$joined);
+if($common!==['learn']){fwrite(STDERR,"Common Team Arena calculation mismatch\n");exit(1);}
+$unfair=false;
+try{udaan_social_create_team_challenge($store,$ida,$a,$teamId,'fit','2026-09-22');}catch(RuntimeException $e){$unfair=true;}
+if(!$unfair){fwrite(STDERR,"Team challenge allowed an Arena not enabled by every member\n");exit(1);}
 $challenge=udaan_social_create_team_challenge($store,$ida,$a,$teamId,'learn','2026-09-22');
 if(($challenge['rule']??'')!=='one_completed_mission_per_member'){fwrite(STDERR,"Team challenge rule mismatch\n");exit(1);}
 $nonOwnerChallenge=false;
