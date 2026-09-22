@@ -32,6 +32,8 @@
 !/data/readiness/.gitkeep
 /data/social/*
 !/data/social/.gitkeep
+/data/competition/*
+!/data/competition/.gitkeep
 
 # Runtime import state
 /data/imports/pending/*
