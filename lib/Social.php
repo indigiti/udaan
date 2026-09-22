@@ -80,6 +80,13 @@ function udaan_social_accept_friend_invite(TempStore $store,string $identity,arr
         if(!is_array($invite)||($invite['type']??'')!=='friend')throw new RuntimeException('Friend invite is invalid or expired.');
         $owner=(string)($invite['created_by_identity']??'');
         if($owner===''||$owner===$identity)throw new RuntimeException('You cannot use your own friend invite.');
+        $ownerCount=0;$joinerCount=0;
+        foreach((array)$graph['friendships'] as$existing){
+            if(!is_array($existing))continue;$members=(array)($existing['members']??[]);
+            if(in_array($owner,$members,true))$ownerCount++;
+            if(in_array($identity,$members,true))$joinerCount++;
+        }
+        if($ownerCount>=50||$joinerCount>=50)throw new RuntimeException('The v1 friend limit of 50 has been reached.');
         $ownerIdentity=$owner;$relationshipId=udaan_social_friendship_id($owner,$identity);
         if(!isset($graph['friendships'][$relationshipId])){
             $graph['friendships'][$relationshipId]=[
@@ -130,7 +137,10 @@ function udaan_social_remove_friend(TempStore $store,string $identity,array $pla
 
 function udaan_social_create_team(TempStore $store,string $identity,array $player,string $name): array {
     if(!udaan_social_enabled_for_player($player))throw new RuntimeException('Social features are unavailable for under-13 Players in this release.');
-    $name=udaan_social_team_name($name);$teamId=uuid_v4();
+    $name=udaan_social_team_name($name);
+    $graph=$store->getSocialGraph();
+    if(count(udaan_social_teams_for_identity($graph,$identity))>=5)throw new RuntimeException('The v1 limit is 5 team memberships per Player.');
+    $teamId=uuid_v4();
     $team=[
         'schema_version'=>1,'id'=>$teamId,'name'=>$name,'created_by_identity'=>$identity,
         'created_by_player_id'=>(string)($player['id']??''),'created_at'=>now_iso(),'updated_at'=>now_iso(),
@@ -190,6 +200,7 @@ function udaan_social_accept_team_invite(TempStore $store,string $identity,array
         $teamId=(string)($invite['team_id']??'');$team=$graph['teams'][$teamId]??null;
         if(!is_array($team)||!empty($team['archived_at']))throw new RuntimeException('Team is unavailable.');
         if(isset($team['members'][$identity]))throw new RuntimeException('You are already a member of this team.');
+        if(count(udaan_social_teams_for_identity($graph,$identity))>=5)throw new RuntimeException('The v1 limit is 5 team memberships per Player.');
         if(count((array)$team['members'])>=8)throw new RuntimeException('This team has reached the v1 maximum of 8 members.');
         $graph['teams'][$teamId]['members'][$identity]=['role'=>'member','joined_at'=>now_iso()];
         $graph['teams'][$teamId]['updated_at']=now_iso();
