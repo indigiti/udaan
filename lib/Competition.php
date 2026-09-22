@@ -183,6 +183,16 @@ function udaan_competition_start_season(TempStore $store,string $identity,array 
         if(is_array($league['season']??null))throw new RuntimeException('This league already has a season.');
         $teamIds=array_keys((array)($league['teams']??[]));
         if(count($teamIds)<2)throw new RuntimeException('At least two teams are required to start a season.');
+        $rosters=[];
+        foreach($teamIds as$teamId){
+            $team=$social['teams'][$teamId]??null;
+            if(!is_array($team)||empty($team['members']))throw new RuntimeException('Every season team must have at least one active member.');
+            $rosters[$teamId]=[
+                'team_name'=>(string)($team['name']??'Team'),
+                'member_identities'=>array_values(array_map('strval',array_keys((array)$team['members']))),
+                'frozen_at'=>now_iso(),
+            ];
+        }
         $rounds=udaan_competition_round_robin($teamIds);$matches=[];$start=new DateTimeImmutable($date,new DateTimeZone('Asia/Kolkata'));
         foreach($rounds as$roundIndex=>$pairs){
             $roundStart=$start->modify('+'.($roundIndex*7).' days');
@@ -200,7 +210,7 @@ function udaan_competition_start_season(TempStore $store,string $identity,array 
         $season=[
             'schema_version'=>1,'id'=>uuid_v4(),'number'=>1,'division'=>(string)($league['division']??'foundation'),
             'start_date'=>$date,'end_date'=>$start->modify('+'.((count($rounds)*7)-1).' days')->format('Y-m-d'),
-            'status'=>'active','created_at'=>now_iso(),'matches'=>$matches,
+            'status'=>'active','created_at'=>now_iso(),'team_rosters'=>$rosters,'matches'=>$matches,
         ];
         $state['leagues'][$leagueId]['season']=$season;$state['leagues'][$leagueId]['updated_at']=now_iso();
         return udaan_competition_prune_state($state);
@@ -225,12 +235,13 @@ function udaan_competition_member_active_days(array $missionState,string $arena,
     return min(3,count($dates));
 }
 
-function udaan_competition_team_match_score(TempStore $store,array $team,string $arena,string $from,string $through): array {
+function udaan_competition_roster_match_score(TempStore $store,array $memberIdentities,string $arena,string $from,string $through): array {
     $members=0;$participants=0;$totalContribution=0;$memberRows=[];
-    foreach(array_keys((array)($team['members']??[])) as$identity){
-        $player=$store->getPlayer((string)$identity);if(!is_array($player))continue;
+    foreach(array_values(array_unique(array_map('strval',$memberIdentities))) as$identity){
+        if(!preg_match('/^[a-f0-9]{64}$/i',$identity))continue;
+        $player=$store->getPlayer($identity);if(!is_array($player))continue;
         $members++;
-        $activeDays=udaan_competition_member_active_days($store->getMissionState((string)$identity),$arena,$from,$through);
+        $activeDays=udaan_competition_member_active_days($store->getMissionState($identity),$arena,$from,$through);
         if($activeDays>0)$participants++;
         $totalContribution+=$activeDays;
         $memberRows[]=['nickname'=>(string)($player['nickname']??'Player'),'participated'=>$activeDays>0];
@@ -247,13 +258,17 @@ function udaan_competition_team_match_score(TempStore $store,array $team,string 
     ];
 }
 
+function udaan_competition_team_match_score(TempStore $store,array $team,string $arena,string $from,string $through): array {
+    return udaan_competition_roster_match_score($store,array_keys((array)($team['members']??[])),$arena,$from,$through);
+}
+
 function udaan_competition_match_result(TempStore $store,array $league,array $match,string $date): array {
-    $graph=$store->getSocialGraph();
-    $teamA=$graph['teams'][(string)$match['team_a']]??null;
-    $teamB=$graph['teams'][(string)$match['team_b']]??null;
     $arena=(string)($league['arena']??'learn');
-    $a=is_array($teamA)?udaan_competition_team_match_score($store,$teamA,$arena,(string)$match['start_date'],(string)$match['end_date']):['score'=>0,'participants'=>0,'members'=>0,'participation_rate'=>0,'capped_active_days'=>0,'member_rows'=>[]];
-    $b=is_array($teamB)?udaan_competition_team_match_score($store,$teamB,$arena,(string)$match['start_date'],(string)$match['end_date']):['score'=>0,'participants'=>0,'members'=>0,'participation_rate'=>0,'capped_active_days'=>0,'member_rows'=>[]];
+    $rosters=(array)($league['season']['team_rosters']??[]);
+    $rosterA=(array)($rosters[(string)$match['team_a']]['member_identities']??[]);
+    $rosterB=(array)($rosters[(string)$match['team_b']]['member_identities']??[]);
+    $a=udaan_competition_roster_match_score($store,$rosterA,$arena,(string)$match['start_date'],(string)$match['end_date']);
+    $b=udaan_competition_roster_match_score($store,$rosterB,$arena,(string)$match['start_date'],(string)$match['end_date']);
     $status=udaan_competition_match_status($match,$date);
     $winner=null;
     if($status==='completed'&&$a['score']!==$b['score'])$winner=$a['score']>$b['score']?(string)$match['team_a']:(string)$match['team_b'];
