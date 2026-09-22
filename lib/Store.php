@@ -46,6 +46,8 @@ final class TempStore {
     public function backend(): string { return $this->redis ? 'Redis' : 'Temporary JSON'; }
     public function historyBackend(): string { return $this->redis ? 'Redis persistent history' : 'Pseudonymous JSON history'; }
     public function userCacheBackend(): string { return $this->redis ? 'Redis user-session cache' : 'Temporary per-user JSON cache'; }
+    public function playerBackend(): string { return $this->redis ? 'Redis persistent player profiles' : 'Encrypted JSON player profiles'; }
+    public function eventBackend(): string { return 'Encrypted JSONL event ledger'; }
     public function redisConfigured(): bool { return (bool)($this->config['redis']['enabled'] ?? true); }
     public function redisRequired(): bool { return (bool)($this->config['redis']['required'] ?? false); }
     public function redisConnected(): bool { return $this->redis instanceof Redis; }
