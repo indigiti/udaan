@@ -91,6 +91,7 @@ try{
         $dataDir.'/user-cache/*.json',
         $dataDir.'/sync-outbox/*.jsonl',
         $dataDir.'/aggregates/*.json',
+        $dataDir.'/rate-limit/*.json',
         $dataDir.'/imports/pending/*.json',
         $dataDir.'/content/packs/*.json',
     ] as $pattern)$purgedFiles+=udaan_remove_matching($pattern);
@@ -100,6 +101,7 @@ try{
         $dataDir.'/content/manifest.json',
         $dataDir.'/content/import-log.json',
         $dataDir.'/content/.import.lock',
+        $dataDir.'/content/runtime-cache.php',
     ] as $file){
         if(is_file($file)&&@unlink($file))$purgedFiles++;
     }
