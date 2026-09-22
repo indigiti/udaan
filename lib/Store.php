@@ -4,6 +4,7 @@ declare(strict_types=1);
 final class TempStore {
     private array $config;
     private ?Redis $redis = null;
+    private ?string $redisError = null;
     private string $roomDir;
     private string $historyDir;
     private string $userCacheDir;
@@ -20,20 +21,47 @@ final class TempStore {
         $this->aggregateDir = dirname($roomDir).'/aggregates';
         $this->rateLimitDir = dirname($roomDir).'/rate-limit';
         foreach([$this->roomDir,$this->historyDir,$this->userCacheDir,$this->syncOutboxDir,$this->aggregateDir,$this->rateLimitDir] as $dir) if (!is_dir($dir)) @mkdir($dir,0775,true);
-        if (($config['redis']['enabled'] ?? true) && class_exists('Redis')) {
-            try {
-                $r = new Redis();
-                $r->connect((string)$config['redis']['host'],(int)$config['redis']['port'],0.25);
-                if ((string)($config['redis']['password'] ?? '') !== '') $r->auth((string)$config['redis']['password']);
-                $r->select((int)($config['redis']['database'] ?? 0));
-                $this->redis = $r;
-            } catch (Throwable $e) { $this->redis = null; }
+        if ($config['redis']['enabled'] ?? true) {
+            if (!class_exists('Redis')) {
+                $this->redisError = 'extension-unavailable';
+            } else {
+                try {
+                    $r = new Redis();
+                    $r->connect((string)$config['redis']['host'],(int)$config['redis']['port'],0.25);
+                    if ((string)($config['redis']['password'] ?? '') !== '') $r->auth((string)$config['redis']['password']);
+                    $r->select((int)($config['redis']['database'] ?? 0));
+                    $this->redis = $r;
+                } catch (Throwable $e) {
+                    $this->redis = null;
+                    $this->redisError = 'connection-failed';
+                }
+            }
         }
     }
 
     public function backend(): string { return $this->redis ? 'Redis' : 'Temporary JSON'; }
     public function historyBackend(): string { return $this->redis ? 'Redis persistent history' : 'Pseudonymous JSON history'; }
     public function userCacheBackend(): string { return $this->redis ? 'Redis user-session cache' : 'Temporary per-user JSON cache'; }
+    public function redisConfigured(): bool { return (bool)($this->config['redis']['enabled'] ?? true); }
+    public function redisRequired(): bool { return (bool)($this->config['redis']['required'] ?? false); }
+    public function redisConnected(): bool { return $this->redis instanceof Redis; }
+    public function redisErrorCode(): ?string {
+        if ($this->redisConnected()) return null;
+        if (!$this->redisConfigured()) return 'disabled';
+        return $this->redisError ?? 'unavailable';
+    }
+    public function runtimeStatus(): array {
+        return [
+            'redis_configured'=>$this->redisConfigured(),
+            'redis_required'=>$this->redisRequired(),
+            'redis_connected'=>$this->redisConnected(),
+            'redis_status'=>$this->redisConnected()?'online':($this->redisConfigured()?'degraded':'disabled'),
+            'redis_error'=>$this->redisErrorCode(),
+            'room_backend'=>$this->backend(),
+            'history_backend'=>$this->historyBackend(),
+            'user_cache_backend'=>$this->userCacheBackend(),
+        ];
+    }
     private function roomKey(string $id): string { return 'udaan:room:'.$id; }
     private function historyKey(string $identity): string { return 'udaan:history:'.$identity; }
     private function userCacheKey(string $identity): string { return 'udaan:usercache:'.$identity; }
