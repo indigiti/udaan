@@ -7,7 +7,8 @@ if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['admin_login'])){
     if(!global_csrf_matches($_POST['csrf']??null))$loginError='Security token expired. Refresh and try again.';
     else{
         $rate=$store->rateLimit('content-admin-login',request_fingerprint('content-admin-login'),8,900);
-        if(!$rate['allowed']){rate_limit_retry_header($rate);http_response_code(429);$loginError='Too many Content Bank login attempts. Try again later.';}
+        $networkRate=$store->rateLimit('content-admin-login-network',request_network_fingerprint('content-admin-login-network'),60,900);
+        if(!$rate['allowed']||!$networkRate['allowed']){$blocked=!$rate['allowed']?$rate:$networkRate;rate_limit_retry_header($blocked);http_response_code(429);$loginError='Too many Content Bank login attempts. Try again later.';}
         else{$key=(string)($_POST['admin_key']??'');if(content_admin_login($key)){header('Location: '.app_url('admin/content-bank'));exit;}$loginError='Access key not accepted.';usleep(350000);}
     }
 }
