@@ -203,7 +203,7 @@ jobs:
           grep -q "daily_readiness_storage" health.php
           grep -q "data/readiness" ops/package-release.sh
           grep -q "udaan_mission_complete_by_source" done.php
-          grep -q "Mission results are private runtime data" today.php
+          grep -q "Mission and readiness data are private runtime data" today.php
           grep -q "Too many offline events in one sync request" api/offline_sync.php
           grep -q "'card_map'" lib/helpers.php
 
