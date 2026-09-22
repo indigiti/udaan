@@ -47,7 +47,7 @@ fail_if_files "generated content runtime files" bash -c "find '$STAGE/data/conte
 fail_if_files "environment files" bash -c "find '$STAGE' -type f \( -name '.env' -o -name '.env.*' \) ! -name '.env.example' -print"
 fail_if_files "Python bytecode/cache" bash -c "find '$STAGE' -type f \( -name '*.pyc' -o -name '*.pyo' \) -print; find '$STAGE' -type d -name '__pycache__' -print"
 
-for required in   "$STAGE/config.php"   "$STAGE/.htaccess"   "$STAGE/data/.htaccess"   "$STAGE/ops/.htaccess"   "$STAGE/data/content/cards.json"   "$STAGE/ready.php"   "$STAGE/health.php"   "$STAGE/ops/preflight.php"   "$STAGE/ops/rotate-runtime-security.php"; do
+for required in   "$STAGE/index.php"   "$STAGE/config.php"   "$STAGE/.htaccess"   "$STAGE/data/.htaccess"   "$STAGE/ops/.htaccess"   "$STAGE/data/content/cards.json"   "$STAGE/ready.php"   "$STAGE/health.php"   "$STAGE/ops/preflight.php"   "$STAGE/ops/rotate-runtime-security.php"; do
   if [[ ! -f "$required" ]]; then
     echo "Required release file missing: ${required#$STAGE/}" >&2
     exit 1
