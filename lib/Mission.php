@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 require_once __DIR__.'/Performance.php';
+require_once __DIR__.'/DailyReadiness.php';
 
 function udaan_mission_types(): array {
     return [
@@ -179,6 +180,30 @@ function udaan_mission_emit_personal_bests(TempStore $store,array $player,array 
             'date'=>$date,
         ]));
     }
+}
+
+
+function udaan_mission_apply_readiness(TempStore $store,string $identity,array $entry): array {
+    $date=(string)($entry['date']??'');
+    if(!preg_match('/^\d{4}-\d{2}-\d{2}$/',$date))throw new InvalidArgumentException('Invalid readiness date.');
+    return $store->mutateMissionState($identity,function(?array $current)use($entry,$date):array{
+        $state=is_array($current)?array_replace(udaan_mission_state_default(),$current):udaan_mission_state_default();
+        foreach((array)($state['missions']??[]) as$id=>$mission){
+            if(!is_array($mission)||($mission['scheduled_date']??'')!==$date)continue;
+            if(in_array((string)($mission['status']??'assigned'),['completed','skipped'],true))continue;
+            $arena=(string)($mission['arena']??'learn');
+            $guidance=udaan_daily_readiness_mission_guidance($entry,$arena);
+            $mission['readiness_guidance']=$guidance;
+            if(($mission['type']??'')!=='daily9'){
+                if(($entry['band']??'')==='low')$mission['difficulty']='light';
+                elseif(($entry['band']??'')==='high'&&in_array($mission['type']??'',['focus','fitness','learning','revision'],true))$mission['difficulty']='challenge';
+                else $mission['difficulty']='standard';
+            }
+            $mission['updated_at']=now_iso();
+            $state['missions'][$id]=$mission;
+        }
+        return udaan_mission_prune_state($state);
+    });
 }
 
 function udaan_mission_apply_status(TempStore $store,string $identity,array $player,string $missionId,string $status,array $result=[]): array {
