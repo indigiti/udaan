@@ -5,6 +5,7 @@ return [
     'environment' => strtolower((string)(getenv('UDAAN_ENV') ?: 'development')),
     'trust_proxy_headers' => getenv('UDAAN_TRUST_PROXY_HEADERS') !== '0',
     'data_dir' => (string)(getenv('UDAAN_DATA_DIR') ?: (__DIR__.'/data')),
+    'public_root' => (string)(getenv('UDAAN_PUBLIC_ROOT') ?: ($_SERVER['DOCUMENT_ROOT'] ?? __DIR__)),
     'room_ttl_seconds' => 21600,
     'user_cache_ttl_seconds' => 604800,
     'offline_reserve_cards' => 1008,
