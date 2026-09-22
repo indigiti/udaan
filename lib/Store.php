@@ -9,6 +9,7 @@ final class TempStore {
     private string $userCacheDir;
     private string $syncOutboxDir;
     private string $aggregateDir;
+    private string $rateLimitDir;
 
     public function __construct(array $config, string $roomDir) {
         $this->config = $config;
@@ -17,7 +18,8 @@ final class TempStore {
         $this->userCacheDir = dirname($roomDir).'/user-cache';
         $this->syncOutboxDir = dirname($roomDir).'/sync-outbox';
         $this->aggregateDir = dirname($roomDir).'/aggregates';
-        foreach([$this->roomDir,$this->historyDir,$this->userCacheDir,$this->syncOutboxDir,$this->aggregateDir] as $dir) if (!is_dir($dir)) @mkdir($dir,0775,true);
+        $this->rateLimitDir = dirname($roomDir).'/rate-limit';
+        foreach([$this->roomDir,$this->historyDir,$this->userCacheDir,$this->syncOutboxDir,$this->aggregateDir,$this->rateLimitDir] as $dir) if (!is_dir($dir)) @mkdir($dir,0775,true);
         if (($config['redis']['enabled'] ?? true) && class_exists('Redis')) {
             try {
                 $r = new Redis();
@@ -59,6 +61,25 @@ final class TempStore {
     }
 
     public function delete(string $id): void { if($this->redis)$this->redis->del($this->roomKey($id)); else @unlink($this->roomFile($id)); }
+
+
+    public function rateLimit(string $scope,string $identity,int $limit,int $windowSeconds): array {
+        $scope=preg_replace('/[^a-z0-9:_-]/i','',strtolower($scope))?:'general';$limit=max(1,$limit);$windowSeconds=max(1,$windowSeconds);$now=time();
+        $fingerprint=hash('sha256',$scope.'|'.$identity);
+        if($this->redis){
+            $key='udaan:ratelimit:'.$scope.':'.$fingerprint;
+            $count=(int)$this->redis->incr($key);
+            if($count===1)$this->redis->expire($key,$windowSeconds);
+            $ttl=(int)$this->redis->ttl($key);if($ttl<0){$this->redis->expire($key,$windowSeconds);$ttl=$windowSeconds;}
+            return ['allowed'=>$count<=$limit,'count'=>$count,'remaining'=>max(0,$limit-$count),'retry_after'=>max(1,$ttl)];
+        }
+        $file=$this->rateLimitDir.'/'.$fingerprint.'.json';$fh=fopen($file,'c+');if(!$fh)throw new RuntimeException('Rate-limit storage is unavailable.');
+        flock($fh,LOCK_EX);rewind($fh);$raw=stream_get_contents($fh);$d=is_string($raw)?json_decode($raw,true):null;$reset=(int)($d['reset']??0);$count=(int)($d['count']??0);
+        if($reset<=$now){$reset=$now+$windowSeconds;$count=0;}$count++;$payload=json_encode(['count'=>$count,'reset'=>$reset],JSON_UNESCAPED_SLASHES);
+        rewind($fh);ftruncate($fh,0);fwrite($fh,$payload?:'{}');fflush($fh);flock($fh,LOCK_UN);fclose($fh);
+        if($count===1&&random_int(1,50)===1){foreach(glob($this->rateLimitDir.'/*.json')?:[] as$old){$m=@filemtime($old);if(is_int($m)&&$m<($now-86400))@unlink($old);}}
+        return ['allowed'=>$count<=$limit,'count'=>$count,'remaining'=>max(0,$limit-$count),'retry_after'=>max(1,$reset-$now)];
+    }
 
     public function getHistory(string $identity): array {
         $empty=['seen_cards'=>[],'seen_topics'=>[],'visits'=>0,'updated_at'=>null];
