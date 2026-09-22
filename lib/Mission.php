@@ -4,6 +4,7 @@ declare(strict_types=1);
 require_once __DIR__.'/Performance.php';
 require_once __DIR__.'/DailyReadiness.php';
 require_once __DIR__.'/Fit.php';
+require_once __DIR__.'/Momentum.php';
 
 function udaan_mission_types(): array {
     return [
@@ -13,6 +14,7 @@ function udaan_mission_types(): array {
         'fitness'=>'Movement',
         'focus'=>'Focus',
         'reflection'=>'Reflection',
+        'comeback'=>'Comeback',
     ];
 }
 
@@ -153,6 +155,28 @@ function udaan_mission_ensure_daily(TempStore $store,string $identity,array $pla
             'scheduled_date'=>$mission['scheduled_date'],'duration_minutes'=>$mission['duration_minutes'],
         ]));
     }
+
+    $momentum=udaan_momentum_summary($state,$player,$date);
+    if(!empty($momentum['comeback_due'])){
+        $template=udaan_momentum_comeback_template($player,$date);
+        if(is_array($template)){
+            $comebackAdded=null;
+            $state=$store->mutateMissionState($identity,function(?array $current)use($template,$player,$date,&$comebackAdded):array{
+                $s=is_array($current)?array_replace(udaan_mission_state_default(),$current):udaan_mission_state_default();
+                foreach((array)($s['missions']??[]) as$m)if(is_array($m)&&($m['source_key']??'')===($template['source_key']??''))return $s;
+                $mission=udaan_mission_from_template($template,$player,$date);
+                $s['missions'][$mission['id']]=$mission;$comebackAdded=$mission;
+                return udaan_mission_prune_state($s);
+            });
+            if(is_array($comebackAdded)){
+                $store->appendPlayerEvent(udaan_player_event('momentum.comeback_assigned',$player,[
+                    'arena'=>$comebackAdded['arena'],'mission_id'=>$comebackAdded['id'],
+                    'inactive_days'=>(int)($momentum['inactive_days']??0),
+                    'scheduled_date'=>$date,
+                ]));
+            }
+        }
+    }
     return $state;
 }
 
@@ -241,7 +265,14 @@ function udaan_mission_apply_status(TempStore $store,string $identity,array $pla
             'completion_source'=>(string)($mission['result']['source']??'self_report'),
             'activity_id'=>(string)($mission['result']['activity_id']??''),
         ]));
-        if($status==='completed')udaan_mission_emit_personal_bests($store,$player,$before,$state,$mission);
+        if($status==='completed'){
+            udaan_mission_emit_personal_bests($store,$player,$before,$state,$mission);
+            if(($mission['type']??'')==='comeback'){
+                $store->appendPlayerEvent(udaan_player_event('momentum.comeback_completed',$player,[
+                    'arena'=>$mission['arena'],'mission_id'=>$mission['id'],'scheduled_date'=>$mission['scheduled_date'],
+                ]));
+            }
+        }
     }
     return ['state'=>$state,'mission'=>$mission,'changed'=>$changed];
 }
