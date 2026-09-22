@@ -12,6 +12,7 @@ if(!is_array($bank)||!isset($bank['cards'])||!is_array($bank['cards'])){fwrite(S
 
 $compiled=content_runtime_cache_build($bank);
 if((int)($compiled['stats']['count']??-1)!==count($bank['cards'])){fwrite(STDERR,"Compiled cache count mismatch\n");exit(1);}
+if(!is_array($compiled['card_map']??null)||count($compiled['card_map'])!==count(array_filter($bank['cards'],fn($c)=>is_array($c)&&isset($c['id'])))){fwrite(STDERR,"Compiled card map mismatch\n");exit(1);}
 $loaded=content_runtime_cache();
 if(!is_array($loaded)||!is_array($loaded['bank']['cards']??null)){fwrite(STDERR,"Compiled cache did not load\n");exit(1);}
 if(count(cards_by_id())!==count(array_filter($bank['cards'],fn($c)=>is_array($c)&&isset($c['id'])))){fwrite(STDERR,"Card map mismatch\n");exit(1);}
