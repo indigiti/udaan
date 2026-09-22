@@ -11,6 +11,8 @@ final class TempStore {
     private string $syncOutboxDir;
     private string $aggregateDir;
     private string $rateLimitDir;
+    private string $playerDir;
+    private string $eventDir;
 
     public function __construct(array $config, string $roomDir) {
         $this->config = $config;
@@ -20,7 +22,9 @@ final class TempStore {
         $this->syncOutboxDir = dirname($roomDir).'/sync-outbox';
         $this->aggregateDir = dirname($roomDir).'/aggregates';
         $this->rateLimitDir = dirname($roomDir).'/rate-limit';
-        foreach([$this->roomDir,$this->historyDir,$this->userCacheDir,$this->syncOutboxDir,$this->aggregateDir,$this->rateLimitDir] as $dir) if (!is_dir($dir)) @mkdir($dir,0775,true);
+        $this->playerDir = dirname($roomDir).'/players';
+        $this->eventDir = dirname($roomDir).'/events';
+        foreach([$this->roomDir,$this->historyDir,$this->userCacheDir,$this->syncOutboxDir,$this->aggregateDir,$this->rateLimitDir,$this->playerDir,$this->eventDir] as $dir) if (!is_dir($dir)) @mkdir($dir,0775,true);
         if ($config['redis']['enabled'] ?? true) {
             if (!class_exists('Redis')) {
                 $this->redisError = 'extension-unavailable';
@@ -65,11 +69,66 @@ final class TempStore {
     private function roomKey(string $id): string { return 'udaan:room:'.$id; }
     private function historyKey(string $identity): string { return 'udaan:history:'.$identity; }
     private function userCacheKey(string $identity): string { return 'udaan:usercache:'.$identity; }
+    private function playerKey(string $identity): string { return 'udaan:player:'.$identity; }
     private function roomFile(string $id): string { return $this->roomDir.'/'.$id.'.json'; }
     private function historyFile(string $identity): string { return $this->historyDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
     private function userCacheFile(string $identity): string { return $this->userCacheDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
+    private function playerFile(string $identity): string { return $this->playerDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
     private function decode(mixed $raw): ?array { if (!is_string($raw) || $raw === '') return null; return secure_unpack($raw); }
     private function encode(array $data): string { return secure_pack($data); }
+
+
+    public function getPlayer(string $identity): ?array {
+        if(!preg_match('/^[a-f0-9]{64}$/i',$identity))return null;
+        if($this->redis){$raw=$this->redis->get($this->playerKey($identity));$d=$raw===false?null:$this->decode($raw);return is_array($d)?$d:null;}
+        $f=$this->playerFile($identity);if(!is_file($f))return null;$d=$this->decode(@file_get_contents($f));return is_array($d)?$d:null;
+    }
+
+    public function putPlayer(string $identity,array $player): void {
+        if(!preg_match('/^[a-f0-9]{64}$/i',$identity))throw new InvalidArgumentException('Invalid player identity.');
+        $encoded=$this->encode($player);
+        if($this->redis){$this->redis->set($this->playerKey($identity),$encoded);return;}
+        $this->atomicWrite($this->playerFile($identity),$encoded);
+    }
+
+    public function mutatePlayer(string $identity,callable $fn): array {
+        if(!preg_match('/^[a-f0-9]{64}$/i',$identity))throw new InvalidArgumentException('Invalid player identity.');
+        if($this->redis){
+            $key=$this->playerKey($identity);
+            for($i=0;$i<8;$i++){
+                $this->redis->watch($key);$raw=$this->redis->get($key);$current=$raw===false?null:$this->decode($raw);
+                $next=$fn($current);if(!is_array($next)){$this->redis->unwatch();throw new RuntimeException('Invalid player mutation.');}
+                $this->redis->multi();$this->redis->set($key,$this->encode($next));$ok=$this->redis->exec();if($ok!==false)return $next;
+            }
+            throw new RuntimeException('Player profile was busy. Please retry.');
+        }
+        $file=$this->playerFile($identity);$fh=fopen($file,'c+');if(!$fh)throw new RuntimeException('Player storage is unavailable.');
+        flock($fh,LOCK_EX);rewind($fh);$raw=stream_get_contents($fh);$current=$this->decode($raw);$next=$fn($current);
+        if(!is_array($next)){flock($fh,LOCK_UN);fclose($fh);throw new RuntimeException('Invalid player mutation.');}
+        $encoded=$this->encode($next);rewind($fh);ftruncate($fh,0);fwrite($fh,$encoded);fflush($fh);flock($fh,LOCK_UN);fclose($fh);return $next;
+    }
+
+    public function listPlayers(int $limit=200): array {
+        $limit=max(1,min(1000,$limit));$rows=[];
+        if($this->redis){
+            $it=null;
+            do{
+                $keys=$this->redis->scan($it,'udaan:player:*',100);
+                if(is_array($keys))foreach($keys as $key){$raw=$this->redis->get((string)$key);$d=$raw===false?null:$this->decode($raw);if(is_array($d))$rows[]=$d;if(count($rows)>=$limit)break 2;}
+            }while($it!==0&&$it!==null);
+        }else{
+            foreach(glob($this->playerDir.'/*.json')?:[] as $file){$d=$this->decode(@file_get_contents($file));if(is_array($d))$rows[]=$d;if(count($rows)>=$limit)break;}
+        }
+        usort($rows,fn($a,$b)=>strcmp((string)($b['updated_at']??''),(string)($a['updated_at']??'')));
+        return array_slice($rows,0,$limit);
+    }
+
+    public function appendPlayerEvent(array $event): void {
+        $event=array_merge(['event_id'=>uuid_v4(),'occurred_at'=>now_iso(),'schema_version'=>1],$event);
+        $line=$this->encode($event);$file=$this->eventDir.'/'.date('Y-m-d').'.jsonl';$fh=fopen($file,'ab');
+        if(!$fh)throw new RuntimeException('Event ledger is not writable.');
+        flock($fh,LOCK_EX);fwrite($fh,$line."\n");fflush($fh);flock($fh,LOCK_UN);fclose($fh);
+    }
 
     public function get(string $id): ?array {
         if ($this->redis) { $v=$this->redis->get($this->roomKey($id)); return $v===false?null:$this->decode($v); }
