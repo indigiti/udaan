@@ -1,9 +1,9 @@
 <?php
 require dirname(__DIR__).'/bootstrap.php';
 if($_SERVER['REQUEST_METHOD']!=='POST')json_response(['ok'=>false,'error'=>'POST only'],405);
-$payload=json_decode(file_get_contents('php://input'),true);if(!is_array($payload))$payload=[];
+$payload=json_request_payload(16384);
 $roomId=require_room_id($_GET['room']??($payload['room']??''));$pid=participant_id_for($roomId);if(!$pid)json_response(['ok'=>false,'error'=>'Join again'],401);
-if(!csrf_matches($roomId,$_SERVER['HTTP_X_CSRF']??null))json_response(['ok'=>false,'error'=>'Session token mismatch'],403);
+if(!csrf_matches($roomId,$_SERVER['HTTP_X_CSRF']??null))json_response(['ok'=>false,'error'=>'Session token mismatch'],403);$rate=$store->rateLimit('answer:'.$roomId,$pid,90,60);if(!$rate['allowed']){rate_limit_retry_header($rate);json_response(['ok'=>false,'error'=>'Answer rate limit exceeded'],429);}
 $cardId=(string)($payload['card']??'');$answer=is_string($payload['answer']??null)?trim($payload['answer']):'';$bank=cards_by_id();if(!isset($bank[$cardId]))json_response(['ok'=>false,'error'=>'Unknown card'],400);$card=$bank[$cardId];if(!card_answer_valid($card,$answer))json_response(['ok'=>false,'error'=>'Invalid answer'],422);
 $earned=0;$correct=null;$already=false;$last=false;$explain=(string)($card['explain']??$card['reveal']??'');$answerRecord=[];$finalScore=0;$finalCount=0;$learningKey='';$deviceHash='';
 $room=$store->mutate($roomId,function($r)use($pid,$cardId,$answer,$card,&$earned,&$correct,&$already,&$last,&$answerRecord,&$finalScore,&$finalCount,&$learningKey,&$deviceHash){
