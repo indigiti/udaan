@@ -3,10 +3,11 @@ require __DIR__.'/bootstrap.php';$roomId=require_room_id($_GET['room']??'');cano
 if($_SERVER['REQUEST_METHOD']==='POST'){
     if(!global_csrf_matches($_POST['csrf']??null))$error='Session expired. Refresh the join page and try again.';
     else{
-        $rate=$store->rateLimit('room-join:'.$roomId,request_fingerprint('room-join'),20,600);
-        if(!$rate['allowed']){rate_limit_retry_header($rate);http_response_code(429);$error='Too many join attempts. Please try again shortly.';}
+        $nickname=trim((string)($_POST['nickname']??''));$phone=normalized_phone((string)($_POST['phone']??''));$deviceInstallId=strtolower(trim((string)($_POST['device_install_id']??'')));$deviceHash=device_identity($deviceInstallId);
+        $rate=$store->rateLimit('room-join:'.$roomId,$deviceHash!==''?$deviceHash:request_fingerprint('room-join'),12,600);
+        $networkRate=$store->rateLimit('room-join-network:'.$roomId,request_network_fingerprint('room-join-network'),240,600);
+        if(!$rate['allowed']||!$networkRate['allowed']){rate_limit_retry_header(!$rate['allowed']?$rate:$networkRate);http_response_code(429);$error='Too many join attempts. Please try again shortly.';}
         else{
-            $nickname=trim((string)($_POST['nickname']??''));$phone=normalized_phone((string)($_POST['phone']??''));$deviceInstallId=strtolower(trim((string)($_POST['device_install_id']??'')));$deviceHash=device_identity($deviceInstallId);
             if(strlen($nickname)<2||strlen($nickname)>24)$error='Choose a nickname between 2 and 24 characters.';
             elseif(!preg_match('/^[\p{L}\p{N} ._\-]{2,24}$/u',$nickname))$error='Use letters, numbers, spaces, dot, dash or underscore in your nickname.';
             elseif(strlen($phone)<10||strlen($phone)>13)$error='Enter a valid WhatsApp number.';
