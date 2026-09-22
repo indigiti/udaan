@@ -77,7 +77,7 @@ if(!$memberInviteBlocked){fwrite(STDERR,"Non-owner created a team invite\n");exi
 $members=udaan_social_team_members($store,$joined);
 if(count($members)!==2){fwrite(STDERR,"Team member projection mismatch\n");exit(1);}
 foreach($members as$m){
-    foreach(['age_group','main_goal','daily_minutes','identity_hash','readiness'] as$forbidden){
+    foreach(['identity','age_group','main_goal','daily_minutes','identity_hash','readiness'] as$forbidden){
         if(array_key_exists($forbidden,$m)){fwrite(STDERR,"Private Player field leaked to Team projection: $forbidden\n");exit(1);}
     }
 }
