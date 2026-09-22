@@ -1,7 +1,7 @@
 <?php
 require __DIR__.'/bootstrap.php';$error='';
 if($_SERVER['REQUEST_METHOD']==='POST'){
-  if(!request_rate_limit('create-room',30,3600))$error='Too many room creation attempts. Please try again later.';
+  if(!request_rate_limit('create-room',60,3600))$error='Too many room creation attempts. Please try again later.';
   elseif(!global_csrf_matches($_POST['csrf']??null))$error='Session expired. Refresh and try again.';
   else{$length=normalize_journey_length($_POST['journey_length']??27);$room=new_room(trim((string)($_POST['title']??''))?:'Future India · Live Learning',$length);$store->put($room['id'],$room);host_set($room['id']);header('Location: '.route_url('present',$room['id']));exit;}
 }
