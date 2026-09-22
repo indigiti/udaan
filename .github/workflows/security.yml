@@ -34,7 +34,7 @@ jobs:
             fi
           }
 
-          runtime_hits="$(printf '%s\n' "$tracked" | grep -E '^data/(rooms|history|user-cache|sync-outbox|aggregates|rate-limit|insights|players|events|missions|readiness|social)/' | grep -vF '/.gitkeep' || true)"
+          runtime_hits="$(printf '%s\n' "$tracked" | grep -E '^data/(rooms|history|user-cache|sync-outbox|aggregates|rate-limit|insights|players|events|missions|readiness|social|competition)/' | grep -vF '/.gitkeep' || true)"
           if [[ -n "$runtime_hits" ]]; then
             echo "::error::Runtime learner/session/aggregate state must never be tracked."
             printf '%s\n' "$runtime_hits"
@@ -77,6 +77,7 @@ jobs:
           php tests/momentum_habits_smoke.php
           php tests/coach_v1_smoke.php
           php tests/friends_teams_smoke.php
+          php tests/competition_v1_smoke.php
 
       - name: Production readiness repository preflight
         shell: bash
