@@ -1,10 +1,25 @@
-# Udaan Live v0.11.0 — Udaan Fit v1
+# Udaan Live v0.12.0 — Momentum + Habit Engine
 
 **Architectural principle:** **Centralize trust, decentralize distribution.**  
 **Base:** v0.5.2 Encrypted Offline Learning Vault  
 **Database:** **Not required** for this release. PHP + encrypted JSON/Redis + encrypted IndexedDB remain the persistence model until production DB adoption.
 
 **Master development knowledge:** See `docs/MASTER_DEVELOPMENT_KNOWLEDGE.md` for the current shipped state, live-pending items, next releases, product architecture, safety rules, KPIs and the 2026–2036 roadmap.
+
+## v0.12.0 Momentum + Habit Engine
+
+v0.12.0 adds healthy retention mechanics derived from the existing Mission/Performance foundation.
+
+- dedicated `/momentum` dashboard;
+- weekly training-day goals;
+- Arena-linked habits from real Mission completion;
+- non-punitive weekly consistency;
+- neutral Core Comeback Missions after genuine inactivity;
+- milestones and next-milestone progress;
+- explicit opt-in achievement sharing;
+- no “streak lost” state;
+- no pay-to-win or purchased rank advantage;
+- no duplicate habit/task database.
 
 ## v0.11.0 Udaan Fit v1
 
