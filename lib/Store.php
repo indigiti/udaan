@@ -13,6 +13,7 @@ final class TempStore {
     private string $rateLimitDir;
     private string $playerDir;
     private string $eventDir;
+    private string $missionDir;
 
     public function __construct(array $config, string $roomDir) {
         $this->config = $config;
@@ -24,7 +25,8 @@ final class TempStore {
         $this->rateLimitDir = dirname($roomDir).'/rate-limit';
         $this->playerDir = dirname($roomDir).'/players';
         $this->eventDir = dirname($roomDir).'/events';
-        foreach([$this->roomDir,$this->historyDir,$this->userCacheDir,$this->syncOutboxDir,$this->aggregateDir,$this->rateLimitDir,$this->playerDir,$this->eventDir] as $dir) if (!is_dir($dir)) @mkdir($dir,0775,true);
+        $this->missionDir = dirname($roomDir).'/missions';
+        foreach([$this->roomDir,$this->historyDir,$this->userCacheDir,$this->syncOutboxDir,$this->aggregateDir,$this->rateLimitDir,$this->playerDir,$this->eventDir,$this->missionDir] as $dir) if (!is_dir($dir)) @mkdir($dir,0775,true);
         if ($config['redis']['enabled'] ?? true) {
             if (!class_exists('Redis')) {
                 $this->redisError = 'extension-unavailable';
@@ -48,6 +50,7 @@ final class TempStore {
     public function userCacheBackend(): string { return $this->redis ? 'Redis user-session cache' : 'Temporary per-user JSON cache'; }
     public function playerBackend(): string { return $this->redis ? 'Redis persistent player profiles' : 'Encrypted JSON player profiles'; }
     public function eventBackend(): string { return 'Encrypted JSONL event ledger'; }
+    public function missionBackend(): string { return $this->redis ? 'Redis persistent mission state' : 'Encrypted JSON mission state'; }
     public function redisConfigured(): bool { return (bool)($this->config['redis']['enabled'] ?? true); }
     public function redisRequired(): bool { return (bool)($this->config['redis']['required'] ?? false); }
     public function redisConnected(): bool { return $this->redis instanceof Redis; }
@@ -72,10 +75,12 @@ final class TempStore {
     private function historyKey(string $identity): string { return 'udaan:history:'.$identity; }
     private function userCacheKey(string $identity): string { return 'udaan:usercache:'.$identity; }
     private function playerKey(string $identity): string { return 'udaan:player:'.$identity; }
+    private function missionKey(string $identity): string { return 'udaan:missions:'.$identity; }
     private function roomFile(string $id): string { return $this->roomDir.'/'.$id.'.json'; }
     private function historyFile(string $identity): string { return $this->historyDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
     private function userCacheFile(string $identity): string { return $this->userCacheDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
     private function playerFile(string $identity): string { return $this->playerDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
+    private function missionFile(string $identity): string { return $this->missionDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
     private function decode(mixed $raw): ?array { if (!is_string($raw) || $raw === '') return null; return secure_unpack($raw); }
     private function encode(array $data): string { return secure_pack($data); }
 
@@ -130,6 +135,30 @@ final class TempStore {
         $line=$this->encode($event);$file=$this->eventDir.'/'.date('Y-m-d').'.jsonl';$fh=fopen($file,'ab');
         if(!$fh)throw new RuntimeException('Event ledger is not writable.');
         flock($fh,LOCK_EX);fwrite($fh,$line."\n");fflush($fh);flock($fh,LOCK_UN);fclose($fh);
+    }
+
+    public function getMissionState(string $identity): array {
+        $empty=['schema_version'=>1,'updated_at'=>null,'missions'=>[]];
+        if(!preg_match('/^[a-f0-9]{64}$/i',$identity))return $empty;
+        if($this->redis){$raw=$this->redis->get($this->missionKey($identity));$d=$raw===false?null:$this->decode($raw);return is_array($d)?array_replace($empty,$d):$empty;}
+        $f=$this->missionFile($identity);if(!is_file($f))return $empty;$d=$this->decode(@file_get_contents($f));return is_array($d)?array_replace($empty,$d):$empty;
+    }
+
+    public function mutateMissionState(string $identity,callable $fn): array {
+        if(!preg_match('/^[a-f0-9]{64}$/i',$identity))throw new InvalidArgumentException('Invalid mission identity.');
+        if($this->redis){
+            $key=$this->missionKey($identity);
+            for($i=0;$i<8;$i++){
+                $this->redis->watch($key);$raw=$this->redis->get($key);$current=$raw===false?null:$this->decode($raw);
+                $next=$fn($current);if(!is_array($next)){$this->redis->unwatch();throw new RuntimeException('Invalid mission state mutation.');}
+                $this->redis->multi();$this->redis->set($key,$this->encode($next));$ok=$this->redis->exec();if($ok!==false)return $next;
+            }
+            throw new RuntimeException('Mission state was busy. Please retry.');
+        }
+        $file=$this->missionFile($identity);$fh=fopen($file,'c+');if(!$fh)throw new RuntimeException('Mission storage is unavailable.');
+        flock($fh,LOCK_EX);rewind($fh);$raw=stream_get_contents($fh);$current=$this->decode($raw);$next=$fn($current);
+        if(!is_array($next)){flock($fh,LOCK_UN);fclose($fh);throw new RuntimeException('Invalid mission state mutation.');}
+        $encoded=$this->encode($next);rewind($fh);ftruncate($fh,0);fwrite($fh,$encoded);fflush($fh);flock($fh,LOCK_UN);fclose($fh);return $next;
     }
 
     public function get(string $id): ?array {
