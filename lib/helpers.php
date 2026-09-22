@@ -11,9 +11,32 @@ function text_cut(string $value,int $max): string { return function_exists('mb_s
 function normalized_phone(string $phone): string { return preg_replace('/\D+/', '', $phone) ?? ''; }
 function phone_mask(string $phone): string {$p=normalized_phone($phone);if(strlen($p)<4)return '••••';return (strlen($p)===10?'+91 ':'').'••••••'.substr($p,-4);}
 
+
+function udaan_app_root(): string { return dirname(__DIR__); }
+function udaan_data_dir(): string {
+    global $config;
+    static $resolved=null;if(is_string($resolved))return $resolved;
+    $raw=trim((string)($config['data_dir']??''));
+    if($raw==='')$raw=udaan_app_root().'/data';
+    $raw=str_replace('\\','/',$raw);
+    $absolute=str_starts_with($raw,'/')||(bool)preg_match('/^[A-Za-z]:\//',$raw);
+    if(!$absolute)$raw=udaan_app_root().'/'.ltrim($raw,'/');
+    $raw=preg_replace('#/+#','/',$raw)??$raw;
+    if($raw!=='/')$raw=rtrim($raw,'/');
+    return $resolved=$raw;
+}
+function udaan_data_path(string $path=''): string {
+    $base=udaan_data_dir();$path=ltrim(str_replace('\\','/',$path),'/');
+    return $path===''?$base:rtrim($base,'/').'/'.$path;
+}
+function udaan_data_is_default(): bool {
+    $default=str_replace('\\','/',udaan_app_root().'/data');
+    return rtrim(udaan_data_dir(),'/')===rtrim($default,'/');
+}
+
 function app_secret(): string {
     static $secret=null; if(is_string($secret))return $secret;
-    $file=dirname(__DIR__).'/data/app-secret.key';
+    $file=udaan_data_path('app-secret.key');
     $fh=@fopen($file,'c+');
     if(!$fh)throw new RuntimeException('Application secret file is not writable.');
     if(!flock($fh,LOCK_EX)){fclose($fh);throw new RuntimeException('Could not lock application secret file.');}
@@ -31,7 +54,7 @@ function b64url_decode(string $raw): string|false { $pad=strlen($raw)%4; if($pad
 function storage_encryption_available(): bool { return function_exists('openssl_encrypt') && in_array('aes-256-gcm', openssl_get_cipher_methods(), true); }
 function storage_key(): string {
     static $key=null; if(is_string($key)) return $key;
-    $file=dirname(__DIR__).'/data/storage-encryption.key'; $fh=@fopen($file,'c+'); if(!$fh) throw new RuntimeException('Storage encryption key file is not writable.');
+    $file=udaan_data_path('storage-encryption.key'); $fh=@fopen($file,'c+'); if(!$fh) throw new RuntimeException('Storage encryption key file is not writable.');
     if(!flock($fh,LOCK_EX)){fclose($fh);throw new RuntimeException('Could not lock storage encryption key file.');}
     rewind($fh);$raw=stream_get_contents($fh);$hex=is_string($raw)?trim($raw):'';
     if(!preg_match('/^[a-f0-9]{64}$/i',$hex)){ $bytes=random_bytes(32);$hex=bin2hex($bytes);rewind($fh);ftruncate($fh,0);if(fwrite($fh,$hex)===false){flock($fh,LOCK_UN);fclose($fh);throw new RuntimeException('Could not persist storage encryption key.');}fflush($fh); }
@@ -102,8 +125,8 @@ function clear_room_session(string $room): void {$s=&udaan_session();foreach(['h
 function journey_length_options(): array { return [21,24,27,30,36]; }
 function normalize_journey_length(mixed $n): int {$n=(int)$n;return in_array($n,journey_length_options(),true)?$n:27;}
 function normalize_learning_length(mixed $n): int {$n=(int)$n;if($n===9)return 9;return normalize_journey_length($n);}
-function content_bank_file_path(): string { return dirname(__DIR__).'/data/content/cards.json'; }
-function content_runtime_cache_file(): string { return dirname(__DIR__).'/data/content/runtime-cache.php'; }
+function content_bank_file_path(): string { return udaan_data_path('content/cards.json'); }
+function content_runtime_cache_file(): string { return udaan_data_path('content/runtime-cache.php'); }
 function content_runtime_cache_build(array $bank): array {
     if(!isset($bank['cards'])||!is_array($bank['cards']))throw new RuntimeException('Cannot compile an invalid content bank.');
     $pillars=[];$futureLabels=[];
