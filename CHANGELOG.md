@@ -1,5 +1,21 @@
 # Udaan Live — Change Log
 
+## v0.6.5 — QOI CSRF, Strict Offline Sync & Card Lookup Cache
+
+### Security
+- Question of India submissions now require the same-session CSRF token in addition to existing device/network throttling.
+- Offline sync rejects batches larger than 250 events instead of silently truncating them.
+
+### Performance
+- Compiled content runtime cache now includes a GUID → card map.
+- Hot answer/offline-sync card lookup can use the compiled map directly instead of rebuilding it per request.
+
+### PWA
+- Service-worker cache advanced to `udaan-v0.6.5`.
+- QOI script URL advanced to `qoi.js?v=0.6.5` so previously active service workers cannot serve the pre-CSRF client.
+
+---
+
 ## v0.6.4 — Certified Deployment Artifact
 
 ### Release integrity
