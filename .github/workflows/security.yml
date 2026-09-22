@@ -34,7 +34,7 @@ jobs:
             fi
           }
 
-          runtime_hits="$(printf '%s\n' "$tracked" | grep -E '^data/(rooms|history|user-cache|sync-outbox|aggregates|rate-limit|insights|players|events|missions|readiness)/' | grep -vF '/.gitkeep' || true)"
+          runtime_hits="$(printf '%s\n' "$tracked" | grep -E '^data/(rooms|history|user-cache|sync-outbox|aggregates|rate-limit|insights|players|events|missions|readiness|social)/' | grep -vF '/.gitkeep' || true)"
           if [[ -n "$runtime_hits" ]]; then
             echo "::error::Runtime learner/session/aggregate state must never be tracked."
             printf '%s\n' "$runtime_hits"
