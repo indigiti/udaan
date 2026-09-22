@@ -14,6 +14,7 @@ final class TempStore {
     private string $playerDir;
     private string $eventDir;
     private string $missionDir;
+    private string $readinessDir;
 
     public function __construct(array $config, string $roomDir) {
         $this->config = $config;
@@ -26,7 +27,8 @@ final class TempStore {
         $this->playerDir = dirname($roomDir).'/players';
         $this->eventDir = dirname($roomDir).'/events';
         $this->missionDir = dirname($roomDir).'/missions';
-        foreach([$this->roomDir,$this->historyDir,$this->userCacheDir,$this->syncOutboxDir,$this->aggregateDir,$this->rateLimitDir,$this->playerDir,$this->eventDir,$this->missionDir] as $dir) if (!is_dir($dir)) @mkdir($dir,0775,true);
+        $this->readinessDir = dirname($roomDir).'/readiness';
+        foreach([$this->roomDir,$this->historyDir,$this->userCacheDir,$this->syncOutboxDir,$this->aggregateDir,$this->rateLimitDir,$this->playerDir,$this->eventDir,$this->missionDir,$this->readinessDir] as $dir) if (!is_dir($dir)) @mkdir($dir,0775,true);
         if ($config['redis']['enabled'] ?? true) {
             if (!class_exists('Redis')) {
                 $this->redisError = 'extension-unavailable';
@@ -51,6 +53,7 @@ final class TempStore {
     public function playerBackend(): string { return $this->redis ? 'Redis persistent player profiles' : 'Encrypted JSON player profiles'; }
     public function eventBackend(): string { return 'Encrypted JSONL event ledger'; }
     public function missionBackend(): string { return $this->redis ? 'Redis persistent mission state' : 'Encrypted JSON mission state'; }
+    public function readinessBackend(): string { return $this->redis ? 'Redis private readiness state' : 'Encrypted JSON readiness state'; }
     public function redisConfigured(): bool { return (bool)($this->config['redis']['enabled'] ?? true); }
     public function redisRequired(): bool { return (bool)($this->config['redis']['required'] ?? false); }
     public function redisConnected(): bool { return $this->redis instanceof Redis; }
@@ -69,6 +72,7 @@ final class TempStore {
             'room_backend'=>$this->backend(),
             'history_backend'=>$this->historyBackend(),
             'user_cache_backend'=>$this->userCacheBackend(),
+            'readiness_backend'=>$this->readinessBackend(),
         ];
     }
     private function roomKey(string $id): string { return 'udaan:room:'.$id; }
@@ -76,11 +80,13 @@ final class TempStore {
     private function userCacheKey(string $identity): string { return 'udaan:usercache:'.$identity; }
     private function playerKey(string $identity): string { return 'udaan:player:'.$identity; }
     private function missionKey(string $identity): string { return 'udaan:missions:'.$identity; }
+    private function readinessKey(string $identity): string { return 'udaan:readiness:'.$identity; }
     private function roomFile(string $id): string { return $this->roomDir.'/'.$id.'.json'; }
     private function historyFile(string $identity): string { return $this->historyDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
     private function userCacheFile(string $identity): string { return $this->userCacheDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
     private function playerFile(string $identity): string { return $this->playerDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
     private function missionFile(string $identity): string { return $this->missionDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
+    private function readinessFile(string $identity): string { return $this->readinessDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
     private function decode(mixed $raw): ?array { if (!is_string($raw) || $raw === '') return null; return secure_unpack($raw); }
     private function encode(array $data): string { return secure_pack($data); }
 
@@ -158,6 +164,31 @@ final class TempStore {
         $file=$this->missionFile($identity);$fh=fopen($file,'c+');if(!$fh)throw new RuntimeException('Mission storage is unavailable.');
         flock($fh,LOCK_EX);rewind($fh);$raw=stream_get_contents($fh);$current=$this->decode($raw);$next=$fn($current);
         if(!is_array($next)){flock($fh,LOCK_UN);fclose($fh);throw new RuntimeException('Invalid mission state mutation.');}
+        $encoded=$this->encode($next);rewind($fh);ftruncate($fh,0);fwrite($fh,$encoded);fflush($fh);flock($fh,LOCK_UN);fclose($fh);return $next;
+    }
+
+
+    public function getReadinessState(string $identity): array {
+        $empty=['schema_version'=>1,'updated_at'=>null,'entries'=>[]];
+        if(!preg_match('/^[a-f0-9]{64}$/i',$identity))return $empty;
+        if($this->redis){$raw=$this->redis->get($this->readinessKey($identity));$d=$raw===false?null:$this->decode($raw);return is_array($d)?array_replace($empty,$d):$empty;}
+        $f=$this->readinessFile($identity);if(!is_file($f))return $empty;$d=$this->decode(@file_get_contents($f));return is_array($d)?array_replace($empty,$d):$empty;
+    }
+
+    public function mutateReadinessState(string $identity,callable $fn): array {
+        if(!preg_match('/^[a-f0-9]{64}$/i',$identity))throw new InvalidArgumentException('Invalid readiness identity.');
+        if($this->redis){
+            $key=$this->readinessKey($identity);
+            for($i=0;$i<8;$i++){
+                $this->redis->watch($key);$raw=$this->redis->get($key);$current=$raw===false?null:$this->decode($raw);
+                $next=$fn($current);if(!is_array($next)){$this->redis->unwatch();throw new RuntimeException('Invalid readiness mutation.');}
+                $this->redis->multi();$this->redis->set($key,$this->encode($next));$ok=$this->redis->exec();if($ok!==false)return $next;
+            }
+            throw new RuntimeException('Readiness state was busy. Please retry.');
+        }
+        $file=$this->readinessFile($identity);$fh=fopen($file,'c+');if(!$fh)throw new RuntimeException('Readiness storage is unavailable.');
+        flock($fh,LOCK_EX);rewind($fh);$raw=stream_get_contents($fh);$current=$this->decode($raw);$next=$fn($current);
+        if(!is_array($next)){flock($fh,LOCK_UN);fclose($fh);throw new RuntimeException('Invalid readiness mutation.');}
         $encoded=$this->encode($next);rewind($fh);ftruncate($fh,0);fwrite($fh,$encoded);fflush($fh);flock($fh,LOCK_UN);fclose($fh);return $next;
     }
 
