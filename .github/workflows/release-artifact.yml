@@ -48,16 +48,21 @@ jobs:
           test -s "$checksum"
           sha256sum -c "$checksum"
           echo "version=$version" >> "$GITHUB_OUTPUT"
+          stage="$RUNNER_TEMP/udaan-release/udaan"
+          test -f "$stage/index.php"
+          test -f "$stage/.htaccess"
+          test -f "$stage/data/.htaccess"
+          test -f "$stage/ops/.htaccess"
           echo "archive=$archive" >> "$GITHUB_OUTPUT"
           echo "checksum=$checksum" >> "$GITHUB_OUTPUT"
+          echo "stage=$stage" >> "$GITHUB_OUTPUT"
           echo "artifact_name=digiops-release" >> "$GITHUB_OUTPUT"
 
       - name: Upload certified deployment artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.package.outputs.artifact_name }}
-          path: |
-            ${{ steps.package.outputs.archive }}
-            ${{ steps.package.outputs.checksum }}
+          path: ${{ steps.package.outputs.stage }}/
+          include-hidden-files: true
           if-no-files-found: error
           retention-days: 30

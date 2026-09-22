@@ -151,8 +151,12 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          grep -q 'artifact_name=digiops-release' .github/workflows/release-artifact.yml
-          grep -q 'name: ${{ steps.package.outputs.artifact_name }}' .github/workflows/release-artifact.yml
+          grep -Fq 'artifact_name=digiops-release' .github/workflows/release-artifact.yml
+          grep -Fq 'outputs.artifact_name' .github/workflows/release-artifact.yml
+          grep -Fq 'RUNNER_TEMP/udaan-release/udaan' .github/workflows/release-artifact.yml
+          grep -Fq 'outputs.stage' .github/workflows/release-artifact.yml
+          grep -Fq 'include-hidden-files: true' .github/workflows/release-artifact.yml
+          grep -Fq 'STAGE/index.php' ops/package-release.sh
 
       - name: Verify protected operational directories
         shell: bash
