@@ -22,6 +22,10 @@
 /data/insights/*
 !/data/insights/.gitkeep
 /data/rate-limit/*
+/data/players/*
+!/data/players/.gitkeep
+/data/events/*
+!/data/events/.gitkeep
 
 # Runtime import state
 /data/imports/pending/*

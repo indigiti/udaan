@@ -1,10 +1,27 @@
-# Udaan Live v0.6.5 — Certified Hardened Distributed Learning
+# Udaan Live v0.7.0 — Player Foundation
 
 **Architectural principle:** **Centralize trust, decentralize distribution.**  
 **Base:** v0.5.2 Encrypted Offline Learning Vault  
 **Database:** **Not required** for this release. PHP + encrypted JSON/Redis + encrypted IndexedDB remain the persistence model until production DB adoption.
 
 **Master development knowledge:** See `docs/MASTER_DEVELOPMENT_KNOWLEDGE.md` for the current shipped state, live-pending items, next releases, product architecture, safety rules, KPIs and the 2026–2036 roadmap.
+
+## v0.7.0 Player Foundation
+
+v0.7.0 introduces the shared identity/data foundation required for the next-generation Udaan platform.
+
+- persistent pseudonymous **Udaan Player** anchored to the existing secure device HMAC identity;
+- private-by-default Player profile with age band, learning stage, preferred language, main goal, optional exam target and daily time budget;
+- selectable initial Arenas: **Learn, Fit, Mind, Reflect**;
+- encrypted Player persistence through the existing Redis/file storage abstraction;
+- encrypted append-only Player Event Ledger for future analytics, Performance Graph and Coach;
+- new **/player** onboarding/edit experience;
+- new **/today** mission-first home shell without fabricated performance scores;
+- protected **/admin/players** operational view exposing only non-sensitive profile fields;
+- readiness and health visibility for Player/event storage;
+- release/package guards that reject Player/event runtime state from Git and certified deployment artifacts.
+
+The universal Mission Engine remains the next planned release. v0.7.0 does not invent mission completion, readiness, fitness or performance scores before those engines exist.
 
 
 ## v0.6.4 certified deployment artifact
