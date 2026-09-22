@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+require_once __DIR__.'/Performance.php';
+
 function udaan_mission_types(): array {
     return [
         'learning'=>'Learning',
