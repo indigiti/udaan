@@ -2,7 +2,7 @@
 
 **Document status:** Active source of truth  
 **Last reconciled:** 22 September 2026  
-**Current application version:** v0.13.0  
+**Current application version:** v0.14.0  
 **Current main SHA:** see the repository `main` branch; release SHAs are certified by the artifact pipeline.  
 **Repository:** `indigiti/udaan`
 
@@ -183,7 +183,7 @@ The shared platform underneath should include:
 ## 6.1 Current certified baseline
 
 **Application:** Udaan Live  
-**Version:** v0.13.0  
+**Version:** v0.14.0  
 **main/source SHA:** use the current repository `main` SHA after merge; release SHAs are certified by the artifact pipeline.
 
 Current release contract:
@@ -437,7 +437,6 @@ The following ideas belong to the approved future vision but are not yet impleme
 - long-term achievement graph
 - Daily Home / mission-first dashboard
 - Coach memory
-- persistent team/social graph
 - league/season system
 - institution accounts
 - parent privacy model
@@ -1442,8 +1441,8 @@ The proposed next release line is:
 | v0.11.0 | Udaan Fit v1 | DONE |
 | v0.12.0 | Momentum + Habit Engine | DONE |
 | v0.13.0 | Coach v1 | DONE |
-| v0.14.0 | Friends + Teams | NEXT |
-| v0.15.0 | Match + League + Season Engine | PLANNED |
+| v0.14.0 | Friends + Teams | DONE |
+| v0.15.0 | Match + League + Season Engine | NEXT |
 | v0.16.0 | Exam Arena foundation | PLANNED |
 | v0.17.0 | First deep exam vertical | PLANNED |
 | v0.18.0 | Udaan Mind | PLANNED |
@@ -1681,18 +1680,30 @@ Persistent Coach memory and generative explanations remain future layers.
 
 ---
 
-# 40. v0.14.0 — Friends / Teams
+# 40. v0.14.0 — Friends / Teams — DONE
 
-Build:
+Implemented:
 
-- friend relationship
-- invite
-- team create/join
-- team membership
-- team profile
-- team challenge
-
-Keep privacy and minors' safety central.
+- encrypted persistent Social Graph
+- one-time 64-bit hashed friend invites
+- friend connect/remove
+- one-time team invites
+- private team create/join/leave
+- max 50 friend connections
+- max 5 team memberships per Player
+- max 8 members per team
+- nickname-only Team member projection
+- no public Player/team discovery
+- no follower counts
+- no open chat/messaging
+- no location sharing
+- under-13 Social v1 disabled pending verified parent/institution consent
+- 7-day Arena team participation challenge
+- Mission-derived challenge participation
+- no per-member score/rank/speed bonus
+- owner-only invite and challenge creation
+- Social Graph readiness/health/security-rotation support
+- deterministic privacy/permission smoke certification
 
 ---
 
@@ -2214,18 +2225,20 @@ These decisions should be made when the dependent development stage arrives rath
 
 ## NEXT
 
-- Friends + Teams
-- safe friend relationship/invite
-- team create/join
-- team membership
-- team profile
-- team challenge foundation
-- privacy and minors-safety controls
+- Match + League + Season Engine
+- match entity and lifecycle
+- transparent score rules
+- season entity
+- divisions
+- improvement-based awards
+- team participation / team leaderboard foundation
+- no pay-to-win
+- small/private pilot before geographic scaling
 
 ## NEAR TERM
 
-- Friends + Teams
-- Match / League foundation
+- Match / League / Season Engine
+- Exam Arena foundation
 
 ## MEDIUM TERM
 
@@ -2258,7 +2271,7 @@ The next code release should not jump to JEE/NEET content or a large AI assistan
 
 It should continue with:
 
-> **v0.14.0 — Friends + Teams**
+> **v0.15.0 — Match + League + Season Engine**
 
 Recommended development order:
 
@@ -2277,7 +2290,9 @@ Momentum / Habits ✅
   ↓
 Coach ✅
   ↓
-Social / Teams
+Social / Teams ✅
+  ↓
+Match / League / Seasons
   ↓
 Exam Arena
   ↓

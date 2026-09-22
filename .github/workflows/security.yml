@@ -34,7 +34,7 @@ jobs:
             fi
           }
 
-          runtime_hits="$(printf '%s\n' "$tracked" | grep -E '^data/(rooms|history|user-cache|sync-outbox|aggregates|rate-limit|insights|players|events|missions|readiness)/' | grep -vF '/.gitkeep' || true)"
+          runtime_hits="$(printf '%s\n' "$tracked" | grep -E '^data/(rooms|history|user-cache|sync-outbox|aggregates|rate-limit|insights|players|events|missions|readiness|social)/' | grep -vF '/.gitkeep' || true)"
           if [[ -n "$runtime_hits" ]]; then
             echo "::error::Runtime learner/session/aggregate state must never be tracked."
             printf '%s\n' "$runtime_hits"
@@ -76,6 +76,7 @@ jobs:
           php tests/fit_v1_smoke.php
           php tests/momentum_habits_smoke.php
           php tests/coach_v1_smoke.php
+          php tests/friends_teams_smoke.php
 
       - name: Production readiness repository preflight
         shell: bash
@@ -207,13 +208,26 @@ jobs:
             exit 1
           fi
 
-      - name: Verify v0.13.0 Coach v1 contract
+      - name: Reject stale v0.13.0 runtime asset references
         shell: bash
         run: |
           set -euo pipefail
-          grep -q "'version' => '0.13.0'" config.php
-          grep -q "udaan-v0.13.0" sw.js
-          grep -q "qoi.js?v=0.13.0" question_of_india.php
+          if grep -R -n 'v=0\.13\.0' --include='*.php' .; then
+            echo "::error::Runtime PHP still references the v0.13.0 asset cache key."
+            exit 1
+          fi
+          if grep -n 'udaan-v0\.13\.0' sw.js; then
+            echo "::error::Service-worker cache version was not advanced to v0.14.0."
+            exit 1
+          fi
+
+      - name: Verify v0.14.0 Friends and Teams contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q "'version' => '0.14.0'" config.php
+          grep -q "udaan-v0.14.0" sw.js
+          grep -q "qoi.js?v=0.14.0" question_of_india.php
           grep -q "RewriteRule ^player/?$ player.php" .htaccess
           grep -q "RewriteRule ^today/?$ today.php" .htaccess
           grep -q "RewriteRule ^progress/?$ progress.php" .htaccess
@@ -222,6 +236,10 @@ jobs:
           grep -q "RewriteRule ^momentum/?$ momentum.php" .htaccess
           grep -q "RewriteRule ^coach/?$ coach.php" .htaccess
           grep -q "RewriteRule ^coach/action/?$ coach_action.php" .htaccess
+          grep -q "RewriteRule ^connect/?$ connect.php" .htaccess
+          grep -q "RewriteRule ^connect/action/?$ connect_action.php" .htaccess
+          grep -q "RewriteRule ^team/(" .htaccess
+          grep -q "RewriteRule ^team/action/?$ team_action.php" .htaccess
           grep -q "RewriteRule ^mission/" .htaccess
           grep -q "RewriteRule ^admin/players/?$ admin_players.php" .htaccess
           grep -q "function udaan_player_normalize" lib/Player.php
@@ -253,6 +271,16 @@ jobs:
           grep -q "READINESS_LOW" lib/Coach.php
           grep -q "MOMENTUM_COMEBACK" lib/Coach.php
           grep -q "GOAL_ALIGNED_MISSION" lib/Coach.php
+          grep -q "function udaan_social_create_friend_invite" lib/Social.php
+          grep -q "function udaan_social_accept_friend_invite" lib/Social.php
+          grep -q "function udaan_social_create_team" lib/Social.php
+          grep -q "function udaan_social_accept_team_invite" lib/Social.php
+          grep -q "function udaan_social_create_team_challenge" lib/Social.php
+          grep -q "function udaan_social_team_challenge_progress" lib/Social.php
+          grep -q "function udaan_social_enabled_for_player" lib/Social.php
+          grep -q "random_bytes(8)" lib/Social.php
+          grep -q "getSocialGraph" lib/Store.php
+          grep -q "mutateSocialGraph" lib/Store.php
           grep -q "momentum.comeback_assigned" lib/Mission.php
           grep -q "momentum.comeback_completed" lib/Mission.php
           grep -q "performance.personal_best" lib/Mission.php
@@ -291,6 +319,22 @@ jobs:
           grep -q "lib/Coach.php" ops/package-release.sh
           grep -q "coach.php" ops/package-release.sh
           grep -q "coach_action.php" ops/package-release.sh
+          grep -q "lib/Social.php" ops/package-release.sh
+          grep -q "connect.php" ops/package-release.sh
+          grep -q "connect_action.php" ops/package-release.sh
+          grep -q "team.php" ops/package-release.sh
+          grep -q "team_action.php" ops/package-release.sh
+          grep -q "data/social" ops/package-release.sh
+          grep -q "social_storage_directory" lib/Readiness.php
+          grep -q "'invite_only'=>true" health.php
+          grep -q "'public_discovery'=>false" health.php
+          grep -q "'open_messaging'=>false" health.php
+          grep -q "'under_13_enabled'=>false" health.php
+          grep -q "'team_size_limit'=>8" health.php
+          grep -q "'team_challenge_ranking'=>false" health.php
+          grep -q "FRIENDS + TEAMS · PRIVATE BY DEFAULT" connect.php
+          grep -q "There is no public Player search, follower count, open messaging" connect.php
+          grep -q "There is no speed bonus or top-member rank" team.php
           grep -q "daily_readiness_storage" health.php
           grep -q "data/readiness" ops/package-release.sh
           grep -q "udaan_mission_complete_by_source" done.php
