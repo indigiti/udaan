@@ -1,10 +1,24 @@
-# Udaan Live v0.10.0 — Daily Readiness
+# Udaan Live v0.11.0 — Udaan Fit v1
 
 **Architectural principle:** **Centralize trust, decentralize distribution.**  
 **Base:** v0.5.2 Encrypted Offline Learning Vault  
 **Database:** **Not required** for this release. PHP + encrypted JSON/Redis + encrypted IndexedDB remain the persistence model until production DB adoption.
 
 **Master development knowledge:** See `docs/MASTER_DEVELOPMENT_KNOWLEDGE.md` for the current shipped state, live-pending items, next releases, product architecture, safety rules, KPIs and the 2026–2036 roadmap.
+
+## v0.11.0 Udaan Fit v1
+
+v0.11.0 turns the Fit Arena into a real, readiness-aware movement workflow rather than a generic self-report task.
+
+- dedicated `/fit` session experience;
+- study-break reset, mobility, easy walk, stretching and beginner yoga choices;
+- bounded 5 / 10 / 15-minute sessions;
+- low-readiness recovery restrictions;
+- structured `fit_session` Mission completion;
+- actual completed Fit minutes feed Performance;
+- 14-day/30-day Fit consistency in `/progress`;
+- no calories, weight, BMI, body-comparison or weight-loss leaderboard;
+- no new fitness database: Fit reuses private Mission/Event architecture.
 
 ## v0.10.0 Daily Readiness
 

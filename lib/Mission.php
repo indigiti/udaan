@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require_once __DIR__.'/Performance.php';
 require_once __DIR__.'/DailyReadiness.php';
+require_once __DIR__.'/Fit.php';
 
 function udaan_mission_types(): array {
     return [
@@ -55,7 +56,7 @@ function udaan_mission_templates_for_player(array $player,string $date): array {
             'duration_minutes'=>10,
             'difficulty'=>'light',
             'content_refs'=>[],
-            'completion_rule'=>['mode'=>'self_report'],
+            'completion_rule'=>['mode'=>'fit_session'],
         ];
     }
     if(in_array('mind',$selected,true)){
@@ -96,7 +97,7 @@ function udaan_mission_from_template(array $template,array $player,string $date)
     if(!in_array($difficulty,udaan_mission_difficulties(),true))throw new InvalidArgumentException('Invalid mission difficulty.');
     $rule=is_array($template['completion_rule']??null)?$template['completion_rule']:[];
     $mode=(string)($rule['mode']??'');
-    if(!in_array($mode,['self_report','event'],true))throw new InvalidArgumentException('Invalid mission completion rule.');
+    if(!in_array($mode,['self_report','event','fit_session'],true))throw new InvalidArgumentException('Invalid mission completion rule.');
 
     return [
         'schema_version'=>1,
@@ -219,20 +220,26 @@ function udaan_mission_apply_status(TempStore $store,string $identity,array $pla
         $state=is_array($current)?array_replace(udaan_mission_state_default(),$current):udaan_mission_state_default();
         if(!isset($state['missions'][$missionId])||!is_array($state['missions'][$missionId]))throw new RuntimeException('Mission not found.');
         $m=$state['missions'][$missionId];
-        if($status==='completed'&&($m['completion_rule']['mode']??'')!=='self_report')throw new RuntimeException('This mission completes automatically from its verified activity.');
+        $mode=(string)($m['completion_rule']['mode']??'self_report');
+        if($status==='completed'&&$mode==='event')throw new RuntimeException('This mission completes automatically from its verified activity.');
+        if($status==='completed'&&$mode==='fit_session'&&empty($result['activity_id']))throw new RuntimeException('Complete this movement mission from Udaan Fit.');
         if(($m['status']??'')===$status){$mission=$m;return $state;}
         if(($m['status']??'')==='completed'&&$status==='skipped'){$mission=$m;return $state;}
         $m['status']=$status;$m['updated_at']=now_iso();
-        if($status==='completed'){$m['completed_at']=now_iso();$m['result']=['source'=>'self_report']+$result;}
-        else{$m['skipped_at']=now_iso();$m['result']=['source'=>'self_report']+$result;}
+        if($status==='completed'){
+            $source=$mode==='fit_session'?'fit_session':'self_report';
+            $m['completed_at']=now_iso();$m['result']=['source'=>$source]+$result;
+        }else{$m['skipped_at']=now_iso();$m['result']=['source'=>'self_report']+$result;}
         $state['missions'][$missionId]=$m;$mission=$m;$changed=true;
         return udaan_mission_prune_state($state);
     });
     if($changed&&is_array($mission)){
         $store->appendPlayerEvent(udaan_player_event($status==='completed'?'mission.completed':'mission.skipped',$player,[
             'arena'=>$mission['arena'],'mission_id'=>$mission['id'],'mission_type'=>$mission['type'],
-            'scheduled_date'=>$mission['scheduled_date'],'duration_minutes'=>$mission['duration_minutes'],
-            'completion_source'=>'self_report',
+            'scheduled_date'=>$mission['scheduled_date'],
+            'duration_minutes'=>(int)($mission['result']['actual_minutes']??$mission['duration_minutes']),
+            'completion_source'=>(string)($mission['result']['source']??'self_report'),
+            'activity_id'=>(string)($mission['result']['activity_id']??''),
         ]));
         if($status==='completed')udaan_mission_emit_personal_bests($store,$player,$before,$state,$mission);
     }

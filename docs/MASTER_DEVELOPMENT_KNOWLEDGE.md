@@ -2,7 +2,7 @@
 
 **Document status:** Active source of truth  
 **Last reconciled:** 22 September 2026  
-**Current application version:** v0.10.0  
+**Current application version:** v0.11.0  
 **Current main SHA:** see the repository `main` branch; release SHAs are certified by the artifact pipeline.  
 **Repository:** `indigiti/udaan`
 
@@ -1440,8 +1440,8 @@ The proposed next release line is:
 | v0.8.0 | Universal Mission Engine | DONE |
 | v0.9.0 | Performance Graph + Personal Best | DONE |
 | v0.10.0 | Daily Readiness | DONE |
-| v0.11.0 | Udaan Fit v1 | NEXT |
-| v0.12.0 | Momentum + Habit Engine | PLANNED |
+| v0.11.0 | Udaan Fit v1 | DONE |
+| v0.12.0 | Momentum + Habit Engine | NEXT |
 | v0.13.0 | Coach v1 | PLANNED |
 | v0.14.0 | Friends + Teams | PLANNED |
 | v0.15.0 | Match + League + Season Engine | PLANNED |
@@ -1607,18 +1607,27 @@ Readiness remains a non-medical workload-planning signal and is not combined wit
 
 ---
 
-# 37. v0.11.0 — Udaan Fit v1
+# 37. v0.11.0 — Udaan Fit v1 — DONE
 
-Add:
+Implemented:
 
-- study-break movement
-- mobility
-- walking
-- stretching
-- yoga basics
-- completion/consistency tracking
+- dedicated private `/fit` experience
+- study-break reset
+- gentle mobility
+- easy walking
+- light stretching
+- beginner yoga basics
+- bounded 5 / 10 / 15-minute sessions
+- readiness-aware recommendations and low-readiness restrictions
+- structured `fit_session` Mission completion
+- actual Fit minutes integrated into Performance
+- 14-day active days / movement minutes / consistency
+- 30-day active-day view
+- no calorie, body-weight, BMI or body-comparison ranking
+- no separate Fit persistence layer; Mission/Event architecture is reused
+- dedicated Fit safety and consistency smoke certification
 
-Integrate with Mission Engine and Performance Profile.
+Fit v1 is intentionally movement-for-performance, not a weight-loss or body-image product.
 
 ---
 
@@ -2188,7 +2197,7 @@ These decisions should be made when the dependent development stage arrives rath
 
 ## LIVE-PENDING
 
-- artifact `10676416116` production deployment confirmation
+- current certified `digiops-release` production deployment confirmation
 - exact live source confirmation
 - live readiness/health verification
 - live security rotation confirmation
@@ -2196,17 +2205,16 @@ These decisions should be made when the dependent development stage arrives rath
 
 ## NEXT
 
-- Udaan Fit v1
-- study-break movement
-- mobility
-- walking
-- stretching
-- yoga basics
-- completion and consistency integration with Missions/Performance
+- Momentum + Habit Engine
+- weekly goals
+- comeback missions
+- non-punitive consistency
+- milestones
+- Personal Best prompts
+- achievement/share cards from real progress
 
 ## NEAR TERM
 
-- Fit v1
 - Momentum
 - Coach v1
 
@@ -2241,7 +2249,7 @@ The next code release should not jump to JEE/NEET content or a large AI assistan
 
 It should continue with:
 
-> **v0.11.0 — Udaan Fit v1**
+> **v0.12.0 — Momentum + Habit Engine**
 
 Recommended development order:
 
@@ -2254,7 +2262,7 @@ Performance Graph ✅
   ↓
 Daily Readiness ✅
   ↓
-Udaan Fit
+Udaan Fit ✅
   ↓
 Momentum / Habits
   ↓

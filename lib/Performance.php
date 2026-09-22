@@ -1,6 +1,12 @@
 <?php
 declare(strict_types=1);
 
+function udaan_performance_completed_minutes(array $mission): int {
+    if(($mission['status']??'')!=='completed')return 0;
+    $actual=(int)($mission['result']['actual_minutes']??($mission['duration_minutes']??0));
+    return max(0,min(480,$actual));
+}
+
 function udaan_performance_daily(array $state): array {
     $days=[];
     foreach((array)($state['missions']??[]) as $mission){
@@ -21,11 +27,11 @@ function udaan_performance_daily(array $state): array {
         $status=(string)($mission['status']??'assigned');
         if($status==='completed'){
             $days[$date]['completed']++;
-            $days[$date]['minutes']+=max(0,(int)($mission['duration_minutes']??0));
+            $days[$date]['minutes']+=udaan_performance_completed_minutes($mission);
             $arena=(string)($mission['arena']??'core');
             if(!isset($days[$date]['arenas'][$arena]))$days[$date]['arenas'][$arena]=['completed'=>0,'minutes'=>0];
             $days[$date]['arenas'][$arena]['completed']++;
-            $days[$date]['arenas'][$arena]['minutes']+=max(0,(int)($mission['duration_minutes']??0));
+            $days[$date]['arenas'][$arena]['minutes']+=udaan_performance_completed_minutes($mission);
         }elseif($status==='skipped'){
             $days[$date]['skipped']++;
         }

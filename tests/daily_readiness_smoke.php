@@ -7,6 +7,7 @@ require_once $root.'/lib/Player.php';
 require_once $root.'/lib/Store.php';
 require_once $root.'/lib/Performance.php';
 require_once $root.'/lib/DailyReadiness.php';
+require_once $root.'/lib/Fit.php';
 require_once $root.'/lib/Mission.php';
 
 $balanced=udaan_daily_readiness_entry([
@@ -67,7 +68,7 @@ if(($byType['daily9']['difficulty']??'')!=='standard'){fwrite(STDERR,"Readiness 
 if(($byType['fitness']['difficulty']??'')!=='light'||($byType['focus']['difficulty']??'')!=='light'){fwrite(STDERR,"Low readiness did not lighten pending Missions\n");exit(1);}
 if(($byType['fitness']['readiness_guidance']['band']??'')!=='low'){fwrite(STDERR,"Mission readiness guidance missing\n");exit(1);}
 
-$completed=udaan_mission_apply_status($store,$identity,$player,$byType['fitness']['id'],'completed');
+$completed=udaan_mission_apply_status($store,$identity,$player,$byType['fitness']['id'],'completed',['activity_id'=>'study_break','activity_label'=>'Study-break reset','category'=>'mobility','actual_minutes'=>5,'readiness_band'=>'low']);
 $completedBefore=$completed['mission'];
 $missionState=udaan_mission_apply_readiness($store,$identity,$high);
 $missions=udaan_missions_for_date($missionState,'2026-09-22');
