@@ -1,6 +1,7 @@
 <?php
 require dirname(__DIR__).'/bootstrap.php';
 if($_SERVER['REQUEST_METHOD']!=='POST')json_response(['ok'=>false,'error'=>'POST only'],405);
+if(!global_csrf_matches($_SERVER['HTTP_X_CSRF']??null))json_response(['ok'=>false,'error'=>'Session token mismatch'],403);
 $p=json_request_payload(8192);$card=question_of_india_card();$answer=is_string($p['answer']??null)?trim((string)$p['answer']):'';$deviceId=is_string($p['device_install_id']??null)?strtolower(trim((string)$p['device_install_id'])):'';$deviceHash=device_identity($deviceId);
 if($deviceHash==='')json_response(['ok'=>false,'error'=>'Secure device identity unavailable'],422);
 $rate=$store->rateLimit('qoi-answer',$deviceHash,12,300);$networkRate=$store->rateLimit('qoi-answer-network',request_network_fingerprint('qoi-answer-network'),180,300);if(!$rate['allowed']||!$networkRate['allowed']){$blocked=!$rate['allowed']?$rate:$networkRate;rate_limit_retry_header($blocked);json_response(['ok'=>false,'error'=>'Question response rate limit exceeded'],429);}

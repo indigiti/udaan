@@ -135,6 +135,18 @@ jobs:
             exit 1
           fi
 
+      - name: Verify v0.6.5 hardening contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q "'version' => '0.6.5'" config.php
+          grep -q "udaan-v0.6.5" sw.js
+          grep -q "qoi.js?v=0.6.5" question_of_india.php
+          grep -q "data-qoi-csrf" question_of_india.php
+          grep -q "HTTP_X_CSRF" api/qoi_answer.php
+          grep -q "Too many offline events in one sync request" api/offline_sync.php
+          grep -q "'card_map'" lib/helpers.php
+
       - name: Verify protected operational directories
         shell: bash
         run: |

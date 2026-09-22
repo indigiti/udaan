@@ -1,7 +1,7 @@
 <?php
 return [
     'app_name' => 'Udaan Live',
-    'version' => '0.6.4',
+    'version' => '0.6.5',
     'environment' => strtolower((string)(getenv('UDAAN_ENV') ?: 'development')),
     'trust_proxy_headers' => getenv('UDAAN_TRUST_PROXY_HEADERS') !== '0',
     'room_ttl_seconds' => 21600,

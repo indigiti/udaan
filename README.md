@@ -1,4 +1,4 @@
-# Udaan Live v0.6.4 — Certified Deployment Foundation
+# Udaan Live v0.6.5 — Certified Hardened Distributed Learning
 
 **Architectural principle:** **Centralize trust, decentralize distribution.**  
 **Base:** v0.5.2 Encrypted Offline Learning Vault  
@@ -48,6 +48,13 @@ v0.6.2 keeps the v0.6.1 trust-recovery model and hardens the high-frequency runt
 - runtime smoke certification in GitHub Actions.
 
 The JSON content bank remains authoritative. Controlled content import/rebuild paths regenerate the runtime cache.
+
+## v0.6.5 hardening update
+
+- Question of India POSTs now require CSRF in addition to existing device/network throttling.
+- Offline sync rejects batches above 250 events rather than truncating.
+- Compiled runtime content cache includes the GUID→card lookup map used by answer/sync hot paths.
+- Service-worker cache is advanced to `udaan-v0.6.5` and QOI script is explicitly cache-busted.
 
 ## v0.6.1 security recovery
 
