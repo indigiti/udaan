@@ -1,10 +1,26 @@
-# Udaan Live v0.14.0 — Friends + Teams
+# Udaan Live v0.15.0 — Match + League + Season Engine
 
 **Architectural principle:** **Centralize trust, decentralize distribution.**  
 **Base:** v0.5.2 Encrypted Offline Learning Vault  
 **Database:** **Not required** for this release. PHP + encrypted JSON/Redis + encrypted IndexedDB remain the persistence model until production DB adoption.
 
 **Master development knowledge:** See `docs/MASTER_DEVELOPMENT_KNOWLEDGE.md` for the current shipped state, live-pending items, next releases, product architecture, safety rules, KPIs and the 2026–2036 roadmap.
+
+## v0.15.0 Match + League + Season Engine
+
+v0.15.0 introduces the first private competition layer on top of Friends + Teams.
+
+- private team leagues;
+- one-time league team invites;
+- round-robin seasons;
+- scheduled / live / completed Match lifecycle;
+- frozen season rosters;
+- Mission-derived 0–100 normalized team scores;
+- maximum 3 active Arena-days contributed per member per Match;
+- private team standings;
+- Season Champion plus Participation, Consistency and Improvement awards;
+- no public leaderboard, individual member rank, speed bonus or pay-to-win advantage;
+- encrypted competition state kept separate from Social membership data.
 
 ## v0.14.0 Friends + Teams
 
