@@ -1,7 +1,7 @@
 <?php
 return [
     'app_name' => 'Udaan Live',
-    'version' => '0.6.1',
+    'version' => '0.6.2',
     'room_ttl_seconds' => 21600,
     'user_cache_ttl_seconds' => 604800,
     'offline_reserve_cards' => 1008,
