@@ -92,9 +92,9 @@ function udaan_mission_templates_for_player(array $player,string $date): array {
 
 function udaan_mission_from_template(array $template,array $player,string $date): array {
     $arena=(string)($template['arena']??'');
-    if(!isset(udaan_player_arenas()[$arena]))throw new InvalidArgumentException('Invalid mission arena.');
     $type=(string)($template['type']??'');
     if(!isset(udaan_mission_types()[$type]))throw new InvalidArgumentException('Invalid mission type.');
+    if(!isset(udaan_player_arenas()[$arena])&&!($type==='comeback'&&$arena==='core'))throw new InvalidArgumentException('Invalid mission arena.');
     $difficulty=(string)($template['difficulty']??'standard');
     if(!in_array($difficulty,udaan_mission_difficulties(),true))throw new InvalidArgumentException('Invalid mission difficulty.');
     $rule=is_array($template['completion_rule']??null)?$template['completion_rule']:[];
