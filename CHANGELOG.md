@@ -1,5 +1,31 @@
 # Udaan Live — Change Log
 
+## v0.6.3 — Production Readiness & Runtime Policy
+
+### Runtime policy
+
+- Added `UDAAN_ENV` environment classification.
+- Added explicit trusted-proxy policy through `UDAAN_TRUST_PROXY_HEADERS`.
+- Added `REDIS_REQUIRED=1` fail-closed production mode.
+- Redis remains optional when required mode is not enabled; degraded file fallback is reported explicitly.
+
+### Readiness / deployment
+
+- Added public `/ready` JSON readiness endpoint independent from normal application bootstrap.
+- Added `php ops/preflight.php` deployment preflight.
+- Readiness validates encryption/signing support, protected directories, content bank, runtime keys/permissions, compiled content cache, signed distribution and Redis policy without creating secrets.
+- `/health.php` now reports environment, trusted-proxy policy and safe Redis/backend runtime state.
+- Added trusted-proxy and Redis-policy smoke tests.
+- CI now runs repository-mode preflight before merge.
+
+### Safety
+
+- Required Redis outages now fail normal application bootstrap rather than silently changing persistence semantics.
+- Forwarded HTTPS headers are honored only when trusted-proxy handling is enabled.
+- Readiness diagnostics expose only safe status/error codes and never Redis passwords or secret material.
+
+---
+
 ## v0.6.2 — Hot-Path Performance & Abuse Hardening
 
 ### Performance
