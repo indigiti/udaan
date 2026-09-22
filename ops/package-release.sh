@@ -41,13 +41,13 @@ fail_if_files() {
 }
 
 fail_if_files "runtime keys" find "$STAGE/data" -maxdepth 1 -type f -name '*.key' -print
-fail_if_files "runtime learner/session state" bash -c "find '$STAGE/data/rooms' '$STAGE/data/history' '$STAGE/data/user-cache' '$STAGE/data/sync-outbox' '$STAGE/data/aggregates' '$STAGE/data/rate-limit' '$STAGE/data/insights' '$STAGE/data/players' '$STAGE/data/events' '$STAGE/data/missions' -type f ! -name '.gitkeep' -print 2>/dev/null"
+fail_if_files "runtime learner/session state" bash -c "find '$STAGE/data/rooms' '$STAGE/data/history' '$STAGE/data/user-cache' '$STAGE/data/sync-outbox' '$STAGE/data/aggregates' '$STAGE/data/rate-limit' '$STAGE/data/insights' '$STAGE/data/players' '$STAGE/data/events' '$STAGE/data/missions' '$STAGE/data/readiness' -type f ! -name '.gitkeep' -print 2>/dev/null"
 fail_if_files "pending import snapshots" bash -c "find '$STAGE/data/imports/pending' -type f ! -name '.gitkeep' -print 2>/dev/null"
 fail_if_files "generated content runtime files" bash -c "find '$STAGE/data/content' -type f \( -name 'manifest.json' -o -name 'runtime-cache.php' -o -name 'import-log.json' -o -name '.import.lock' -o -path '*/packs/*.json' -o -path '*/backups/cards-*.json' \) -print 2>/dev/null"
 fail_if_files "environment files" bash -c "find '$STAGE' -type f \( -name '.env' -o -name '.env.*' \) ! -name '.env.example' -print"
 fail_if_files "Python bytecode/cache" bash -c "find '$STAGE' -type f \( -name '*.pyc' -o -name '*.pyo' \) -print; find '$STAGE' -type d -name '__pycache__' -print"
 
-for required in   "$STAGE/index.php"   "$STAGE/config.php"   "$STAGE/.htaccess"   "$STAGE/data/.htaccess"   "$STAGE/ops/.htaccess"   "$STAGE/data/content/cards.json"   "$STAGE/ready.php"   "$STAGE/health.php"   "$STAGE/ops/preflight.php"   "$STAGE/ops/rotate-runtime-security.php"   "$STAGE/lib/Player.php"   "$STAGE/lib/Mission.php"   "$STAGE/player.php"   "$STAGE/today.php"   "$STAGE/mission_action.php"; do
+for required in   "$STAGE/index.php"   "$STAGE/config.php"   "$STAGE/.htaccess"   "$STAGE/data/.htaccess"   "$STAGE/ops/.htaccess"   "$STAGE/data/content/cards.json"   "$STAGE/ready.php"   "$STAGE/health.php"   "$STAGE/ops/preflight.php"   "$STAGE/ops/rotate-runtime-security.php"   "$STAGE/lib/Player.php"   "$STAGE/lib/Mission.php"   "$STAGE/lib/DailyReadiness.php"   "$STAGE/player.php"   "$STAGE/today.php"   "$STAGE/readiness.php"   "$STAGE/mission_action.php"; do
   if [[ ! -f "$required" ]]; then
     echo "Required release file missing: ${required#$STAGE/}" >&2
     exit 1
