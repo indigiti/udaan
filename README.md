@@ -1,9 +1,23 @@
-# Udaan Live v0.6.3 — Production-Ready Distributed Learning Foundation
+# Udaan Live v0.6.4 — Certified Deployment Foundation
 
 **Architectural principle:** **Centralize trust, decentralize distribution.**  
 **Base:** v0.5.2 Encrypted Offline Learning Vault  
 **Database:** **Not required** for this release. PHP + encrypted JSON/Redis + encrypted IndexedDB remain the persistence model until production DB adoption.
 
+
+## v0.6.4 certified deployment artifact
+
+v0.6.4 adds a deterministic, source-traceable deployment bundle.
+
+- `ops/package-release.sh` builds a deployable tarball from an exact Git SHA.
+- PR certification smoke-builds the same release package.
+- After a successful `main` security/syntax run, GitHub Actions automatically publishes a 30-day certified artifact.
+- `RELEASE.json` inside the package records the exact source SHA/version.
+- `SHA256SUMS` validates every packaged file.
+- The tarball/checksum pair is uploaded together.
+- Runtime keys/state, pending imports, generated packs/cache, environment files and Python bytecode are hard-rejected.
+
+Use only an artifact whose source SHA matches the certified `main` commit you intend to deploy. See `docs/CERTIFIED_RELEASE_v0.6.4.md`.
 
 ## v0.6.3 production readiness
 
