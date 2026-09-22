@@ -1,7 +1,9 @@
 <?php
 return [
     'app_name' => 'Udaan Live',
-    'version' => '0.6.2',
+    'version' => '0.6.3',
+    'environment' => strtolower((string)(getenv('UDAAN_ENV') ?: 'development')),
+    'trust_proxy_headers' => getenv('UDAAN_TRUST_PROXY_HEADERS') !== '0',
     'room_ttl_seconds' => 21600,
     'user_cache_ttl_seconds' => 604800,
     'offline_reserve_cards' => 1008,
@@ -30,5 +32,6 @@ return [
         'password' => getenv('REDIS_PASSWORD') ?: '',
         'database' => (int)(getenv('REDIS_DB') ?: 0),
         'enabled' => getenv('REDIS_ENABLED') !== '0',
+        'required' => getenv('REDIS_REQUIRED') === '1',
     ],
 ];

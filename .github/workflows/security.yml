@@ -64,6 +64,25 @@ jobs:
           set -euo pipefail
           php tests/runtime_smoke.php
 
+
+      - name: Production readiness repository preflight
+        shell: bash
+        run: |
+          set -euo pipefail
+          php ops/preflight.php --repository-mode
+          php tests/proxy_smoke.php
+          php tests/redis_policy_smoke.php
+
+      - name: Verify readiness and Redis-required contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q "RewriteRule ^ready/?$ ready.php" .htaccess
+          grep -q "Required Redis runtime is unavailable" bootstrap.php
+          grep -q "redisRequired()" bootstrap.php
+          grep -q "UDAAN_TRUST_PROXY_HEADERS" config.php
+          grep -q "REDIS_REQUIRED" config.php
+
       - name: Verify presenter state guard
         shell: bash
         run: |
