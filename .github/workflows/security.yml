@@ -73,6 +73,16 @@ jobs:
           php tests/proxy_smoke.php
           php tests/redis_policy_smoke.php
 
+
+      - name: Certified release package smoke
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash -n ops/package-release.sh
+          SOURCE_SHA="$(git rev-parse HEAD)" OUTPUT_DIR="$RUNNER_TEMP/udaan-release" bash ops/package-release.sh
+          test -f "$RUNNER_TEMP/udaan-release"/udaan-v*.tar.gz
+          test -f "$RUNNER_TEMP/udaan-release"/udaan-v*.tar.gz.sha256
+
       - name: Verify readiness and Redis-required contract
         shell: bash
         run: |
