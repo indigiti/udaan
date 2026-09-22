@@ -1,9 +1,25 @@
-# Udaan Live v0.6.1 — Security-Recovered Distributed Learning Foundation
+# Udaan Live v0.6.2 — Hardened Distributed Learning Foundation
 
 **Architectural principle:** **Centralize trust, decentralize distribution.**  
 **Base:** v0.5.2 Encrypted Offline Learning Vault  
 **Database:** **Not required** for this release. PHP + encrypted JSON/Redis + encrypted IndexedDB remain the persistence model until production DB adoption.
 
+
+## v0.6.2 performance and abuse hardening
+
+v0.6.2 keeps the v0.6.1 trust-recovery model and hardens the high-frequency runtime paths:
+
+- compiled PHP runtime content cache for faster PHP-FPM reads;
+- no full-bank scan during presenter polling;
+- presenter state protected by host/capability access;
+- Redis-first throttling with protected file fallback;
+- bounded JSON request bodies;
+- classroom-safe device/session throttles with broad network flood ceilings;
+- CSRF on join and Content Bank login;
+- CSP/HSTS/cross-origin response headers;
+- runtime smoke certification in GitHub Actions.
+
+The JSON content bank remains authoritative. Controlled content import/rebuild paths regenerate the runtime cache.
 
 ## v0.6.1 security recovery
 

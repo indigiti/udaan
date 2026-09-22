@@ -1,5 +1,33 @@
 # Udaan Live — Change Log
 
+## v0.6.2 — Hot-Path Performance & Abuse Hardening
+
+### Performance
+
+- Added an opcache-friendly compiled runtime content cache while keeping `data/content/cards.json` as the source of truth.
+- Controlled content rebuild/import paths regenerate the compiled runtime cache automatically.
+- Presenter state no longer scans the full card bank on every poll.
+- Presenter polling is non-overlapping, pauses while the tab is hidden, and stops after authorization denial.
+
+### Security / abuse controls
+
+- Live presenter state now requires the creator host session or a per-room capability token.
+- Added Redis-first rate limiting with a protected file fallback.
+- Room creation, room joins, answers, offline sync, Question of India, and Content Bank login are throttled.
+- Classroom/NAT-safe throttling uses device/session identity first with high network flood ceilings.
+- Join and Content Bank login forms now require CSRF tokens.
+- JSON APIs enforce bounded request bodies.
+- Added CSP, HSTS, Cross-Origin-Resource-Policy and X-Permitted-Cross-Domain-Policies headers.
+
+### Operations
+
+- `/health.php` reports compiled runtime-cache readiness and security protection state.
+- Cleanup prunes stale file-backed throttle records.
+- Key rotation purges stale throttle/cache artifacts before regenerating signed distribution.
+- CI smoke-tests compiled content caching and rate limiting in addition to PHP/JS syntax and repository safety.
+
+---
+
 ## v0.6.1 — Security Recovery & Runtime Trust Rotation
 
 ### Security

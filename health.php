@@ -1,10 +1,10 @@
 <?php
-require __DIR__.'/bootstrap.php';header('Content-Type: application/json; charset=utf-8');header('Cache-Control: no-store');$stats=bank_stats();$dist=content_distribution_stats();echo json_encode([
+require __DIR__.'/bootstrap.php';header('Content-Type: application/json; charset=utf-8');header('Cache-Control: no-store');$stats=bank_stats();$dist=content_distribution_stats();$runtimeCache=content_runtime_cache();echo json_encode([
  'ok'=>true,'app'=>'Udaan Live','version'=>$config['version']??'0.6.1',
  'room_storage'=>$store->backend(),'history_storage'=>$store->historyBackend(),'user_cache_storage'=>$store->userCacheBackend(),
  'user_cache_ttl_seconds'=>(int)($config['user_cache_ttl_seconds']??86400),'room_ttl_seconds'=>(int)($config['room_ttl_seconds']??21600),
  'session_name'=>session_name(),'pretty_urls'=>true,'room_id'=>'uuid-v4','pwa'=>true,'service_worker'=>'sw.js',
- 'architecture_principle'=>'Centralize trust, decentralize distribution.',
+ 'architecture_principle'=>'Centralize trust, decentralize distribution.','runtime_content_cache'=>['ready'=>is_array($runtimeCache),'mode'=>is_array($runtimeCache)?'compiled-php-opcache-friendly':'json-fallback','source_mtime'=>(int)($runtimeCache['source_mtime']??0),'source_size'=>(int)($runtimeCache['source_size']??0)],'presenter_state_protected'=>true,'request_throttling'=>true,
  'browser_qna_cache'=>'AES-GCM encrypted IndexedDB','device_install_id'=>'UUID v4 (local only; server stores HMAC)','offline_answer_queue'=>true,
  'offline_reserve_capacity'=>(int)($config['offline_reserve_cards']??1008),'offline_device_bank_capacity'=>(int)($config['offline_device_bank_cards']??1008),'offline_device_bank_balance'=>'up to 112 cards × 9 pillars','offline_shell'=>'offline-learning.php',
  'browser_vault_encryption'=>'Web Crypto AES-GCM 256-bit','server_temp_encryption'=>storage_encryption_available()?'AES-256-GCM':'unavailable','learning_reflection_rail'=>true,'card_reflection_seconds'=>(int)($config['card_reflection_seconds']??3),'sync_outbox'=>'data/sync-outbox/*.jsonl',

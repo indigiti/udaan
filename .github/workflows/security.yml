@@ -57,6 +57,29 @@ jobs:
           done < <(find assets/js -type f -name '*.js' -print0)
           node --check sw.js
 
+
+      - name: Runtime cache and throttle smoke
+        shell: bash
+        run: |
+          set -euo pipefail
+          php tests/runtime_smoke.php
+
+      - name: Verify presenter state guard
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q "Presenter state access denied" api/state.php
+          grep -q "state_token" bootstrap.php
+          grep -q "future_topic_labels()" bootstrap.php
+
+      - name: Verify browser security headers
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q "Content-Security-Policy" .htaccess
+          grep -q "Strict-Transport-Security" .htaccess
+          grep -q "Cross-Origin-Resource-Policy" .htaccess
+
       - name: Verify public content delivery is read only
         shell: bash
         run: |

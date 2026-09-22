@@ -4,15 +4,19 @@ require __DIR__.'/bootstrap.php';
 $loginError='';$actionError='';$verification=null;$verificationToken='';$importSuccess=null;$migrationSuccess=null;$pasted='';
 
 if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['admin_login'])){
-    $key=(string)($_POST['admin_key']??'');
-    if(content_admin_login($key)){header('Location: '.app_url('admin/content-bank'));exit;}
-    $loginError='Access key not accepted.';usleep(350000);
+    if(!global_csrf_matches($_POST['csrf']??null))$loginError='Security token expired. Refresh and try again.';
+    else{
+        $rate=$store->rateLimit('content-admin-login',request_fingerprint('content-admin-login'),8,900);
+        $networkRate=$store->rateLimit('content-admin-login-network',request_network_fingerprint('content-admin-login-network'),60,900);
+        if(!$rate['allowed']||!$networkRate['allowed']){$blocked=!$rate['allowed']?$rate:$networkRate;rate_limit_retry_header($blocked);http_response_code(429);$loginError='Too many Content Bank login attempts. Try again later.';}
+        else{$key=(string)($_POST['admin_key']??'');if(content_admin_login($key)){header('Location: '.app_url('admin/content-bank'));exit;}$loginError='Access key not accepted.';usleep(350000);}
+    }
 }
 
 if(!content_admin_authenticated()){
     // Initializes a strong local key on first visit. It remains web-inaccessible under data/.htaccess.
     content_admin_key();
-    ?><!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Content Bank Access · Udaan</title><?=common_assets_head()?></head><body><div class="shell"><header class="site-head"><a class="brand" href="<?=h(route_url('home'))?>"><span class="brand-mark">उ</span><span>Udaan</span></a><div class="head-actions"><span class="ghost">Content Bank · Protected</span><?=theme_toggle()?></div></header><main class="admin-login-wrap"><section class="admin-login-card"><p class="eyebrow">CONTENT ADMIN</p><h1>Verify before anything enters the bank.</h1><p class="admin-lead">Enter the Content Admin access key. On first use the app creates a strong key at <code>data/content-admin.key</code>. Read it through Cloudways SFTP/SSH; the file is blocked from public web access.</p><?php if($loginError):?><p class="form-error"><?=h($loginError)?></p><?php endif;?><form method="post" data-progress-submit data-progress-label="Unlocking Content Bank"><input type="hidden" name="admin_login" value="1"><div class="field"><label>CONTENT ADMIN ACCESS KEY</label><input name="admin_key" type="password" autocomplete="current-password" required autofocus></div><button class="primary">Unlock Content Bank →</button></form><p class="small-note">You can override the file key with the server environment variable <code>UDAAN_CONTENT_ADMIN_KEY</code>.</p></section></main></div><?=common_theme_script()?></body></html><?php exit;
+    ?><!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Content Bank Access · Udaan</title><?=common_assets_head()?></head><body><div class="shell"><header class="site-head"><a class="brand" href="<?=h(route_url('home'))?>"><span class="brand-mark">उ</span><span>Udaan</span></a><div class="head-actions"><span class="ghost">Content Bank · Protected</span><?=theme_toggle()?></div></header><main class="admin-login-wrap"><section class="admin-login-card"><p class="eyebrow">CONTENT ADMIN</p><h1>Verify before anything enters the bank.</h1><p class="admin-lead">Enter the Content Admin access key. On first use the app creates a strong key at <code>data/content-admin.key</code>. Read it through Cloudways SFTP/SSH; the file is blocked from public web access.</p><?php if($loginError):?><p class="form-error"><?=h($loginError)?></p><?php endif;?><form method="post" data-progress-submit data-progress-label="Unlocking Content Bank"><input type="hidden" name="admin_login" value="1"><input type="hidden" name="csrf" value="<?=h(global_csrf())?>"><div class="field"><label>CONTENT ADMIN ACCESS KEY</label><input name="admin_key" type="password" autocomplete="current-password" required autofocus></div><button class="primary">Unlock Content Bank →</button></form><p class="small-note">You can override the file key with the server environment variable <code>UDAAN_CONTENT_ADMIN_KEY</code>.</p></section></main></div><?=common_theme_script()?></body></html><?php exit;
 }
 
 if($_SERVER['REQUEST_METHOD']==='POST'){

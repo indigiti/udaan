@@ -68,6 +68,18 @@ function absolute_app_url(string $path=''): string {$proto=strtolower((string)($
 function route_url(string $name,?string $room=null): string {$map=['home'=>'','join'=>'join','verify'=>'verify','journey'=>'journey','complete'=>'complete','present'=>'present','state'=>'state','answer'=>'answer','qr'=>'qr','demo'=>'demo-crowd','reset'=>'reset','offline_pack'=>'offline-pack','offline_sync'=>'offline-sync'];if($name==='home')return app_url('');if($room===null||!isset($map[$name]))throw new InvalidArgumentException('Invalid route');return app_url('room/'.rawurlencode($room).'/'.$map[$name]);}
 function absolute_route_url(string $name,?string $room=null): string {$path=route_url($name,$room);$proto=strtolower((string)($_SERVER['HTTP_X_FORWARDED_PROTO']??''))==='https'||(!empty($_SERVER['HTTPS'])&&$_SERVER['HTTPS']!=='off')?'https':'http';$host=preg_replace('/[^A-Za-z0-9.:-]/','',(string)($_SERVER['HTTP_HOST']??'localhost'))?:'localhost';return $proto.'://'.$host.$path;}
 function json_response(array $data,int $status=200): never {http_response_code($status);header('Content-Type: application/json; charset=utf-8');header('Cache-Control: no-store');echo json_encode($data,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);exit;}
+function json_request_payload(int $maxBytes=65536): array {
+    $maxBytes=max(1024,$maxBytes);$declared=(int)($_SERVER['CONTENT_LENGTH']??0);if($declared>$maxBytes)json_response(['ok'=>false,'error'=>'Request body too large'],413);
+    $raw=file_get_contents('php://input',false,null,0,$maxBytes+1);if(!is_string($raw))json_response(['ok'=>false,'error'=>'Request body unavailable'],400);if(strlen($raw)>$maxBytes)json_response(['ok'=>false,'error'=>'Request body too large'],413);
+    if($raw==='')return [];try{$decoded=json_decode($raw,true,128,JSON_THROW_ON_ERROR);}catch(JsonException $e){json_response(['ok'=>false,'error'=>'Invalid JSON request'],400);}return is_array($decoded)?$decoded:[];
+}
+function request_network_fingerprint(string $scope='web'): string {
+    $remote=trim((string)($_SERVER['REMOTE_ADDR']??'unknown'));$ua=text_cut(trim((string)($_SERVER['HTTP_USER_AGENT']??'')),240);return hash_hmac('sha256',$scope.'|'.$remote.'|'.$ua,app_secret());
+}
+function request_fingerprint(string $scope='web'): string {
+    $session=session_status()===PHP_SESSION_ACTIVE?session_id():'';return hash_hmac('sha256',$scope.'|'.request_network_fingerprint($scope).'|'.$session,app_secret());
+}
+function rate_limit_retry_header(array $rate): void { $retry=max(1,(int)($rate['retry_after']??60));header('Retry-After: '.$retry); }
 function require_room_id(?string $id): string {$id=trim((string)$id);$uuid='/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i';$legacy='/^[A-Z2-9]{5}$/';if(preg_match($uuid,$id))return strtolower($id);if(preg_match($legacy,strtoupper($id)))return strtoupper($id);http_response_code(400);exit('Invalid room');}
 function canonicalize_get_route(string $route,string $room): void {if($_SERVER['REQUEST_METHOD']!=='GET')return;$path=parse_url((string)($_SERVER['REQUEST_URI']??''),PHP_URL_PATH)?:'';if(str_ends_with($path,'/'.basename((string)($_SERVER['SCRIPT_NAME']??'')))){header('Location: '.route_url($route,$room),true,302);exit;}}
 
@@ -89,13 +101,46 @@ function clear_room_session(string $room): void {$s=&udaan_session();foreach(['h
 function journey_length_options(): array { return [21,24,27,30,36]; }
 function normalize_journey_length(mixed $n): int {$n=(int)$n;return in_array($n,journey_length_options(),true)?$n:27;}
 function normalize_learning_length(mixed $n): int {$n=(int)$n;if($n===9)return 9;return normalize_journey_length($n);}
+function content_bank_file_path(): string { return dirname(__DIR__).'/data/content/cards.json'; }
+function content_runtime_cache_file(): string { return dirname(__DIR__).'/data/content/runtime-cache.php'; }
+function content_runtime_cache_build(array $bank): array {
+    if(!isset($bank['cards'])||!is_array($bank['cards']))throw new RuntimeException('Cannot compile an invalid content bank.');
+    $pillars=[];$futureLabels=[];
+    foreach($bank['cards'] as $c){
+        if(!is_array($c))continue;
+        $p=(string)($c['pillar']??'other');$pillars[$p]=($pillars[$p]??0)+1;
+        if($p==='future'&&!empty($c['topic'])&&!isset($futureLabels[(string)$c['topic']]))$futureLabels[(string)$c['topic']]=(string)($c['topic_name']??$c['topic']);
+    }
+    $source=content_bank_file_path();$compiled=[
+        'schema'=>1,
+        'source_mtime'=>(int)(@filemtime($source)?:0),
+        'source_size'=>(int)(@filesize($source)?:0),
+        'bank'=>$bank,
+        'stats'=>['count'=>count($bank['cards']),'pillars'=>count($pillars),'by_pillar'=>$pillars,'version'=>$bank['version']??''],
+        'future_labels'=>$futureLabels,
+    ];
+    $php="<?php\nreturn ".var_export($compiled,true).";\n";$file=content_runtime_cache_file();$tmp=$file.'.tmp-'.bin2hex(random_bytes(5));
+    if(@file_put_contents($tmp,$php,LOCK_EX)===false)throw new RuntimeException('Could not write compiled content runtime cache.');
+    @chmod($tmp,0640);if(!@rename($tmp,$file)){@unlink($tmp);throw new RuntimeException('Could not publish compiled content runtime cache.');}
+    @chmod($file,0640);if(function_exists('opcache_invalidate'))@opcache_invalidate($file,true);return $compiled;
+}
+function content_runtime_cache(): ?array {
+    static $loaded=false,$cache=null;if($loaded)return $cache;$loaded=true;$source=content_bank_file_path();$file=content_runtime_cache_file();
+    if(!is_file($file)||!is_file($source))return null;
+    try{$data=require $file;}catch(Throwable $e){return null;}
+    if(!is_array($data)||!isset($data['bank']['cards'])||!is_array($data['bank']['cards']))return null;
+    if((int)($data['source_mtime']??-1)!==(int)(@filemtime($source)?:0)||(int)($data['source_size']??-1)!==(int)(@filesize($source)?:0))return null;
+    return $cache=$data;
+}
 function content_bank(): array {
-    static $bank=null;if(is_array($bank))return $bank;$file=dirname(__DIR__).'/data/content/cards.json';$raw=@file_get_contents($file);$data=is_string($raw)?json_decode($raw,true):null;
+    static $bank=null;if(is_array($bank))return $bank;$compiled=content_runtime_cache();if(is_array($compiled['bank']??null))return $bank=$compiled['bank'];
+    $file=content_bank_file_path();$raw=@file_get_contents($file);$data=is_string($raw)?json_decode($raw,true):null;
     if(!is_array($data)||!isset($data['cards'])||!is_array($data['cards']))throw new RuntimeException('Content bank is unavailable.');
-    $bank=$data;return $bank;
+    return $bank=$data;
 }
 function cards_by_id(): array {static $map=null;if(is_array($map))return $map;$map=[];foreach(content_bank()['cards'] as $c)if(is_array($c)&&isset($c['id']))$map[(string)$c['id']]=$c;return $map;}
-function bank_stats(): array {$b=content_bank();$pillars=[];foreach($b['cards'] as $c){$p=(string)($c['pillar']??'other');$pillars[$p]=($pillars[$p]??0)+1;}return ['count'=>count($b['cards']),'pillars'=>count($pillars),'by_pillar'=>$pillars,'version'=>$b['version']??''];}
+function bank_stats(): array {$compiled=content_runtime_cache();if(is_array($compiled['stats']??null))return $compiled['stats'];$b=content_bank();$pillars=[];foreach($b['cards'] as $c){$p=(string)($c['pillar']??'other');$pillars[$p]=($pillars[$p]??0)+1;}return ['count'=>count($b['cards']),'pillars'=>count($pillars),'by_pillar'=>$pillars,'version'=>$b['version']??''];}
+function future_topic_labels(): array {$compiled=content_runtime_cache();if(is_array($compiled['future_labels']??null))return $compiled['future_labels'];$out=[];foreach(content_bank()['cards'] as$c)if(is_array($c)&&($c['pillar']??'')==='future'&&!empty($c['topic'])&&!isset($out[(string)$c['topic']]))$out[(string)$c['topic']]=(string)($c['topic_name']??$c['topic']);return $out;}
 function secure_shuffle(array $items): array {
     for($i=count($items)-1;$i>0;$i--){$j=random_int(0,$i);if($i!==$j){$tmp=$items[$i];$items[$i]=$items[$j];$items[$j]=$tmp;}}
     return $items;
