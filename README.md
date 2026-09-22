@@ -1,10 +1,24 @@
-# Udaan Live v0.8.0 — Universal Mission Engine
+# Udaan Live v0.9.0 — Performance Graph & Personal Best
 
 **Architectural principle:** **Centralize trust, decentralize distribution.**  
 **Base:** v0.5.2 Encrypted Offline Learning Vault  
 **Database:** **Not required** for this release. PHP + encrypted JSON/Redis + encrypted IndexedDB remain the persistence model until production DB adoption.
 
 **Master development knowledge:** See `docs/MASTER_DEVELOPMENT_KNOWLEDGE.md` for the current shipped state, live-pending items, next releases, product architecture, safety rules, KPIs and the 2026–2036 roadmap.
+
+## v0.9.0 Performance Graph & Personal Best
+
+v0.9.0 turns Mission history into a real performance layer without inventing a single overall score.
+
+- private `/progress` dashboard;
+- 14-day and 30-day training summaries;
+- meaningful training days;
+- completed Mission count and completed training minutes;
+- Mission completion rate;
+- per-Arena activity breakdown;
+- all-time Personal Bests;
+- `performance.personal_best` events emitted from genuine Mission completion;
+- no health/readiness score and no reflection-text collection.
 
 ## v0.8.0 Universal Mission Engine
 
