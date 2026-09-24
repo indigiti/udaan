@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 require dirname(__DIR__).'/lib/helpers.php';
 
+$loaded=require dirname(__DIR__).'/config.php';
+if(($loaded['trust_proxy_headers']??true)!==false){fwrite(STDERR,"Proxy trust must default off when UDAAN_TRUST_PROXY_HEADERS is unset\n");exit(1);}
+
 $config=['trust_proxy_headers'=>false];
 $_SERVER['HTTPS']='off';
 $_SERVER['HTTP_X_FORWARDED_PROTO']='https';
