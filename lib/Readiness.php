@@ -115,6 +115,8 @@ function udaan_readiness_report(array $config,string $root,bool $repositoryMode=
     if($opcache===false||empty($opcache['opcache_enabled']))$warn('opcache-disabled','PHP OPcache is not reported as enabled; runtime content-cache performance will be lower.');
 
     if($environment!=='production')$warn('environment-not-production','UDAAN_ENV is not set to production.');
+    $legacyMode=legacy_plaintext_storage_mode();$checks['legacy_plaintext_storage']=['ok'=>true,'code'=>$legacyMode];
+    if($environment==='production'&&$legacyMode!=='deny')$warn('legacy-plaintext-read-enabled','Legacy plaintext storage reads remain enabled. Run the controlled migration, then set UDAAN_LEGACY_PLAINTEXT_STORAGE=deny.');
     if($environment==='production'&&configured_public_url()==='')$warn('public-url-not-configured','UDAAN_PUBLIC_URL is not configured; absolute links will fall back to the web-server host.');
     if(!empty($config['trust_proxy_headers']))$checks['trusted_proxy_headers']=['ok'=>true,'code'=>'enabled'];
     else $checks['trusted_proxy_headers']=['ok'=>true,'code'=>'disabled'];
