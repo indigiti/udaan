@@ -10,8 +10,15 @@ require_once $root.'/lib/ContentPacks.php';
 require_once $root.'/lib/Readiness.php';
 
 $report=udaan_readiness_report($config,$root,false);
-http_response_code(!empty($report['ready'])?200:503);
+$ready=!empty($report['ready']);
+http_response_code($ready?200:503);
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
 header('X-Robots-Tag: noindex, nofollow');
-echo json_encode($report,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT);
+echo json_encode([
+    'ready'=>$ready,
+    'app'=>(string)($config['app_name']??'Udaan Live'),
+    'version'=>(string)($config['version']??''),
+    'status'=>$ready?'ready':'not-ready',
+    'time'=>date(DATE_ATOM),
+],JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
