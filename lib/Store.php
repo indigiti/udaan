@@ -273,10 +273,11 @@ final class TempStore {
                 $next=$fn($current);if(!is_array($next)){$this->redis->unwatch();throw new RuntimeException('Invalid social graph mutation.');}
                 $next=array_replace(['schema_version'=>1,'updated_at'=>now_iso(),'friendships'=>[],'invites'=>[],'teams'=>[]],$next);
                 foreach(['friendships','invites','teams'] as$k)if(!is_array($next[$k]))$next[$k]=[];
+                $migrationBase=$versionRaw===false?['friendships'=>[],'invites'=>[],'teams'=>[]]:$current;
                 $this->redis->multi();
-                $this->queueRedisEntityDiff('social','friend',(array)($current['friendships']??[]),(array)$next['friendships']);
-                $this->queueRedisEntityDiff('social','invite',(array)($current['invites']??[]),(array)$next['invites']);
-                $this->queueRedisEntityDiff('social','team',(array)($current['teams']??[]),(array)$next['teams']);
+                $this->queueRedisEntityDiff('social','friend',(array)($migrationBase['friendships']??[]),(array)$next['friendships']);
+                $this->queueRedisEntityDiff('social','invite',(array)($migrationBase['invites']??[]),(array)$next['invites']);
+                $this->queueRedisEntityDiff('social','team',(array)($migrationBase['teams']??[]),(array)$next['teams']);
                 $this->redis->set($versionKey,(string)(((int)$versionRaw)+1));
                 if($versionRaw===false)$this->redis->del($this->legacySocialKey());
                 $ok=$this->redis->exec();if($ok!==false)return $next;
@@ -289,9 +290,10 @@ final class TempStore {
             $current=$this->getSocialGraph();$next=$fn($current);if(!is_array($next))throw new RuntimeException('Invalid social graph mutation.');
             $next=array_replace(['schema_version'=>1,'updated_at'=>now_iso(),'friendships'=>[],'invites'=>[],'teams'=>[]],$next);
             foreach(['friendships','invites','teams'] as$k)if(!is_array($next[$k]))$next[$k]=[];
-            $this->persistFileEntityDiff($this->socialDir,'friend',(array)($current['friendships']??[]),(array)$next['friendships']);
-            $this->persistFileEntityDiff($this->socialDir,'invite',(array)($current['invites']??[]),(array)$next['invites']);
-            $this->persistFileEntityDiff($this->socialDir,'team',(array)($current['teams']??[]),(array)$next['teams']);
+            $migrationBase=is_file($this->socialMarkerFile())?$current:['friendships'=>[],'invites'=>[],'teams'=>[]];
+            $this->persistFileEntityDiff($this->socialDir,'friend',(array)($migrationBase['friendships']??[]),(array)$next['friendships']);
+            $this->persistFileEntityDiff($this->socialDir,'invite',(array)($migrationBase['invites']??[]),(array)$next['invites']);
+            $this->persistFileEntityDiff($this->socialDir,'team',(array)($migrationBase['teams']??[]),(array)$next['teams']);
             if(@file_put_contents($this->socialMarkerFile(),"2\n",LOCK_EX)===false)throw new RuntimeException('Could not activate social partitions.');@chmod($this->socialMarkerFile(),0640);
             return $next;
         }finally{flock($lock,LOCK_UN);fclose($lock);}
@@ -325,9 +327,10 @@ final class TempStore {
                 $next=$fn($current);if(!is_array($next)){$this->redis->unwatch();throw new RuntimeException('Invalid competition state mutation.');}
                 $next=array_replace(['schema_version'=>1,'updated_at'=>now_iso(),'leagues'=>[],'invites'=>[]],$next);
                 foreach(['leagues','invites'] as$k)if(!is_array($next[$k]))$next[$k]=[];
+                $migrationBase=$versionRaw===false?['leagues'=>[],'invites'=>[]]:$current;
                 $this->redis->multi();
-                $this->queueRedisEntityDiff('competition','league',(array)($current['leagues']??[]),(array)$next['leagues']);
-                $this->queueRedisEntityDiff('competition','invite',(array)($current['invites']??[]),(array)$next['invites']);
+                $this->queueRedisEntityDiff('competition','league',(array)($migrationBase['leagues']??[]),(array)$next['leagues']);
+                $this->queueRedisEntityDiff('competition','invite',(array)($migrationBase['invites']??[]),(array)$next['invites']);
                 $this->redis->set($versionKey,(string)(((int)$versionRaw)+1));
                 if($versionRaw===false)$this->redis->del($this->legacyCompetitionKey());
                 $ok=$this->redis->exec();if($ok!==false)return $next;
@@ -340,8 +343,9 @@ final class TempStore {
             $current=$this->getCompetitionState();$next=$fn($current);if(!is_array($next))throw new RuntimeException('Invalid competition state mutation.');
             $next=array_replace(['schema_version'=>1,'updated_at'=>now_iso(),'leagues'=>[],'invites'=>[]],$next);
             foreach(['leagues','invites'] as$k)if(!is_array($next[$k]))$next[$k]=[];
-            $this->persistFileEntityDiff($this->competitionDir,'league',(array)($current['leagues']??[]),(array)$next['leagues']);
-            $this->persistFileEntityDiff($this->competitionDir,'invite',(array)($current['invites']??[]),(array)$next['invites']);
+            $migrationBase=is_file($this->competitionMarkerFile())?$current:['leagues'=>[],'invites'=>[]];
+            $this->persistFileEntityDiff($this->competitionDir,'league',(array)($migrationBase['leagues']??[]),(array)$next['leagues']);
+            $this->persistFileEntityDiff($this->competitionDir,'invite',(array)($migrationBase['invites']??[]),(array)$next['invites']);
             if(@file_put_contents($this->competitionMarkerFile(),"2\n",LOCK_EX)===false)throw new RuntimeException('Could not activate competition partitions.');@chmod($this->competitionMarkerFile(),0640);
             return $next;
         }finally{flock($lock,LOCK_UN);fclose($lock);}
