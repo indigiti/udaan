@@ -79,6 +79,7 @@ jobs:
           php tests/coach_v1_smoke.php
           php tests/friends_teams_smoke.php
           php tests/competition_v1_smoke.php
+          php tests/partitioned_social_competition_smoke.php
 
       - name: Production readiness repository preflight
         shell: bash
