@@ -43,7 +43,7 @@ function udaan_readiness_report(array $config,string $root,bool $repositoryMode=
     $aes=storage_encryption_available();$push('aes_256_gcm',$aes,$aes?'available':'unavailable');
     $sodium=content_pack_signing_available();$push('ed25519_sodium',$sodium,$sodium?'available':'unavailable');
 
-    $dataDir=$root.'/data';$dataWritable=is_dir($dataDir)&&is_writable($dataDir);
+    $dataDir=data_root();$dataWritable=is_dir($dataDir)&&is_writable($dataDir);
     $push('data_directory',$dataWritable,$dataWritable?'writable':'not-writable');
     $playerDir=$dataDir.'/players';$eventDir=$dataDir.'/events';$missionDir=$dataDir.'/missions';$dailyReadinessDir=$dataDir.'/readiness';$socialDir=$dataDir.'/social';$competitionDir=$dataDir.'/competition';
     $push('player_storage_directory',is_dir($playerDir)&&is_writable($playerDir),(is_dir($playerDir)&&is_writable($playerDir))?'writable':'not-writable');
@@ -53,9 +53,11 @@ function udaan_readiness_report(array $config,string $root,bool $repositoryMode=
     $push('social_storage_directory',is_dir($socialDir)&&is_writable($socialDir),(is_dir($socialDir)&&is_writable($socialDir))?'writable':'not-writable');
     $push('competition_storage_directory',is_dir($competitionDir)&&is_writable($competitionDir),(is_dir($competitionDir)&&is_writable($competitionDir))?'writable':'not-writable');
 
-    $dataDenied=is_file($dataDir.'/.htaccess')&&preg_match('/Require\s+all\s+denied/i',(string)@file_get_contents($dataDir.'/.htaccess'));
+    $docRoot=str_replace('\\','/',realpath($_SERVER['DOCUMENT_ROOT']??'')?:'');$dataReal=str_replace('\\','/',realpath($dataDir)?:$dataDir);
+    $dataOutsideDoc=$docRoot===''||!str_starts_with($dataReal,rtrim($docRoot,'/').'/');
+    $dataDenied=$dataOutsideDoc||(is_file($dataDir.'/.htaccess')&&preg_match('/Require\s+all\s+denied/i',(string)@file_get_contents($dataDir.'/.htaccess')));
     $opsDenied=is_file($root.'/ops/.htaccess')&&preg_match('/Require\s+all\s+denied/i',(string)@file_get_contents($root.'/ops/.htaccess'));
-    $push('data_http_denied',(bool)$dataDenied,$dataDenied?'protected':'deny-rule-missing');
+    $push('data_http_denied',(bool)$dataDenied,$dataOutsideDoc?'outside-document-root':($dataDenied?'protected':'deny-rule-missing'));
     $push('ops_http_denied',(bool)$opsDenied,$opsDenied?'protected':'deny-rule-missing');
 
     $maintenance=is_file($dataDir.'/maintenance.flag');
@@ -113,6 +115,7 @@ function udaan_readiness_report(array $config,string $root,bool $repositoryMode=
     if($opcache===false||empty($opcache['opcache_enabled']))$warn('opcache-disabled','PHP OPcache is not reported as enabled; runtime content-cache performance will be lower.');
 
     if($environment!=='production')$warn('environment-not-production','UDAAN_ENV is not set to production.');
+    if($environment==='production'&&configured_public_url()==='')$warn('public-url-not-configured','UDAAN_PUBLIC_URL is not configured; absolute links will fall back to the web-server host.');
     if(!empty($config['trust_proxy_headers']))$checks['trusted_proxy_headers']=['ok'=>true,'code'=>'enabled'];
     else $checks['trusted_proxy_headers']=['ok'=>true,'code'=>'disabled'];
 

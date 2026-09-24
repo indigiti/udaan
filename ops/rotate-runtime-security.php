@@ -20,7 +20,7 @@ require_once $root.'/lib/helpers.php';
 require_once $root.'/lib/ContentImport.php';
 require_once $root.'/lib/ContentPacks.php';
 
-$dataDir=$root.'/data';
+$dataDir=data_root();
 $maintenance=$dataDir.'/maintenance.flag';
 if(!is_dir($dataDir)&&!@mkdir($dataDir,0775,true)&&!is_dir($dataDir)){
     fwrite(STDERR,"Data directory is unavailable.".PHP_EOL);

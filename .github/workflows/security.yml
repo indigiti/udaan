@@ -95,6 +95,16 @@ jobs:
           SOURCE_SHA="$(git rev-parse HEAD)" OUTPUT_DIR="$RUNNER_TEMP/udaan-release" bash ops/package-release.sh
           test -f "$RUNNER_TEMP/udaan-release"/udaan-v*.tar.gz
           test -f "$RUNNER_TEMP/udaan-release"/udaan-v*.tar.gz.sha256
+          stage="$RUNNER_TEMP/udaan-release/udaan"
+          test -f "$stage/public/index.php"
+          test -f "$stage/public/api/answer.php"
+          test -f "$stage/private/bootstrap.php"
+          test -f "$stage/private/.udaan-split-runtime"
+          test ! -e "$stage/public/lib"
+          test ! -e "$stage/public/data"
+          grep -q "UDAAN_BASE_PATH" "$stage/public/index.php"
+          grep -q "UDAAN_DATA_ROOT" "$stage/public/api/answer.php"
+          while IFS= read -r -d '' file; do php -l "$file"; done < <(find "$stage/public" -type f -name '*.php' -print0)
 
       - name: Verify readiness and Redis-required contract
         shell: bash
@@ -326,10 +336,6 @@ jobs:
           grep -q "No calories, weight targets, body comparison or extreme exercise" fit.php
           grep -q "'calorie_tracking'=>false" health.php
           grep -q "'weight_tracking'=>false" health.php
-          grep -q "lib/Fit.php" ops/package-release.sh
-          grep -q "fit.php" ops/package-release.sh
-          grep -q "lib/Momentum.php" ops/package-release.sh
-          grep -q "momentum.php" ops/package-release.sh
           grep -q "WEEKLY MOMENTUM" momentum.php
           grep -q "There is no “streak lost” state" momentum.php
           grep -q "data-achievement-share" momentum.php
@@ -344,15 +350,6 @@ jobs:
           grep -q "'generative_model'=>false" health.php
           grep -q "'reason_codes'=>true" health.php
           grep -q "'raw_readiness_values'=>false" health.php
-          grep -q "lib/Coach.php" ops/package-release.sh
-          grep -q "coach.php" ops/package-release.sh
-          grep -q "coach_action.php" ops/package-release.sh
-          grep -q "lib/Social.php" ops/package-release.sh
-          grep -q "connect.php" ops/package-release.sh
-          grep -q "connect_action.php" ops/package-release.sh
-          grep -q "team.php" ops/package-release.sh
-          grep -q "team_action.php" ops/package-release.sh
-          grep -q "data/social" ops/package-release.sh
           grep -q "social_storage_directory" lib/Readiness.php
           grep -q "competition_storage_directory" lib/Readiness.php
           grep -q "'invite_only'=>true" health.php
@@ -376,12 +373,7 @@ jobs:
           grep -q "Participation Award" lib/Competition.php
           grep -q "Consistency Award" lib/Competition.php
           grep -q "Improvement Award" lib/Competition.php
-          grep -q "lib/Competition.php" ops/package-release.sh
-          grep -q "data/competition" ops/package-release.sh
-          grep -q "leagues.php" ops/package-release.sh
-          grep -q "league_action.php" ops/package-release.sh
           grep -q "daily_readiness_storage" health.php
-          grep -q "data/readiness" ops/package-release.sh
           grep -q "udaan_mission_complete_by_source" done.php
           grep -q "Mission and readiness data are private runtime data" today.php
           grep -q "Too many offline events in one sync request" api/offline_sync.php
@@ -396,7 +388,9 @@ jobs:
           grep -Fq 'RUNNER_TEMP/udaan-release/udaan' .github/workflows/release-artifact.yml
           grep -Fq 'outputs.stage' .github/workflows/release-artifact.yml
           grep -Fq 'include-hidden-files: true' .github/workflows/release-artifact.yml
-          grep -Fq 'STAGE/index.php' ops/package-release.sh
+          grep -Fq 'STAGE/public/index.php' ops/package-release.sh
+          grep -Fq 'STAGE/private' ops/package-release.sh
+          grep -Fq 'release_layout=public-private' ops/package-release.sh
 
       - name: Verify protected operational directories
         shell: bash

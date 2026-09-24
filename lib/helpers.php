@@ -11,9 +11,31 @@ function text_cut(string $value,int $max): string { return function_exists('mb_s
 function normalized_phone(string $phone): string { return preg_replace('/\D+/', '', $phone) ?? ''; }
 function phone_mask(string $phone): string {$p=normalized_phone($phone);if(strlen($p)<4)return '••••';return (strlen($p)===10?'+91 ':'').'••••••'.substr($p,-4);}
 
+function data_root(): string {
+    static $root=null;if(is_string($root))return $root;
+    $configured=trim((string)(getenv('UDAAN_DATA_ROOT')?:''));$appRoot=dirname(__DIR__);
+    $candidate=$configured!==''?$configured:(is_file($appRoot.'/.udaan-split-runtime')?dirname($appRoot).'/udaan-data':$appRoot.'/data');
+    $candidate=rtrim(str_replace('\\','/',$candidate),'/');if($candidate==='')throw new RuntimeException('Runtime data root is invalid.');
+    if(!is_dir($candidate)&&!@mkdir($candidate,0770,true)&&!is_dir($candidate))throw new RuntimeException('Runtime data root is not writable.');
+    return $root=$candidate;
+}
+function data_path(string $relative=''): string {$base=data_root();$relative=ltrim(str_replace('\\','/',$relative),'/');return $relative===''?$base:$base.'/'.$relative;}
+function seed_content_bank_file_path(): string {return dirname(__DIR__).'/data/content/cards.json';}
+function ensure_runtime_content_bank(): string {
+    $target=data_path('content/cards.json');if(is_file($target))return $target;
+    $seed=seed_content_bank_file_path();if(!is_file($seed))throw new RuntimeException('Approved content seed is unavailable.');
+    $dir=dirname($target);if(!is_dir($dir)&&!@mkdir($dir,0770,true)&&!is_dir($dir))throw new RuntimeException('Runtime content directory is not writable.');
+    $lockPath=data_path('.content-seed.lock');$lock=@fopen($lockPath,'c+');if(!$lock||!flock($lock,LOCK_EX))throw new RuntimeException('Could not lock runtime content initialization.');
+    try{
+        if(is_file($target))return $target;
+        $tmp=$target.'.seed-'.bin2hex(random_bytes(5));if(!@copy($seed,$tmp)){@unlink($tmp);throw new RuntimeException('Could not initialize runtime content bank.');}
+        @chmod($tmp,0640);if(!@rename($tmp,$target)){@unlink($tmp);throw new RuntimeException('Could not publish runtime content bank.');}@chmod($target,0640);return $target;
+    }finally{flock($lock,LOCK_UN);fclose($lock);}
+}
+
 function app_secret(): string {
     static $secret=null; if(is_string($secret))return $secret;
-    $file=dirname(__DIR__).'/data/app-secret.key';
+    $file=data_path('app-secret.key');
     $fh=@fopen($file,'c+');
     if(!$fh)throw new RuntimeException('Application secret file is not writable.');
     if(!flock($fh,LOCK_EX)){fclose($fh);throw new RuntimeException('Could not lock application secret file.');}
@@ -31,7 +53,7 @@ function b64url_decode(string $raw): string|false { $pad=strlen($raw)%4; if($pad
 function storage_encryption_available(): bool { return function_exists('openssl_encrypt') && in_array('aes-256-gcm', openssl_get_cipher_methods(), true); }
 function storage_key(): string {
     static $key=null; if(is_string($key)) return $key;
-    $file=dirname(__DIR__).'/data/storage-encryption.key'; $fh=@fopen($file,'c+'); if(!$fh) throw new RuntimeException('Storage encryption key file is not writable.');
+    $file=data_path('storage-encryption.key'); $fh=@fopen($file,'c+'); if(!$fh) throw new RuntimeException('Storage encryption key file is not writable.');
     if(!flock($fh,LOCK_EX)){fclose($fh);throw new RuntimeException('Could not lock storage encryption key file.');}
     rewind($fh);$raw=stream_get_contents($fh);$hex=is_string($raw)?trim($raw):'';
     if(!preg_match('/^[a-f0-9]{64}$/i',$hex)){ $bytes=random_bytes(32);$hex=bin2hex($bytes);rewind($fh);ftruncate($fh,0);if(fwrite($fh,$hex)===false){flock($fh,LOCK_UN);fclose($fh);throw new RuntimeException('Could not persist storage encryption key.');}fflush($fh); }
@@ -65,9 +87,10 @@ function app_base_path(): string {
 }
 function app_url(string $path=''): string { $base=app_base_path();return ($base?:'').'/'.ltrim($path,'/'); }
 function request_is_https(): bool {global $config;$trustProxy=(bool)($config['trust_proxy_headers']??false);$forwarded=strtolower(trim(explode(',',(string)($_SERVER['HTTP_X_FORWARDED_PROTO']??''))[0]));return ($trustProxy&&$forwarded==='https')||(!empty($_SERVER['HTTPS'])&&$_SERVER['HTTPS']!=='off');}
-function absolute_app_url(string $path=''): string {$proto=request_is_https()?'https':'http';$host=preg_replace('/[^A-Za-z0-9.:-]/','',(string)($_SERVER['HTTP_HOST']??'localhost'))?:'localhost';return $proto.'://'.$host.app_url($path);}
+function configured_public_url(): string {global $config;$url=trim((string)($config['public_url']??getenv('UDAAN_PUBLIC_URL')?:''));if($url==='')return '';$parts=parse_url($url);if(!is_array($parts)||!in_array(strtolower((string)($parts['scheme']??'')),['http','https'],true)||empty($parts['host']))return '';return rtrim($url,'/');}
+function absolute_app_url(string $path=''): string {$canonical=configured_public_url();if($canonical!=='')return $canonical.'/'.ltrim($path,'/');$proto=request_is_https()?'https':'http';$host=preg_replace('/[^A-Za-z0-9.:-]/','',(string)($_SERVER['SERVER_NAME']??$_SERVER['HTTP_HOST']??'localhost'))?:'localhost';return $proto.'://'.$host.app_url($path);}
 function route_url(string $name,?string $room=null): string {$map=['home'=>'','join'=>'join','verify'=>'verify','journey'=>'journey','complete'=>'complete','present'=>'present','state'=>'state','answer'=>'answer','qr'=>'qr','demo'=>'demo-crowd','reset'=>'reset','offline_pack'=>'offline-pack','offline_sync'=>'offline-sync'];if($name==='home')return app_url('');if($room===null||!isset($map[$name]))throw new InvalidArgumentException('Invalid route');return app_url('room/'.rawurlencode($room).'/'.$map[$name]);}
-function absolute_route_url(string $name,?string $room=null): string {$path=route_url($name,$room);$proto=request_is_https()?'https':'http';$host=preg_replace('/[^A-Za-z0-9.:-]/','',(string)($_SERVER['HTTP_HOST']??'localhost'))?:'localhost';return $proto.'://'.$host.$path;}
+function absolute_route_url(string $name,?string $room=null): string {$path=route_url($name,$room);$canonical=configured_public_url();if($canonical!=='')return $canonical.substr($path,strlen(app_base_path()));$proto=request_is_https()?'https':'http';$host=preg_replace('/[^A-Za-z0-9.:-]/','',(string)($_SERVER['SERVER_NAME']??$_SERVER['HTTP_HOST']??'localhost'))?:'localhost';return $proto.'://'.$host.$path;}
 function json_response(array $data,int $status=200): never {http_response_code($status);header('Content-Type: application/json; charset=utf-8');header('Cache-Control: no-store');echo json_encode($data,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);exit;}
 function json_request_payload(int $maxBytes=65536): array {
     $maxBytes=max(1024,$maxBytes);$declared=(int)($_SERVER['CONTENT_LENGTH']??0);if($declared>$maxBytes)json_response(['ok'=>false,'error'=>'Request body too large'],413);
@@ -102,8 +125,8 @@ function clear_room_session(string $room): void {$s=&udaan_session();foreach(['h
 function journey_length_options(): array { return [21,24,27,30,36]; }
 function normalize_journey_length(mixed $n): int {$n=(int)$n;return in_array($n,journey_length_options(),true)?$n:27;}
 function normalize_learning_length(mixed $n): int {$n=(int)$n;if($n===9)return 9;return normalize_journey_length($n);}
-function content_bank_file_path(): string { return dirname(__DIR__).'/data/content/cards.json'; }
-function content_runtime_cache_file(): string { return dirname(__DIR__).'/data/content/runtime-cache.php'; }
+function content_bank_file_path(): string { return ensure_runtime_content_bank(); }
+function content_runtime_cache_file(): string { return data_path('content/runtime-cache.php'); }
 function content_runtime_cache_build(array $bank): array {
     if(!isset($bank['cards'])||!is_array($bank['cards']))throw new RuntimeException('Cannot compile an invalid content bank.');
     $pillars=[];$futureLabels=[];$cardMap=[];
