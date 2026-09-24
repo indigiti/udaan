@@ -63,10 +63,14 @@ PHP
 while IFS= read -r -d '' file; do
   rel="${file#$SOURCE_STAGE/}"
   case "$rel" in
-    bootstrap.php|config.php|cleanup.php) continue ;;
+    bootstrap.php|config.php|cleanup.php|demo_fill.php) continue ;;
   esac
   make_stub "$rel" 0
 done < <(find "$SOURCE_STAGE" -maxdepth 1 -type f -name '*.php' -print0)
+
+# Demo crowd generation is source/development tooling and is never web-published.
+sed -i '/demo-crowd.*demo_fill\.php/d' "$STAGE/public/.htaccess"
+rm -f "$STAGE/private/demo_fill.php"
 
 if [[ -d "$SOURCE_STAGE/api" ]]; then
   while IFS= read -r -d '' file; do
@@ -104,7 +108,7 @@ for required in \
 done
 
 # Security contract: implementation/config/runtime directories must never be web-published.
-for forbidden in private lib data ops config.php bootstrap.php cleanup.php; do
+for forbidden in private lib data ops config.php bootstrap.php cleanup.php demo_fill.php; do
   [[ ! -e "$STAGE/public/$forbidden" ]] || { echo "Private path leaked into public artifact: $forbidden" >&2; exit 1; }
 done
 grep -q "private_html/udaan" "$STAGE/public/index.php" || { echo "Public front controller does not target private runtime." >&2; exit 1; }
