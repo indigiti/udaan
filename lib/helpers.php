@@ -67,12 +67,14 @@ function secure_pack(array $payload): string {
     if(!is_string($ct)) throw new RuntimeException('Could not encrypt secure payload.');
     $env=json_encode(['iv'=>b64url_encode($iv),'tag'=>b64url_encode($tag),'ct'=>b64url_encode($ct)],JSON_UNESCAPED_SLASHES);if(!is_string($env))throw new RuntimeException('Could not encode encryption envelope.');return 'UDENC1.'.b64url_encode($env);
 }
+function legacy_plaintext_storage_mode(): string {global $config;$mode=strtolower(trim((string)($config['legacy_plaintext_storage']??getenv('UDAAN_LEGACY_PLAINTEXT_STORAGE')?:'read')));return in_array($mode,['read','deny'],true)?$mode:'read';}
 function secure_unpack(string $raw): ?array {
     if(str_starts_with($raw,'UDENC1.')){
         if(!storage_encryption_available()) return null; $envRaw=b64url_decode(substr($raw,7)); if(!is_string($envRaw))return null; $env=json_decode($envRaw,true); if(!is_array($env))return null;
         $iv=b64url_decode((string)($env['iv']??'')); $tag=b64url_decode((string)($env['tag']??'')); $ct=b64url_decode((string)($env['ct']??'')); if(!is_string($iv)||!is_string($tag)||!is_string($ct))return null;
         $json=openssl_decrypt($ct,'aes-256-gcm',storage_key(),OPENSSL_RAW_DATA,$iv,$tag,'udaan:v1'); if(!is_string($json))return null; $d=json_decode($json,true); return is_array($d)?$d:null;
     }
+    if(legacy_plaintext_storage_mode()==='deny')return null;
     $d=json_decode($raw,true); return is_array($d)?$d:null;
 }
 function device_install_id_valid(string $id): bool { return (bool)preg_match('/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i',trim($id)); }

@@ -87,6 +87,9 @@ jobs:
           php ops/preflight.php --repository-mode
           php tests/proxy_smoke.php
           php tests/redis_policy_smoke.php
+          php tests/legacy_storage_smoke.php
+          health_json="$(php health.php)"
+          HEALTH_JSON="$health_json" php -r '$d=json_decode((string)getenv("HEALTH_JSON"),true); if(!is_array($d)||array_keys($d)!==["ok","app","version","time"]||empty($d["ok"])) { fwrite(STDERR,"Public health payload is not minimal\n"); exit(1); }'
 
       - name: Certified release package smoke
         shell: bash
@@ -103,6 +106,9 @@ jobs:
           test -f "$stage/private/.udaan-split-runtime"
           test ! -e "$stage/public/lib"
           test ! -e "$stage/public/data"
+          test ! -e "$stage/public/demo_fill.php"
+          test ! -e "$stage/private/demo_fill.php"
+          ! grep -q "demo-crowd" "$stage/public/.htaccess"
           grep -q "UDAAN_BASE_PATH" "$stage/public/index.php"
           grep -q "UDAAN_DATA_ROOT" "$stage/public/api/answer.php"
           while IFS= read -r -d '' file; do php -l "$file"; done < <(find "$stage/public" -type f -name '*.php' -print0)
@@ -116,6 +122,9 @@ jobs:
           grep -q "redisRequired()" bootstrap.php
           grep -q "UDAAN_TRUST_PROXY_HEADERS" config.php
           grep -q "REDIS_REQUIRED" config.php
+          grep -q "UDAAN_LEGACY_PLAINTEXT_STORAGE" config.php
+          grep -q "legacy_plaintext_storage" lib/Readiness.php
+          test -f ops/migrate-legacy-storage.php
 
       - name: Verify presenter state guard
         shell: bash
