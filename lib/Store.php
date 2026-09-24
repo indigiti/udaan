@@ -58,8 +58,8 @@ final class TempStore {
     public function eventBackend(): string { return 'Encrypted JSONL event ledger'; }
     public function missionBackend(): string { return $this->redis ? 'Redis persistent mission state' : 'Encrypted JSON mission state'; }
     public function readinessBackend(): string { return $this->redis ? 'Redis private readiness state' : 'Encrypted JSON readiness state'; }
-    public function socialBackend(): string { return $this->redis ? 'Redis encrypted social graph' : 'Encrypted JSON social graph'; }
-    public function competitionBackend(): string { return $this->redis ? 'Redis encrypted competition state' : 'Encrypted JSON competition state'; }
+    public function socialBackend(): string { return $this->redis ? 'Redis partitioned encrypted social state' : 'Partitioned encrypted JSON social state'; }
+    public function competitionBackend(): string { return $this->redis ? 'Redis partitioned encrypted competition state' : 'Partitioned encrypted JSON competition state'; }
     public function redisConfigured(): bool { return (bool)($this->config['redis']['enabled'] ?? true); }
     public function redisRequired(): bool { return (bool)($this->config['redis']['required'] ?? false); }
     public function redisConnected(): bool { return $this->redis instanceof Redis; }
@@ -89,16 +89,24 @@ final class TempStore {
     private function playerKey(string $identity): string { return 'udaan:player:'.$identity; }
     private function missionKey(string $identity): string { return 'udaan:missions:'.$identity; }
     private function readinessKey(string $identity): string { return 'udaan:readiness:'.$identity; }
-    private function socialKey(): string { return 'udaan:social:graph'; }
-    private function competitionKey(): string { return 'udaan:competition:state'; }
+    private function legacySocialKey(): string { return 'udaan:social:graph'; }
+    private function socialVersionKey(): string { return 'udaan:social:v2:version'; }
+    private function socialEntityKey(string $type,string $id): string { return 'udaan:social:v2:'.$type.':'.$id; }
+    private function legacyCompetitionKey(): string { return 'udaan:competition:state'; }
+    private function competitionVersionKey(): string { return 'udaan:competition:v2:version'; }
+    private function competitionEntityKey(string $type,string $id): string { return 'udaan:competition:v2:'.$type.':'.$id; }
     private function roomFile(string $id): string { return $this->roomDir.'/'.$id.'.json'; }
     private function historyFile(string $identity): string { return $this->historyDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
     private function userCacheFile(string $identity): string { return $this->userCacheDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
     private function playerFile(string $identity): string { return $this->playerDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
     private function missionFile(string $identity): string { return $this->missionDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
     private function readinessFile(string $identity): string { return $this->readinessDir.'/'.preg_replace('/[^a-f0-9]/i','',$identity).'.json'; }
-    private function socialFile(): string { return $this->socialDir.'/graph.json'; }
-    private function competitionFile(): string { return $this->competitionDir.'/state.json'; }
+    private function legacySocialFile(): string { return $this->socialDir.'/graph.json'; }
+    private function socialMarkerFile(): string { return $this->socialDir.'/.schema-v2'; }
+    private function socialEntityFile(string $type,string $id): string { return $this->socialDir.'/'.$type.'/'.$id.'.json'; }
+    private function legacyCompetitionFile(): string { return $this->competitionDir.'/state.json'; }
+    private function competitionMarkerFile(): string { return $this->competitionDir.'/.schema-v2'; }
+    private function competitionEntityFile(string $type,string $id): string { return $this->competitionDir.'/'.$type.'/'.$id.'.json'; }
     private function decode(mixed $raw): ?array { if (!is_string($raw) || $raw === '') return null; return secure_unpack($raw); }
     private function encode(array $data): string { return secure_pack($data); }
 
@@ -205,49 +213,142 @@ final class TempStore {
     }
 
 
+    private function redisPartitionEntities(string $pattern,string $prefix): array {
+        $rows=[];$it=null;
+        do{
+            $keys=$this->redis?->scan($it,$pattern,250);
+            if(is_array($keys))foreach($keys as$key){$raw=$this->redis?->get((string)$key);$d=$raw===false?null:$this->decode($raw);if(!is_array($d))continue;$id=substr((string)$key,strlen($prefix));if($id!=='')$rows[$id]=$d;}
+        }while($it!==0&&$it!==null);
+        return $rows;
+    }
+
+    private function filePartitionEntities(string $dir): array {
+        $rows=[];foreach(glob($dir.'/*.json')?:[] as$file){$d=$this->decode(@file_get_contents($file));if(!is_array($d))continue;$id=basename($file,'.json');if($id!=='')$rows[$id]=$d;}return $rows;
+    }
+
+    private function queueRedisEntityDiff(string $scope,string $type,array $current,array $next): void {
+        foreach($next as$id=>$value){
+            $id=(string)$id;if($id===''||!is_array($value))continue;
+            if(!isset($current[$id])||$current[$id]!=$value)$this->redis?->set($scope==='social'?$this->socialEntityKey($type,$id):$this->competitionEntityKey($type,$id),$this->encode($value));
+        }
+        foreach($current as$id=>$value)if(!array_key_exists($id,$next))$this->redis?->del($scope==='social'?$this->socialEntityKey($type,(string)$id):$this->competitionEntityKey($type,(string)$id));
+    }
+
+    private function persistFileEntityDiff(string $base,string $type,array $current,array $next): void {
+        $dir=$base.'/'.$type;if(!is_dir($dir)&&!@mkdir($dir,0770,true)&&!is_dir($dir))throw new RuntimeException('Partition directory is unavailable.');
+        foreach($next as$id=>$value){
+            $id=preg_replace('/[^A-Za-z0-9_-]/','',(string)$id)??'';if($id===''||!is_array($value))continue;
+            if(!isset($current[$id])||$current[$id]!=$value)$this->atomicWrite($dir.'/'.$id.'.json',$this->encode($value));
+        }
+        foreach($current as$id=>$value){$safe=preg_replace('/[^A-Za-z0-9_-]/','',(string)$id)??'';if($safe!==''&&!array_key_exists($id,$next))@unlink($dir.'/'.$safe.'.json');}
+    }
+
     public function getSocialGraph(): array {
         $empty=['schema_version'=>1,'updated_at'=>null,'friendships'=>[],'invites'=>[],'teams'=>[]];
-        if($this->redis){$raw=$this->redis->get($this->socialKey());$d=$raw===false?null:$this->decode($raw);return is_array($d)?array_replace($empty,$d):$empty;}
-        $f=$this->socialFile();if(!is_file($f))return $empty;$d=$this->decode(@file_get_contents($f));return is_array($d)?array_replace($empty,$d):$empty;
+        if($this->redis){
+            if($this->redis->get($this->socialVersionKey())!==false){
+                $graph=$empty;
+                $graph['friendships']=$this->redisPartitionEntities('udaan:social:v2:friend:*','udaan:social:v2:friend:');
+                $graph['invites']=$this->redisPartitionEntities('udaan:social:v2:invite:*','udaan:social:v2:invite:');
+                $graph['teams']=$this->redisPartitionEntities('udaan:social:v2:team:*','udaan:social:v2:team:');
+                return $graph;
+            }
+            $raw=$this->redis->get($this->legacySocialKey());$d=$raw===false?null:$this->decode($raw);return is_array($d)?array_replace($empty,$d):$empty;
+        }
+        if(is_file($this->socialMarkerFile())){
+            $graph=$empty;
+            $graph['friendships']=$this->filePartitionEntities($this->socialDir.'/friend');
+            $graph['invites']=$this->filePartitionEntities($this->socialDir.'/invite');
+            $graph['teams']=$this->filePartitionEntities($this->socialDir.'/team');
+            return $graph;
+        }
+        $f=$this->legacySocialFile();if(!is_file($f))return $empty;$d=$this->decode(@file_get_contents($f));return is_array($d)?array_replace($empty,$d):$empty;
     }
 
     public function mutateSocialGraph(callable $fn): array {
         if($this->redis){
-            $key=$this->socialKey();
+            $versionKey=$this->socialVersionKey();
             for($i=0;$i<8;$i++){
-                $this->redis->watch($key);$raw=$this->redis->get($key);$current=$raw===false?null:$this->decode($raw);
+                $this->redis->watch($versionKey);$versionRaw=$this->redis->get($versionKey);$current=$this->getSocialGraph();
                 $next=$fn($current);if(!is_array($next)){$this->redis->unwatch();throw new RuntimeException('Invalid social graph mutation.');}
-                $this->redis->multi();$this->redis->set($key,$this->encode($next));$ok=$this->redis->exec();if($ok!==false)return $next;
+                $next=array_replace(['schema_version'=>1,'updated_at'=>now_iso(),'friendships'=>[],'invites'=>[],'teams'=>[]],$next);
+                foreach(['friendships','invites','teams'] as$k)if(!is_array($next[$k]))$next[$k]=[];
+                $migrationBase=$versionRaw===false?['friendships'=>[],'invites'=>[],'teams'=>[]]:$current;
+                $this->redis->multi();
+                $this->queueRedisEntityDiff('social','friend',(array)($migrationBase['friendships']??[]),(array)$next['friendships']);
+                $this->queueRedisEntityDiff('social','invite',(array)($migrationBase['invites']??[]),(array)$next['invites']);
+                $this->queueRedisEntityDiff('social','team',(array)($migrationBase['teams']??[]),(array)$next['teams']);
+                $this->redis->set($versionKey,(string)(((int)$versionRaw)+1));
+                if($versionRaw===false)$this->redis->del($this->legacySocialKey());
+                $ok=$this->redis->exec();if($ok!==false)return $next;
             }
-            throw new RuntimeException('Social graph was busy. Please retry.');
+            throw new RuntimeException('Social state was busy. Please retry.');
         }
-        $file=$this->socialFile();$fh=fopen($file,'c+');if(!$fh)throw new RuntimeException('Social graph storage is unavailable.');
-        flock($fh,LOCK_EX);rewind($fh);$raw=stream_get_contents($fh);$current=$this->decode($raw);$next=$fn($current);
-        if(!is_array($next)){flock($fh,LOCK_UN);fclose($fh);throw new RuntimeException('Invalid social graph mutation.');}
-        $encoded=$this->encode($next);rewind($fh);ftruncate($fh,0);fwrite($fh,$encoded);fflush($fh);flock($fh,LOCK_UN);fclose($fh);return $next;
+        $lock=@fopen($this->socialDir.'/.partition.lock','c+');if(!$lock)throw new RuntimeException('Social state storage is unavailable.');
+        if(!flock($lock,LOCK_EX)){fclose($lock);throw new RuntimeException('Social state lock is unavailable.');}
+        try{
+            $current=$this->getSocialGraph();$next=$fn($current);if(!is_array($next))throw new RuntimeException('Invalid social graph mutation.');
+            $next=array_replace(['schema_version'=>1,'updated_at'=>now_iso(),'friendships'=>[],'invites'=>[],'teams'=>[]],$next);
+            foreach(['friendships','invites','teams'] as$k)if(!is_array($next[$k]))$next[$k]=[];
+            $migrationBase=is_file($this->socialMarkerFile())?$current:['friendships'=>[],'invites'=>[],'teams'=>[]];
+            $this->persistFileEntityDiff($this->socialDir,'friend',(array)($migrationBase['friendships']??[]),(array)$next['friendships']);
+            $this->persistFileEntityDiff($this->socialDir,'invite',(array)($migrationBase['invites']??[]),(array)$next['invites']);
+            $this->persistFileEntityDiff($this->socialDir,'team',(array)($migrationBase['teams']??[]),(array)$next['teams']);
+            if(@file_put_contents($this->socialMarkerFile(),"2\n",LOCK_EX)===false)throw new RuntimeException('Could not activate social partitions.');@chmod($this->socialMarkerFile(),0640);
+            return $next;
+        }finally{flock($lock,LOCK_UN);fclose($lock);}
     }
 
-
     public function getCompetitionState(): array {
-        $empty=['schema_version'=>1,'updated_at'=>null,'leagues'=>[]];
-        if($this->redis){$raw=$this->redis->get($this->competitionKey());$d=$raw===false?null:$this->decode($raw);return is_array($d)?array_replace($empty,$d):$empty;}
-        $f=$this->competitionFile();if(!is_file($f))return $empty;$d=$this->decode(@file_get_contents($f));return is_array($d)?array_replace($empty,$d):$empty;
+        $empty=['schema_version'=>1,'updated_at'=>null,'leagues'=>[],'invites'=>[]];
+        if($this->redis){
+            if($this->redis->get($this->competitionVersionKey())!==false){
+                $state=$empty;
+                $state['leagues']=$this->redisPartitionEntities('udaan:competition:v2:league:*','udaan:competition:v2:league:');
+                $state['invites']=$this->redisPartitionEntities('udaan:competition:v2:invite:*','udaan:competition:v2:invite:');
+                return $state;
+            }
+            $raw=$this->redis->get($this->legacyCompetitionKey());$d=$raw===false?null:$this->decode($raw);return is_array($d)?array_replace($empty,$d):$empty;
+        }
+        if(is_file($this->competitionMarkerFile())){
+            $state=$empty;
+            $state['leagues']=$this->filePartitionEntities($this->competitionDir.'/league');
+            $state['invites']=$this->filePartitionEntities($this->competitionDir.'/invite');
+            return $state;
+        }
+        $f=$this->legacyCompetitionFile();if(!is_file($f))return $empty;$d=$this->decode(@file_get_contents($f));return is_array($d)?array_replace($empty,$d):$empty;
     }
 
     public function mutateCompetitionState(callable $fn): array {
         if($this->redis){
-            $key=$this->competitionKey();
+            $versionKey=$this->competitionVersionKey();
             for($i=0;$i<8;$i++){
-                $this->redis->watch($key);$raw=$this->redis->get($key);$current=$raw===false?null:$this->decode($raw);
+                $this->redis->watch($versionKey);$versionRaw=$this->redis->get($versionKey);$current=$this->getCompetitionState();
                 $next=$fn($current);if(!is_array($next)){$this->redis->unwatch();throw new RuntimeException('Invalid competition state mutation.');}
-                $this->redis->multi();$this->redis->set($key,$this->encode($next));$ok=$this->redis->exec();if($ok!==false)return $next;
+                $next=array_replace(['schema_version'=>1,'updated_at'=>now_iso(),'leagues'=>[],'invites'=>[]],$next);
+                foreach(['leagues','invites'] as$k)if(!is_array($next[$k]))$next[$k]=[];
+                $migrationBase=$versionRaw===false?['leagues'=>[],'invites'=>[]]:$current;
+                $this->redis->multi();
+                $this->queueRedisEntityDiff('competition','league',(array)($migrationBase['leagues']??[]),(array)$next['leagues']);
+                $this->queueRedisEntityDiff('competition','invite',(array)($migrationBase['invites']??[]),(array)$next['invites']);
+                $this->redis->set($versionKey,(string)(((int)$versionRaw)+1));
+                if($versionRaw===false)$this->redis->del($this->legacyCompetitionKey());
+                $ok=$this->redis->exec();if($ok!==false)return $next;
             }
             throw new RuntimeException('Competition state was busy. Please retry.');
         }
-        $file=$this->competitionFile();$fh=fopen($file,'c+');if(!$fh)throw new RuntimeException('Competition storage is unavailable.');
-        flock($fh,LOCK_EX);rewind($fh);$raw=stream_get_contents($fh);$current=$this->decode($raw);$next=$fn($current);
-        if(!is_array($next)){flock($fh,LOCK_UN);fclose($fh);throw new RuntimeException('Invalid competition state mutation.');}
-        $encoded=$this->encode($next);rewind($fh);ftruncate($fh,0);fwrite($fh,$encoded);fflush($fh);flock($fh,LOCK_UN);fclose($fh);return $next;
+        $lock=@fopen($this->competitionDir.'/.partition.lock','c+');if(!$lock)throw new RuntimeException('Competition state storage is unavailable.');
+        if(!flock($lock,LOCK_EX)){fclose($lock);throw new RuntimeException('Competition state lock is unavailable.');}
+        try{
+            $current=$this->getCompetitionState();$next=$fn($current);if(!is_array($next))throw new RuntimeException('Invalid competition state mutation.');
+            $next=array_replace(['schema_version'=>1,'updated_at'=>now_iso(),'leagues'=>[],'invites'=>[]],$next);
+            foreach(['leagues','invites'] as$k)if(!is_array($next[$k]))$next[$k]=[];
+            $migrationBase=is_file($this->competitionMarkerFile())?$current:['leagues'=>[],'invites'=>[]];
+            $this->persistFileEntityDiff($this->competitionDir,'league',(array)($migrationBase['leagues']??[]),(array)$next['leagues']);
+            $this->persistFileEntityDiff($this->competitionDir,'invite',(array)($migrationBase['invites']??[]),(array)$next['invites']);
+            if(@file_put_contents($this->competitionMarkerFile(),"2\n",LOCK_EX)===false)throw new RuntimeException('Could not activate competition partitions.');@chmod($this->competitionMarkerFile(),0640);
+            return $next;
+        }finally{flock($lock,LOCK_UN);fclose($lock);}
     }
 
     public function get(string $id): ?array {

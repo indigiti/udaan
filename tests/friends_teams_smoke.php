@@ -23,14 +23,15 @@ if(udaan_social_enabled_for_player($c)){fwrite(STDERR,"Under-13 Player was incor
 
 $invite=udaan_social_create_friend_invite($store,$ida,$a);
 if(!preg_match('/^[A-F0-9]{16}$/',$invite['code']??'')){fwrite(STDERR,"Friend invite strength/format mismatch\n");exit(1);}
-$socialFile=$tmp.'/social/graph.json';
-if(!is_file($socialFile)){fwrite(STDERR,"Encrypted Social Graph file missing\n");exit(1);}
-$raw=(string)file_get_contents($socialFile);
+$socialMarker=$tmp.'/social/.schema-v2';
+$inviteFiles=glob($tmp.'/social/invite/*.json')?:[];
+if(!is_file($socialMarker)||count($inviteFiles)!==1){fwrite(STDERR,"Partitioned encrypted Social state missing\n");exit(1);}
+$raw=(string)file_get_contents($inviteFiles[0]);
 if(str_contains($raw,(string)$invite['code'])||str_contains($raw,'Asha')||str_contains($raw,'Bharat')){
-    fwrite(STDERR,"Social Graph leaked plaintext invite/profile data\n");exit(1);
+    fwrite(STDERR,"Partitioned Social state leaked plaintext invite/profile data\n");exit(1);
 }
 $decoded=secure_unpack($raw);
-if(!is_array($decoded)||empty($decoded['invites'])){fwrite(STDERR,"Social Graph encryption/decode failed\n");exit(1);}
+if(!is_array($decoded)||($decoded['type']??'')!=='friend'){fwrite(STDERR,"Partitioned Social encryption/decode failed\n");exit(1);}
 
 udaan_social_accept_friend_invite($store,$idb,$b,(string)$invite['code']);
 $friendsA=udaan_social_friends($store,$ida);

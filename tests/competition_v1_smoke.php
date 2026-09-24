@@ -91,11 +91,13 @@ $awards=udaan_competition_awards($standings);
 $keys=array_column($awards,'key');
 foreach(['season_champion','participation','consistency','improvement'] as$key)if(!in_array($key,$keys,true)){fwrite(STDERR,"Missing competition award: $key\n");exit(1);}
 
-$competitionFile=$tmp.'/competition/state.json';
-if(!is_file($competitionFile)){fwrite(STDERR,"Encrypted competition state file missing\n");exit(1);}
-$raw=(string)file_get_contents($competitionFile);
-if(str_contains($raw,'Private Pilot')||str_contains($raw,'Alpha Team')){fwrite(STDERR,"Competition state leaked plaintext\n");exit(1);}
-if(!is_array(secure_unpack($raw))){fwrite(STDERR,"Competition state encryption/decode failed\n");exit(1);}
+$competitionMarker=$tmp.'/competition/.schema-v2';
+$leagueFiles=glob($tmp.'/competition/league/*.json')?:[];
+if(!is_file($competitionMarker)||count($leagueFiles)!==1){fwrite(STDERR,"Partitioned encrypted competition state missing\n");exit(1);}
+$raw=(string)file_get_contents($leagueFiles[0]);
+if(str_contains($raw,'Private Pilot')||str_contains($raw,'Alpha Team')){fwrite(STDERR,"Partitioned competition state leaked plaintext\n");exit(1);}
+$decodedCompetition=secure_unpack($raw);
+if(!is_array($decodedCompetition)||empty($decodedCompetition['id'])){fwrite(STDERR,"Partitioned competition encryption/decode failed\n");exit(1);}
 
 $events=[];
 foreach(glob($tmp.'/events/*.jsonl')?:[] as$file)foreach(file($file,FILE_IGNORE_NEW_LINES|FILE_SKIP_EMPTY_LINES)?:[] as$line){
