@@ -115,6 +115,7 @@ jobs:
           grep -q "UDAAN_BASE_PATH" "$stage/public/index.php"
           grep -q "UDAAN_DATA_ROOT" "$stage/public/api/answer.php"
           while IFS= read -r -d '' file; do php -l "$file"; done < <(find "$stage/public" -type f -name '*.php' -print0)
+          bash tests/packaged_runtime_integration.sh
 
       - name: Verify readiness and Redis-required contract
         shell: bash
