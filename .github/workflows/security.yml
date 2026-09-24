@@ -91,6 +91,8 @@ jobs:
           php tests/legacy_storage_smoke.php
           health_json="$(php health.php)"
           HEALTH_JSON="$health_json" php -r '$d=json_decode((string)getenv("HEALTH_JSON"),true); if(!is_array($d)||array_keys($d)!==["ok","app","version","time"]||empty($d["ok"])) { fwrite(STDERR,"Public health payload is not minimal\n"); exit(1); }'
+          ready_json="$(php ready.php)"
+          READY_JSON="$ready_json" php -r '$d=json_decode((string)getenv("READY_JSON"),true); $keys=array_keys((array)$d); sort($keys); $expected=["app","ready","status","time","version"]; sort($expected); if(!is_array($d)||$keys!==$expected||array_key_exists("checks",$d)||array_key_exists("warnings",$d)) { fwrite(STDERR,"Public readiness payload is not minimal\n"); exit(1); }'
 
       - name: Certified release package smoke
         shell: bash
