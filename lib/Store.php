@@ -381,5 +381,5 @@ final class TempStore {
         if($this->redis)return 0;$n=0;foreach(glob($this->userCacheDir.'/*.json')?:[] as$f){$d=$this->decode(@file_get_contents($f));if(!$d||(!empty($d['expires_at'])&&strtotime((string)$d['expires_at'])<time())){if(@unlink($f))$n++;}}return $n;
     }
 
-    private function atomicWrite(string $file,string $encoded): void {$tmp=$file.'.tmp.'.getmypid().'.'.bin2hex(random_bytes(3));if(file_put_contents($tmp,$encoded,LOCK_EX)===false||!@rename($tmp,$file)){@unlink($tmp);throw new RuntimeException('Storage is not writable.');}}
+    private function atomicWrite(string $file,string $encoded): void {$tmp=$file.'.tmp.'.getmypid().'.'.bin2hex(random_bytes(3));if(file_put_contents($tmp,$encoded,LOCK_EX)===false||!@rename($tmp,$file)){@unlink($tmp);throw new RuntimeException('Storage is not writable.');}@chmod($file,0640);}
 }
