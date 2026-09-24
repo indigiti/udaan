@@ -69,6 +69,7 @@ jobs:
         run: |
           set -euo pipefail
           php tests/runtime_smoke.php
+          php tests/state_offline_sync_smoke.php
           php tests/player_foundation_smoke.php
           php tests/mission_engine_smoke.php
           php tests/performance_graph_smoke.php
