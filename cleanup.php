@@ -2,8 +2,8 @@
 require __DIR__.'/bootstrap.php';
 if(PHP_SAPI!=='cli'){http_response_code(403);exit('CLI only');}
 
-$rooms=0;$unreadableRooms=0;$pending=0;$rateLimits=0;
-foreach(glob(__DIR__.'/data/rooms/*.json')?:[] as $f){
+$rooms=0;$unreadableRooms=0;$pending=0;$rateLimits=0;$dataDir=data_root();
+foreach(glob($dataDir.'/rooms/*.json')?:[] as $f){
     $raw=@file_get_contents($f);
     $d=is_string($raw)?secure_unpack($raw):null;
     if(!is_array($d)){$unreadableRooms++;continue;}
@@ -11,12 +11,12 @@ foreach(glob(__DIR__.'/data/rooms/*.json')?:[] as $f){
     $expiresAt=$expiresRaw!==''?strtotime($expiresRaw):false;
     if($expiresAt!==false&&$expiresAt<time()){if(@unlink($f))$rooms++;}
 }
-foreach(glob(__DIR__.'/data/imports/pending/*.json')?:[] as $f){
+foreach(glob($dataDir.'/imports/pending/*.json')?:[] as $f){
     $raw=@file_get_contents($f);
     $d=is_string($raw)?json_decode($raw,true):null;
     if(!is_array($d)||(int)($d['expires_at']??0)<time()){if(@unlink($f))$pending++;}
 }
-foreach(glob(__DIR__.'/data/rate-limit/*.json')?:[] as $f){
+foreach(glob($dataDir.'/rate-limit/*.json')?:[] as $f){
     $mtime=@filemtime($f);
     if(is_int($mtime)&&$mtime<(time()-86400)){if(@unlink($f))$rateLimits++;}
 }
