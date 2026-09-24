@@ -27,6 +27,7 @@ rm -f "$SOURCE_STAGE/.gitignore"
 #   private/ -> private_html/udaan/
 # Server implementation, configuration, runtime state and operational tooling stay private.
 cp -a "$SOURCE_STAGE/." "$STAGE/private/"
+printf 'schema=1\nruntime_data_root=../udaan-data\n' > "$STAGE/private/.udaan-split-runtime"
 for path in assets sw.js manifest.webmanifest offline.html .htaccess; do
   if [[ -e "$SOURCE_STAGE/$path" ]]; then
     cp -a "$SOURCE_STAGE/$path" "$STAGE/public/$path"
@@ -47,6 +48,12 @@ declare(strict_types=1);
 if(!is_string(\$privateRoot)||trim(\$privateRoot)===''){
     \$privateRoot=dirname(dirname(\$publicRoot)).'/private_html/udaan';
 }
+\$scriptName=str_replace('\\\\','/',(string)(\$_SERVER['SCRIPT_NAME']??''));
+\$basePath=$depth===0?dirname(\$scriptName):dirname(dirname(\$scriptName));
+if(\$basePath==='/'||\$basePath==='.'||\$basePath==='\\\\')\$basePath='';
+if(trim((string)(getenv('UDAAN_BASE_PATH')?:''))==='')putenv('UDAAN_BASE_PATH='.\$basePath);
+if(trim((string)(getenv('UDAAN_DATA_ROOT')?:''))==='')putenv('UDAAN_DATA_ROOT='.dirname(\$privateRoot).'/udaan-data');
+putenv('UDAAN_PUBLIC_ROOT='.\$publicRoot);
 \$target=rtrim(\$privateRoot,'/').'/$rel';
 if(!is_file(\$target)){http_response_code(503);exit('Udaan private runtime is unavailable.');}
 require \$target;
@@ -89,7 +96,7 @@ fail_if_files "Python bytecode/cache" bash -c "find '$STAGE' -type f \( -name '*
 
 for required in \
   "$STAGE/public/index.php" "$STAGE/public/.htaccess" "$STAGE/public/assets" \
-  "$PRIVATE/bootstrap.php" "$PRIVATE/config.php" "$PRIVATE/data/.htaccess" "$PRIVATE/ops/.htaccess" \
+  "$PRIVATE/bootstrap.php" "$PRIVATE/config.php" "$PRIVATE/.udaan-split-runtime" "$PRIVATE/data/.htaccess" "$PRIVATE/ops/.htaccess" \
   "$PRIVATE/data/content/cards.json" "$PRIVATE/ready.php" "$PRIVATE/health.php" \
   "$PRIVATE/ops/preflight.php" "$PRIVATE/ops/rotate-runtime-security.php" \
   "$PRIVATE/lib/Player.php" "$PRIVATE/lib/Mission.php" "$PRIVATE/lib/Social.php" "$PRIVATE/lib/Competition.php"; do
