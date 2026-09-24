@@ -5,6 +5,7 @@ return [
     'environment' => strtolower((string)(getenv('UDAAN_ENV') ?: 'development')),
     'public_url' => rtrim((string)(getenv('UDAAN_PUBLIC_URL') ?: ''), '/'),
     'trust_proxy_headers' => getenv('UDAAN_TRUST_PROXY_HEADERS') === '1',
+    'legacy_plaintext_storage' => strtolower((string)(getenv('UDAAN_LEGACY_PLAINTEXT_STORAGE') ?: 'read')),
     'room_ttl_seconds' => 21600,
     'user_cache_ttl_seconds' => 604800,
     'offline_reserve_cards' => 1008,
