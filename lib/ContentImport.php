@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-function content_admin_key_path(): string { return dirname(__DIR__) . '/data/content-admin.key'; }
+function content_admin_key_path(): string { return data_path('content-admin.key'); }
 function content_admin_key(): string {
     $env = trim((string)(getenv('UDAAN_CONTENT_ADMIN_KEY') ?: ''));
     if (strlen($env) >= 12) return $env;
@@ -110,7 +110,7 @@ function import_validate_card(array $card, int $index): array {
     foreach (['source_title','source_section','source_reference','source_url'] as $meta) if (isset($card[$meta]) && !is_string($card[$meta])) $errors[]="$meta must be a string";
     return ['index'=>$index,'card'=>$normalized,'errors'=>array_values(array_unique($errors)),'warnings'=>$warnings];
 }
-function content_bank_file(): string { return dirname(__DIR__) . '/data/content/cards.json'; }
+function content_bank_file(): string { return content_bank_file_path(); }
 function import_read_bank_fresh(): array {
     $raw=@file_get_contents(content_bank_file()); $bank=is_string($raw)?json_decode($raw,true):null;
     if (!is_array($bank) || !isset($bank['cards']) || !is_array($bank['cards'])) throw new RuntimeException('Live content bank is invalid or unavailable.');
@@ -155,24 +155,24 @@ function verify_content_json(string $raw): array {
     return ['submitted'=>count($cards),'ready'=>$ready,'review'=>$review,'rejected'=>$rejected,'pillar_counts'=>$pillars,'kind_counts'=>$kinds,'verified_at'=>now_iso(),'bank_before'=>count($bank['cards'])];
 }
 function save_verification(array $result): string {
-    $token=uuid_v4();$dir=dirname(__DIR__).'/data/imports/pending';if(!is_dir($dir)&&!@mkdir($dir,0775,true)&&!is_dir($dir))throw new RuntimeException('Unable to create pending import folder.');
+    $token=uuid_v4();$dir=data_path('imports/pending');if(!is_dir($dir)&&!@mkdir($dir,0775,true)&&!is_dir($dir))throw new RuntimeException('Unable to create pending import folder.');
     $payload=['token'=>$token,'session_hash'=>hash('sha256',session_id()),'created_at'=>time(),'expires_at'=>time()+1800,'result'=>$result];
     $file=$dir.'/'.$token.'.json';if(@file_put_contents($file,json_encode($payload,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT),LOCK_EX)===false)throw new RuntimeException('Unable to save verified import. Check data/imports permissions.');
     $s=&udaan_session();$s['content_import_pending']=$token;return $token;
 }
 function load_verification(string $token): array {
-    if(!is_standard_uuid($token))throw new RuntimeException('Invalid verification token.');$file=dirname(__DIR__).'/data/imports/pending/'.$token.'.json';$raw=@file_get_contents($file);$p=is_string($raw)?json_decode($raw,true):null;
+    if(!is_standard_uuid($token))throw new RuntimeException('Invalid verification token.');$file=data_path('imports/pending/'.$token.'.json');$raw=@file_get_contents($file);$p=is_string($raw)?json_decode($raw,true):null;
     if(!is_array($p)||($p['token']??'')!==$token)throw new RuntimeException('Verified batch was not found. Paste and verify again.');
     if((int)($p['expires_at']??0)<time()){@unlink($file);throw new RuntimeException('Verification expired. Paste and verify the JSON again.');}
     if(!hash_equals((string)($p['session_hash']??''),hash('sha256',session_id())))throw new RuntimeException('Verification belongs to another admin session.');
     $s=&udaan_session();if(($s['content_import_pending']??null)!==$token)throw new RuntimeException('Verification token is no longer active in this session.');
     return $p;
 }
-function cleanup_pending_verification(string $token): void { @unlink(dirname(__DIR__).'/data/imports/pending/'.$token.'.json');$s=&udaan_session();if(($s['content_import_pending']??null)===$token)unset($s['content_import_pending']); }
-function content_import_log_path(): string {return dirname(__DIR__).'/data/content/import-log.json';}
+function cleanup_pending_verification(string $token): void { @unlink(data_path('imports/pending/'.$token.'.json'));$s=&udaan_session();if(($s['content_import_pending']??null)===$token)unset($s['content_import_pending']); }
+function content_import_log_path(): string {return data_path('content/import-log.json');}
 function content_import_history(): array {$raw=@file_get_contents(content_import_log_path());$v=is_string($raw)?json_decode($raw,true):null;return is_array($v)?$v:[];}
 function content_import_write_log(array $entry): void {$log=content_import_history();array_unshift($log,$entry);$log=array_slice($log,0,100);@file_put_contents(content_import_log_path(),json_encode($log,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT),LOCK_EX);}
-function prune_content_backups(int $keep=20): void {$dir=dirname(__DIR__).'/data/content/backups';$files=glob($dir.'/cards-*.json')?:[];usort($files,fn($a,$b)=>filemtime($b)<=>filemtime($a));foreach(array_slice($files,$keep) as $f)@unlink($f);}
+function prune_content_backups(int $keep=20): void {$dir=data_path('content/backups');$files=glob($dir.'/cards-*.json')?:[];usort($files,fn($a,$b)=>filemtime($b)<=>filemtime($a));foreach(array_slice($files,$keep) as $f)@unlink($f);}
 function import_verified_batch(string $token): array {
     $pending=load_verification($token);$ready=$pending['result']['ready']??[];if(!is_array($ready)||!$ready)throw new RuntimeException('This verified batch contains no cards ready for import.');
     $bankFile=content_bank_file();$lockFile=dirname($bankFile).'/.import.lock';$lock=fopen($lockFile,'c+');if(!$lock||!flock($lock,LOCK_EX))throw new RuntimeException('Could not acquire content-bank import lock.');
