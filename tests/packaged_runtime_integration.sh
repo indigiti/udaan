@@ -27,6 +27,14 @@ test ! -e "$RUNTIME/public_html/udaan/lib"
 test ! -e "$RUNTIME/public_html/udaan/data"
 test ! -e "$RUNTIME/public_html/udaan/config.php"
 
+# Production Cloudways PHP-FPM can disable putenv; no generated entrypoint may need it.
+if grep -RnF 'putenv(' "$RUNTIME/public_html/udaan" --include='*.php'; then
+  echo 'Packaged public PHP entrypoint must not call putenv().' >&2
+  exit 1
+fi
+php -d disable_functions=putenv -r 'if(function_exists("putenv"))exit(1);'
+
+
 PORT="$(python3 - <<'PY'
 import socket
 s=socket.socket()
@@ -57,7 +65,7 @@ REDIS_ENABLED=0 \
 UDAAN_TRUST_PROXY_HEADERS=0 \
 UDAAN_LEGACY_PLAINTEXT_STORAGE=read \
 UDAAN_PUBLIC_URL="$BASE/udaan" \
-php -S "127.0.0.1:$PORT" -t "$RUNTIME/public_html" "$TMP/router.php" >"$TMP/php-server.log" 2>&1 &
+php -d disable_functions=putenv -S "127.0.0.1:$PORT" -t "$RUNTIME/public_html" "$TMP/router.php" >"$TMP/php-server.log" 2>&1 &
 SERVER_PID="$!"
 
 for _ in $(seq 1 50); do
