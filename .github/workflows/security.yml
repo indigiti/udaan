@@ -130,8 +130,8 @@ jobs:
           test ! -e "$stage/public/demo_fill.php"
           test ! -e "$stage/private/demo_fill.php"
           ! grep -q "demo-crowd" "$stage/public/.htaccess"
-          grep -q "UDAAN_BASE_PATH" "$stage/public/index.php"
-          grep -q "UDAAN_DATA_ROOT" "$stage/public/api/answer.php"
+          grep -q "UDAAN_DEPLOY_BASE_PATH" "$stage/public/index.php"
+          grep -q "UDAAN_DEPLOY_DATA_ROOT" "$stage/public/api/answer.php"
           while IFS= read -r -d '' file; do php -l "$file"; done < <(find "$stage/public" -type f -name '*.php' -print0)
           # Trace the packaged HTTP journey so failed assertions identify the endpoint/step.
           bash -x tests/packaged_runtime_integration.sh
