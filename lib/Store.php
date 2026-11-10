@@ -135,10 +135,19 @@ final class TempStore {
             }
             throw new RuntimeException('Player profile was busy. Please retry.');
         }
-        $file=$this->playerFile($identity);$fh=fopen($file,'c+');if(!$fh)throw new RuntimeException('Player storage is unavailable.');
-        flock($fh,LOCK_EX);rewind($fh);$raw=stream_get_contents($fh);$current=$this->decode($raw);$next=$fn($current);
-        if(!is_array($next)){flock($fh,LOCK_UN);fclose($fh);throw new RuntimeException('Invalid player mutation.');}
-        $encoded=$this->encode($next);rewind($fh);ftruncate($fh,0);fwrite($fh,$encoded);fflush($fh);flock($fh,LOCK_UN);fclose($fh);return $next;
+        $file=$this->playerFile($identity);$fh=@fopen($file,'c+');
+        if(!$fh)throw new RuntimeException('Player storage is unavailable.');
+        if(!flock($fh,LOCK_EX)){fclose($fh);throw new RuntimeException('Player profile storage lock is unavailable.');}
+        try{
+            rewind($fh);$raw=stream_get_contents($fh);$current=$this->decode($raw);$next=$fn($current);
+            if(!is_array($next))throw new RuntimeException('Invalid player mutation.');
+            $encoded=$this->encode($next);
+            rewind($fh);ftruncate($fh,0);fwrite($fh,$encoded);fflush($fh);
+            return $next;
+        }finally{
+            // Callback validation and encryption can throw: always release the file lock.
+            flock($fh,LOCK_UN);fclose($fh);
+        }
     }
 
     public function listPlayers(int $limit=200): array {
@@ -181,10 +190,19 @@ final class TempStore {
             }
             throw new RuntimeException('Mission state was busy. Please retry.');
         }
-        $file=$this->missionFile($identity);$fh=fopen($file,'c+');if(!$fh)throw new RuntimeException('Mission storage is unavailable.');
-        flock($fh,LOCK_EX);rewind($fh);$raw=stream_get_contents($fh);$current=$this->decode($raw);$next=$fn($current);
-        if(!is_array($next)){flock($fh,LOCK_UN);fclose($fh);throw new RuntimeException('Invalid mission state mutation.');}
-        $encoded=$this->encode($next);rewind($fh);ftruncate($fh,0);fwrite($fh,$encoded);fflush($fh);flock($fh,LOCK_UN);fclose($fh);return $next;
+        $file=$this->missionFile($identity);$fh=@fopen($file,'c+');
+        if(!$fh)throw new RuntimeException('Mission storage is unavailable.');
+        if(!flock($fh,LOCK_EX)){fclose($fh);throw new RuntimeException('Mission state storage lock is unavailable.');}
+        try{
+            rewind($fh);$raw=stream_get_contents($fh);$current=$this->decode($raw);$next=$fn($current);
+            if(!is_array($next))throw new RuntimeException('Invalid mission state mutation.');
+            $encoded=$this->encode($next);
+            rewind($fh);ftruncate($fh,0);fwrite($fh,$encoded);fflush($fh);
+            return $next;
+        }finally{
+            // Callback validation and encryption can throw: always release the file lock.
+            flock($fh,LOCK_UN);fclose($fh);
+        }
     }
 
 
@@ -206,10 +224,19 @@ final class TempStore {
             }
             throw new RuntimeException('Readiness state was busy. Please retry.');
         }
-        $file=$this->readinessFile($identity);$fh=fopen($file,'c+');if(!$fh)throw new RuntimeException('Readiness storage is unavailable.');
-        flock($fh,LOCK_EX);rewind($fh);$raw=stream_get_contents($fh);$current=$this->decode($raw);$next=$fn($current);
-        if(!is_array($next)){flock($fh,LOCK_UN);fclose($fh);throw new RuntimeException('Invalid readiness mutation.');}
-        $encoded=$this->encode($next);rewind($fh);ftruncate($fh,0);fwrite($fh,$encoded);fflush($fh);flock($fh,LOCK_UN);fclose($fh);return $next;
+        $file=$this->readinessFile($identity);$fh=@fopen($file,'c+');
+        if(!$fh)throw new RuntimeException('Readiness storage is unavailable.');
+        if(!flock($fh,LOCK_EX)){fclose($fh);throw new RuntimeException('Readiness state storage lock is unavailable.');}
+        try{
+            rewind($fh);$raw=stream_get_contents($fh);$current=$this->decode($raw);$next=$fn($current);
+            if(!is_array($next))throw new RuntimeException('Invalid readiness mutation.');
+            $encoded=$this->encode($next);
+            rewind($fh);ftruncate($fh,0);fwrite($fh,$encoded);fflush($fh);
+            return $next;
+        }finally{
+            // Callback validation and encryption can throw: always release the file lock.
+            flock($fh,LOCK_UN);fclose($fh);
+        }
     }
 
 
