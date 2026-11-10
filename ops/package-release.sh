@@ -51,7 +51,7 @@ if(!is_string(\$privateRoot)||trim(\$privateRoot)===''){
 \$scriptName=str_replace('\\\\','/',(string)(\$_SERVER['SCRIPT_NAME']??''));
 \$basePath=$depth===0?dirname(\$scriptName):dirname(dirname(\$scriptName));
 if(\$basePath==='/'||\$basePath==='.'||\$basePath==='\\\\')\$basePath='';
-// Cloudways/PHP-FPM may disable putenv(). Pass generated deployment paths via
+// Cloudways/PHP-FPM may disable environment mutation. Pass deployment paths via
 // request-local constants, while retaining explicit UDAAN_* environment overrides.
 if(!defined('UDAAN_DEPLOY_BASE_PATH'))define('UDAAN_DEPLOY_BASE_PATH',\$basePath);
 if(!defined('UDAAN_DEPLOY_DATA_ROOT'))define('UDAAN_DEPLOY_DATA_ROOT',dirname(\$privateRoot).'/udaan-data');
