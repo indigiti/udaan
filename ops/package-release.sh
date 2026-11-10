@@ -51,9 +51,11 @@ if(!is_string(\$privateRoot)||trim(\$privateRoot)===''){
 \$scriptName=str_replace('\\\\','/',(string)(\$_SERVER['SCRIPT_NAME']??''));
 \$basePath=$depth===0?dirname(\$scriptName):dirname(dirname(\$scriptName));
 if(\$basePath==='/'||\$basePath==='.'||\$basePath==='\\\\')\$basePath='';
-if(trim((string)(getenv('UDAAN_BASE_PATH')?:''))==='')putenv('UDAAN_BASE_PATH='.\$basePath);
-if(trim((string)(getenv('UDAAN_DATA_ROOT')?:''))==='')putenv('UDAAN_DATA_ROOT='.dirname(\$privateRoot).'/udaan-data');
-putenv('UDAAN_PUBLIC_ROOT='.\$publicRoot);
+// Cloudways/PHP-FPM may disable putenv(). Pass generated deployment paths via
+// request-local constants, while retaining explicit UDAAN_* environment overrides.
+if(!defined('UDAAN_DEPLOY_BASE_PATH'))define('UDAAN_DEPLOY_BASE_PATH',\$basePath);
+if(!defined('UDAAN_DEPLOY_DATA_ROOT'))define('UDAAN_DEPLOY_DATA_ROOT',dirname(\$privateRoot).'/udaan-data');
+if(!defined('UDAAN_DEPLOY_PUBLIC_ROOT'))define('UDAAN_DEPLOY_PUBLIC_ROOT',\$publicRoot);
 \$target=rtrim(\$privateRoot,'/').'/$rel';
 if(!is_file(\$target)){http_response_code(503);exit('Udaan private runtime is unavailable.');}
 require \$target;
