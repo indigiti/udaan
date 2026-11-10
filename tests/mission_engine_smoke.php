@@ -19,29 +19,36 @@ $player['onboarding_completed']=true;
 $player['arenas']=['learn','fit','mind','reflect'];
 $date='2026-09-22';
 
+fwrite(STDERR,"mission-smoke: assigning daily missions\n");
 $state=udaan_mission_ensure_daily($store,$identity,$player,$date);
 $missions=udaan_missions_for_date($state,$date);
 if(count($missions)!==4){fwrite(STDERR,"Expected four daily missions\n");exit(1);}
 
+fwrite(STDERR,"mission-smoke: checking idempotence\n");
 $state2=udaan_mission_ensure_daily($store,$identity,$player,$date);
 if(count(udaan_missions_for_date($state2,$date))!==4){fwrite(STDERR,"Daily assignment was not idempotent\n");exit(1);}
 
 $byType=[];foreach(udaan_missions_for_date($state2,$date) as$m)$byType[$m['type']]=$m;
 foreach(['daily9','fitness','focus','reflection'] as$type)if(!isset($byType[$type])){fwrite(STDERR,"Missing mission type: $type\n");exit(1);}
 
+fwrite(STDERR,"mission-smoke: completing fit mission\n");
 $fit=udaan_mission_apply_status($store,$identity,$player,$byType['fitness']['id'],'completed',['activity_id'=>'mobility','activity_label'=>'Gentle mobility','category'=>'mobility','actual_minutes'=>10,'readiness_band'=>'balanced']);
 if(($fit['mission']['status']??'')!=='completed'||($fit['mission']['result']['source']??'')!=='fit_session'){fwrite(STDERR,"Fit-session completion failed\n");exit(1);}
 
+fwrite(STDERR,"mission-smoke: verifying event-only completion guard\n");
 $blocked=false;
 try{udaan_mission_apply_status($store,$identity,$player,$byType['daily9']['id'],'completed');}catch(RuntimeException $e){$blocked=true;}
 if(!$blocked){fwrite(STDERR,"Verified Daily 9 mission accepted self-report completion\n");exit(1);}
 
+fwrite(STDERR,"mission-smoke: completing by verified source\n");
 $verified=udaan_mission_complete_by_source($store,$identity,$player,'daily:'.$date.':daily9',['room_id'=>'smoke']);
 if(!is_array($verified)||($verified['status']??'')!=='completed'||($verified['result']['source']??'')!=='verified_event'){fwrite(STDERR,"Verified mission completion failed\n");exit(1);}
 
+fwrite(STDERR,"mission-smoke: skipping focus mission\n");
 $skip=udaan_mission_apply_status($store,$identity,$player,$byType['focus']['id'],'skipped');
 if(($skip['mission']['status']??'')!=='skipped'){fwrite(STDERR,"Mission skip failed\n");exit(1);}
 
+fwrite(STDERR,"mission-smoke: reading final mission state\n");
 $final=$store->getMissionState($identity);
 if(count(udaan_mission_history($final,20))!==4){fwrite(STDERR,"Mission history mismatch\n");exit(1);}
 $finalRows=udaan_missions_for_date($final,$date);
@@ -49,6 +56,7 @@ $completed=count(array_filter($finalRows,fn($m)=>($m['status']??'')==='completed
 $skipped=count(array_filter($finalRows,fn($m)=>($m['status']??'')==='skipped'));
 if($completed!==2||$skipped!==1){fwrite(STDERR,"Mission status aggregate mismatch\n");exit(1);}
 
+fwrite(STDERR,"mission-smoke: checking event ledger\n");
 $eventFiles=glob($tmp.'/events/*.jsonl')?:[];
 if(count($eventFiles)!==1){fwrite(STDERR,"Mission event ledger file missing\n");exit(1);}
 $lines=file($eventFiles[0],FILE_IGNORE_NEW_LINES|FILE_SKIP_EMPTY_LINES)?:[];
