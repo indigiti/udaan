@@ -11,6 +11,7 @@ permissions:
 jobs:
   repository-safety:
     runs-on: ubuntu-latest
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
         with:
@@ -66,20 +67,37 @@ jobs:
 
       - name: Runtime cache, Player and Mission smoke
         shell: bash
+        timeout-minutes: 18
         run: |
           set -euo pipefail
-          php tests/runtime_smoke.php
-          php tests/state_offline_sync_smoke.php
-          php tests/player_foundation_smoke.php
-          php tests/mission_engine_smoke.php
-          php tests/performance_graph_smoke.php
-          php tests/daily_readiness_smoke.php
-          php tests/fit_v1_smoke.php
-          php tests/momentum_habits_smoke.php
-          php tests/coach_v1_smoke.php
-          php tests/friends_teams_smoke.php
-          php tests/competition_v1_smoke.php
-          php tests/partitioned_social_competition_smoke.php
+          # Emit per-test progress so a stalled smoke test can be diagnosed.
+          # GNU timeout returns 124 on timeout; fail closed rather than blocking a release.
+          smoke_tests=(
+            tests/runtime_smoke.php
+            tests/state_offline_sync_smoke.php
+            tests/player_foundation_smoke.php
+            tests/mission_engine_smoke.php
+            tests/performance_graph_smoke.php
+            tests/daily_readiness_smoke.php
+            tests/fit_v1_smoke.php
+            tests/momentum_habits_smoke.php
+            tests/coach_v1_smoke.php
+            tests/friends_teams_smoke.php
+            tests/competition_v1_smoke.php
+            tests/partitioned_social_competition_smoke.php
+          )
+          for test_file in "${smoke_tests[@]}"; do
+            echo "::group::${test_file}"
+            echo "Started ${test_file} at $(date -u +%FT%TZ)"
+            if timeout --signal=TERM --kill-after=5s 75s php "$test_file"; then
+              echo "Passed ${test_file} at $(date -u +%FT%TZ)"
+            else
+              status=$?
+              echo "::error file=${test_file}::Smoke failed or exceeded 75 seconds (status=${status})"
+              exit "$status"
+            fi
+            echo "::endgroup::"
+          done
 
       - name: Production readiness repository preflight
         shell: bash
@@ -115,7 +133,8 @@ jobs:
           grep -q "UDAAN_BASE_PATH" "$stage/public/index.php"
           grep -q "UDAAN_DATA_ROOT" "$stage/public/api/answer.php"
           while IFS= read -r -d '' file; do php -l "$file"; done < <(find "$stage/public" -type f -name '*.php' -print0)
-          bash tests/packaged_runtime_integration.sh
+          # Trace the packaged HTTP journey so failed assertions identify the endpoint/step.
+          bash -x tests/packaged_runtime_integration.sh
 
       - name: Verify readiness and Redis-required contract
         shell: bash
