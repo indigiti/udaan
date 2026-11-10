@@ -20,6 +20,8 @@ cp -a "$TMP/package/udaan/private" "$RUNTIME/private_html/udaan"
 
 test -f "$RUNTIME/public_html/udaan/index.php"
 test -f "$RUNTIME/public_html/udaan/api/state.php"
+test -f "$RUNTIME/public_html/udaan/assets/css/ambient.css"
+test -f "$RUNTIME/public_html/udaan/assets/js/ambient.js"
 test -f "$RUNTIME/private_html/udaan/bootstrap.php"
 test ! -e "$RUNTIME/public_html/udaan/lib"
 test ! -e "$RUNTIME/public_html/udaan/data"
@@ -35,12 +37,27 @@ PY
 )"
 BASE="http://127.0.0.1:$PORT"
 
+# PHP's built-in server may serve a parent index.php for an absent URL.
+# A test-only router ensures missing/publicly forbidden paths return a real 404.
+cat >"$TMP/router.php" <<'PHP'
+<?php
+declare(strict_types=1);
+$uri=parse_url((string)($_SERVER['REQUEST_URI']??''),PHP_URL_PATH);
+$root=realpath((string)($_SERVER['DOCUMENT_ROOT']??''));
+$target=is_string($uri)&&is_string($root)?realpath($root.rawurldecode($uri)):false;
+if(!is_string($root)||!is_string($target)||!str_starts_with($target,$root.DIRECTORY_SEPARATOR)||!is_file($target)){
+    http_response_code(404);
+    exit('Not found');
+}
+return false;
+PHP
+
 UDAAN_ENV=production \
 REDIS_ENABLED=0 \
 UDAAN_TRUST_PROXY_HEADERS=0 \
 UDAAN_LEGACY_PLAINTEXT_STORAGE=read \
 UDAAN_PUBLIC_URL="$BASE/udaan" \
-php -S "127.0.0.1:$PORT" -t "$RUNTIME/public_html" >"$TMP/php-server.log" 2>&1 &
+php -S "127.0.0.1:$PORT" -t "$RUNTIME/public_html" "$TMP/router.php" >"$TMP/php-server.log" 2>&1 &
 SERVER_PID="$!"
 
 for _ in $(seq 1 50); do
@@ -51,6 +68,7 @@ kill -0 "$SERVER_PID"
 
 curl -fsS -D "$TMP/index.headers" -o "$TMP/index.html" "$BASE/udaan/index.php"
 grep -q "Udaan" "$TMP/index.html"
+grep -q "udaan-ambient-page" "$TMP/index.html"
 grep -q '/udaan/assets/' "$TMP/index.html"
 grep -Eiq '^Set-Cookie: UDAANLIVESESSID=.*Path=/udaan/' "$TMP/index.headers"
 
@@ -74,6 +92,8 @@ if($keys!==$expected||isset($d["checks"])||isset($d["warnings"]))exit(1);
 
 curl -fsS "$BASE/udaan/manifest.webmanifest" >/dev/null
 curl -fsS "$BASE/udaan/sw.js" >/dev/null
+curl -fsS "$BASE/udaan/assets/css/ambient.css" >/dev/null
+curl -fsS "$BASE/udaan/assets/js/ambient.js" >/dev/null
 
 http_code="$(curl -sS -o "$TMP/private-leak.txt" -w '%{http_code}' "$BASE/udaan/lib/helpers.php")"
 [[ "$http_code" == "404" ]]
